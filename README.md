@@ -1,0 +1,2 @@
+# SearchforDocs
+Search like algolia
