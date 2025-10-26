@@ -16,7 +16,7 @@
   "dependencies": {
     "@syncfusion/react-base": "*", 
     "@syncfusion/react-buttons": "*",
-    "@syncfusion/react-inputs": "*",
+    "@syncfusion/react-inputs": "*", 
     "@syncfusion/react-notifications": "*",
     "@syncfusion/react-navigations": "*",
     "@syncfusion/react-popups": "*",
