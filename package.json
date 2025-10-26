@@ -14,7 +14,7 @@
     "validation": "gulp validation"
   },
   "dependencies": {
-    "@syncfusion/react-base": "*",
+    "@syncfusion/react-base": "*", 
     "@syncfusion/react-buttons": "*",
     "@syncfusion/react-inputs": "*",
     "@syncfusion/react-notifications": "*",
