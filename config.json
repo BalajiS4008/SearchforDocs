@@ -1,0 +1,53 @@
+{
+  "spellErrorConfig": {
+    "propWords": [
+      "toggleable",
+      "textalign",
+      "stringedit",
+      "numericedit",
+      "dropdownedit",
+      "booleanedit",
+      "datepickeredit",
+      "stringfilter",
+      "numericfilter",
+      "datepickerfilter",
+      "doesNotcontain",
+      "filterbarTitle",
+      "unsorting",
+      "casesensitive"
+    ],
+    "specialWords": [
+      "Syncfusion",
+      "rowcell",
+      "lowrisk",
+      "José",
+      "Stréét",
+      "headercell",
+      "altrow",
+      "LINQ"
+    ],
+    "abbreviationWords": [
+      "VPAT",
+      "cldr",
+      "CLDR",
+      "Cldr"
+    ],
+    "reservedWords": [],
+    "domainWords": [
+      "webparts",
+      "undoable",
+      "setx",
+      "chiplist",
+      "navigations",
+      "datalabel",
+      "useeffect",
+      "inversed",
+      "drilldown",
+      "stepline",
+      "stripline",
+      "Stripline",
+      "Striplines",
+      "striplines"
+    ]
+  }
+}
