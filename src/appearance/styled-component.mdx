@@ -1,0 +1,51 @@
+import { Snippet } from '../common/snippet';
+import { styledSnippet, styledButtonSnippet, dynamicStyledSnippet, dynamicButtonSnippet } from './snippet';
+import StyledButton from '/images/appearance/button-styles.png';
+import DynamicStyles from '/images/appearance/dynamic-styles.png';
+import { Meta } from '../common/meta';
+import { Preview } from '../common/preview';
+import StyledComponent from './styled';
+import DynamicStyledComponent from './dynamic-styles';
+
+<Meta
+  title="Styled-components usage in React components | Syncfusion"
+  description="Styled-components utilize tagged template literals to style React components."
+/>
+
+# Styled-Components Usage in React Components
+
+Syncfusion<sup>®</sup> React components support custom styling using the <a href="https://styled-components.com/" target="_blank" rel="noopener noreferrer">styled-component library</a>.
+
+## Adding styled component to the application
+
+To style a Syncfusion<sup>®</sup> React component using `styled-components`, follow these steps:
+
+1. Import `styled-components` in the `src/App.tsx` file.
+
+2. Use the <a href="https://styled-components.com/docs/api#styled" target="_blank" rel="noopener noreferrer">styled</a> factory to wrap the Syncfusion® React component.
+
+3. Override the component's styles to create a styled version of it.
+
+<Snippet content={styledSnippet} />
+
+The following code demonstrates how to create a styled Syncfusion<sup>®</sup> React Button component using styled-components:
+
+<Snippet content={styledButtonSnippet} />
+
+The output will appear as follows:
+
+<Preview content={<StyledComponent />} header={false} />
+
+## Styling with dynamically computed props
+
+We can style the Syncfusion `React` components dynamically based on props.
+
+<Snippet content={dynamicStyledSnippet} />
+
+The below example code shows the dynamically styling the components using props.
+
+<Snippet content={dynamicButtonSnippet} />
+
+The output will appear as follows:
+
+<Preview content={<DynamicStyledComponent />} header={false} />

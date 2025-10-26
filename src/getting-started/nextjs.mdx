@@ -1,0 +1,91 @@
+import { Snippet } from '../common/snippet';
+import { nextNpm, nextframeworkSnippet, messagePackage, nextJSStyles, nextJSMessageSample, runSample } from './snippets';
+import { Link } from 'react-router';
+import { Meta } from '../common/meta';
+import { Preview } from '../common/preview';
+import DefaultMessage from '../components/message/message';
+
+<Meta
+ title="React components in Next.js | Syncfusion"
+ description="Integrate React components into Next.js, the React framework for building fast, scalable, and SEO-friendly web applications."
+/>
+
+# Getting Started with a Next.js App using React Components
+
+This guide walks you through setting up a `Next.js` application and integrating Syncfusion<sup>®</sup> React components.
+
+## What is Next.js?
+
+[Next.js](https://nextjs.org/) is a React framework that simplifies building fast, SEO-friendly, and user-centric web applications. It offers features like server-side rendering, automatic code splitting, routing, and API routes, making it ideal for modern web applications.
+
+## Prerequisites
+
+Before getting started with the `Next.js` application, ensure the following prerequisites are met:
+
+* [Node.js 18.17](https://nodejs.org/en) or higher.
+
+* Compatibility with macOS, Windows, or Linux.
+
+## Create a Next.js application
+
+To create a new `Next.js` app, use either an NPM or Yarn command:
+
+<Snippet content={nextNpm} />
+
+After running the command, you'll be prompted to configure the project:
+
+1.Define the project name: Let's specify the name of the project as `nextjs-demo`.
+
+<Snippet content={[{ title: "CMD", code: '√ What is your project named? » nextjs-demo' }]} />
+
+2.Select the required packages.
+
+<Snippet content={nextframeworkSnippet} />
+
+3.Once set up, navigate to the project directory:
+
+<Snippet content={[{ title: "CMD", code: 'cd nextjs-demo' }]} />
+
+The application is now ready with default settings. Now, let's add Syncfusion<sup>®</sup> components to the project.
+
+## Install Syncfusion<sup>®</sup> React packages
+
+Syncfusion<sup>®</sup> React components can be found on [npmjs.com](https://www.npmjs.com/search?q=react). Install the necessary package to use Syncfusion<sup>®</sup> components. We'll use the React `Message` component as an example:
+
+<Snippet content={messagePackage}/>
+
+## Import Syncfusion<sup>®</sup> CSS styles
+
+Syncfusion<sup>®</sup> React components are styled using <Link to="/appearance/built-in-themes">built-in themes</Link>. Import the `Material3` theme into `src/app/globals.css`, and remove the existing styles in that file:
+
+<Snippet content={nextJSStyles} />
+
+> For more on themes and individual component CSS, see the <Link to="/appearance/built-in-themes">themes</Link> section.
+
+## Add Syncfusion<sup>®</sup> React component
+
+To integrate the React Message component:
+
+1.Import the `Message` component in `src/app/page.tsx`:
+
+<Snippet content={[{ title: "page.tsx", code: `import { Message } from '@syncfusion/react-notifications';` }]} />
+
+2.Then, add the `Message` component in the application using the following code sample.
+
+<Snippet content={nextJSMessageSample} />
+
+## Run the application
+
+Start the application with:
+
+<Snippet content={runSample} />
+
+The output will appear as follows:
+
+<Preview content={<DefaultMessage />} header={false} />
+
+To learn more about the functionality of the Message component, refer to the <Link to="/message">documentation</Link>.
+
+## See also
+
+* <p><Link to="/getting-started/vite">Getting Started with Syncfusion<sup>®</sup> React UI Component using Vite</Link></p>

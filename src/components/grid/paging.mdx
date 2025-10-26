@@ -1,0 +1,94 @@
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import EnablingPaging from './enabling-paging.tsx';
+import PageSettings from './page-settings.tsx';
+import PageNavigation from './page-navigation.tsx';
+import PagerTemplate from './pager-template.tsx';
+import PagingEvents from './paging-events.tsx';
+import { Meta } from '../../common/meta';
+import { Link } from 'react-router';
+
+<Meta
+  title="React Data Grid - Paging | Syncfusion"
+  description="Paging in Data Grid supports scalable data navigation with performance optimization for faster rendering and efficient handling of large datasets."
+/>
+
+# Paging in React Data Grid
+
+The Syncfusion® React Data Grid paging feature provides an option to display grid data in segmented pages, making it easier to navigate through datasets. This feature is particularly useful when dealing with extensive datasets.  
+
+## Enable paging
+ 
+Enable paging by setting [`pageSettings.enabled`](https://react-api.syncfusion.com/data-grid/pagesettings#enabled) property to `true` on the grid. By default, the grid displays "12" records per page.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<EnablingPaging />}
+  path="grid/enabling-paging.tsx"
+  scroll={false}
+/>
+ 
+## Configuring page settings
+ 
+The [`pageSettings`](https://react-api.syncfusion.com/data-grid/pagesettings) property configures paging behavior within the grid and includes:
+
+| Property      | Description                                          |
+|---------------|------------------------------------------------------|
+| `pageSize`    | Sets the number of rows displayed per page.          |
+| `currentPage` | Specifies the active page number.                     |
+| `pageCount`   | Configures how many pager buttons are visible in the navigation. |
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<PageSettings />}
+  path="grid/page-settings.tsx"
+  scroll={false}
+/>
+ 
+## Pager template
+ 
+The pager template in the grid enables customization of the appearance and behavior of the pager element. This feature is useful when custom elements are preferred over the default pager controls.
+
+To apply a pager template, use the [`pageSettings.template`](https://react-api.syncfusion.com/data-grid/pagesettings#template) property in the grid configuration. Within the template, values such as `currentPage`, `pageSize`, and `pageCount` are available to assist in creating a custom layout.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<PagerTemplate />}
+  path="grid/pager-template.tsx"
+/>
+ 
+## Programmatic page navigation
+
+The Data Grid's [`goToPage`](https://react-api.syncfusion.com/data-grid/overview#gotopage) method allows navigating to a specific page programmatically. It is helpful for managing page navigation through external actions.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<PageNavigation />}
+  path="grid/page-navigation.tsx"
+  scroll={false}
+/>
+
+## Events 
+
+The Data Grid component includes event hooks that fire when navigation occurs between page.
+
+| Event | Description |
+|----------|---------------------------|
+| [`onPageChange`](https://react-api.syncfusion.com/data-grid/overview#onpagechange) | Fires after a paging operation is completed on the grid. Provides page navigation details for post-page-change actions such as updating UI elements, loading data, or triggering dependent logic. |
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<PagingEvents/>}
+  path="grid/paging-events.tsx"
+  scroll={false}
+/>
+
+## See also
+
+* <p><Link to="/data-grid/accessibility#pager">Keyboard Shortcuts for Paging</Link></p>
+* <p><Link to="/data-grid/data-binding/custom-data#handling-paging-operation">Handling Paging in Custom API Services</Link></p>

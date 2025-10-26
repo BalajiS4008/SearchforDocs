@@ -1,0 +1,232 @@
+import BasicCalendar from './basic-usage';
+import CalendarViews from './views';
+import DateRangeCalendar from './date-range';
+import ControlledCalendar from './controlled-vs-uncontrolled';
+import DisabledDatesCalendar from './disabled-dates';
+import SpecialDatesCalendar from './special-dates';
+import MonthPickerCalendar from './month-picker';
+import WeekNumbersCalendar from './week-numbers';
+import MultiSelectionCalendar from './multi-selection';
+import DisabledCalendar from './disabled-calendar';
+import ReadOnlyCalendar from './readonly-calendar';
+import MultipleView from './multiple-view';
+import WeekDaysCalendar from './weekdays-format.tsx';
+import { Preview } from '../../common/preview';
+import { Check, Cross, Clock } from '../../common/util';
+import { Snippet } from '../../common/snippet';
+import { calendarNpm, calendarImport, calendarStyles, calendarSnippet } from './calendar-snippets'
+import { Link } from 'react-router'
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Calendar Component | Syncfusion"
+ description="The Calendar component displays dates with customizable views, cells and options to select a date."
+/>
+
+# React Calendar
+
+The React `Calendar` component provides an intuitive interface for date selection and navigation. It offers a comprehensive set of features including multiple view modes, date range restrictions, custom rendering, and accessibility support for building robust date-picking experiences.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite?section=set-up-the-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let's add the React `Calendar` component to the project.
+
+### Installing Syncfusion® packages
+
+To use the React `Calendar` component in this project, the [`@syncfusion/react-calendars`](https://www.npmjs.com/package/@syncfusion/react-calendars) package needs to be installed using the following command:
+
+<Snippet content={calendarNpm}/>
+
+### Adding CSS reference
+
+In this article, the `Material 3` theme is applied using CSS styles, which are available in installed packages. The necessary Material CSS styles for the `Calendar` component and its dependents were imported into the **src/App.css** file.
+
+<Snippet content={calendarStyles}/>
+
+### Adding Calendar component
+
+To include the `Calendar` component in your application, import the `Calendar` from the `@syncfusion/react-calendars` package in **App.tsx**.
+
+<Snippet content={calendarImport} />
+
+Add the `Calendar` component in application as shown in below code example.
+
+<Snippet content={calendarSnippet} />
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+The `Calendar` component provides a simple and intuitive way to select dates. By default, it displays the current month and allows users to navigate between months and years.
+
+<Preview 
+  content={<BasicCalendar />} 
+  path="calendar/basic-usage.tsx"
+/>
+
+## Views
+
+The `Calendar` component supports multiple view modes including month, year, and decade views. Users can switch between different views using the `start` and `depth` properties to control the initial view and navigation depth.
+
+<Preview 
+  content={<CalendarViews />} 
+  path="calendar/views.tsx"
+/>
+
+## Select View
+
+The `Calendar` component supports multiple view modes including month, year, and decade views. Users can switch between different views using the radio buttons to control the initial view.
+
+<Preview 
+  content={<MultipleView />} 
+  path="calendar/multiple-view.tsx"
+/>
+
+## Date Range
+
+The `minDate` and `maxDate` properties used to control date selection by setting minimum and maximum selectable dates. This ensures users can only select dates within the specified range, making it ideal for booking systems and date-restricted scenarios.
+
+<Preview 
+  content={<DateRangeCalendar />} 
+  path="calendar/date-range.tsx"
+/>
+
+## Controlled Vs Uncontrolled
+
+The `Calendar` component supports both controlled and uncontrolled modes. In controlled mode, the `value` prop manages the selected date externally, while uncontrolled mode uses the `defaultValue` prop for initial state with internal state management.
+
+<Preview 
+  content={<ControlledCalendar />} 
+  path="calendar/controlled-vs-uncontrolled.tsx"
+/>
+
+## Disabled Dates
+
+The `cellTemplate` property is used to customize the appearance of specific dates, allowing to disable those dates to prevent user selection. This is useful for blocking weekends, holidays, or unavailable dates in scheduling applications.
+
+<Preview 
+  content={<DisabledDatesCalendar />} 
+  path="calendar/disabled-dates.tsx"
+/>
+
+## Special Dates
+
+The `cellTemplate` property is used to customize the appearance of specific dates by highlighting important dates, events, or special occasions with custom styling, icons, or indicators.
+ 
+<Preview 
+  content={<SpecialDatesCalendar />} 
+  path="calendar/special-dates.tsx"
+/>
+
+## Month Picker
+ 
+Configure the calendar to function as a month picker by setting the appropriate `start` and `depth` properties. This mode allows users to select entire months rather than specific dates, perfect for monthly reports or billing cycles.
+ 
+<Preview 
+  content={<MonthPickerCalendar />} 
+  path="calendar/month-picker.tsx"
+/>
+
+## Week Numbers
+
+The `weekNumber` property is used to display week numbers alongside the calendar dates. This feature is particularly useful for business applications that reference ISO week numbers for planning and reporting purposes.
+ 
+<Preview 
+  content={<WeekNumbersCalendar />} 
+  path="calendar/week-numbers.tsx"
+/>
+
+## Week Days Format
+
+The `WeekDaysFormat` property is used to display week days into a different formats alongside the calendar dates.
+ 
+<Preview 
+  content={<WeekDaysCalendar />} 
+  path="calendar/weekdays-format.tsx"
+/>
+
+## Multi Selection
+
+The `multiSelect` property enable users to select multiple non-consecutive dates. This is useful for scheduling events, selecting date ranges, or marking multiple important dates. 
+ 
+<Preview 
+  content={<MultiSelectionCalendar />} 
+  path="calendar/multi-selection.tsx"
+/>
+
+## Disabled Calendar
+
+The `disabled` property is used to disable the entire calendar component. This prevents all user interactions while maintaining the visual display of the calendar.
+ 
+<Preview 
+  content={<DisabledCalendar />} 
+  path="calendar/disabled-calendar.tsx"
+/>
+
+## Readonly Calendar
+
+The `readonly` property is used in the calendar component to prevent users from selecting or altering dates. This guarantees that the displayed information remains stable and unchanged.
+ 
+<Preview 
+  content={<ReadOnlyCalendar />} 
+  path="calendar/readonly-calendar.tsx"
+/>
+
+## Accessibility
+ 
+The `Calendar` component follows accessibility guidelines and standards, including [ADA](https://www.ada.gov/), [Section 508](https://www.section508.gov/), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) standards, and [WCAG roles](https://www.w3.org/TR/wai-aria/#roles) that are commonly used to evaluate accessibility.
+ 
+The accessibility compliance for the `Calendar` component is outlined below.
+ 
+| Accessibility Criteria | Compatibility |
+| -- | -- |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Support | <Check/> |
+| [Section 508](https://www.section508.gov/) Support | <Check/> |
+| Screen Reader Support | <Check/> |
+| Right-To-Left Support | <Check/> |
+| Color Contrast | <Check/> |
+| Mobile Device Support | <Check/> |
+| Keyboard Navigation Support | <Check/> |
+| [Accessibility](https://www.npmjs.com/package/@storybook/addon-a11y) Validation | <Check/> |
+ 
+<Check/> - All features of the component meet the requirement.
+ 
+<Clock/> - Some features of the component do not meet the requirement.
+ 
+<Cross/> - The component does not meet the requirement.
+ 
+### WAI-ARIA attributes
+ 
+The `Calendar` component follows the [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/grid/) patterns to meet accessibility requirements. The following ARIA attributes are used in the `Calendar` component:
+ 
+| Attributes | Purpose |
+| --- | --- |
+| <mark>tabindex</mark> | Makes the calendar focusable |
+| <mark>role</mark> | Specifies the role of the calendar dates table. |
+| <mark>data-role</mark> | Identifies the component's role |
+| <mark>aria-atomic</mark> | Indicates the entire title should be presented as a whole when changes occur |
+| <mark>aria-live</mark> | Announces changes to the month/year title immediately to screen reader users |
+| <mark>aria-label</mark> | Provides accessible names for calendar navigation and date cells. |
+| <mark>aria-disabled</mark> | Indicates disabled dates that cannot be selected. |
+| <mark>aria-selected</mark> | Indicates the currently selected date(s). |
+ 
+### Keyboard interaction
+ 
+The `Calendar` component follows keyboard interaction guidelines, making it accessible for people who use assistive technologies (AT) and those who rely on keyboard navigation. The following keyboard shortcuts are supported:
+ 
+| Press | To do this |
+| --- | --- |
+| <kbd>Arrow Keys</kbd> | Navigate between dates in the current view. |
+| <kbd>Home</kbd> | Focuses the first day of the month. |
+| <kbd>End</kbd> | Focuses the last day of the month. |
+| <kbd>Page Up</kbd> | Focuses the same date of the previous month. |
+| <kbd>Page Down</kbd> | Focuses the same date of the next month. |
+| <kbd>Enter</kbd> | Selects the currently focused date. |
+| <kbd>Shift + Page Up</kbd> | Focuses the same date of the previous year. |
+| <kbd>Shift + Page Down</kbd> | Focuses the same date for the next year. |
+| <kbd>Control + Upper Arrow</kbd> | Moves to the inner level of view like month to year and year to decade. |
+| <kbd>Control + Down Arrow</kbd> | Moves out from the depth level view like decade to year and year to month. |
+| <kbd>Control + Home</kbd> | Focuses the first date of the current year. |
+| <kbd>Control + End</kbd> | Focuses the last date of the current year. |

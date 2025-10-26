@@ -1,0 +1,213 @@
+import NumericTextBoxComponent from './basic-numeric-textbox';
+import IncrementalStep from './incremental-steps';
+import SpinButton from './spin-button';
+import NumericTextBoxFormats from './format';
+import Small from './small';
+import Label from './label';
+import Disabled from './normal';
+import Controlled from './controlled';
+import Readonly from './readonly';
+import Ranges from './ranges';
+import CustomHandle from './custom';
+import Validate from './validate';
+import StrictMode from './strict-mode';
+import { Preview } from '../../common/preview';
+import { Check, Cross, Clock } from '../../common/util';
+import { Snippet } from '../../common/snippet'
+import { numerictextboxNpm, numerictextboxImport, numerictextboxStyles, numerictextboxCode } from './numeric-textbox-snippets'
+import { Link } from 'react-router'
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Numeric TextBox Component| Syncfusion"
+  description="The Numeric Textbox component allows users to input and validate numeric values with customizable formats, precision, and spin buttons."
+/>
+
+# React Numeric TextBox
+
+The `Numeric TextBox` is a specialized input control for precise and flexible numeric data entry in web applications.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite#set-up-the-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let’s add the `React Numeric TextBox` component to the project.
+
+### Installing Syncfusion® packages
+
+To use the `Numeric TextBox` component, install the [`@syncfusion/react-inputs`](https://www.npmjs.com/package/@syncfusion/react-inputs) package:  
+
+<Snippet content={numerictextboxNpm}/>
+
+### Adding CSS reference
+
+To use the `Numeric TextBox` component, you need to import the Syncfusion® CSS styles in the application. You can import the required CSS styles from the following package.
+
+<Snippet content={numerictextboxStyles}/>
+
+### Adding Numeric TextBox component
+
+To include the `Numeric TextBox` component in your application, import the `NumericTextBox` from the `@syncfusion/react-inputs` package in `App.tsx`.
+
+<Snippet content={numerictextboxImport}/>
+
+You can use the following code snippet to add the `Numeric TextBox` component to the application.
+
+<Snippet content={numerictextboxCode}/>
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+The following sample shows how to use the `Numeric TextBox` component in the application.
+
+<Preview 
+  content={<NumericTextBoxComponent />} 
+  path="numeric-textbox/basic-numeric-textbox.tsx" 
+/>
+
+## Steps
+
+The `Numeric TextBox` component features a [`step`](https://react-api.syncfusion.com/numeric-textbox/overview#step) property that lets you set precise increment values, enabling users to adjust numeric inputs with ease using spin buttons.
+
+<Preview
+  content={<IncrementalStep />}
+  path="numeric-textbox/incremental-steps.tsx"
+/>
+
+## Spin buttons
+
+By default, the `Numeric TextBox` component displays a spin button ([`spinButton`](https://react-api.syncfusion.com/numeric-textbox/overview#spinbutton) is set to `true`). This behavior can be disabled by setting the [`spinButton`](https://react-api.syncfusion.com/numeric-textbox/overview#spinbutton) property to `false` in the configuration.
+
+<Preview
+  content={<SpinButton />}
+  path="numeric-textbox/spin-button.tsx"
+/>
+
+## Formats
+
+Customize your `Numeric TextBox` with the [`format`](https://react-api.syncfusion.com/numeric-textbox/overview#format) property for value display, defaulting to 'n2' (two decimal places) when the field loses focus.
+
+<Preview
+  content={<NumericTextBoxFormats />}
+  path="numeric-textbox/format.tsx"
+/>
+
+## Sizes
+
+The `Numeric TextBox` component enables you to set a more compact input by utilizing its [`size`](https://react-api.syncfusion.com/numeric-textbox/overview#size) property.
+
+<Preview
+  content={<Small />}
+  path="numeric-textbox/small.tsx"
+/>
+
+## Disabled
+
+When the `disabled` attribute is set to true, the `Numeric TextBox` component cannot be edited or focused.
+
+<Preview
+  content={<Disabled />}
+  path="numeric-textbox/normal.tsx"
+/>
+
+## ReadOnly
+
+When the `readOnly` attribute is set to true, the `Numeric TextBox` component cannot be edited.
+
+<Preview
+  content={<Readonly />}
+  path="numeric-textbox/readonly.tsx"
+/>
+
+## Value range
+
+Implement input validation in your `Numeric TextBox` with range control: use [`min`](https://react-api.syncfusion.com/numeric-textbox/overview#min) for lower limits and [`max`](https://react-api.syncfusion.com/numeric-textbox/overview#max) for upper limits and when [`strictMode`](https://react-api.syncfusion.com/numeric-textbox/overview#strictmode) is enabled, out-of-range values are automatically corrected to the nearest limit.
+
+<Preview
+  content={<Ranges />}
+  path="numeric-textbox/ranges.tsx"
+/>
+
+## Float label
+
+The floating label functionality offers three distinct behavioral modes: `Never`, `Auto` and `Always`.
+
+<Preview
+  content={<Label />}
+  path="numeric-textbox/label.tsx"
+/>
+
+## Value parsing
+
+The `Numeric TextBox` component allows you to create custom methods for formatting and parsing the user input.
+
+<Preview
+  content={<CustomHandle />}
+  path="numeric-textbox/custom.tsx"
+/>
+
+## Controlled vs Uncontrolled
+
+This component implements both controlled and uncontrolled state management paradigms, offering developers implementation flexibility:
+
+* **Controlled**: Use the [`value`](https://react-api.syncfusion.com/numeric-textbox/overview#value) property to manage the component state from a parent component. In this mode, the parent is responsible for passing the value and handling any state updates. This approach is ideal for complex UIs where you need centralized control and a predictable data flow.
+
+* **Uncontrolled**: Use the [`defaultValue`](https://react-api.syncfusion.com/numeric-textbox/overview#defaultValue) property to set the initial value and let the component manage its own state internally. This is a simpler, "fire-and-forget" approach that is perfect for standalone inputs or scenarios where you don't need to manage the state externally.
+
+<Preview
+  content={<Controlled />}
+  path="numeric-textbox/controlled.tsx"
+/>
+
+## Validate on type
+
+The `Numeric TextBox` component validates input dynamically as you type when [`validateOnType`](https://react-api.syncfusion.com/numeric-textbox/overview#validateOnType) is enabled, ensuring that decimal values are correctly formatted according to the specified precision, which in this case is set to 3 decimal places. When it is disabled, allows the user to type more decimal places.
+
+<Preview
+  content={<Validate />}
+  path="numeric-textbox/validate.tsx"
+/>
+
+## Strict mode
+
+When [`strictMode`](https://react-api.syncfusion.com/numeric-textbox/overview#strictmode) is off, the `Numeric TextBox` allows values outside the defined minimum and maximum range without automatically correcting them. When [`strictMode`](https://react-api.syncfusion.com/numeric-textbox/overview#strictmode) is on, any out-of-range value entered is automatically adjusted to the nearest valid limit instead of displaying an error.
+<Preview
+  content={<StrictMode />}
+  path="numeric-textbox/strictMode.tsx"
+/>
+
+## Accessibility
+
+The `Numeric TextBox` component followed the accessibility guidelines and standards, including [ADA](https://www.ada.gov/), [Section 508](https://www.section508.gov/), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) standards, and [WCAG roles](https://www.w3.org/TR/wai-aria/#roles) that are commonly used to evaluate accessibility.
+
+The accessibility compliance for the `Numeric TextBox` component is outlined below.
+
+| Accessibility Criteria | Compatibility |
+| -- | -- |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Support | <Check/> |
+| [Section 508](https://www.section508.gov/) Support | <Check/> |
+| Screen Reader Support | <Check/> |
+| Right-To-Left Support | <Check/> |
+| Color Contrast | <Check/> |
+| Mobile Device Support | <Check/> |
+| Keyboard Navigation Support | <Check/> |
+| [Accessibility](https://www.npmjs.com/package/@storybook/addon-a11y) Validation | <Check/> |
+
+<Check/> - All features of the component meet the requirement.
+
+<Clock/> - Some features of the component do not meet the requirement.
+
+<Cross/> - The component does not meet the requirement.
+
+### WAI-ARIA attributes
+
+The `Numeric TextBox` component followed the [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/alert/) patterns to meet the accessibility. The following ARIA attributes are used in the `Numeric TextBox` component:
+
+| Attributes | Purpose |
+| --- | --- |
+| <mark>aria-label</mark> | Provides an accessible name for the component. |
+| <mark>aria-valuenow</mark> | Indicates the current value of the component. |
+| <mark>aria-valuemin</mark> | Indicates the minimum value of the component. |
+| <mark>aria-valuemax</mark> | Indicates the maximum value of the component. |
+| <mark>role=spinButton</mark> | Indicates the role of the component. |

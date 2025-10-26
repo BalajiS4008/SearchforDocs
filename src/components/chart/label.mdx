@@ -1,0 +1,99 @@
+import SmartLabel from './smartLabel'
+import SmartLabelPosition from './smartLabelPosition'
+import SmartEdgeLabel from './smartEdgeLabel'
+import SmartLabelCustomization from './smartLabelCustomization.tsx'
+import SmartLabelTrim from './smartLabelTrim'
+import SmartLabelLineBreak from './smartLabelLineBreak'
+import SmartLabelMaximumLabel from './smartLabelMaximumLabel'
+import AxisLabelRotation from './axisLabelRotation'
+import { Preview } from '../../common/preview';
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Chart Axis Labels | Syncfusion"
+  description="React Chart axis labels show scale values with customizable rotation, position, trimming, styling, and overlap handling."
+/>
+
+# Axis Labels in React Chart
+
+Axis labels are the textual representations displayed along the chart axes to describe the scale and values of the data. They play a key role in helping users interpret the chart accurately.
+
+## Smart axis label
+
+When axis labels become crowded, especially in charts with many or lengthy labels, you can control their visibility and arrangement using the [`intersectMode`](https://react-api.syncfusion.com/chart/chartaxislabelprops#intersectmode) property in the [`ChartAxisLabel`](https://react-api.syncfusion.com/chart/chartaxislabelprops) component.
+
+For example, setting intersectMode to "Hide" will automatically hide overlapping labels to maintain a clean appearance.
+
+**Available intersectMode Options**:
+
+- `None` – No action is taken; labels may overlap.
+
+- `Hide` – Overlapping labels are hidden.
+
+- `Trim` – Truncates long labels and adds an ellipsis (...).
+
+- `Wrap` – Wraps labels onto multiple lines.
+
+- `MultipleRows` – Stacks labels in multiple rows to avoid overlap.
+
+- `Rotate45` – Rotates labels 45 degrees for better spacing.
+
+- `Rotate90` – Rotates labels vertically (90 degrees).
+
+<Preview onDemand={true} reset={true} content={<SmartLabel />} path="chart/smartLabel.tsx" scroll={false} />
+
+## Axis label rotation
+
+Use the [`rotationAngle`](https://react-api.syncfusion.com/chart/chartaxislabelprops#rotationangle) property to rotate the axis labels from 0 to 360 degrees. By default, the [`rotationAngle`](https://react-api.syncfusion.com/chart/chartaxislabelprops#rotationangle) value is set to 0 degrees.
+
+<Preview onDemand={true} reset={true} content={<AxisLabelRotation />} path="chart/axisLabelRotation.tsx" />
+
+## Axis label positioning
+
+By default, axis labels are placed outside the axis line for better visibility. However, you can reposition them inside the axis by setting the [`position`](https://react-api.syncfusion.com/chart/chartaxislabelprops#position) property to `Inside`.
+
+<Preview onDemand={true} reset={true} content={<SmartLabelPosition />} path="chart/smartLabelPosition.tsx" scroll={false} />
+
+## Managing edge labels
+
+Use the [`edgeLabelPlacement`](https://react-api.syncfusion.com/chart/chartaxislabelprops#edgelabelplacement) property to control how axis labels at the edges of the chart are displayed. This helps prevent labels from overflowing or being clipped outside the chart area.
+
+**Available edgeLabelPlacement Options**:
+
+- `None` – No adjustment; edge labels may overflow.
+
+- `Hide` – Hides edge labels if they exceed the chart boundaries.
+
+- `Shift` – Moves edge labels inward to keep them fully visible within the chart area.
+
+<Preview onDemand={true} reset={true} content={<SmartEdgeLabel />} path="chart/smartEdgeLabel.tsx" scroll={false} />
+
+## Label customization
+
+You can personalize the look and feel of axis labels using the following styling properties:
+
+- `color` – Sets the text color of the label.
+
+- `fontSize` – Defines the font size of the label text.
+
+- `fontWeight` – Controls the thickness of the font (e.g., Normal, Bold).
+
+- `fontFamily` – Specifies the font style (e.g., Arial, Roboto, Times New Roman).
+
+<Preview onDemand={true} reset={true} content={<SmartLabelCustomization />} path="chart/smartLabelCustomization.tsx" />
+
+## Label trim
+
+To prevent axis labels from overflowing or overlapping, you can enable trimming using the [`enableTrim`](https://react-api.syncfusion.com/chart/chartaxislabelprops#enabletrim) property. This automatically shortens long labels and adds an ellipsis (...) when necessary.
+
+Additionally, you can control the maximum width of each label using the [`maxLabelWidth`](https://react-api.syncfusion.com/chart/chartaxislabelprops#maxlabelwidth) property in the [`ChartAxisLabel`](https://react-api.syncfusion.com/chart/chartaxislabelprops) component. By default, this value is set to 34 pixels.
+
+<Preview onDemand={true} reset={true} content={<SmartLabelTrim />} path="chart/smartLabelTrim.tsx" />
+
+## Controlling maximum number of axis labels
+
+You can limit the number of axis labels displayed by setting the [`maxLabelDensity`](https://react-api.syncfusion.com/chart/chartaxisprops#maxlabeldensity) property. This defines the maximum number of labels rendered per 100 pixels of the chart width, helping to reduce clutter in dense charts.
+
+If both maxLabelDensity and axis range properties (minimum, maximum, interval) are specified, the range settings take priority over maximumLabels.
+
+<Preview onDemand={true} reset={true} content={<SmartLabelMaximumLabel />} path="chart/smartLabelMaximumLabel.tsx" />

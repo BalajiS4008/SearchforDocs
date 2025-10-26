@@ -1,0 +1,32 @@
+.toolbar-demo-container {
+    width: 490px;
+}
+
+.toolbar-demo {
+    width: 470px;
+}
+
+.popup-toolbar,
+.extended-toolbar {
+    height: 180px;
+    width: 490px;
+}
+
+.orientation-toolbar {
+    width: 12.5em;
+}
+
+@media (max-width: 768px) {
+
+    .toolbar-demo-container,
+    .popup-toolbar,
+    .extended-toolbar,
+    .toolbar-demo {
+        width: 100%;
+    }
+
+    .popup-toolbar,
+    .extended-toolbar {
+        height: 200px;
+    }
+}

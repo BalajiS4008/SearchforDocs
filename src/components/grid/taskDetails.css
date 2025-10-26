@@ -1,0 +1,22 @@
+.task-management .sf-grid-header-row .customcss {
+    background-color:  #e90b7b24;
+    color: #000000;
+}
+
+.task-management .sf-grid-header-row .customcss div {
+    display: flex;
+}
+
+.task-management .sf-grid-header-row .customcss svg:not(.sf-icon) {
+    margin-left: 5px;
+    margin-top: 3px;
+}
+
+.dark-theme .task-management .sf-grid-header-row .customcss {
+    background-color: #b9236ead;
+    color: #ffffff;
+}
+
+.dark-theme .task-management .sf-grid-header-row .customcss svg:not(.sf-icon) path {
+    stroke: #ffffff;
+}

@@ -1,0 +1,93 @@
+.product-inventory .status-continued-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    background-color: #2C7009;
+    border-radius: 50%;
+    line-height: 16px;
+}
+
+.product-inventory .status-discontinued {
+    display: flex;
+    align-items: center;
+    padding: 6px 8px;
+    font-size: 12px;
+    color: #8C1D18;
+    background-color: #FFD8E4;
+    border-radius: 4px;
+}
+
+.product-inventory .status-discontinued-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    background-color: #8C1D18;
+    border-radius: 50%;
+    line-height: 16px;
+}
+
+.product-inventory .status-continued {
+    display: flex;
+    align-items: center;
+    padding: 6px 8px;
+    font-size: 12px;
+    color: #2C7009;
+    background-color: #D1FFBA;
+    border-radius: 4px;
+}
+
+.product-inventory .product-inventory-stock-value {
+    font-weight: bold;
+}
+
+.product-inventory .product-inventory-stock-high {
+    color: #E46962;
+}
+
+.product-inventory .product-inventory-stock-medium {
+    color: #D47123;
+}
+
+.product-inventory .product-inventory-stock-low {
+    color: #42AB0D;
+}
+
+.dark-theme .product-inventory .status-continued-icon {
+    background-color: #689f38;
+    color: #ffffff;
+}
+
+.dark-theme .product-inventory .status-discontinued-icon {
+    background-color: #d32f2f;
+    color: #ffffff;
+}
+
+.dark-theme .product-inventory .status-continued {
+    color: #c8e6c9;
+    background-color: #2e7d32;
+}
+
+.dark-theme .product-inventory .status-discontinued {
+    color: #ffcdd2;
+    background-color: #c62828;
+}
+
+.dark-theme .product-inventory .product-inventory-stock-high {
+    color: #ff8a80;
+}
+
+.dark-theme .product-inventory .product-inventory-stock-medium {
+    color: #ffb74d;
+}
+
+.dark-theme .product-inventory .product-inventory-stock-low {
+    color: #a5d6a7;
+}

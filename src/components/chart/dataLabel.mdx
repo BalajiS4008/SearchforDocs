@@ -1,0 +1,67 @@
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { chartNpm, chartImport } from './snippets';
+import { Link } from 'react-router';
+import DataLabel from './dataLabel'
+import DataLabelText from './dataLabelText'
+import DataLabelFormat from './dataLabelFormat'
+import DataLabelMargin from './dataLabelMargin'
+import DataLabelRotation from './dataLabelRotation'
+import DataLabelCustom from './dataLabelCustom'
+import DataLabelTemplate from './dataLabelTemplate'
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Chart DataLabel | Syncfusion"
+  description="React Chart data labels show values near data points for easy reading, with support for custom text, positioning, rotation, margins, and styling."
+/>
+
+# DataLabel in React Chart
+
+Data labels display the values of individual data points on a chart, enhancing clarity and helping users interpret the data more easily. You can customize their format and placement to improve overall chart readability.
+
+## Position
+
+Use the [`position`](https://react-api.syncfusion.com/chart/chartmarkerprops#border) property to control where data labels appear on the chart. Available options include:
+
+- `Top`
+
+- `Middle`
+
+- `Bottom`
+
+- `Outer` (applicable only for column and bar series)
+
+Choosing the right position helps ensure labels are clearly visible and do not overlap with other chart elements.
+
+<Preview onDemand={true} reset={true} content={<DataLabel />} path="chart/dataLabel.tsx" scroll={false} />
+
+## Text mapping
+
+The [`labelField`](https://react-api.syncfusion.com/chart/chartdatalabelprops#labelfield) property allows you to bind text from your data source, which will be rendered as the label for each data point.
+
+<Preview onDemand={true} reset={true} content={<DataLabelText />} path="chart/dataLabelText.tsx" />
+
+## Format
+
+Customize the appearance of data labels using the [`format`](https://react-api.syncfusion.com/chart/chartdatalabelprops#format) property in the [`ChartDataLabel`](https://react-api.syncfusion.com/chart/chartdatalabelprops) component. You can apply standard global formats such as 'n' for numbers, 'p' for percentages, and 'c' for currency values.
+
+<Preview onDemand={true} reset={true} content={<DataLabelFormat />} path="chart/dataLabelFormat.tsx" />
+
+## Margin
+
+Use the [`margin`](https://react-api.syncfusion.com/chart/chartdatalabelprops#margin) property in the `ChartDataLabel` component to adjust spacing around labels. You can specify values for `left`, `right`, `top`, and `bottom` to fine-tune label positioning and enhance readability.
+
+<Preview onDemand={true} reset={true} content={<DataLabelMargin />} path="chart/dataLabelMargin.tsx" />
+
+## Label rotation
+
+You can rotate data labels by setting the [`enableRotation`](https://react-api.syncfusion.com/chart/chartdatalabelprops#enablerotation) property to `true` and specifying the desired rotationAngle using the [`rotationAngle`](https://react-api.syncfusion.com/chart/chartdatalabelprops#rotationangle) property.
+
+<Preview onDemand={true} reset={true} content={<DataLabelRotation />} path="chart/dataLabelRotation.tsx" />
+
+## Customization
+
+The `ChartDataLabel` component offers extensive customization options. You can style the label background using the [`fill`](https://react-api.syncfusion.com/chart/chartdatalabelprops#fill) and [`border`](https://react-api.syncfusion.com/chart/chartdatalabelprops#border) properties. To create rounded corners, adjust the [`borderRadius`](https://react-api.syncfusion.com/chart/chartdatalabelprops#borderradius) property with the desired `x` and `y` values. Additionally, use the [`font`](https://react-api.syncfusion.com/chart/chartdatalabelprops#font) property to define the text appearance, including `color`, `fontFamily`, `fontWeight`, and `size`.
+
+<Preview onDemand={true} reset={true} content={<DataLabelCustom />} path="chart/dataLabelCustom.tsx" />

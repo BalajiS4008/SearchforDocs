@@ -1,0 +1,148 @@
+import { splitButtonNpm, splitButtonImport, splitButtonStyles, splitButtonSnippet } from './snippets';
+import Overview from './overview.tsx';
+import Disabled from './disabled.tsx';
+import Icon from './icon.tsx';
+import Size from './size.tsx';
+import Variants from './variants.tsx';
+import Customization from './customization.tsx';
+import { Preview } from '../../common/preview';
+import { Check, Cross, Clock } from '../../common/util';
+import { Snippet } from '../../common/snippet';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Split Button Component | Syncfusion"
+  description= "The SplitButton component combines a default action with a dropdown of related options, offering flexibility and streamlined workflows."
+/>
+
+# React Split Button
+
+The React [`Split Button`](https://react-api.syncfusion.com/split-button/overview) is a graphical user interface component that displays Split Button with visual severity levels. It differentiates Buttons with icons and colors to denote the importance and context of the Button. It has several built-in features, such as severities, variants, icons, and a template.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite#set-up-the-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let’s add the React Split Button component to the project.
+
+### Adding Syncfusion® packages
+
+To use the [`Split Button`](https://react-api.syncfusion.com/split-button/overview) component, install the [`@syncfusion/react-splitbuttons`](https://www.npmjs.com/package/@syncfusion/react-splitbuttons) package:  
+
+<Snippet content={splitButtonNpm}/>
+
+### Adding CSS Reference
+
+Import the [`Split Button`](https://react-api.syncfusion.com/split-button/overview) component’s required CSS references as follows in **src/App.css**.
+
+<Snippet content={splitButtonStyles}/>
+
+### Adding Split Button component
+
+To include the [`Split Button`](https://react-api.syncfusion.com/split-button/overview) component in your application, import the [`Split Button`](https://react-api.syncfusion.com/split-button/overview) from `@syncfusion/react-splitbuttons` package in **App.tsx**.
+
+<Snippet content={splitButtonImport}/>
+
+Add the [`Split Button`](https://react-api.syncfusion.com/split-button/overview) component in application as shown in below code example.
+
+<Snippet content={splitButtonSnippet} />
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+This section outlines the functionality of [`Split Button`](https://react-api.syncfusion.com/split-button/overview), comparing them to Split Button as essential UI components for selecting options in forms and settings menus.
+
+<Preview
+  content={<Overview />}
+  path="splitbutton/overview.tsx"
+/>
+
+## Disabled
+
+The disabled section shows how the [`Split Button`](https://react-api.syncfusion.com/split-button/overview) behaves or can be set up when it shouldn't be interactive, demonstrating different states within the interface.
+
+<Preview
+  content={<Disabled />}
+  path="splitbutton/disabled.tsx"
+/>
+
+## Icons
+
+This part explores the capability to include icons within the [`Split Button`](https://react-api.syncfusion.com/split-button/overview), adding a layer of visual communication to the component to better signal its purpose or function.
+
+<Preview
+  content={<Icon />}
+  path="splitbutton/icon.tsx"
+/>
+## Variants
+
+The [`Split Button`](https://react-api.syncfusion.com/split-button/overview) component has three distinct [`variants`](https://react-api.syncfusion.com/split-button/overview#variant) : `standard`, `outlined` and `filled`.
+
+<Preview 
+  content={<Variants />}
+  path="splitbutton/variants.tsx"
+/>
+
+## Size
+
+Easily customize the Split Button's [`size`](https://react-api.syncfusion.com/split-button/overview#size) to match your design requirements using its built-in sizing properties.
+
+<Preview
+  content={<Size />}
+  path="splitbutton/size.tsx"
+/>
+
+## Customization
+
+Customize the [`Split Button`](https://react-api.syncfusion.com/split-button/overview) by adding icons and separators, turning items into links, or applying a custom design to the dropdown menu.
+<Preview
+  content={<Customization />}
+  path="splitbutton/customization.tsx"
+/>
+
+## Accessibility
+
+The [`Split Button`](https://react-api.syncfusion.com/split-button/overview) component followed the accessibility guidelines and standards, including [ADA](https://www.ada.gov/), [Section 508](https://www.section508.gov/), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) standards, and [WCAG roles](https://www.w3.org/TR/wai-aria/#roles) that are commonly used to evaluate accessibility.
+
+The accessibility compliance for the [`Split Button`](https://react-api.syncfusion.com/split-button/overview) component is outlined below.
+
+| Accessibility Criteria | Compatibility |
+| -- | -- |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Support | <Check/> |
+| [Section 508](https://www.section508.gov/) Support | <Check/> |
+| Screen Reader Support | <Check/> |
+| Right-To-Left Support | <Check/> |
+| Color Contrast | <Check/> |
+| Mobile Device Support | <Check/> |
+| Keyboard Navigation Support | <Check/> |
+| [Accessibility](https://www.npmjs.com/package/@storybook/addon-a11y) Validation | <Check/> |
+
+<Check/> - All features of the component meet the requirement.
+
+<Clock/> - Some features of the component do not meet the requirement.
+
+<Cross/> - The component does not meet the requirement.
+
+### WAI-ARIA attributes
+
+The [`Split Button`](https://react-api.syncfusion.com/split-button/overview) component followed the [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/alert/) patterns to meet the accessibility. The following ARIA attributes are used in the Splitbutton component:
+
+| Attributes | Purpose |
+| --- | --- |
+| <mark>role</mark> | Indicates the Split Button component as button, Split Button popup as menu, and the Split Button popup action items as menuitem. |
+| <mark>aria-haspopup</mark> | Indicates the availability and type of interactive Split Button popup element. |
+| <mark>aria-expanded</mark> | Indicates whether the Split Button popup can be expanded or collapsed, as well as indicates whether its current state is expanded or collapsed. |
+| <mark>aria-disabled</mark> | Indicates that the element is perceivable but disabled, so it is not editable or otherwise operable. |
+
+### Keyboard interaction
+
+The [`Split Button`](https://react-api.syncfusion.com/split-button/overview) component followed the [keyboard interaction](https://www.w3.org/WAI/ARIA/apg/patterns/alert/#keyboardinteraction) guideline, making it easy for people who use assistive technologies (AT) and those who completely rely on keyboard navigation. The following keyboard shortcuts are supported by the Splitbutton component.
+
+| **Windows** | **Mac** | **To do this** |
+| --- | --- | --- |
+| <kbd>Space , Enter</kbd>| <kbd>Space , Enter</kbd> | Opens and closes the popup.|
+| <kbd>Esc</kbd>| <kbd>Esc</kbd> | Closes the opened popup. |
+| <kbd>↑</kbd>| <kbd>↑</kbd> | Navigates up or to the previous action item. |
+| <kbd>↓</kbd>| <kbd>↓</kbd> | Navigates down or to the Next action item. |

@@ -1,0 +1,60 @@
+/* live sample */
+
+.trade .sf-grid-header-cell {
+  height: 43px;
+  line-height: 39px;
+}
+
+.trade .sf-grid-content-row .sf-cell .sf-icons {
+  line-height: 0;
+}
+
+.trade .side-space {
+  padding: 0 5px;
+  height: 14px;
+  width: 14px;
+  margin-left: 3px;
+}
+
+.trade .above-0,
+.trade .above-0 span {
+  color: #00A653;
+}
+
+.trade .below-0,
+.trade .below-0 span {
+  color: #FF3740;
+}
+
+.trade .neutral,
+.trade .sf-grid-content-row .sf-cell .sf-icons.neutral {
+  color: #888888;
+}
+
+.trade .ticker-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trade .rounded-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
+
+.trade .ticker-name {
+  color: #111827;
+  opacity: .9;
+}
+
+.dark-theme .trade .ticker-name {
+  color: #E3E3E3; 
+  opacity: 1;
+}

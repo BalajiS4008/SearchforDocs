@@ -1,0 +1,53 @@
+.employee-detail .sf-user {
+    margin-right: 5px;
+    margin-top: -4px;
+}
+.employee-detail .sf-description {
+    margin-right: 5px;
+    margin-top: 1px;
+}
+.employee-detail .sf-location {
+    margin-left: 5px;
+    margin-top: 1px;
+}
+.employee-detail .sf-date {
+    margin-top: 2px;
+    margin-right: 6px;
+}
+.employee-detail .sf-mail,
+.employee-detail .sf-phone {
+    margin-right: 2px;
+    margin-top: -1px;
+}
+
+.employee-detail div:has(.sf-mail),
+.employee-detail div:has(.sf-description),
+.employee-detail div:has(.sf-date),
+.employee-detail div:has(.sf-location),
+.employee-detail div:has(.sf-phone) {
+    display: flex;
+}
+
+.employee-detail .sf-grid-header-text {
+    width: 100%;
+}
+
+.employee-detail .sf-header-template-right {
+    justify-content: end;
+}
+
+.employee-detail .sf-header-template-center {
+    align-items: center;
+}
+
+.employee-detail .sf-chip {
+    pointer-events: none;
+    height: 25px;
+}
+
+.employee-detail .image img {
+    height: 65px;
+    width: 65px;
+    border-radius: 65px;
+    box-shadow: inset 0 0 1px #e0e0e0, inset 0 0 14px rgba(68, 66, 66, 0.2);
+}

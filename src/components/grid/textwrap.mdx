@@ -1,0 +1,27 @@
+import AutoWrapColumn from './autowrap-column.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Data Grid - Text Wrapping | Syncfusion"
+  description="Text wrapping in Data Grid cells, headers, or both to improve readability and maintain consistent layout across varying content lengths."
+/>
+
+
+# Text Wrapping in React Data Grid
+
+Syncfusion® React Data Grid component text wrapping feature ensures that content exceeding the column width remains fully visible without being truncated, enhancing readability for lengthy text in both headers and data cells. To enable text wrapping feature, set [`textWrapSettings.enabled`](https://react-api.syncfusion.com/data-grid/textwrapsettings#enabled) to `true`. The [`textWrapSettings.wrapMode`](https://react-api.syncfusion.com/data-grid/textwrapsettings#wrapmode) property defines the text wrapping behavior within the grid and provides the following options:
+
+
+| Mode     | Description                                                                 |
+|----------|-----------------------------------------------------------------------------|
+| `Both`     | Wraps both column headers and cell content for maximum readability.         |
+| `Header`   | Wraps only column headers, keeping cell content compact.                    |
+| `Content` | Wraps only data cells, keeping headers concise.      |
+
+For example, setting `textWrapSettings.wrapMode` to `Both` enables wrapping in both header and data cells.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<AutoWrapColumn />} path="grid/autowrap-column.tsx" scroll={false} />
+

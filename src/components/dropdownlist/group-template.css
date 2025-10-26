@@ -1,0 +1,25 @@
+.ddl-flex-container {
+  padding: var(--sf-spacing-5) var(--sf-spacing-0);
+}
+.ddl-border-bottom {
+  border-bottom: 0.063rem solid var(--sf-color-white);
+}
+
+.badge {
+  padding: var(--sf-spacing-0) var(--sf-spacing-6);
+}
+
+.badge--senior {
+  background-color: lightgreen;
+  color: #155724;
+}
+
+.badge--mid {
+  background-color: var(--sf-color-white);
+  color: #856404;
+}
+
+.badge--default {
+  background-color: #f8d7da;
+  color: #721c24;
+}

@@ -1,0 +1,15 @@
+.dropdown-menu-url {
+    text-decoration: none;
+    color: #6750A4;
+}
+
+.sf-dark-mode .dropdown-menu-url {
+    color: #D0BCFF;
+}
+.dropdown-center {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}

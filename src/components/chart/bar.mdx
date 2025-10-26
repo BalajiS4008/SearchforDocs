@@ -1,0 +1,113 @@
+import Bar from './bar'
+import BarLiveUpdate from './barLiveUpdate'
+import BarGroupedBar from './barGroupedBar'
+import BarCustomization from './barCustomization'
+import BarWidth from './barWidth'
+import BarLabel from './barLabel'
+import BarWidthInPixel from './barWidthInPixel'
+import { Preview } from '../../common/preview';
+import BarNegative from './barNegative'
+import BarWithTrack from './barWithTrack'
+import BarPalette from './barPalette'
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Bar Chart & Graph | Syncfusion"
+  description="Bar charts use horizontal bars to compare categories by value (count, total, average)."
+/>
+
+# React Bar Chart
+
+A bar chart visually represents categorical data using rectangular bars, allowing easy comparison of values across different categories.
+
+## Overview
+
+To visualize data as a bar chart, set the [`type`](https://react-api.syncfusion.com/chart/chartseriesprops#type) property to `Bar` within the [`ChartSeries`](https://react-api.syncfusion.com/chart/chartseriesprops) component.
+
+<Preview onDemand={true} reset={true} content={<Bar />} path="chart/bar.tsx" />
+
+## Data label
+
+To display data labels on the bar chart, set the [`visible`](https://react-api.syncfusion.com/chart/chartdatalabelprops#visible) property to `true` within the [`ChartDataLabel`](https://react-api.syncfusion.com/chart/chartdatalabelprops) component.
+
+<Preview onDemand={true} reset={true} content={<BarLabel />} path="chart/barLabel.tsx" />
+
+## Grouped bar
+
+To group columns together in a chart, use the [`groupName`](https://react-api.syncfusion.com/chart/chartseriesprops#groupname) property in the `ChartSeries` component. Bars that share the same groupName will be clustered visually under the same category.
+
+<Preview onDemand={true} reset={true} content={<BarGroupedBar />} path="chart/barGroupedBar.tsx" />
+
+## Negative data
+
+A negative bar chart visually represents negative values using downward-facing bars, making it easy to highlight trends and compare positive vs. negative data.
+
+- Negative values extend below the axis baseline
+- Useful for financial data, profit/loss analysis, or temperature variation
+
+<Preview onDemand={true} reset={true} content={<BarNegative />} path="chart/barNegative.tsx" />
+
+## Bar with track
+
+A bar chart with track displays both actual values and target or maximum values in a single visualization. This technique uses two overlapping bars:
+- The track bar represents the target or maximum value.
+- The actual bar overlays the track to show progress or performance.
+
+<Preview onDemand={true} reset={true} content={<BarWithTrack />} path="chart/barWithTrack.tsx" />
+
+## Datasource update
+
+We can dynamically replace the entire dataset in a Bar chart when the underlying data changes significantly.
+
+This approach is especially useful during:
+- Periodic refreshes (e.g., hourly or daily updates)
+- Batch processing of large datasets
+- Recalculated analytics or simulations
+
+<Preview onDemand={true} reset={true} content={<BarLiveUpdate />} path="chart/barLiveUpdate.tsx" />
+
+## Customizing bar spacing and width
+
+You can control the spacing and width of bar series in the chart using the following properties:
+
+- [`columnSpacing`](https://react-api.syncfusion.com/chart/chartseriesprops#columnspacing):
+
+    Defines the space between multiple bar series.
+    - Accepts values from 0 to 1.
+    - A lower value results in tighter spacing, while a higher value increases the gap between bar.
+
+- [`columnWidth`](https://react-api.syncfusion.com/chart/chartseriesprops#columnwidth):
+
+    Determines the width of each individual bar.
+    - Also accepts values from 0 to 1.
+    - A smaller value produces thinner columns, whereas a larger value makes them wider.
+
+These properties allow you to fine-tune the layout and visual balance of your bar chart for better readability and presentation.
+
+<Preview onDemand={true} reset={true} content={<BarWidth />} path="chart/barWidth.tsx" scroll={false} />
+
+## Bar width in pixels
+
+To define the exact width of columns in pixels, use the [`columnWidthInPixel`](https://react-api.syncfusion.com/chart/chartseriesprops#columnwidthinpixel) property within the `ChartSeries` Component.
+
+- This property allows you to specify a fixed column width, ensuring consistent sizing regardless of chart size or data density.
+- It is especially useful when you want precise control over the visual layout of your column chart.
+
+<Preview onDemand={true} reset={true} content={<BarWidthInPixel />} path="chart/barWidthInPixel.tsx" scroll={false} />
+
+## Series customization
+
+You can customize the appearance of the bar series in the `ChartSeries` component by setting the following properties: 
+
+- [`fill`](https://react-api.syncfusion.com/chart/chartseriesprops#fill) – Sets the color of the bars in the series.  
+- [`opacity`](https://react-api.syncfusion.com/chart/chartseriesprops#opacity) – Controls the transparency level of the bars, allowing for varying visibility.  
+- [`border`](https://react-api.syncfusion.com/chart/chartseriesprops#border) – Defines the thickness and color of the border around the bars.  
+- [`cornerRadius`](https://react-api.syncfusion.com/chart/chartseriesprops#cornerradius) – Specifies the radius of the corners of the bars, allowing for rounded edges.  
+
+<Preview onDemand={true} reset={true} content={<BarCustomization />} path="chart/barCustomization.tsx" />
+
+## Customizing data point colors
+
+The [`colorField`](https://react-api.syncfusion.com/chart/chartseriesprops#colorfield) property in the `ChartSeries` component enables you to assign different colors to individual data points based on the values of a specific field in the data source.
+
+<Preview onDemand={true} reset={true} content={<BarPalette />} path="chart/barPalette.tsx" />

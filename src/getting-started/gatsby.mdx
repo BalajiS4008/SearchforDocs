@@ -1,0 +1,78 @@
+import { Snippet } from '../common/snippet';
+import { gatsbyNpm, gatsbyPreferenceSnippet, fabBtnPackage, gatsbyStyles, gatsbyFABSample, gatsbyRunSample } from './snippets';
+import { Link } from 'react-router';
+import { Meta } from '../common/meta';
+import FloatingActionButton from '../components/floating-action-button/color';
+import { Preview } from '../common/preview';
+
+<Meta
+ title="React components in Gatsby | Syncfusion"
+ description="Integrate React components into Gatsby, the React-based framework for building high-performance, scalable websites."
+/>
+
+# Getting Started with a Gatsby App using React Components
+
+This guide walks you through setting up a [Gatsby](https://www.gatsbyjs.com/) project and integrating the Syncfusion<sup>®</sup> React components.
+
+`Gatsby` is an open-source framework built on React that enables developers to create fast, modern websites and web applications. It combines the best features of `React`, `GraphQL`, and modern `JavaScript` to build a fast and scalable website.
+
+## Prerequisites
+
+<p><Link to="/overview/system-requirements">System requirements for Syncfusion<sup>®</sup> React UI components</Link></p>
+
+## Set up the Gatsby project
+
+1\. To create a new `Gatsby` project, use one of the commands that are specific to either NPM or Yarn.
+
+<Snippet content={gatsbyNpm} />
+
+2\. Using one of the above commands will lead you to set up additional configurations for the project, as below:
+
+Define the project name: We can specify the name of the project directly. Let's specify the name of the project as `my-project` for this guide.
+
+<Snippet content={gatsbyPreferenceSnippet} />
+
+3\. Upon completing the aforementioned steps to create `my-project`, run the following command to jump into the project directory:
+
+<Snippet content={[{ title: "CMD", code: 'cd my-project' }]} />
+
+Now that `my-project` is ready to run with default settings, let's add Syncfusion<sup>®</sup> React component to the project.
+
+## Add Syncfusion<sup>®</sup> React packages
+
+This guide uses the React <Link to="/floating-action-button">`FAB`</Link> component as an example. To use the React `FAB` component in the project, the `@syncfusion/react-buttons` package needs to be installed using the following command:
+
+<Snippet content={fabBtnPackage} />
+
+## Import Syncfusion<sup>®</sup> CSS styles
+
+Syncfusion<sup>®</sup> React components are styled using <Link to="/appearance/built-in-themes">built-in themes</Link>. The necessary `Material 3` CSS styles for the `FAB` component and its dependents were imported into the `src/pages/style.css` file.
+
+<Snippet content={gatsbyStyles} />
+
+## Add Syncfusion<sup>®</sup> React component
+
+Follow the below steps to add the React `FAB` component to the project:
+
+1\. Before adding the `FAB` component to your markup, import the `FAB` component in the `src/pages/index.tsx` file.
+
+<Snippet content={[{ title: "index.tsx", code: `import { Fab } from "@syncfusion/react-buttons";` }]} />
+
+2\. Then, add the `FAB` component in the application using the following code sample.
+.
+
+<Snippet content={gatsbyFABSample} />
+
+## Run the project
+
+To run the project, use the following command:
+
+<Snippet content={gatsbyRunSample} />
+
+The output will appear as follows:
+
+<Preview content={<FloatingActionButton />} header={false} />
+
+## See also
+
+* <p><Link to="/getting-started/vite">Getting Started with Syncfusion<sup>®</sup> React UI Component using Vite</Link></p>

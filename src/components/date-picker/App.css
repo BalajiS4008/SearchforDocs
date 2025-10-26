@@ -1,0 +1,47 @@
+ .form-group {
+   margin-bottom: 20px;
+ }
+
+ label {
+   display: block;
+   margin-bottom: 8px;
+   font-weight: 500;
+ }
+
+ .validation-message {
+   color: #f44336;
+   font-size: 12px;
+   margin-top: 4px;
+ }
+
+ .datepicker-view-container {
+    width: 290px;
+}
+
+.datepicker-view-options {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    width: 500px;
+}
+
+.datepicker-view-label {
+    margin-right: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.datepicker-radio-group {
+    display: flex;
+    align-items: center;
+}
+
+.datepicker-radio-option {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.datepicker-current-view {
+    margin-bottom: 10px;
+}

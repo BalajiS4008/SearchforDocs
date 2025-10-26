@@ -1,0 +1,68 @@
+.sales .star-full {
+  color: #EDC554;
+  font-size: 20px;
+}
+
+.sales .star-half {
+  color: #cac4d0;
+  font-size: 20px;
+}
+
+.sales .star-empty {
+  color: #e7e0ec;
+  font-size: 20px;
+}
+
+.sales .stock-status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    color: #000000;
+}
+
+.sales .sf-stock-in {
+    background-color: #B7FA96;
+    font-weight: 400;
+}
+
+.sales .sf-stock-low {
+    background-color: #FFF2CD;
+    font-weight: 400;
+}
+
+.sales .sf-stock-out {
+    background-color: #F9DEDC;
+    font-weight: 400;
+}
+
+/* Dark Theme */
+.dark-theme .sales .star-full {
+    color: #FFD700; /* Brighter gold for better visibility */
+}
+
+.dark-theme .sales .star-half {
+    color: #5a5a5a; /* Darker gray for half-filled stars */
+}
+
+.dark-theme .sales .star-empty {
+    color: #424242; /* Even darker gray for empty stars */
+}
+
+.dark-theme .sales .stock-status {
+    color: #FFFFFF; /* White text for better contrast */
+}
+
+.dark-theme .sales .sf-stock-in {
+    background-color: #2E7D32; /* Darker green */
+}
+
+.dark-theme .sales .sf-stock-low {
+    background-color: #B36B00; /* Darker orange */
+}
+
+.dark-theme .sales .sf-stock-out {
+    background-color: #C62828; /* Darker red */
+}

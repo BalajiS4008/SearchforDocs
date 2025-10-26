@@ -1,0 +1,58 @@
+import CustomBinding from './custom-binding.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Link } from 'react-router';
+import { gridCustomFilterSnippet, gridCustomPagingSnippet, gridCustomSortingSnippet } from './grid-snippets';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Data Grid - Custom Data Binding | Syncfusion"
+  description="Custom data binding in Data Grid enables integration with remote services and external APIs for dynamic, real-time data access."
+/>
+
+# Custom Data Binding in React Data Grid
+
+The Syncfusion® React Data Grid component supports custom binding to manage data processing through an external custom API. Processed data is then bound to the grid component. This approach enables implementation of tailored data logic based on specific application requirements.
+
+When using custom binding, the grid component expects the data to be returned as an object with two properties:
+
+    * `result:` Actual data to be displayed in the grid.
+    * `count:`  Indicates the total number of records available in the dataset.
+
+To utilize custom binding, configure Syncfusion® DataManager, which integrates seamlessly with the grid and facilitates custom data operations and binding.
+
+Data Grid interactions such as paging, sorting, and filtering trigger the [`onDataRequest`](https://react-api.syncfusion.com/data-grid/overview#ondatarequest) event. This event provides the current grid state along with details of the action performed, enabling precise control over data handling.
+
+To handle this event:
+
+1. Subscribe to `onDataRequest` within the component.
+
+2. Access the event arguments to identify the action type and extract parameters like page index, sort order, and filters.
+
+3. Use these parameters to fetch data from the external source and bind it to the grid.
+
+> The `onDataRequest` event does not trigger automatically during the initial rendering. It should be invoked within `React.useEffect` hook with an initial query, such as `{ skip: 0, take: 10 }`.
+
+## Handling filtering operation
+
+When a filtering operation is performed on the grid, the `onDataRequest` event is triggered. Within this event, the relevant arguments associated with the filter action can be accessed. To update the grid’s data state accordingly, use the following approach:
+
+<Snippet content={gridCustomFilterSnippet}/>
+
+## Handling paging operation
+
+When a paging operation is performed on the grid, the `onDataRequest` event is triggered. Within this event, the relevant arguments associated with the paging action can be accessed. To update the grid’s data state accordingly, use the following approach:
+
+<Snippet content={gridCustomPagingSnippet}/>
+
+## Handling sorting operation
+
+When a sorting operation is performed on the grid, the `onDataRequest` event is triggered. Within this event, the relevant arguments associated with the sorting action can be accessed. To update the grid’s data state accordingly, use the following approach:
+
+<Snippet content={gridCustomSortingSnippet}/>
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<CustomBinding />} path="grid/custom-binding.tsx" scroll={false} />
+
+## See also
+
+* <p><Link to="/data-grid/data-binding/local-data#events">Grid Data Rendering Events</Link></p>

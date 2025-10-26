@@ -1,0 +1,81 @@
+
+import { Snippet } from '../common/snippet';
+import { Preview } from '../common/preview';
+import { Link } from 'react-router';
+import Icons from './icon-demo';
+import { iconSnippet } from './snippet';
+import IconCustomization from './icon-customization';
+import { Meta } from '../common/meta';
+import { Iframe } from '../common/util';
+
+<Meta
+ title="React Icons Library | Syncfusion"
+ description="React icon library is a pre-designed and scalable collection of SVG-based icon components built specifically for modern React applications."
+/>
+
+# React Icons
+
+React icon library is a collection of pre-designed icons that can be used to enhance the user interface of an application. It is a centralized and scalable collection of SVG-based React icon components, built specifically for modern React applications. These icons are designed to provide a consistent and customizable experience across projects.
+
+## Create a Vite project
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite#create-a-vite-project">Vite</Link> documentation. Once the Vite project is set up with default settings, you can add React components to the project.
+
+### Installing Syncfusion® package
+
+Icons can be used from the npm package `react-icons`. To use the icons, install the npm package using the following command:
+
+<Snippet content={[{ title: "npm", code: `npm install @syncfusion/react-icons` }]} />
+
+## Steps to use the icons library in the React application
+
+The built-in Syncfusion React icons are designed for direct integration within your React applications. Each icon is built as an independent, customizable React component that supports standard SVG properties such as width, height, color, etc..
+
+1\. Import the required icon components (e.g., EditIcon, SearchIcon) from the Syncfusion<sup>®</sup> `react-icons` package.
+
+<Snippet content={[ { title: "App.tsx", code: `import { DownloadIcon, SaveIcon, EditIcon, SearchIcon } from '@syncfusion/react-icons';` } ]} />
+
+2\. Add the icon components in application as shown in below code example.
+
+<Snippet content={iconSnippet} />
+
+3\. The following example demonstrates how to use the React icon components.
+
+<Preview content={<Icons />} path="appearance/icon-demo.tsx" />
+
+## Customization
+
+Syncfusion<sup>®</sup> React icons are customizable and support standard `SVG` properties. Each icon component is rendered with following default values for the below attributes:
+
+* Width: `16px`
+
+* Height: `16px`
+
+* ViewBox: `0 0 24 24`
+
+These default values ensure a consistent icon size and alignment across your application. However, you can easily override these properties using standard `SVG` attributes.
+
+### Size and Color
+
+You can customize the icon's size by adjusting the `width` and `height` properties, and change its appearance by modifying the `color` property.
+
+The following example demonstrates how to apply various sizes and colors to the Syncfusion React icons:
+
+<Preview content={<IconCustomization />} path="appearance/icon-customization.tsx" />
+
+## Available icons
+
+Explore the complete collection of Syncfusion<sup>®</sup> React icons below. Utilize the search to quickly locate desired icons.
+
+<Iframe 
+        src="https://ej2.syncfusion.com/products/react-icons/material3/demo.html"
+        title="Syncfusion React Icons"
+        width="100%"
+        height="100%"
+        style={{ border: "1px solid var(--border-color)", borderRadius: "12px", backgroundColor:  "white"}}
+/>
+
+## See also
+
+* <p><Link to="/button#icon-and-label">Syncfusion React Icon buttons</Link></p>
+

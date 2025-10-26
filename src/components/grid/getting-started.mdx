@@ -1,0 +1,83 @@
+import { gridNpm, gridImport, gridStyles, gridDataSource, gridDefineColumns, gridFeatures } from './grid-snippets';
+import Functionalities from './default-functionalities.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Data Grid component - Getting Started | Syncfusion"
+  description="Build a fast React table with Syncfusion React Data Grid featuring sorting, filtering, pagination, and row selection for efficient data display."
+/>
+
+
+# Getting Started with React Data Grid
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite#set-up-the-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let’s add the React Data Grid component to the project.
+
+## Installing Syncfusion® packages
+
+To use the Data Grid component, install the [`@syncfusion/react-grid`](https://www.npmjs.com/package/@syncfusion/react-grid) package:  
+
+<Snippet content={gridNpm}/>
+
+## Adding CSS reference
+
+Import the Data Grid component's required CSS references as follows in `src/App.css`.
+
+<Snippet content={gridStyles}/>
+
+## Adding Data Grid component
+
+To include the Data Grid component in your application, import the `Grid` from `@syncfusion/react-grid` package in `App.tsx`.
+
+<Snippet content={gridImport}/>
+
+## Configuring the datasource
+
+Create an `employeeInformation.ts` file and define a structured JSON dataset representing employee records. Then, `import` the `employeeInformation` module into your component and bind the data to the grid using the [`dataSource`](https://react-api.syncfusion.com/data-grid/overview#datasource) property.
+
+<Snippet content={gridDataSource}/>
+
+## Defining columns
+
+Each column in the Data Grid is defined using the `<Column>` component. The `field` property maps column identifiers from the data source and displays their values, while the `headerText` property sets the user-defined title shown in each column header.
+
+<Snippet content={gridDefineColumns}/>
+
+## Enabling basic features
+
+Add paging, sorting, searching, and filtering features to the grid.
+
+<Snippet content={gridFeatures}/>
+ 
+## Enabling basic events
+
+The Data Grid component raises key events when rendering the grid, loading data, and performing actions like sorting, filtering, searching, paging, row selection, and deselection. These events help track the grid's event flow and indicate when data-related actions are complete.
+
+| Event Name           | Description                                               |
+|--------------------------|-----------------------------------------------------------|
+| [`onGridRenderStart`](https://react-api.syncfusion.com/data-grid/overview#ongridrenderstart)           | Fires an event when the grid begins rendering its rows, columns, and headers.   |
+| [`onDataLoad`](https://react-api.syncfusion.com/data-grid/overview#ondataload)           | Fires an event when data is successfully retrieved and notified to DOM initialization. |
+| [`onGridRenderComplete`](https://react-api.syncfusion.com/data-grid/overview#ongridrendercomplete)              | Fires an event when the grid is fully loaded into the DOM and ready for user interaction.|
+| [`onError`](https://react-api.syncfusion.com/data-grid/overview#onerror)            | Fires an event when an error occurs during grid rendering or data operations. |
+| [`onPageChange`](https://react-api.syncfusion.com/data-grid/overview#onpagechange)   | Fires an event when the user moved to a different page in the grid.   |
+| [`onSort`](https://react-api.syncfusion.com/data-grid/overview#onsort)         |Fires an event when the grid is sorted based on a column.                        |
+| [`onFilter`](https://react-api.syncfusion.com/data-grid/overview#onfilter)       | Fires an event when a filter is applied to the grid.                      |
+| [`onSearch`](https://react-api.syncfusion.com/data-grid/overview#onsearch)       | Fires an event when search results are displayed in the grid.                         |
+| [`onRowSelect`](https://react-api.syncfusion.com/data-grid/overview#onrowselect)          | Fires an event when a row is selected.                        |
+| [`onRowDeselect`](https://react-api.syncfusion.com/data-grid/overview#onrowdeselect)        | Fires an event when a row is deselected.                      |
+
+## Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<Functionalities />}
+  path="grid/default-functionalities.tsx"
+  scroll={false}
+/>

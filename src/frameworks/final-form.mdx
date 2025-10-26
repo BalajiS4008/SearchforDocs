@@ -1,0 +1,67 @@
+import { Link } from 'react-router';
+import { Snippet } from '../common/snippet';
+import { finalFormSetup, finalFormSample, finalFormStyles } from './snippets';
+import { Image } from '../common/image';
+import { Meta } from '../common/meta';
+
+<Meta
+ title="React components in React Final Form | Syncfusion"
+ description="Integrate React components with React Final Form, a lightweight subscription-based state management for advanced form validation."
+/>
+
+# Integration of React Components with React Final Form
+
+This guide walks you through setting up Syncfusion React components with `React Final Form`.
+
+## What is React Final Form?
+
+[React Final Form](https://final-form.org/react) is a high-performance form state management solution for React that delivers functionality through a subscription-based architecture, minimizing re-renders while offering comprehensive capabilities, including both synchronous and asynchronous field and form-level validation.
+
+## Prerequisites
+
+<p><Link to="/overview/system-requirements">System requirements for Syncfusion<sup>®</sup> React UI components</Link></p>
+
+## Create a Vite project
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite#create-a-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let’s add the React components to the project.
+
+## Add Syncfusion<sup>®</sup> React packages
+
+This guide demonstrates an asynchronous field-level validation implementation  of `React Final Form` with various Syncfusion<sup>®</sup> React components including <Link to="/textbox">`TextBox`</Link>, <Link to="/button">`Button`</Link>, and <Link to="/checkbox">`CheckBox`</Link>. To implement these components in the project, install the `@syncfusion/react-inputs`, `@syncfusion/react-buttons`, and `react-final-form` packages.
+
+<Snippet content={finalFormSetup} />
+
+## Import Syncfusion<sup>®</sup> CSS styles
+
+Syncfusion<sup>®</sup> React components are styled using <Link to="/appearance/built-in-themes">built-in themes</Link>. The necessary `Material 3` CSS styles for the inputs and buttons components and its dependents are imported along with the required sample styles into the `src/App.css` file.
+
+<Snippet content={finalFormStyles} />
+
+## Add Syncfusion<sup>®</sup> React component with Final Form
+
+Follow the below steps to add the Syncfusion<sup>®</sup> React component to the project:
+
+1\. Before adding the component, import the required component in the `src/App.tsx` file.
+
+<Snippet content={[{ title: "App.tsx", code: `import { Form, Field } from "react-final-form";
+import { TextBox } from '@syncfusion/react-inputs';
+import { NumericTextBox } from '@syncfusion/react-inputs';
+import { Checkbox, Button } from '@syncfusion/react-buttons';` }]} />
+
+2\. Then, add the components in the application using the following code sample.
+
+<Snippet content={finalFormSample} />
+
+## Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{title:"CMD", code: "npm run dev"}]} />
+
+The output will appear as follows:
+
+<Image style={ { width: '100%' } } alt="finalform sample" src={'/images/framework/final-form.png'} hasDarkImage={true} />
+
+## See also
+
+* <p><Link to="/getting-started/vite">Getting Started with Syncfusion<sup>®</sup> React UI Component using Vite</Link></p>

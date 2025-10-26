@@ -1,0 +1,21 @@
+export const scatterLabelData = [
+  { height: 57, weight: 105, name: "John" },
+  { height: 63, weight: 127, name: "Robert" },
+  { height: 54, weight: 70, name: "James" },
+  { height: 64, weight: 110, name: "Henry" },
+  { height: 68, weight: 120, name: "William" },
+  { height: 70, weight: 112, name: "Alfred" },
+  { height: 58, weight: 88, name: "Thomas" },
+  { height: 72, weight: 150, name: "Philip" },
+  { height: 68, weight: 137, name: "Ronald" },
+  { height: 60, weight: 84, name: "Jeffrey" },
+  { height: 54, weight: 85, name: "Alice" },
+  { height: 58, weight: 55, name: "Jane" },
+  { height: 70, weight: 84, name: "Louise" },
+  { height: 61, weight: 101, name: "Janet" },
+  { height: 66, weight: 98, name: "Carol" },
+  { height: 66, weight: 112, name: "Mary" },
+  { height: 65, weight: 78, name: "Barbara" },
+  { height: 64, weight: 90, name: "Judy" },
+  { height: 51, weight: 59, name: "Joyce" }
+];

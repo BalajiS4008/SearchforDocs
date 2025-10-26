@@ -1,0 +1,32 @@
+.custom-row .sf-pending-status .sf-cell {
+    background-color: #FFECB3;
+    color: #000000;
+    font-weight: 500;
+}
+
+.custom-row .sf-cancel-status .sf-cell {
+    background-color: #e48992;
+    color: #000000;
+    font-weight: 500;
+}
+ 
+.custom-row .sf-expired-status .sf-cell {
+    background-color: #CFD8DC;
+    color: #000000;
+    font-weight: 500;
+}
+
+.dark-theme .custom-row .sf-pending-status .sf-cell {
+    background-color: #665000;
+    color: #FFDE9A;
+}
+
+.dark-theme .custom-row .sf-cancel-status .sf-cell {
+    background-color: #8C1D18;
+    color: #FFDAD6;
+}
+
+.dark-theme .custom-row .sf-expired-status .sf-cell {
+    background-color: #45474B;
+    color: #CAC4D0;
+}

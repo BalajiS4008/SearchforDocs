@@ -1,0 +1,28 @@
+import ColumnsState from './employee-grid.tsx';
+import ShowHideColumns from './product-detail-grid.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Data Grid - Column State Management | Syncfusion"
+  description="Data Grid updates column state dynamically through React to manage layout, visibility, and configuration changes triggered by user interaction."
+/>
+
+# Dynamic Column Management in React Data Grid Using React State
+
+The Syncfusion® React Data Grid component enables dynamic column updates through React state. Major changes, such as adding or removing columns, trigger a full refresh to reinitialize the layout and configuration. Minor updates, like toggling visibility or modifying column properties, result in a lightweight UI update without resetting the internal state.
+
+## Defining columns in React state
+ 
+The Data Grid component columns can be defined using a React `useState` variable, enabling runtime updates like adding or removing columns. 
+
+For example, toggling a "Salary" column updates the state. When the column structure changes, the grid triggers a full refresh to reinitialize layout and configuration.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<ColumnsState />} path="grid/employee-grid.tsx" scroll={false} />
+ 
+## Show or hide columns using React state
+
+Column visibility can be controlled through a React `useState` variable. For example, a checkbox can toggles a column's visibility by updating its [`visible`](https://react-api.syncfusion.com/data-grid/columnprops#visible) property in the state. This action triggers a lightweight UI refresh without reinitializing the grid's internal state.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<ShowHideColumns />} path="grid/product-detail-grid.tsx" scroll={false} />

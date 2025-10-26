@@ -1,0 +1,133 @@
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet'
+import { SkeletonNpm, SkeletonImport, SkeletonStyles, SkeletonCode } from './skeleton-snippets'
+import SkeletonDefault from './default';
+import SkeletonVarients from './vaients';
+import Animations from './animation';
+import DynamicContent from './dynamiccontent';
+import { Check, Cross, Clock }  from '../../common/util';
+import Color from './color';
+import { Link } from 'react-router'
+import PulseEffect from './pulseeffect';
+import FadeEffect from './fadeeffect';
+import  WaveEffect from './waveeffect';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Skeleton Component | Syncfusion"
+  description="The Skeleton component provides a placeholder preview while content loads, enhancing perceived performance and improving user experience."
+/>
+
+# React Skeleton
+
+The `Skeleton` component enhances user engagement by improving loading states during data retrieval.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite#set-up-the-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let’s add the `React Skeleton` component to the project.
+
+### Installing Syncfusion® packages
+
+To use the `Skeleton` component, install the [`@syncfusion/react-notifications`](https://www.npmjs.com/package/@syncfusion/react-notifications) package:  
+
+<Snippet content={SkeletonNpm}/>
+
+### Adding CSS reference
+
+Import the `Skeleton` component’s required CSS references as follows in `src/App.css`.
+
+<Snippet content={SkeletonStyles}/>
+
+### Adding Skeleton component
+
+To include the `Skeleton` component in your application import the `Skeleton` from `@syncfusion/react-notifications` package in `App.tsx`.
+
+<Snippet content={SkeletonImport}/>
+
+Add the `Skeleton` component in application as shown in below code example.
+
+<Snippet content={SkeletonCode}/>
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+The following example demonstrates the `Skeleton` component is rendered with the given shape.
+
+<Preview content={<SkeletonDefault />} path="skeleton/default.tsx" />
+
+## Variants
+
+The `Skeleton` component provides `Text`, `Circular`, `Rectangular`, and `Square` variants for consistent loading UI design via the [`variant`](https://react-api.syncfusion.com/skeleton/overview#variant) property.
+
+<Preview content={<SkeletonVarients />} path="skeleton/vaients.tsx" scroll={false}/>
+
+## Animations
+
+Enhance loading with the `Skeleton` component's animations: `Wave`, `Pulse`, `Fade`, or `None` via the [`animation`](https://react-api.syncfusion.com/skeleton/overview#animation) property.
+
+### Pulse
+
+The `Pulse` animation creates a subtle rhythmic effect, ideal for emphasizing loading elements in dashboards and data-rich interfaces.
+
+<Preview content={<PulseEffect />} path="skeleton/pulseeffect.tsx" />
+
+### Fade
+
+The `Fade` animation offers smooth opacity transitions, making it a minimalist loading indicator perfect for professional, content-focused interfaces.
+
+<Preview content={<FadeEffect />} path="skeleton/fadeeffect.tsx" />
+
+### Wave
+
+The `Wave` animation smoothly indicates active loading in interactive apps and media-rich environments.
+
+<Preview content={<WaveEffect />} path="skeleton/waveeffect.tsx" />
+
+## Transitions
+
+The `Skeleton` component enhances loading experiences, ensuring visual consistency in dynamic applications with frequent content updates. This approach fosters responsive interfaces during complex data operations.
+
+<Preview content={<DynamicContent />} path="skeleton/dynamiccontent.tsx" />
+
+## Color
+
+You can customize the component’s color by adjusting its background-color CSS property.
+
+<Preview content={<Color />} path="skeleton/color.tsx" />
+
+## Accessibility
+
+The `Skeleton` component followed the accessibility guidelines and standards, including [ADA](https://www.ada.gov/), [Section 508](https://www.section508.gov/), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) standards, and [WCAG roles](https://www.w3.org/TR/wai-aria/#roles) that are commonly used to evaluate accessibility.
+
+The accessibility compliance for the `Skeleton` component is outlined below.
+
+| Accessibility Criteria | Compatibility |
+| -- | -- |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Support | <Check/> |
+| [Section 508](https://www.section508.gov/) Support | <Check/> |
+| Screen Reader Support | <Check/> |
+| Right-To-Left Support | <Check/> |
+| Color Contrast | <Check/> |
+| Mobile Device Support | <Check/> |
+| Keyboard Navigation Support | <Check/> |
+| [Accessibility](https://www.npmjs.com/package/@storybook/addon-a11y) Validation | <Check/> |
+
+<Check/> - All features of the component meet the requirement.
+
+<Clock/> - Some features of the component do not meet the requirement.
+
+<Cross/> - The component does not meet the requirement.
+
+### WAI-ARIA attributes
+
+The `Skeleton` component followed the [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/alert/) patterns to meet the accessibility. The following ARIA attributes are used in the Skeleton component:
+
+| Attributes | Purpose |
+| --- | --- |
+| <mark>role=alert</mark> | Used to convey a significant and contextual message to the user. |
+| <mark>aria-label</mark> | Attribute provides the text label for the Skeleton. |
+| <mark>aria-live</mark>  | Attributes which indicates the content changes which are not intractable are live regions. |
+| <mark>aria-busy</mark>  | Set to true until loading is complete, then set to false. |

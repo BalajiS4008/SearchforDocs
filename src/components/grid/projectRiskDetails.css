@@ -1,0 +1,356 @@
+/* Risk Level Font Styling - Material 3 Light Theme */
+.project-risk .risk-critical-font {
+    font-family: 'Roboto Condensed', 'Roboto', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: #B3261E;
+    text-shadow: 0.5px 0.5px 1px rgba(179, 38, 30, 0.3);
+}
+
+.project-risk .risk-high-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    color: #C5221F;
+    font-style: normal;
+}
+
+.project-risk .risk-medium-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: #B06000;
+    font-style: italic;
+}
+
+.project-risk .risk-low-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #137333;
+    opacity: 0.8;
+}
+
+/* Impact Score Font Styling */
+.project-risk .impact-extreme-font {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 900;
+    font-size: 15px;
+    color: #B3261E;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 2px;
+}
+
+.project-risk .impact-high-font {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    font-size: 14px;
+    color: #C5221F;
+    border-left: 2px solid #C5221F;
+    padding-left: 8px;
+}
+
+.project-risk .impact-moderate-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: #B06000;
+}
+
+.project-risk .impact-low-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #137333;
+    font-style: italic;
+}
+
+/* Department Font Styling for Organizational Hierarchy */
+.project-risk .dept-strategic-font {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #1A73E8;
+    text-transform: capitalize;
+    letter-spacing: 0.2px;
+}
+
+.project-risk .dept-critical-font {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: #B3261E;
+    letter-spacing: 1px;
+}
+
+.project-risk .dept-analytics-font {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+    font-size: 12px;
+    color: #1A73E8;
+    font-variant: small-caps;
+}
+
+.project-risk .dept-operational-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #3C4043;
+    opacity: 0.9;
+}
+
+/* Budget Font Styling for Financial Importance */
+.project-risk .budget-enterprise-font {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 800;
+    font-size: 14px;
+    color: #0D652D;
+    background: linear-gradient(135deg, #E6F4EA 0%, #D4EDDA 100%);
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-shadow: 0.5px 0.5px 1px rgba(13, 101, 45, 0.2);
+}
+
+.project-risk .budget-major-font {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    font-size: 13px;
+    color: #137333;
+    border-bottom: 2px solid #34A853;
+}
+
+.project-risk .budget-standard-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: #1A73E8;
+}
+
+.project-risk .budget-minimal-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #5F6368;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Mitigation Status Font Styling for Urgency */
+.project-risk .status-urgent-font {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    color: #B3261E;
+    letter-spacing: 1px;
+    text-underline-offset: 3px;
+}
+
+.project-risk .status-active-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: #1A73E8;
+    font-style: oblique;
+}
+
+.project-risk .status-scheduled-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #B06000;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.project-risk .status-watch-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #137333;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Project Manager Font Styling for Accountability */
+.project-risk .manager-crisis-font {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 800;
+    font-size: 14px;
+    color: #B3261E;
+    text-transform: capitalize;
+    border: 2px solid #FCE8E6;
+    background-color: #FAD2CF;
+    padding: 2px 6px;
+    border-radius: 6px;
+}
+
+.project-risk .manager-high-pressure-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #C5221F;
+    text-transform: capitalize;
+    background-color: #FCE8E6;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.project-risk .manager-standard-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: #3C4043;
+    text-transform: capitalize;
+}
+
+/* Timeline Font Styling for Project Duration Complexity */
+.project-risk .timeline-complex-font {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    font-size: 12px;
+    color: #B3261E;
+    letter-spacing: 0.5px;
+    border: 1px solid #EA4335;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.project-risk .timeline-extended-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: #B06000;
+    font-style: oblique;
+    text-decoration: underline;
+}
+
+.project-risk .timeline-standard-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #5F6368;
+}
+
+/* Material 3 Dark Theme */
+/* Risk Level Font Styling - Material 3 Dark Theme */
+.dark-theme .project-risk .risk-critical-font {
+    color: #F28B82;
+    text-shadow: 0.5px 0.5px 1px rgba(242, 139, 130, 0.3);
+}
+
+.dark-theme .project-risk .risk-high-font {
+    color: #F28B82;
+}
+
+.dark-theme .project-risk .risk-medium-font {
+    color: #FDD663;
+}
+
+.dark-theme .project-risk .risk-low-font {
+    color: #81C995;
+}
+
+/* Impact Score Font Styling - Material 3 Dark Theme */
+.dark-theme .project-risk .impact-extreme-font {
+    color: #F28B82;
+}
+
+.dark-theme .project-risk .impact-high-font {
+    color: #F28B82;
+    border-left: 2px solid #F28B82;
+}
+
+.dark-theme .project-risk .impact-moderate-font {
+    color: #FDD663;
+}
+
+.dark-theme .project-risk .impact-low-font {
+    color: #81C995;
+}
+
+/* Department Font Styling - Material 3 Dark Theme */
+.dark-theme .project-risk .dept-strategic-font {
+    color: #8AB4F8;
+}
+
+.dark-theme .project-risk .dept-critical-font {
+    color: #F28B82;
+}
+
+.dark-theme .project-risk .dept-analytics-font {
+    color: #8AB4F8;
+}
+
+.dark-theme .project-risk .dept-operational-font {
+    color: #E8EAED;
+}
+
+/* Budget Font Styling - Material 3 Dark Theme */
+.dark-theme .project-risk .budget-enterprise-font {
+    color: #81C995;
+    background: linear-gradient(135deg, #1A3D2A 0%, #1E4731 100%);
+    text-shadow: 0.5px 0.5px 1px rgba(129, 201, 149, 0.2);
+}
+
+.dark-theme .project-risk .budget-major-font {
+    color: #81C995;
+    border-bottom: 2px solid #81C995;
+}
+
+.dark-theme .project-risk .budget-standard-font {
+    color: #8AB4F8;
+}
+
+.dark-theme .project-risk .budget-minimal-font {
+    color: #BDC1C6;
+}
+
+/* Mitigation Status Font Styling - Material 3 Dark Theme */
+.dark-theme .project-risk .status-urgent-font {
+    color: #F28B82;
+}
+
+.dark-theme .project-risk .status-active-font {
+    color: #8AB4F8;
+}
+
+.dark-theme .project-risk .status-scheduled-font {
+    color: #FDD663;
+}
+
+.dark-theme .project-risk .status-watch-font {
+    color: #81C995;
+}
+
+/* Project Manager Font Styling - Material 3 Dark Theme */
+.dark-theme .project-risk .manager-crisis-font {
+    color: #F28B82;
+    border: 2px solid #5C2B29;
+    background-color: #632423;
+}
+
+.dark-theme .project-risk .manager-high-pressure-font {
+    color: #F28B82;
+    background-color: #5C2B29;
+}
+
+.dark-theme .project-risk .manager-standard-font {
+    color: #E8EAED;
+}
+
+/* Timeline Font Styling - Material 3 Dark Theme */
+.dark-theme .project-risk .timeline-complex-font {
+    color: #F28B82;
+    border: 1px solid #F28B82;
+}
+
+.dark-theme .project-risk .timeline-extended-font {
+    color: #FDD663;
+}
+
+.dark-theme .project-risk .timeline-standard-font {
+    color: #BDC1C6;
+}

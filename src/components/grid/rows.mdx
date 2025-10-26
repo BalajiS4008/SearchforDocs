@@ -1,0 +1,95 @@
+import RowHover from './row-hover.tsx';
+import RowHeight from './row-height.tsx';
+import AltRow from './alt-row-style.tsx';
+import DisableRowHover from './disable-row-hover.tsx';
+import RowMethods from './row-methods.tsx';
+import RowCustomization from './row-data-bound-customization.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Data Grid - Row Customization | Syncfusion"
+  description="Rows in Data Grid with conditional styling and adjustable row height for flexible layout and visual clarity."
+/>
+
+# Rows in React Data Grid
+ 
+The Syncfusion® React Data Grid component displays each row as a single record from a data source, facilitating data viewing, interaction, and modification. The Data Grid component supports row customization through styling, conditional formatting, alternating colors, adjustable row heights, and hover effects. Row data can be accessed, and rendering events are available for further configuration.
+
+## Conditional row styling
+
+Data Grid component enhances readability by applying conditional row styling through the [`rowClass`](https://react-api.syncfusion.com/data-grid/overview#rowclass) property. This feature allows rows to be visually distinguished based on data, such as applying custom background colors to rows where the "Status" column is "Pending", "Expired", or "Cancelled". Clicking the renew button updates these rows to "Active", removing the custom styling and reverting to the default appearance to reflect the updated status.
+
+<Preview  frame={false} 
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<RowCustomization />}
+  path="grid/row-data-bound-customization.tsx"
+  scroll={false}
+/>
+
+## Alternating row colors
+ 
+The [`enableAltRow`](https://react-api.syncfusion.com/data-grid/overview#enablealtrow) property is enabled by default and automatically adds the `.sf-altrow` CSS class to alternating grid rows. However, since no background color is applied by default, custom styles can be defined for the `.sf-grid .sf-altrow` class to visually highlight alternating rows.
+
+<Preview  frame={false} 
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<AltRow />}
+  path="grid/alt-row-style.tsx"
+  scroll={false}
+/>
+
+## Custom row height
+ 
+The [`rowHeight`](https://react-api.syncfusion.com/data-grid/overview#rowheight) property defines a fixed height for all rows in a grid. For example, setting the row height to "60px" enhances readability for varied content sizes. The height can be dynamically adjusted to values like "20px", "40px", or "60px" by updating React state through a button click, providing a flexible layout.
+
+<Preview  frame={false} 
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<RowHeight />}
+  path="grid/row-height.tsx"
+  scroll={false}
+/>
+
+## Row hover effects
+ 
+The Data Grid component highlights rows on mouse hover by default using the [`enableHover`](https://react-api.syncfusion.com/data-grid/overview#enablehover) property. To customize the background color of highlighted rows, style the `.sf-grid .sf-grid-content-row:hover .sf-cell` CSS selector.
+
+<Preview  frame={false} 
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<RowHover />}
+  path="grid/row-hover.tsx"
+  scroll={false}
+/>
+
+### Disable row hover effects
+ 
+To disable row hover highlighting, set the `enableHover` property to `false` in the grid.
+
+<Preview  frame={false} 
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<DisableRowHover />}
+  path="grid/disable-row-hover.tsx"
+  scroll={false}
+/>
+
+## Accessing row data dynamically
+ 
+The Data Grid component provides a set of built-in methods for programmatically accessing row elements and their associated data. Each method returns specific row-related information.
+ 
+| Method Name              | Returns                                                                |
+|--------------------------|-------------------------------------------------------------------------|
+| [`getSelectedRecords`](https://react-api.syncfusion.com/data-grid/overview#getselectedrecords)       | Returns current view port all  row objects with associated data |
+| [`getSelectedRowIndexes`](https://react-api.syncfusion.com/data-grid/overview#getselectedrowindexes)| An array of indexes for the currently selected rows.                   |
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<RowMethods />}
+  path="grid/row-methods.tsx"
+  scroll={false}
+/>

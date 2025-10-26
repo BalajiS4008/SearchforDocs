@@ -1,0 +1,14 @@
+.component-section .sf-message {
+    margin: 10px 0;
+    min-width: 350px;
+}
+
+.component-section .rounded {
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 576px) {
+    .component-section .sf-message {
+        min-width: 200px;
+    }
+}

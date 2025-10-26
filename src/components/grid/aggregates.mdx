@@ -1,0 +1,112 @@
+import Aggregates from './aggregate.tsx';
+import AggregateTypes from './aggregate-type.tsx';
+import MultipleAggregates from './multiple-aggregate.tsx';
+import CustomAggregate from './custom-aggregate.tsx';
+import AggregateFormat from './aggregate-format.tsx';
+import AggregateStyling from './aggregate-styling.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Meta } from '../../common/meta';
+import { Link } from 'react-router';
+
+<Meta
+  title="React Data Grid - Aggregates | Syncfusion"
+  description="Aggregation calculates column totals, averages, and summaries displayed in footer rows for quick insights in Data Grid."
+/>
+
+# Aggregates in React Data Grid
+
+The Syncfusion® React Data Grid component supports summary rows that display aggregate values such as total, average, minimum, and maximum. The aggregates feature automatically computes column-level summaries from the data source without manual computation.
+
+## Setting up aggregates
+
+The Data Grid component supports aggregate calculations through the [`aggregates`](https://react-api.syncfusion.com/data-grid/overview#aggregates) property. Each aggregate is defined using an [`AggregateColumn`](https://react-api.syncfusion.com/data-grid/aggregaterowprops), which includes the [`field`](https://react-api.syncfusion.com/data-grid/aggregatecolumnprops#field) property to specify the target column, the [`type`](https://react-api.syncfusion.com/data-grid/aggregatecolumnprops#type) property to define the calculation method such as sum, count, average, etc., and the [`format`](https://react-api.syncfusion.com/data-grid/aggregatecolumnprops#format) property to apply formatting to the displayed summary value. The [`footerTemplate`](https://react-api.syncfusion.com/data-grid/aggregatecolumnprops#footertemplate) property customizes how the summary value is shown in the footer row.
+
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<Aggregates />}
+  path="grid/aggregate.tsx"
+  scroll={false}
+/>
+
+## Types of built-in aggregates
+
+The Data Grid component includes several built-in aggregate functions for common calculations:
+ 
+- `Sum`: Adds all values in a column.
+- `Average`: Calculates the mean of column values.
+- `Min / Max`: Finds the smallest or largest value in a column.
+- `Count`: Counts non-null values in a column.
+- `TrueCount / FalseCount`: Counts occurrences of true or false for boolean values.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<AggregateTypes />}
+  path="grid/aggregate-type.tsx"
+  scroll={false}
+/>
+
+## Multiple aggregates for a column
+
+The Data Grid component applies multiple aggregate types to a single column to display various summary values, such as sum, minimum, and maximum. Each aggregate is defined using an `AggregateColumn` with the same field name and a distinct aggregate type value to define the calculation.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<MultipleAggregates />}
+  path="grid/multiple-aggregate.tsx"
+  scroll={false}
+/>
+ 
+## Custom aggregates
+
+The Data Grid component supports custom aggregates when built-in types like sum, count, or average do not meet specific calculation needs. To define a custom aggregate, set the `type` property to `Custom` and define a custom aggregate function to the [`customAggregate`](https://react-api.syncfusion.com/data-grid/aggregatecolumnprops#customaggregate) property within the `AggregateColumn`. This feature supports defining custom aggregate logic, including conditional averages, totals, and calculations derived from multiple fields.
+
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<CustomAggregate />}
+  path="grid/custom-aggregate.tsx"
+  scroll={false}
+/>
+ 
+## Format aggregate values
+
+The Data Grid component applies formatting to aggregate values using the `format` property in AggregateColumn. Format strings such as `C2` for currency, `N0` for whole numbers, and `yMd` for date formats can be used to customize the display.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<AggregateFormat />}
+  path="grid/aggregate-format.tsx"
+  scroll={false}
+/>
+
+## Styling aggregates dynamically
+
+The [`cellClass`](https://react-api.syncfusion.com/data-grid/aggregatecolumnprops#cellclass) property enables dynamic styling of aggregate cells based on their values. This property accesses both aggregated column details and row data to customize the appearance.
+
+- `column:` The column definition object, containing metadata such as field name and configuration.
+- `data:` The full data object for the row, allowing contextual evaluation of the cell value.
+- `rowIndex:` The index of the current row, useful for applying alternating styles.
+
+In this example, the "Freight Charges" cell displays a different style when the total exceeds the budget of "3000" and another when it falls below.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<AggregateStyling />}
+  path="grid/aggregate-styling.tsx"
+  scroll={false}
+/>
+
+> When the `cellClass` property is defined as a function, it runs every time an aggregate cell is rendered or updated. In grid with frequent changes to aggregate cells, this repeated execution increases processing load and can slow down performance. To improve efficiency, use the [`footerTemplate`](https://react.syncfusion.com/data-grid/aggregates) feature for customizing aggregate cells instead of using function-based class assignments.
+
+## See also
+
+* <p><Link to="/data-grid/columns/column-format">Cell Formatting Options</Link></p>
+* <p><Link to="/data-grid/globalization#loading-translations-for-culture">Internationalization of Grid Cell Formats</Link></p>

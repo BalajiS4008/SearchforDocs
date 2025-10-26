@@ -1,0 +1,84 @@
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { chartNpm, chartImport } from './snippets';
+import { Link } from 'react-router';
+import Marker from './marker'
+import MarkerShape from './markerShape'
+import MarkerImage from './markerImage'
+import MarkerCustom from './markerCustom'
+import MarkerFilled from './markerFilled'
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Chart Marker | Syncfusion"
+  description="React Chart markers highlight data points using shapes or images, with customizable size, fill, border, and templates for better visibility."
+/>
+
+# Marker in React Chart
+
+Markers in charts visually represent individual data points, enhancing clarity and user engagement. They can be customized in terms of `shape`, `size`, and `color`, making it easier to interpret data trends.
+
+## Displaying markers
+
+To show markers on data points, set the [`visible`](https://react-api.syncfusion.com/chart/chartmarkerprops#visible) property to `true` in the [`ChartMarker`](https://react-api.syncfusion.com/chart/chartmarkerprops) component.
+
+<Preview onDemand={true} reset={true} content={<Marker />} path="chart/marker.tsx" />
+
+## Shape
+
+The `ChartMarker` component supports a variety of shapes to visually represent data points, allowing for better distinction between series.
+
+You can customize the marker shape using the [`shape`](https://react-api.syncfusion.com/chart/chartmarkerprops#shape) property. The available options include:
+
+- `Circle`
+
+- `Rectangle`
+
+- `Triangle`
+
+- `Diamond`
+
+- `Cross`
+
+- `Plus`
+
+- `HorizontalLine`
+
+- `VerticalLine`
+
+- `Pentagon`
+
+- `InvertedTriangle`
+
+- `Star`
+
+<Preview onDemand={true} reset={true} content={<MarkerShape />} path="chart/markerShape.tsx" scroll={false} />
+
+## Marker as image
+
+You can display custom images as markers in the chart by configuring the `ChartMarker` component. To do this, set the [`shape`](https://react-api.syncfusion.com/chart/chartmarkerprops#shape) property to [`Image`](https://react-api.syncfusion.com/chart/unions#chartshape) and provide the image URL using the [`imageUrl`](https://react-api.syncfusion.com/chart/chartmarkerprops#imageurl) property.
+
+<Preview onDemand={true} reset={true} content={<MarkerImage />} path="chart/markerImage.tsx" />
+
+## Marker customization
+
+You can enhance the appearance of markers in the `ChartMarker` component by adjusting various visual properties.
+
+**Key Customization Options**:
+
+- [`fill`](https://react-api.syncfusion.com/chart/chartmarkerprops#fill): Sets the fill color of the marker.
+
+- [`height`](https://react-api.syncfusion.com/chart/chartmarkerprops#height) and [`width`](https://react-api.syncfusion.com/chart/chartmarkerprops#width): Define the size of the marker.
+
+- [`border`](https://react-api.syncfusion.com/chart/chartmarkerprops#border): Configures the marker's outline, including color and width.
+
+These properties help you align the marker design with your chart’s overall style and improve visual clarity.
+
+<Preview onDemand={true} reset={true} content={<MarkerCustom />} path="chart/markerCustom.tsx" />
+
+## Filled marker
+
+By default, chart markers are displayed as solid shapes filled with the color assigned to their data series. This helps visually distinguish different series in the chart.
+If you prefer transparent or hollow markers, you can customize this behavior by setting the [`filled`](https://react-api.syncfusion.com/chart/chartmarkerprops#filled) property to `false` in the `ChartMarker` component.
+
+<Preview onDemand={true} reset={true} content={<MarkerFilled />} path="chart/markerFilled.tsx" />

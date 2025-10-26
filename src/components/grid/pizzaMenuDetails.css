@@ -1,0 +1,100 @@
+/* Pizza Sample */
+
+.pizza .sf-pizza-info-container {
+    display: flex;
+    padding: 10px 100px 10px 30px;
+}
+
+.pizza .sf-flex-grow {
+    flex-grow: 1;
+}
+
+.pizza .sf-pizza-image-layout {
+    margin-right: 30px;
+}
+
+.pizza .sf-pizza-image {
+    width: 100px;
+    height: 100px;
+}
+
+.pizza .sf-info-text-separator {
+    margin-bottom: 10px;
+}
+
+.pizza .sf-pizza-title {
+    font-weight: 700;
+}
+
+.pizza .sf-pizza-size {
+    font-weight: 300;
+    margin-left: 10px;
+}
+
+.pizza .sf-pizza-price-layout {
+    text-align: center;
+    margin-left: 30px;
+}
+
+.pizza .sf-pizza-price-text {
+    font-weight: 300;
+}
+
+.pizza .sf-pizza-price {
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.pizza .sf-pizza-original-price {
+    text-decoration: line-through;
+}
+
+.pizza .sf-pizza-price-min-layout {
+    display: none;
+    margin-top: 20px;
+}
+
+.pizza .details {
+    border-color: #e0e0e0;
+    border-style: solid;
+    border-width: 1px 0px 0px 0px;
+    padding-left: 18px;
+}
+
+@media only screen and (max-width: 1050px) {
+    .pizza .sf-pizza-info-container {
+        padding: 10px 15%;
+    }
+
+    .pizza .sf-pizza-price-layout {
+        display: none;
+    }
+
+    .pizza .sf-pizza-price-min-layout {
+        display: block;
+    }
+}
+
+.pizza .sf-chip.sf-outline {
+    pointer-events: none;
+    height: 25px;
+}
+
+
+.dark-theme .pizza .details {
+    border-color: #424242;
+}
+
+.dark-theme .pizza .sf-pizza-title {
+    color: #ffffff;
+}
+
+.dark-theme .pizza .sf-pizza-size,
+.dark-theme .pizza .sf-pizza-price-text,
+.dark-theme .sf-pizza-original-price {
+    color: #e0e0e0;
+}
+
+.dark-theme .pizza .sf-pizza-price {
+    color: #ffffff;
+}

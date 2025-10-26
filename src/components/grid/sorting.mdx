@@ -1,0 +1,199 @@
+import Sorting from './sorting.tsx';
+import MultiSorting from './multi-sorting.tsx';
+import UnSorting from './unsorting.tsx';
+import InitialSorting from './initial-sorting.tsx';
+import DisableSorting from './disable-sorting.tsx';
+import ExternalSorting from './external-sorting.tsx';
+import CustomLogicSorting from './custom-logic-sorting.tsx';
+import HandleNullSorting from './handle-null-sorting.tsx';
+import CultureInSorting from './culture-sorting.tsx';
+import BlockSpecificSorting from './block-specific-sorting.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Check, Cross, Clock } from '../../common/util';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+import StateSorting from './state-sorting.tsx';
+
+<Meta
+  title="React Data Grid- Sorting | Syncfusion"
+  description="Sort data in Data Grid with multi-column support and custom logic for refined control over row ordering."
+/>
+
+# Sorting in React Data Grid
+
+The Syncfusion® React Data Grid component provides powerful sorting capabilities to arrange rows in ascending or descending order based on column values. It supports both single and multi-column sorting.
+
+## Enable sorting
+
+Sorting is activated by setting the [`sortSettings.enabled`](https://react-api.syncfusion.com/data-grid/sortsettings#enabled) property to `true` in the grid configuration. When enabled, clicking a column header cycles through ascending, descending, and unsorted states. The sort icon adjacent to the header clearly indicates the current sort direction, providing intuitive visual feedback.
+
+<Preview frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}   
+  content={<Sorting />}
+  path="grid/sorting.tsx"
+  scroll={false}
+/>
+
+## Sorting order
+
+The Data Grid component arranges data in a defined sequence through column header interactions, as outlined below:
+- Initial state: Data displays in its original, unsorted order.
+- First click: Sorts the column in ascending order (e.g., A to Z or 1 to 100).
+- Second click: Sorts the column in descending order (e.g., Z to A or 100 to 1).
+- Third click: Clears sorting, restoring the original data order.
+
+## Multi-sorting
+
+Multi-column sorting is enabled by default when the [`sortSettings.enabled`](https://react-api.syncfusion.com/data-grid/sortsettings#enabled) property is `true`. To sort by multiple columns, hold <kbd>Ctrl</kbd> while clicking on different sortable column headers. Press <kbd>Shift</kbd> + click a header to remove sorting from that specific column without altering other sorted columns. Clicking a sortable header without holding <kbd>Ctrl</kbd> or <kbd>Shift</kbd> applies single-column sorting and clears any existing multi-column sort configuration.
+
+<Preview frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}   
+  content={<MultiSorting />}
+  path="grid/multi-sorting.tsx"  
+  scroll={false}
+/>
+
+> Single-column sorting: set the [`sortSettings.mode`](https://react-api.syncfusion.com/data-grid/sortsettings#mode) property to `single`. This ensures only one column is sorted at a time, clicking a new header clears any existing sort order.
+
+## Apply sorting on initial rendering
+
+The Data Grid can display sorted data when it loads by using the [`sortSettings.columns`](https://react-api.syncfusion.com/data-grid/sortsettings#columns) property. This property defines the initial sort by specifying the columns and their sort direction (ascending or descending). This establishes the default sort order upon initial rendering, which remains active until modified by sortable column header click interactions or programmatically.
+
+<Preview frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}   
+  content={<InitialSorting />}
+  path="grid/initial-sorting.tsx"
+  scroll={false}
+/>
+
+## Disable sorting
+
+Sorting can be disabled by setting the [`sortSettings.enabled`](https://react-api.syncfusion.com/data-grid/sortsettings#enabled) property to `false` in the grid’s configuration. This prevents column headers from responding to click interactions, keeping the data in its original order.
+
+### Specific columns
+Sorting for a specific column is disabled by setting the [`allowSort`](https://react-api.syncfusion.com/data-grid/columnprops#allowsort) property to `false` in the column configuration. For example, in a nutrition data report, sorting can be disabled for the "Protein" column to prevent interaction.
+
+<Preview frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}   
+  content={<DisableSorting />}
+  path="grid/disable-sorting.tsx"
+  scroll={false}
+/>
+
+### Conditional sorting based on roles
+
+Sorting can be dynamically enabled or disabled by updating the `sortSettings.enabled` property based on specific conditions. For example, sorting can be enabled for users with the "Admin" role and disabled for users with the "Employee" role by managing this property through state updates.
+
+<Preview frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}   
+  content={<StateSorting />}
+  path="grid/state-sorting.tsx"
+  scroll={false}
+/>
+
+### Disable clear sort
+In the Data Grid component, clicking a column header normally changes the sorting between ascending, descending, and unsorted. To remove the unsorted option and keep sorting active, set the [`sortSettings.allowUnsort`](https://react-api.syncfusion.com/data-grid/sortsettings#allowunsort) property to `false`. This keeps sorting limited to ascending and descending only.
+
+<Preview frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}   
+  content={<UnSorting />}
+  path="grid/unsorting.tsx"
+  scroll={false}
+/>
+
+## Programmatic sorting
+
+The Data Grid component supports sorting programmatically through the following methods:
+
+- [`sortByColumn(field, direction, isMultiSort)`](https://react-api.syncfusion.com/data-grid/overview#sortbycolumn) — Sorts a specific column by passing the field name, sort direction (Ascending or Descending), and an optional flag for multi-sorting.
+
+- [`removeSortColumn(field)`]((https://react-api.syncfusion.com/data-grid/overview#removesortcolumn)) — Removes sorting for a specific column from the current sorting collection.
+
+- [`clearSort()`](https://react-api.syncfusion.com/data-grid/overview#clearsort) — Clears sorting on all columns, resetting to the default unsorted state.
+
+
+<Preview frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}   
+  content={<ExternalSorting />}
+  path="grid/external-sorting.tsx"
+  scroll={false}
+/>
+
+## Custom sorting
+
+The Data Grid component allows customization of sorting behavior to handle special cases or complex requirements. Custom sorting rules can be defined to override the default sorting using the [`sortComparer`](https://react-api.syncfusion.com/data-grid/columnprops#sortComparer) method. This method includes the following parameters:
+
+- `referenceValue`: Value from the current row being sorted.  
+
+- `comparerValue`: Value from the row to compare against.  
+
+- `referenceRowData`(optional): Full data of the current row for advanced sorting.  
+
+- `comparerRowData`(optional): Full data of the comparison row for complex logic.  
+
+- `sortDirection`(optional): Current sort direction as ascending, descending, or unsort. 
+
+
+### Custom sorting logic
+Custom sorting logic is implemented using the `sortComparer` property in grid column configuration. This function compares values and returns `-1`, `0`, or `1`, similar to JavaScript’s `Array.sort`, enabling advanced sorting such as case-insensitive or special character handling.
+
+<Preview frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}   
+  content={<CustomLogicSorting />}
+  path="grid/custom-logic-sorting.tsx"
+  scroll={false}
+/>
+
+### Handle null values in sorting
+
+By default, null values appear at the top in descending order and at the bottom in ascending order. To consistently place null values at the bottom, use a custom `sortComparer` function in the column configuration, ensuring clear separation of null and valid data.
+
+<Preview frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}   
+  content={<HandleNullSorting />}
+  path="grid/handle-null-sorting.tsx"
+  scroll={false}
+/>
+
+### Culture-specific sorting
+
+Culture-specific sorting is enabled by setting the `locale` property in the React `Provider`. Assigning the locale to the desired culture code activates sorting rules based on that culture. This ensures accurate and culturally appropriate ordering for different languages and regions. The example below demonstrates sorting using the "ar" (Arabic) locale through the `sortComparer` property.
+
+<Preview frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}   
+  content={<CultureInSorting />}
+  path="grid/culture-sorting.tsx"
+  scroll={false}
+/>
+
+## Events
+The Data Grid component provides event hooks that trigger after sorting actions complete.
+
+| Event | Description |
+|-------|-------------|
+| [`onSort`](https://react-api.syncfusion.com/data-grid/overview#onsort) | Fires after a sorting or clear-sorting action completes. It provides details about the current sort state, including the "column name", "sort direction", and the "action" performed (sorting or clearing). This event is useful for logging, updating the UI, or triggering related workflows. |
+
+<Preview frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}   
+  content={<BlockSpecificSorting />}
+  path="grid/block-specific-sorting.tsx"
+  scroll={false}
+/>
+
+## See also
+
+* <p><Link to="/data-grid/data-binding/custom-data#handling-sorting-operation">Handling Sorting in Custom API Services</Link></p>
+
+* <p><Link to="/data-grid/accessibility#sorting">Keyboard Shortcuts for Sorting</Link></p>

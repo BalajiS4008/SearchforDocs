@@ -1,0 +1,313 @@
+.leads .lead-id-link {
+  color: #1a73e8;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+/* Customer Details Styles */
+.leads .customer-details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0;
+}
+
+.leads .customer-avatar {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.leads .customer-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.leads .customer-name {
+  color: #202124;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0 0 2px 0;
+  line-height: 1.2;
+}
+
+.leads .customer-email {
+  color: #5f6368;
+  font-size: 13px;
+  margin: 0;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Status Badge Styles */
+.leads .status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.leads .status-badge.qualified {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+}
+
+.leads .status-badge.new {
+  background-color: #e6f4ea;
+  color: #137333;
+}
+
+.leads .status-badge.contacted {
+  background-color: #fef7e0;
+  color: #ea8600;
+}
+
+.leads .status-badge.lead {
+  background-color: #fce8e6;
+  color: #d93025;
+}
+
+.leads .status-badge-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* Interest Level Badge Styles */
+.leads .interest-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.leads .interest-badge.high {
+  background-color: #e6f4ea;
+  color: #137333;
+}
+
+.leads .interest-badge.medium {
+  background-color: #fef7e0;
+  color: #ea8600;
+}
+
+.leads .interest-badge.low {
+  background-color: #fce8e6;
+  color: #d93025;
+}
+
+.leads .interest-badge-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* Assignee Styles */
+.leads .assignee-details {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.leads .assignee-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid #e8eaed;
+}
+
+.leads .assignee-name {
+  color: #202124;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Date Styles */
+.leads .next-contact-date {
+  color: #5f6368;
+  font-size: 14px;
+}
+
+/* Revenue Styles */
+.leads .revenue-amount {
+  color: #202124;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Source Styles */
+.leads .lead-source {
+  color: #5f6368;
+  font-size: 14px;
+}
+
+/* Color-coded Avatar Backgrounds */
+.leads .avatar-red {
+  background-color: #fce8e6;
+  color: #d93025;
+}
+
+.leads .avatar-blue {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+}
+
+.leads .avatar-green {
+  background-color: #e6f4ea;
+  color: #137333;
+}
+
+.leads .avatar-orange {
+  background-color: #fef7e0;
+  color: #ea8600;
+}
+
+.leads .avatar-purple {
+  background-color: #f3e8ff;
+  color: #9333ea;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .leads .customer-details {
+    gap: 8px;
+  }
+  
+  .leads .customer-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+  
+  .leads .assignee-avatar {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .leads .customer-name,
+  .leads .assignee-name,
+  .leads .revenue-amount {
+    font-size: 13px;
+  }
+  
+  .leads .customer-email,
+  .leads .next-contact-date,
+  .leads .lead-source {
+    font-size: 12px;
+  }
+}
+
+/* Dark Theme Styles */
+.dark-theme .leads .lead-id-link {
+  color: #8ab4f8;
+}
+
+.dark-theme .leads .customer-name {
+  color: #e8eaed;
+}
+
+.dark-theme .leads .customer-email {
+  color: #9aa0a6;
+}
+
+.dark-theme .leads .status-badge.qualified {
+  background-color: #344155;
+  color: #8ab4f8;
+}
+
+.dark-theme .leads .status-badge.new {
+  background-color: #2e493a;
+  color: #81c995;
+}
+
+.dark-theme .leads .status-badge.contacted {
+  background-color: #53452c;
+  color: #fdd663;
+}
+
+.dark-theme .leads .status-badge.lead {
+  background-color: #593532;
+  color: #f28b82;
+}
+
+.dark-theme .leads .interest-badge.high {
+  background-color: #2e493a;
+  color: #81c995;
+}
+
+.dark-theme .leads .interest-badge.medium {
+  background-color: #53452c;
+  color: #fdd663;
+}
+
+.dark-theme .leads .interest-badge.low {
+  background-color: #593532;
+  color: #f28b82;
+}
+
+.dark-theme .leads .assignee-avatar {
+  border-color: #3c4043;
+}
+
+.dark-theme .leads .assignee-name {
+  color: #e8eaed;
+}
+
+.dark-theme .leads .next-contact-date {
+  color: #9aa0a6;
+}
+
+.dark-theme .leads .revenue-amount {
+  color: #e8eaed;
+}
+
+.dark-theme .leads .lead-source {
+  color: #9aa0a6;
+}
+
+.dark-theme .leads .avatar-red {
+  background-color: #593532;
+  color: #f28b82;
+}
+
+.dark-theme .leads .avatar-blue {
+  background-color: #344155;
+  color: #8ab4f8;
+}
+
+.dark-theme .leads .avatar-green {
+  background-color: #2e493a;
+  color: #81c995;
+}
+
+.dark-theme .leads .avatar-orange {
+  background-color: #53452c;
+  color: #fdd663;
+}
+
+.dark-theme .leads .avatar-purple {
+  background-color: #4f375b;
+  color: #c58af9;
+}

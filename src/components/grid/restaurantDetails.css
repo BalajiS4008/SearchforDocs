@@ -1,0 +1,315 @@
+.restaurant-menu .sf-cell.sf-m3-primary-header {
+    background-color: #E8DEF8;
+    color: #1D192B;
+}
+
+.sf-grid .sf-cell.sf-header-bold,
+.sf-category-highlight {
+    background: rgb(225, 223, 223);
+}
+
+.restaurant-menu .sf-cell.sf-m3-secondary-header {
+    background-color: #F3EDF7;
+    color: #1D192B;
+}
+
+.restaurant-menu .sf-cell.sf-m3-tertiary-header {
+    background-color: #FCE8E6;
+    color: #601410;
+}
+
+.restaurant-menu .sf-cell.sf-m3-error-header {
+    background-color: #FFDAD6;
+    color: #601410;
+}
+
+.restaurant-menu .sf-cell.sf-m3-surface-header {
+    background-color: #FEF7FF;
+    color: #1D192B;
+}
+
+/* Template Base Styles */
+.restaurant-menu .sf-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.restaurant-menu .sf-availability-template,
+.restaurant-menu .sf-spice-template,
+.restaurant-menu .sf-price-template,
+.restaurant-menu .sf-item-name-template {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+}
+
+/* Availability Template */
+.restaurant-menu .sf-availability-template {
+    justify-content: center;
+    gap: 6px;
+}
+
+.restaurant-menu .sf-availability-template.sf-available {
+    background-color: #E6F4EA;
+    color: #1E7E34;
+    border: 1px solid #A8E6A3;
+}
+
+.restaurant-menu .sf-availability-template.sf-unavailable {
+    background-color: #FDE7E7;
+    color: #D63384;
+    border: 1px solid #F5C2C7;
+}
+
+/* Spice Level Template */
+.restaurant-menu .sf-spice-template {
+    justify-content: center;
+    gap: 6px;
+}
+
+.restaurant-menu .sf-spice-icons {
+    display: flex;
+    gap: 2px;
+}
+
+.restaurant-menu .sf-spice-template.sf-spice-hot {
+    background-color: #FFEBEE;
+    color: #C62828;
+}
+
+.restaurant-menu .sf-spice-template.sf-spice-medium {
+    background-color: #FFF3E0;
+    color: #F57C00;
+}
+
+.restaurant-menu .sf-spice-template.sf-spice-mild {
+    background-color: #FFF9C4;
+    color: #F9A825;
+}
+
+.restaurant-menu .sf-spice-template.sf-spice-none {
+    background-color: #E1F5FE;
+    color: #0277BD;
+}
+
+/* Price Template */
+.restaurant-menu .sf-price-template {
+    justify-content: flex-end;
+    gap: 6px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.restaurant-menu .sf-price-template.sf-price-premium {
+    background-color: #FFF8E1;
+    color: #FF8F00;
+    border: 1px solid #FFCC02;
+}
+
+.restaurant-menu .sf-price-template.sf-price-standard {
+    background-color: #E8F5E8;
+    color: #2E7D32;
+    border: 1px solid #81C784;
+}
+
+.restaurant-menu .sf-price-template.sf-price-budget {
+    background-color: #E3F2FD;
+    color: #1976D2;
+    border: 1px solid #64B5F6;
+}
+
+/* Item Name Template */
+.restaurant-menu .sf-item-name-template {
+    gap: 8px;
+    position: relative;
+}
+
+.restaurant-menu .sf-item-name-template.sf-unavailable {
+    background-color: #FDE7E7;
+    color: #AD1457;
+    border-left: 3px solid #E91E63;
+    opacity: 0.8;
+}
+
+.restaurant-menu .sf-item-name-template.sf-featured {
+    background-color: #F3E5F5;
+    color: #6A1B9A;
+    border-left: 3px solid #9C27B0;
+
+}
+
+.restaurant-menu .sf-strikethrough {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.restaurant-menu .sf-featured-badge {
+    position: absolute;
+    top: -11px;
+    right: -2px;
+    background-color: #9C27B0;
+    color: white;
+    font-size: 8px;
+
+    padding: 1px 4px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Interactive States */
+.restaurant-menu .sf-availability-template:hover,
+.restaurant-menu .sf-spice-template:hover,
+.restaurant-menu .sf-price-template:hover,
+.restaurant-menu .sf-item-name-template:hover {
+    opacity: 0.9;
+    transition: opacity 200ms ease;
+}
+
+.restaurant-menu .sf-availability-template:focus,
+.restaurant-menu .sf-spice-template:focus,
+.restaurant-menu .sf-price-template:focus,
+.restaurant-menu .sf-item-name-template:focus {
+    outline: 2px solid #6750A4;
+    outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .restaurant-menu .sf-availability-template,
+    .restaurant-menu .sf-spice-template,
+    .restaurant-menu .sf-price-template,
+    .restaurant-menu .sf-item-name-template {
+        padding: 6px 8px;
+        font-size: 12px;
+        gap: 4px;
+    }
+
+    .restaurant-menu .sf-icon {
+        width: 14px;
+        height: 14px;
+        margin-right: 4px;
+    }
+
+    .restaurant-menu .sf-featured-badge {
+        font-size: 8px;
+        padding: 1px 4px;
+    }
+}
+
+/* Scoped Header Styles - Dark Theme */
+.dark-theme .restaurant-menu .sf-cell.sf-m3-primary-header {
+    background-color: #3A304D;
+    color: #EADDFF;
+    border-bottom: 2px solid #5A4F6A;
+}
+
+.dark-theme .restaurant-menu .sf-cell.sf-m3-secondary-header {
+    background-color: #2E283E;
+    color: #EADDFF;
+    border-bottom: 2px solid #4A4458;
+}
+
+.dark-theme .restaurant-menu .sf-cell.sf-m3-tertiary-header {
+    background-color: #5C1F1A;
+    color: #FFDAD6;
+    border-bottom: 2px solid #8C3A33;
+}
+
+.dark-theme .restaurant-menu .sf-cell.sf-m3-error-header {
+    background-color: #93000A;
+    color: #FFDAD6;
+    border-bottom: 2px solid #B3261E;
+}
+
+.dark-theme .restaurant-menu .sf-cell.sf-m3-surface-header {
+    background-color: #1D192B;
+    color: #EADDFF;
+    border-left: 3px solid #D0BCFF;
+}
+
+/* Availability Template - Dark Theme */
+.dark-theme .restaurant-menu .sf-availability-template.sf-available {
+    background-color: #1A3D2A;
+    color: #6AF0A1;
+    border: 1px solid #34A853;
+}
+
+.dark-theme .restaurant-menu .sf-availability-template.sf-unavailable {
+    background-color: #5C2B29;
+    color: #F28B82;
+    border: 1px solid #EA4335;
+}
+
+/* Spice Level Template - Dark Theme */
+.dark-theme .restaurant-menu .sf-spice-template.sf-spice-hot {
+    background-color: #632423;
+    color: #FAD2CF;
+}
+
+.dark-theme .restaurant-menu .sf-spice-template.sf-spice-medium {
+    background-color: #7A3E00;
+    color: #FABD6F;
+}
+
+.dark-theme .restaurant-menu .sf-spice-template.sf-spice-mild {
+    background-color: #7A7000;
+    color: #FFF59D;
+}
+
+.dark-theme .restaurant-menu .sf-spice-template.sf-spice-none {
+    background-color: #013A5C;
+    color: #6DD5FA;
+}
+
+/* Price Template - Dark Theme */
+.dark-theme .restaurant-menu .sf-price-template.sf-price-premium {
+    background-color: #5F5400;
+    color: #FFF176;
+    border: 1px solid #FBC02D;
+}
+
+.dark-theme .restaurant-menu .sf-price-template.sf-price-standard {
+    background-color: #1B5E20;
+    color: #A5D6A7;
+    border: 1px solid #4CAF50;
+}
+
+.dark-theme .restaurant-menu .sf-price-template.sf-price-budget {
+    background-color: #0D47A1;
+    color: #90CAF9;
+    border: 1px solid #2196F3;
+}
+
+/* Item Name Template - Dark Theme */
+.dark-theme .restaurant-menu .sf-item-name-template.sf-unavailable {
+    background-color: #5C2B29;
+    color: #F28B82;
+    border-left: 3px solid #D93025;
+}
+
+.dark-theme .restaurant-menu .sf-item-name-template.sf-featured {
+    background-color: #4A148C;
+    color: #E1BEE7;
+    border-left: 3px solid #8E24AA;
+}
+
+.dark-theme .restaurant-menu .sf-featured-badge {
+    background-color: #CE93D8;
+    color: #311B92;
+}
+
+/* Interactive States - Dark Theme */
+.dark-theme .restaurant-menu .sf-availability-template:focus,
+.dark-theme .restaurant-menu .sf-spice-template:focus,
+.dark-theme .restaurant-menu .sf-price-template:focus,
+.dark-theme .restaurant-menu .sf-item-name-template:focus {
+    outline: 2px solid #D0BCFF;
+    outline-offset: 2px;
+}

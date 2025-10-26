@@ -1,0 +1,51 @@
+import RowTemplate from './rowtemplate.tsx';
+import RenderChartInRowTemplate from './rowtemplate-chart.tsx';
+import UsecaseRowTemplate from './usecase-row-sample.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Meta } from '../../common/meta';
+import { Link } from 'react-router';
+
+<Meta
+  title="React Data Grid - Row Templates | Syncfusion"
+  description="Data Grid supports custom row layouts using templates with components, images, and flexible rendering for rich, modular UI composition."
+/>
+
+# Row Templates in React Data Grid
+
+The row template feature in the Syncfusion® React Data Grid component enables customization of row appearance and layout. This feature supports displaying custom content, such as images, buttons, or other controls within rows. To activate the row template feature, configure the [`rowTemplate`](https://react-api.syncfusion.com/data-grid/overview#rowtemplate) property with a custom HTML template defining the layout for each row.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<RowTemplate />} path="grid/rowtemplate.tsx" scroll={false} />
+
+## Render Syncfusion® React Chart in row template
+
+The Data Grid component supports embedding custom controls, such as the Syncfusion® React [`Chart`](https://react.syncfusion.com/chart/getting-started) component, within grid rows to enhance interactivity and provide graphical data representations. The [`rowTemplate`](https://react-api.syncfusion.com/data-grid/overview#rowtemplate) property enables this by accepting a custom HTML template that defines the layout for each row, facilitating rich data visualization.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<RenderChartInRowTemplate />} path="grid/rowtemplate-chart.tsx" scroll={false} />
+
+## Showcasing data with rich row layouts
+ 
+The Data Grid component supports extensive UI customization capabilities to accommodate diverse requirements. Beyond simple text-based cell content, it enables the creation of visually rich row layouts featuring elements such as images, descriptive fields, and context-specific data like names, roles, or locations all seamlessly integrated within a unified row structure.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<UsecaseRowTemplate />} path="grid/usecase-row-sample.tsx" scroll={false} />
+
+## Limitations
+
+The Data Grid component relies on the [`field`](https://react-api.syncfusion.com/data-grid/columnprops#field) property mapped to the data source for actions like sorting, filtering, etc. When using the row template feature to customize row layouts, each column must be accurately mapped to a corresponding field in the data source. 
+
+When the field name is undefined or an incorrect field name is used in the column configuration, grid actions such as sorting and filtering do not work as expected.
+
+Depending on your layout design, the following features may be limited or unsupported when using row templates:
+
+* Selection
+* Editing
+* Filtering
+* Sorting
+* Pagination
+
+## See also
+* <p><Link to="/data-grid/columns/templates">Column Template in Syncfusion React Data Grid</Link></p>
+
+* <p><Link to="/data-grid/columns/headers#header-template">Header Template in Syncfusion React Data Grid</Link></p>
+
+* <p><Link to="/data-grid/data-binding/empty-record-template">Empty Record Template in Syncfusion React Data Grid</Link></p>

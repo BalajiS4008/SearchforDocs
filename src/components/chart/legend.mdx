@@ -1,0 +1,147 @@
+import { Preview } from '../../common/preview';
+import { Link } from 'react-router';
+import Legend from './legend'
+import LegendShape from './legendShape'
+import LegendToggle from './legendToggle'
+import LegendPosition from './legendPosition'
+import LegendAlignment from './legendAlignment'
+import LegendReverse from './legendReverse'
+import LegendArrow from './legendArrow'
+import LegendTitle from './legendTitle'
+import LegendTitleCustom from './legendTitleCustom'
+import LegendSize from './legendSize'
+import LegendItemSize from './legendItemSize'
+import LegendPaging from './legendPaging'
+import LegendText from './legendText'
+import LegendCustomPosition from './legendCustomPosition'
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Chart Legend | Syncfusion"
+  description="React Chart legends show series labels and icons to interpret colors and shapes, with customizable position, alignment, size, paging, and styling."
+/>
+
+# Legend in React Chart
+
+A legend in a chart serves as a visual key that identifies the symbols, colors, or patterns used to represent different data series, enabling users to interpret the chart accurately.
+
+## Overview
+
+By default, the [`visible`](https://react-api.syncfusion.com/chart/chartlegendprops#visible) property of the [`ChartLegend`](https://react-api.syncfusion.com/chart/chartlegendprops) component is set to `true`, ensuring the legend is displayed. To populate the legend with entries, make sure to define the [`name`](https://react-api.syncfusion.com/chart/chartseriesprops#name) property within each [`ChartSeries`](https://react-api.syncfusion.com/chart/chartseriesprops) component.
+
+<Preview onDemand={true} reset={true} content={<Legend />} path="chart/legend.tsx" />
+
+## Shapes
+
+You can set the [`legendShape`](https://react-api.syncfusion.com/chart/chartseriesprops#legendshape) property in the `ChartSeries` component to customize the shape of legend items. Available shapes include: `SeriesType`, `Circle`, `Rectangle`, `Cross`, `Diamond`, `HorizontalLine`, `VerticalLine`, `Triangle`, `Pentagon`, and `InvertedTriangle`, as well as `Image`.
+
+<Preview onDemand={true} reset={true} content={<LegendShape />} path="chart/legendShape.tsx" scroll={false} />
+
+## Legend position
+
+To control where the legend appears on the chart, use the [`position`](https://react-api.syncfusion.com/chart/chartlegendprops#position) property in the `ChartLegend` component.
+
+Available Options:
+
+-  `Top` - Displays the legend at the top of the chart.
+
+-  `Bottom` - Displays the legend at the bottom.
+
+-  `Right` - Displays the legend on the right side.
+
+-  `Left` - Displays the legend on the left side.
+
+-  `Custom` – Allows precise placement using `x` and `y` coordinates
+
+-  `Auto` – Automatically determines the best position based on the chart layout.
+
+<Preview onDemand={true} reset={true} content={<LegendPosition />} path="chart/legendPosition.tsx" scroll={false} />
+
+## Legend custom position
+
+Set the [`position`](https://react-api.syncfusion.com/chart/chartlegendprops#position) property to `custom` and use the [`location`](https://react-api.syncfusion.com/chart/chartlegendprops#location) property to specify the x and y coordinates for the legend's placement.
+
+<Preview onDemand={true} reset={true} content={<LegendCustomPosition />} path="chart/legendCustomPosition.tsx" />
+
+## Alignment
+
+The [`align`](https://react-api.syncfusion.com/chart/chartlegendprops#align) property in the `ChartLegend` component allows you to control how the legend is aligned within its assigned position.
+
+Available Options:
+
+- `Left` – Aligns the legend to the start of the container.
+
+- `Center` – Centers the legend within the container.
+
+- `Right` – Aligns the legend to the end of the container.
+
+<Preview onDemand={true} reset={true} content={<LegendAlignment />} path="chart/legendAlignment.tsx" scroll={false} />
+
+## Reverse
+
+The [`inversed`](https://react-api.syncfusion.com/chart/chartlegendprops#inversed) property in the `ChartLegend` component allows you to reverse the order of legend items. When set to `true`, the items are displayed from left to right. By default, it is set to `false`, which arranges the items from right to left.
+
+<Preview onDemand={true} reset={true} content={<LegendReverse />} path="chart/legendReverse.tsx" />
+
+## Title
+
+You can use the [`title`](https://react-api.syncfusion.com/chart/chartlegendprops#title) property in the `ChartLegend` component to display a descriptive title above the legend, providing additional context for the data series.
+
+<Preview onDemand={true} reset={true} content={<LegendTitle />} path="chart/legendTitle.tsx" />
+
+## Title customization
+
+Use the [`titleStyle`](https://react-api.syncfusion.com/chart/chartlegendprops#titlestyle) property in the `ChartLegend` component to customize the appearance of the legend [`title`](https://react-api.syncfusion.com/chart/chartlegendprops#title), and [maxTitleWidth](https://react-api.syncfusion.com/chart/chartlegendprops#maxtitlewidth) to control its maximum width.
+
+<Preview onDemand={true} reset={true} content={<LegendTitleCustom />} path="chart/legendTitleCustom.tsx" />
+
+## Legend toggle
+
+The [`toggleVisibility`](https://react-api.syncfusion.com/chart/chartlegendprops#togglevisibility) property enhances the interactivity of the chart legend by allowing users to control the visibility of individual data series. By default, `toggleVisibility` is set to `true`. This means users can click on legend items to show or hide the corresponding data series in the chart.
+
+<Preview onDemand={true} reset={true} content={<LegendToggle />} path="chart/legendToggle.tsx" />
+
+## Size and appearance
+
+You can customize the overall look and dimensions of the legend in the `ChartLegend` component using the following properties:
+
+**Key Properties**:
+
+- [`height`](https://react-api.syncfusion.com/chart/chartlegendprops#height): Sets the height of the legend area.
+
+- [`width`](https://react-api.syncfusion.com/chart/chartlegendprops#width): Sets the width of the legend area.
+
+- [`border`](https://react-api.syncfusion.com/chart/chartlegendprops#border): Defines the border style, color, and width around the legend.
+
+- [`background`](https://react-api.syncfusion.com/chart/chartlegendprops#background): Specifies the background color of the legend area.
+
+<Preview onDemand={true} reset={true} content={<LegendSize />} path="chart/legendSize.tsx" />
+
+## Legend item size
+
+You can customize the size and spacing of legend symbols in the ChartLegend component using the following properties:
+
+**Key Properties**:
+
+- [`shapeHeight`](https://react-api.syncfusion.com/chart/chartlegendprops#shapeheight): Sets the height of each legend shape.
+
+- [`shapeWidth`](https://react-api.syncfusion.com/chart/chartlegendprops#shapewidth): Sets the width of each legend shape.
+
+- [`shapePadding`](https://react-api.syncfusion.com/chart/chartlegendprops#shapepadding): Defines the spacing between the legend shape and its corresponding label.
+
+<Preview onDemand={true} reset={true} content={<LegendItemSize />} path="chart/legendItemSize.tsx" scroll={false} />
+
+## Pagination
+
+When a chart contains many legend items, you can enable legend paging to navigate through them efficiently. To do this, set both the [`width`](https://react-api.syncfusion.com/chart/chartlegendprops#width) and [`height`](https://react-api.syncfusion.com/chart/chartlegendprops#height) properties in the `ChartLegend` component. This limits the visible area of the legend and automatically activates paging controls when the content exceeds the defined space.
+
+<Preview onDemand={true} reset={true} content={<LegendPaging />} path="chart/legendPaging.tsx" />
+
+## Text customization
+
+You can customize how legend text appears in the `ChartLegend` component using the [`textStyle`](https://react-api.syncfusion.com/chart/chartlegendprops#textstyle), and [`maxLabelWidth`](https://react-api.syncfusion.com/chart/chartlegendprops#maxlabelwidth) properties.
+
+- `maxLabelWidth`: Defines the maximum width of legend labels.
+- `textStyle`: Enables detailed customization of the legend text appearance, such as font size, color, and weight.
+
+<Preview onDemand={true} reset={true} content={<LegendText />} path="chart/legendText.tsx" />

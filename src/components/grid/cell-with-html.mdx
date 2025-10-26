@@ -1,0 +1,17 @@
+import DisableHTMLContent from './sales-details-grid.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Data Grid - Displaying HTML Content in Cells | Syncfusion"
+  description="Data Grid supports HTML rendering in cells and headers, enabling formatted text, images, and links through templates and markup configuration."
+/>
+
+
+# Displaying HTML Content Cells in React Data Grid
+
+The Syncfusion® React Data Grid component supports rendering HTML elements, such as images, links, and formatted text, in both header and data cells to present rich content with custom layouts. By default, HTML content is encoded to prevent security risks. To render raw HTML directly, set the [`disableHtmlEncode`](https://react-api.syncfusion.com/data-grid/columnprops#disablehtmlencode) property to `false`, allowing formatted elements to display as intended within cells or headers.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<DisableHTMLContent />} path="grid/sales-details-grid.tsx" scroll={false} />

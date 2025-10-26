@@ -1,0 +1,212 @@
+import BasicDatePicker from './basic-date-picker';
+import ViewDatePicker from './view-date-picker';
+import DisabledDatePicker from './disable-date-picker';
+import SpecialDatePicker from './special-date-picker';
+import MonthDatePicker from './month-date-picker';
+import FormatDatePicker from './format-date-picker';
+import ControlledDatePicker from './controlled-date-picker';
+import DisableDatePicker from './disabled-date-picker';
+import ReadOnlyDatePicker from './readOnly-date-picker';
+import FormSupportDatePicker from './form-support-date-picker';
+import { Preview } from '../../common/preview';
+import { Check, Cross, Clock } from '../../common/util';
+import { Snippet } from '../../common/snippet';
+import { datePickerNpm, datePickerImport, datePickerStyles, datePickerDependency, datePickerSnippet } from './date-picker-snippets';
+import { Link } from 'react-router'
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React DatePicker Component | Syncfusion"
+  description="The Datepicker component allows users to select dates easily with interactive calendar views and customizable formats and styles."
+/>
+# React DatePicker
+
+The React `DatePicker` component provides an intuitive interface for date selection and navigation. It offers a comprehensive set of features including multiple view modes, date range restrictions, custom rendering, and accessibility support for building robust date-picking experiences.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite?section=set-up-the-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let's add the React `DatePicker` component to the project.
+
+### Installing Syncfusion® packages
+
+To use the React `DatePicker` component in this project, the [`@syncfusion/react-calendars`](https://www.npmjs.com/package/@syncfusion/react-calendars) package needs to be installed using the following command:
+
+<Snippet content={datePickerNpm}/>
+
+### Adding CSS reference
+
+In this article, the `Material 3` theme is applied using CSS styles, which are available in installed packages. The necessary Material CSS styles for the `DatePicker` component and its dependents were imported into the **src/App.css** file.
+
+<Snippet content={datePickerStyles}/>
+
+### Adding Calendar component
+
+To include the `DatePicker` component in your application, import the `DatePicker` from the `@syncfusion/react-calendars` package in **App.tsx**.
+
+<Snippet content={datePickerImport} />
+
+Add the `DatePicker` component in application as shown in below code example.
+
+<Snippet content={datePickerSnippet} />
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+The `DatePicker` component provides a simple and intuitive way to select dates. By default, it displays the current month and allows users to navigate between months and years.
+
+<Preview 
+  content={<BasicDatePicker />} 
+  path="date-picker/basic-date-picker.tsx"
+/>
+
+## Views
+
+The `DatePicker` component supports multiple view modes including Month, Year, and Decade. You can programmatically track which view is currently active using the `onViewChange` event handler.
+
+The `DatePicker` starts with the Month view by default and allows users to drill up to Year and Decade views or back down to more specific selections. The example below demonstrates how to detect and display the current view mode:
+
+The `DatePicker` supports the following view types:
+- **Month view**: Displays days of a month, allowing selection of a specific date
+- **Year view**: Displays months of a year, letting users choose a month
+- **Decade view**: Displays years of a decade, enabling selection of a specific year
+
+<Preview 
+  content={<ViewDatePicker />} 
+  path="date-picker/view-date-picker.tsx"
+/>
+
+## Controlled Vs Uncontrolled
+
+The `DatePicker` component can be used in both controlled and uncontrolled modes. In controlled mode, the component's value is managed by the parent component, while in uncontrolled mode, the component manages its own state.
+
+<Preview 
+  content={<ControlledDatePicker />} 
+  path="date-picker/controlled-date-picker.tsx"
+/>
+
+## Disabled Dates
+
+The `DatePicker` component allows you to disable specific dates, preventing users from selecting them. This is useful for blocking out holidays, weekends, or any dates that should not be selectable in your application.
+
+You can disable dates in the `DatePicker` using the `cellTemplate` prop, which lets you customize how individual date cells are rendered. In the example below, we've disabled the 4th, 15th, and 25th days of each month by applying the `sf-disabled` CSS class:
+
+<Preview 
+  content={<DisabledDatePicker />} 
+  path="date-picker/disable-date-picker.tsx"
+/>
+
+## Special Dates 
+
+The `DatePicker` is used to customize the appearance of specific dates by highlighting important dates, events, or special occasions with custom styling, icons, or indicators.
+
+<Preview 
+  content={<SpecialDatePicker />} 
+  path="date-picker/special-date-picker.tsx"
+/>
+
+## Month picker
+
+Configure the `DatePicker` to function as a month picker by setting the appropriate start and depth properties. This mode allows users to select entire months rather than specific dates, perfect for monthly reports or billing cycles.
+
+<Preview 
+  content={<MonthDatePicker />} 
+  path="date-picker/month-date-picker.tsx"
+/>
+
+## Format
+
+The `DatePicker` component supports various date formats, allowing you to display and receive date values in formats that best suit your application needs. You can specify custom date formats using the `format` property, which accepts standard date format patterns.
+
+<Preview 
+  content={<FormatDatePicker />} 
+  path="date-picker/format-date-picker.tsx"
+/>
+
+## Appearance
+
+### Disabled
+
+The `DatePicker` component can be disabled to prevent user interaction. This is useful when you want to temporarily disable the date selection functionality, such as during form validation or when certain conditions are not met. You can disable the `DatePicker` by setting the `disabled` property to `true`.
+<Preview 
+  content={<DisableDatePicker />} 
+  path="date-picker/disabled-date-picker.tsx"
+/>
+
+### ReadOnly
+
+The `DatePicker` component can be set to read-only mode, which allows users to view the selected date but prevents them from making any changes. This is useful when you want to display a date value that should not be altered by the user, such as in a read-only form or when the date is determined by another process. You can set the `DatePicker` to read-only mode by setting the `readOnly` property to `true`.
+
+<Preview 
+  content={<ReadOnlyDatePicker />} 
+  path="date-picker/readOnly-date-picker.tsx"
+/>
+
+## Forms support
+
+The `DatePicker` component can be integrated into forms to allow users to select dates as part of form submissions. This integration ensures that the selected date is included in the form data, making it easy to handle and validate user input. You can use the `DatePicker` component within a form by placing it inside a `<form>` element and handling the form submission as needed.
+
+<Preview 
+  content={<FormSupportDatePicker />} 
+  path="date-picker/form-support-date-picker.tsx"
+/>
+
+## Accessibility
+ 
+The `DatePicker` component follows accessibility guidelines and standards, including [ADA](https://www.ada.gov/), [Section 508](https://www.section508.gov/), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) standards, and [WCAG roles](https://www.w3.org/TR/wai-aria/#roles) that are commonly used to evaluate accessibility.
+ 
+The accessibility compliance for the `DatePicker` component is outlined below.
+ 
+| Accessibility Criteria | Compatibility |
+| -- | -- |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Support | <Clock/>|
+| [Section 508](https://www.section508.gov/) Support | <Clock/> |
+| Screen Reader Support | <Check/> |
+| Right-To-Left Support | <Check/> |
+| Color Contrast | <Check/> |
+| Mobile Device Support | <Check/> |
+| Keyboard Navigation Support | <Check/> |
+| [Accessibility](https://www.npmjs.com/package/@storybook/addon-a11y) Validation | <Check/> |
+ 
+<Check/> - All features of the component meet the requirement.
+ 
+<Clock/> - Some features of the component do not meet the requirement.
+ 
+<Cross/> - The component does not meet the requirement.
+ 
+### WAI-ARIA attributes
+ 
+The `DatePicker` component follows the [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/grid/) patterns to meet accessibility requirements. The following ARIA attributes are used in the `DatePicker` component:
+ 
+| Attributes | Purpose |
+| --- | --- |
+| <mark>aria-expanded</mark> | Indicates whether the popup list has expanded or not.|
+| <mark>aria-disabled</mark> | Indicates disabled dates that cannot be selected. |
+| <mark>aria-activedescendant</mark> | Indicates the current active child being managed in the DatePicker component.|
+
+### Keyboard interaction
+ 
+The `DatePicker` component follows keyboard interaction guidelines, making it accessible for people who use assistive technologies (AT) and those who rely on keyboard navigation. The following keyboard shortcuts are supported:
+ 
+| Press | To do this |
+| --- | --- |
+| <kbd>Alt + Down Arrow</kbd> | Opens the popup. |
+| <kbd>Alt + Up Arrow</kbd> | Closes the popup. |
+| <kbd>Esc</kbd> | closes the popup. |
+| <kbd>Upper Arrow</kbd> | Focus the previous week date.|
+| <kbd>Down Arrow</kbd> | Focus the next week date. |
+| <kbd>Left Arrow</kbd> | Focus the previous date. |
+| <kbd>Right Arrow Up</kbd> | Focus the next date. |
+| <kbd>Home</kbd> | Focus the first date in the month. |
+| <kbd>End</kbd> | 	Focus the last date in the month. |
+| <kbd>Page Up</kbd> | Focus the same date in the previous month. |
+| <kbd>Page Down</kbd> | 	Focus the same date in the next month. |
+| <kbd>Enter</kbd> | Select the currently focused date. |
+| <kbd>Shift + Page Up</kbd> | Focus the same date in the previous year. |
+| <kbd>Shift + Page Down</kbd> | Focus the same date in the next year. |
+| <kbd>Control + Upper Arrow</kbd> | Moves into the inner level of view like month-year, year-decade. |
+| <kbd>Control + Down Arrow</kbd> | Moves out from the depth level view like decade-year, year-month. |
+| <kbd>Control + Home</kbd> | Focus the starting date in the current year. |
+| <kbd>Control + End</kbd> |	Focus the ending date in the current year. |

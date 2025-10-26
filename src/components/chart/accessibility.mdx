@@ -1,0 +1,59 @@
+import { Preview } from '../../common/preview';
+import { Check, Cross, Clock } from '../../common/util';
+import Accessibility from './accessibility';
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Chart Accessibility | Syncfusion"
+  description="Chart accessibility provides ARIA roles, labels, and keyboard navigation for inclusive use. Supports screen readers, focus management, and high-contrast modes."
+/>
+
+# React Chart Accessibility
+
+The Chart component followed the accessibility guidelines and standards, including , **Section 508, WCAG 2.2 standards, and WCAG** roles that are commonly used to evaluate accessibility.
+
+The accessibility compliance for the Chart component is outlined below.
+
+| Accessibility Criteria | Compatibility |
+| -- | -- |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Support | <Clock/> |
+| [Section 508](https://www.section508.gov/) Support | <Clock/> |
+| Screen Reader Support | <Check/> |
+| Right-To-Left Support | <Check/> |
+| Color Contrast | <Check/> |
+| Mobile Device Support | <Check/> |
+| Keyboard Navigation Support | <Clock/> |
+| [Accessibility](https://www.npmjs.com/package/@storybook/addon-a11y) Validation | <Clock/> |
+| [Axe-core](https://www.npmjs.com/package/axe-core) Accessibility Validation | <Clock/> |
+
+<Check/> - All features of the component meet the requirement.
+
+<Clock/> - Some features of the component do not meet the requirement.
+
+<Cross/> - The component does not meet the requirement.
+
+## WAI-ARIA attributes
+
+The Chart component followed the [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/grid/) patterns to meet the accessibility. The following ARIA attributes are used in the Chart component:
+
+| Attributes | Purpose |
+| --------------| --- |
+| `role=img`    | To represent the element act as path element in chart. |
+| `role=region` | To represent the element act as group element in chart. |
+| `role=text`   | To represent the element act as text element in chart. |
+
+## Accessibility customization in React Chart component
+
+The Syncfusion® React Chart control is structured to visualize data in a graphical manner. It provides robust customization options for accessibility, allowing you to enhance the user experience for those with disabilities. The main attributes of the React Chart control’s accessibility customization are briefly explained in this section.
+
+The chart control has a number of characteristics that enable accessibility features to be customized, including:
+
+- [`ariaLabel`](https://react-api.syncfusion.com/chart/chartaccessibilityprops#arialabel) - Provides a text description for the chart, improving support for screen readers.
+- [`role`](https://react-api.syncfusion.com/chart/chartaccessibilityprops#role) - Specifies the role of the chart, helping screen readers to identify the element appropriately.
+- [`focusable`](https://react-api.syncfusion.com/chart/chartaccessibilityprops#focusable) - Allows the chart to receive focus, making it accessible via keyboard navigation.
+- [`color`](https://react-api.syncfusion.com/chart/focusoutlineprops#color) - Sets the color of the focus border, enhancing visibility when the chart is focused.
+- [`offset`](https://react-api.syncfusion.com/chart/focusoutlineprops#offset) - Defines the margin around the focus border.
+- [`width`](https://react-api.syncfusion.com/chart/focusoutlineprops#width) - Specifies the width of the focus border.
+- [`tabIndex`](https://react-api.syncfusion.com/chart/chartaccessibilityprops#tabindex) - Specifies the tab order of the chart element, enabling efficient keyboard navigation.
+
+<Preview onDemand={true} reset={true} content={<Accessibility />} path="chart/accessibility.tsx" />

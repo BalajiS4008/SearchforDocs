@@ -1,0 +1,160 @@
+import ColumnAllFeature from './sales-detail-grid.tsx';
+import BasicTemplate from './sales-grid.tsx';
+import AccessRowTemplate from './library-data-grid.tsx';
+import ConditionalTemplate from './stock-category-grid.tsx';
+import LinkTemplate from './link-template.tsx';
+import ImageTemplate from './employeeData-grid.tsx';
+import ComponentIntegrationTemplate from './sales-trend-grid.tsx';
+import ButtonTemplate from './restaurant-grid.tsx';
+import DynamicTemplate from './tasksData-grid.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Meta } from '../../common/meta';
+import { Link } from 'react-router';
+
+<Meta
+  title="React Data Grid - Column Templates | Syncfusion"
+  description="Column templates in Data Grid enable conditional rendering, custom components, and image integration for rich, flexible content display."
+/>
+
+# Column Templates in React Data Grid
+ 
+The Syncfusion® React Data Grid component enables customization of cell content through the [`template`](https://react-api.syncfusion.com/data-grid/columnprops#template) property in the [`Column`](https://react-api.syncfusion.com/data-grid/overview#columns) component. This feature supports rich, interactive displays, such as styled statuses, images, or buttons, beyond plain text. This section explores various template scenarios, best practices, and advanced use cases to enhance grid functionality.
+
+## Basic template
+ 
+The template property in the Data Grid component allows customization of each cell using a function that returns JSX. This function receives the current row data and column details as props, enabling dynamic content rendering based on specific values.
+
+<Preview frame={false} 
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<BasicTemplate />}
+  path="grid/sales-grid.tsx"
+  scroll={false}
+/>
+
+> The column template custom function receives a parameter of type [`ColumnTemplateProps`](https://react-api.syncfusion.com/data-grid/columntemplateprops), an interface providing access to the current row data and column configuration for rendering.
+
+## Row data with templates
+
+In Data Grid component, templates receive the current row data object as props, providing access to all fields and metadata like row index. This enables the creation of complex cell content, such as combining multiple data points or applying styling based on the row position.
+
+<Preview frame={false} 
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<AccessRowTemplate />}
+  path="grid/library-data-grid.tsx"
+  scroll={false}
+/>
+
+## Conditional templates
+
+Conditional templates enable rendering different cell content based on specific values or conditions, enhancing readability and visual distinction of data.
+
+<Preview frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<ConditionalTemplate />}
+  path="grid/stock-category-grid.tsx"
+  scroll={false}
+/>
+
+## Button template
+ 
+Button templates in the Data Grid component add interactivity by placing buttons within grid cells. 
+
+In the example below, a view button opens a [`Dialog`](https://react.syncfusion.com/dialog#getting-started) component to show detailed information about a restaurant item, including its name, category, price, description, and spice level. Clicking the place order button in the dialog displays a [`Message`](https://react.syncfusion.com/message#getting-started) component, confirming that the order was successfully placed.
+
+<Preview frame={false} 
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<ButtonTemplate />}
+  path="grid/restaurant-grid.tsx"
+  scroll={false}
+/>
+
+## Image template
+
+Image templates allow displaying visuals, such as employee photos or product thumbnails, directly in grid cells.
+
+<Preview frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<ImageTemplate />}
+  path="grid/employeeData-grid.tsx"
+  scroll={false}
+/>
+ 
+## Hyperlink template
+
+Hyperlink templates in the grid make cells interactive by rendering values as clickable links, useful for linking to websites, email addresses, or other external resources.
+
+In the example below, the "First Name" column is rendered as a hyperlink using the [`template`](https://react-api.syncfusion.com/data-grid/columnprops#template) property with an `<a>` tag.
+
+<Preview frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<LinkTemplate />}
+  path="grid/link-template.tsx"
+  scroll={false}
+/>
+ 
+## Component integration in templates
+
+Templates support both Syncfusion® and custom React components, allowing rich visualizations and interactive layouts.
+
+In the below example, a [`Chart`](https://react.syncfusion.com/chart/getting-started) component can be rendered inside a cell to show product sales details, enhancing the individuals experience with visual insights.
+
+<Preview frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<ComponentIntegrationTemplate />}
+  path="grid/sales-trend-grid.tsx"
+  scroll={false}
+/>
+
+> Unique IDs for the `Chart` component prevent rendering conflicts in grid cell.
+
+## Performance optimization for templates
+
+Complex templates can impact Data Grid component performance, especially with large datasets. To improve efficiency:
+
+- Use `React.memo` or `useCallback` to memoize template functions and prevent unnecessary re-renders.
+
+- Avoid heavy inline styles or computations inside templates, use CSS classes or precomputed values instead.
+
+- Limit the number of templated columns to maintain smooth scrolling and rendering.
+
+<Preview frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<ColumnAllFeature />}
+  path="grid/sales-detail-grid.tsx"
+  scroll={false}
+/>
+ 
+## Dynamic template switching
+
+Dynamic template switching in Data Grid component allows templates to change based on interaction or application state. This enables flexible data presentation depending on context or individual preference.
+
+For example, a "Progress" column can switch between displaying a progress bar and a text percentage by storing the template function in a state variable and updating it dynamically as needed.
+
+<Preview frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<DynamicTemplate />}
+  path="grid/tasksData-grid.tsx"
+  scroll={false}
+/>
+
+## See also
+
+* <p><Link to="/data-grid/rows/templates">Row Template in Syncfusion React Data Grid</Link></p>
+
+* <p><Link to="/data-grid/columns/headers#header-template">Header Template in Syncfusion React Data Grid</Link></p>
+
+* <p><Link to="/data-grid/editing/configuration#using-a-template-for-column-editing">Edit Template in Syncfusion React Data Grid</Link></p>
+
+* <p><Link to="/data-grid/filtering/filter-bar#filter-bar-template-with-custom-component">Filter Bar Template in Syncfusion React Data Grid</Link></p>
+
+* <p><Link to="/data-grid/data-binding/empty-record-template">Empty Record Template in Syncfusion React Data Grid</Link></p>

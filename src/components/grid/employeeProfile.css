@@ -1,0 +1,17 @@
+.machine-monitor .sf-grid-content-row:not(.sf-grid-edit-row):hover .sf-cell:not(.sf-active),
+.machine-monitor .sf-grid-content-row:not(.sf-grid-edit-row):hover .sf-cell {
+    background-color:  #e90b7b24;
+}
+
+.machine-monitor .sf-active {
+    background: #e90b7b4a ; 
+}
+
+.dark-theme .machine-monitor .sf-grid-content-row:not(.sf-grid-edit-row):hover .sf-cell:not(.sf-active),
+.dark-theme .machine-monitor .sf-grid-content-row:not(.sf-grid-edit-row):hover .sf-cell {
+    background-color: #b9236ead;
+}
+
+.dark-theme .machine-monitor .sf-active {
+    background: #aa1a638f;
+}

@@ -1,0 +1,168 @@
+import { Preview } from '../../common/preview';
+import { Check, Cross, Clock } from '../../common/util';
+import { Snippet } from '../../common/snippet'
+import { TextBoxNpm, TextBoxImport, TextBoxStyles, TextBoxCode } from './textbox-snippets';
+import BasicTextBox from './basic';
+import Readonly from './formprops';
+import Icons from './icons';
+import SizeSample from './size';
+import Controlled from './controlled';
+import ValidationStates from './validation-states';
+import FloatLabel from './floatlabel';
+import Customization from './customization';
+import AdaptiveRendering from './adaptive-rendering';
+import FormSample from './formsupport';
+import { Link } from 'react-router';
+import Disabled from './disabled';
+import TextBoxBasic from './textbox';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React TextBox Component | Syncfusion"
+  description="The TextBox component offers a field for users to enter and edit text with customizable variants, fill mode and sizes."
+/>
+
+# React TextBox
+
+The `TextBox` component is a lightweight component that can be used to get input from users in various forms such as text, password, email, etc.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite#set-up-the-vite-project">Vite</Link> documentation. documentation. Once that Vite project is ready to run with default settings, let’s add the `React TextBox` component to the project.
+
+### Installing Syncfusion® packages
+
+To use the `TextBox` component, install the [`@syncfusion/react-inputs`](https://www.npmjs.com/package/@syncfusion/react-inputs) package:  
+
+<Snippet content={TextBoxNpm}/>
+
+### Adding CSS reference
+
+The following CSS files are available in the Syncfusion® package that needs to be imported in the application.
+
+<Snippet content={TextBoxStyles}/>
+
+### Adding TextBox component
+
+To include the `TextBox` component in your application, import the `TextBox` from the `@syncfusion/react-inputs` package in `App.tsx`.
+
+<Snippet content={TextBoxImport}/>
+
+Add the `TextBox` component in application as shown in below code example.
+
+<Snippet content={TextBoxCode}/>
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+The following example demonstrates the `TextBox` component is rendered with the given text.
+
+<Preview content={<TextBoxBasic />} path="textbox/textbox.tsx" className="sb-padding-bottom-30" />
+
+## Variants
+
+The `TextBox` component enhances user interaction through its three distinct visual variants: `Standard`, `Outlined` and `Filled`.
+
+<Preview
+    content={<BasicTextBox />}
+    path="textbox/basic.tsx"
+/>
+
+## Disabled
+
+When the `disabled` attribute is set to true, the `TextBox` component cannot be edited or focused.
+
+<Preview content={<Disabled />} path="textbox/disabled.tsx" />
+
+## ReadOnly
+
+When the `readOnly` attribute is set to true, the `TextBox` component cannot be edited.
+
+<Preview content={<Readonly />} path="textbox/formprops.tsx" />
+
+## Icons
+
+The `TextBox` component allows for icon integration, with the ability to place icons at the start or end of the input using the [`prefix`](https://react-api.syncfusion.com/textbox/overview#prefix) and [`suffix`](https://react-api.syncfusion.com/textbox/overview#suffix) properties, respectively.
+
+<Preview content={<Icons />} path="textbox/icons.tsx" />
+
+## Sizes
+
+The `TextBox` component enables you to set a more compact input by utilizing its [`size`](https://react-api.syncfusion.com/textbox/overview#size) property.
+
+<Preview content={<SizeSample />} path="textbox/size.tsx" />
+
+## Controlled vs Uncontrolled
+
+This component implements both controlled and uncontrolled state management paradigms, offering developers implementation flexibility:
+
+* **Controlled**: External state management via parent props ensures centralized control, predictable data flow, and improved testability in complex interfaces.
+
+* **Uncontrolled**: The component autonomously manages its internal state, minimizing boilerplate and simplifying standalone implementation with few external dependencies.
+
+<Preview content={<Controlled />} path="textbox/controlled.tsx" />
+
+## Customization
+
+Use the styled-components library to customize the `TextBox` component's appearance. To prevent hierarchy conflicts, add extra class names. Here are some customization examples.
+
+<Preview content={<Customization />} path="textbox/customization.tsx" />
+
+## Adaptive rendering
+
+The `TextBox` component implements context-sensitive rendering capabilities through its native type attribute.
+
+<Preview content={<AdaptiveRendering />} path="textbox/adaptive-rendering.tsx" />
+
+## Color
+
+The `TextBox` component offers validation indicators `Success`, `Warning`, and `Error` through its [`color`](https://react-api.syncfusion.com/textbox/overview#color) property.
+
+<Preview content={<ValidationStates />} path="textbox/validation-states.tsx" />
+
+## Float label
+
+The floating label functionality offers three distinct behavioral modes: `Never`, `Auto` and `Always`.
+
+
+<Preview content={<FloatLabel />} path="textbox/floatlabel.tsx" />
+
+## Form support
+
+The `TextBox` component integrates seamlessly with the form, as shown below.
+
+<Preview content={<FormSample />} path="textbox/formsupport.tsx" />
+
+## Accessibility
+
+The `TextBox` component followed the accessibility guidelines and standards, including [ADA](https://www.ada.gov/), [Section 508](https://www.section508.gov/), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) standards, and [WCAG roles](https://www.w3.org/TR/wai-aria/#roles) that are commonly used to evaluate accessibility.
+
+The accessibility compliance for the `TextBox` component is outlined below.
+
+| Accessibility Criteria | Compatibility |
+| -- | -- |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Support | <Check/> |
+| [Section 508](https://www.section508.gov/) Support | <Check/> |
+| Screen Reader Support | <Check/> |
+| Right-To-Left Support | <Check/> |
+| Color Contrast | <Check/> |
+| Mobile Device Support | <Check/> |
+| Keyboard Navigation Support | <Check/> |
+| [Accessibility](https://www.npmjs.com/package/@storybook/addon-a11y) Validation | <Check/> |
+
+<Check/> - All features of the component meet the requirement.
+
+<Clock/> - Some features of the component do not meet the requirement.
+
+<Cross/> - The component does not meet the requirement.
+
+### WAI-ARIA attributes
+
+The `TextBox` component followed the [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/alert/) patterns to meet the accessibility. The following ARIA attributes are used in the TextBox component:
+
+| Attributes | Purpose |
+| --- | --- |
+| <mark>aria-label</mark> | Provides an accessible name for the component when labelMode was set to `Never`. |

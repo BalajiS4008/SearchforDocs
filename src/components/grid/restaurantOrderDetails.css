@@ -1,0 +1,199 @@
+.food-order-container {
+  padding: 12px;
+}
+
+.food-order-banner {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  background-color: #FAFAFA;
+  padding: 12px;
+  border-bottom: 1px solid #E0E0E0;
+  margin-bottom: 16px;
+  gap: 12px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+.food-order-chef-card {
+  flex: 1 0 25%;
+  margin: 0 2px;
+  padding: 12px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.08);
+  text-align: center;
+  min-width: 150px;
+}
+
+.food-order-chef-image {
+   height: 100px;
+   width: 100px;
+   box-shadow: inset 0 0 1px #e0e0e0, inset 0 0 14px rgba(68, 66, 66, 0.2);
+}
+
+.food-order-chef-name {
+  margin: 8px 0 6px;
+  color: #212121;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+}
+
+.food-preparing-orders {
+  margin: 0 0 8px;
+  color: #757575;
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+}
+
+.food-order-item {
+  margin: 6px 0;
+  padding: 8px;
+  background-color: #E6D7F7;
+  border-radius: 4px;
+  border: 1px solid #E0E0E0;
+  color: #000000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+}
+
+.food-order .chef-info img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    box-shadow: inset 0 0 1px #e0e0e0, inset 0 0 14px rgba(68, 66, 66, 0.2);
+}
+
+.food-order .sf-grid-content-container .chef-info {
+    display: flex;
+    align-items: center;
+}
+
+.food-order .sf-grid-content-container .chef-info span {
+    margin: 10px;
+}
+
+/* Status badge styles */
+.food-order .status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 8px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    white-space: nowrap;
+    border: 1px solid transparent;
+}
+
+/* Completed status - Success style (Green) */
+.food-order .status-completed {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+/* In-progress status - Warning style (Yellow/Orange) */
+.food-order .status-in-progress {
+    background-color: #fff3cd;
+    color: #856404;
+    border-color: #ffeaa7;
+}
+
+/* Not started status - Error style (Red) */
+.food-order .status-not-started {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+/* Unknown status - Default gray style */
+.food-order .status-unknown {
+    background-color: #e2e3e5;
+    color: #383d41;
+    border-color: #d6d8db;
+}
+
+.food-order-item strong {
+    font-weight: 500;
+    font-size: 13px;
+}
+
+/* Dark Theme */
+.dark-theme .food-order-banner {
+    background-color: #212121;
+    border-bottom: 1px solid #424242;
+    box-shadow: 0 1px 2px rgba(255, 255, 255, 0.12);
+}
+
+.dark-theme .food-order-chef-card {
+    background-color: #333333;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.12), 0 1px 2px rgba(255, 255, 255, 0.08);
+}
+
+.dark-theme .food-order-chef-name {
+    color: #E0E0E0;
+}
+
+.dark-theme .food-preparing-orders {
+    color: #BDBDBD;
+}
+
+.dark-theme .food-order-item {
+    background-color: #4F3C6A;
+    border: 1px solid #5A4C70;
+    color: #E0E0E0;
+}
+
+
+.dark-theme .food-order .status-completed {
+    background-color: #2E4B3E;
+    color: #A5D6A7;
+    border-color: #385E49;
+}
+
+.dark-theme .food-order .status-in-progress {
+    background-color: #534B1E;
+    color: #FFF59D;
+    border-color: #6D622A;
+}
+
+.dark-theme .food-order .status-not-started {
+    background-color: #612A2F;
+    color: #FFCDD2;
+    border-color: #79353A;
+}
+
+.dark-theme .food-order .status-unknown {
+    background-color: #4E5153;
+    color: #B0B0B0;
+    border-color: #616466;
+}
+
+.dark-theme .food-order .sf-grid-header-row .sf-cell {
+    background-color: #333333;
+    color: #E0E0E0;
+    border-bottom: 1px solid #424242;
+}
+.dark-theme .food-order .sf-grid-content-row .sf-cell {
+    background-color: #2A2A2A;
+    color: #E0E0E0;
+    border-bottom: 1px solid #424242;
+}
+
+.dark-theme svg.status-yes path{
+    stroke: rgb(81, 185, 29);
+}
+
+.dark-theme svg.status-no circle{
+    fill: rgb(7, 142, 244);;
+}
+
+.sf-grid.food-order .status-column{
+    cursor: default;
+
+}

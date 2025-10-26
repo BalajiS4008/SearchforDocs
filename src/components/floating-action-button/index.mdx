@@ -1,0 +1,142 @@
+import { fabNpm, fabImport, fabStyles, fabComponent } from './snippets';
+import Position from './position.tsx';
+import Default from './default.tsx';
+import ColorSample from './color.tsx';
+import Content from './content.tsx';
+import SizeSample from './size.tsx';
+import Disabled from './disabled.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Check, Cross, Clock } from '../../common/util';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Floating Action Button Component | Syncfusion"
+  description="The Floating Action Button (FAB) offers quick access to primary actions, with customizable icons, colors, and responsive positioning."
+/>
+
+# React Floating Action Button
+
+The Floating Action Button ([`FAB`](https://react-api.syncfusion.com/floating-action-button/overview)) enhances accessibility with its floating design and customizable icons and colors for context.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite#set-up-the-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let’s add the React [`FAB`](https://react-api.syncfusion.com/floating-action-button/overview) component to the project.
+
+### Installing Syncfusion® packages
+
+To use the [`FAB`](https://react-api.syncfusion.com/floating-action-button/overview) component, install the [`@syncfusion/react-buttons`](https://www.npmjs.com/package/@syncfusion/react-buttons) package:  
+
+<Snippet content={fabNpm}/>
+
+### Adding CSS reference
+
+Import the [`FAB`](https://react-api.syncfusion.com/floating-action-button/overview) component’s required CSS references as follows in **src/App.css**.
+
+<Snippet content={fabStyles}/>
+
+### Adding FAB component
+
+To include the [`FAB`](https://react-api.syncfusion.com/floating-action-button/overview) component in your application, import the `FAB` from `@syncfusion/react-buttons` package in **App.tsx**.
+
+<Snippet content={fabImport}/>
+
+Add the [`FAB`](https://react-api.syncfusion.com/floating-action-button/overview) component in application as shown in below code example.
+
+<Snippet content={fabComponent}/>
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+The following example demonstrates how to render a simple [`FAB`](https://react-api.syncfusion.com/floating-action-button/overview) component.
+
+<Preview content={<Default />} path="floating-action-button/default.tsx" />
+
+## Color
+
+The [`FAB`](https://react-api.syncfusion.com/floating-action-button/overview) component provides various styles to convey different alert levels, including `Warning`, `Success`, `Error`, and `Info`, through its [`color`](https://react-api.syncfusion.com/floating-action-button/overview#color) property.
+
+<Preview
+  content={<ColorSample />}
+  path="floating-action-button/color.tsx"
+/>
+
+## Icon and text
+
+The [`FAB`](https://react-api.syncfusion.com/floating-action-button/overview) component lets you customize the button's appearance by including an icon, a text label, or both.
+
+<Preview
+  content={<Content />}
+  path="floating-action-button/content.tsx"
+/>
+
+## Size
+
+The [`FAB`](https://react-api.syncfusion.com/floating-action-button/overview) component can be resized for design flexibility, allowing it to fit into limited spaces while maintaining its core functionality.
+
+<Preview
+  content={<SizeSample />}
+  path="floating-action-button/size.tsx"
+/>
+
+## Position
+
+The [`FAB`](https://react-api.syncfusion.com/floating-action-button/overview) can be placed anywhere in the UI, allowing developers to optimize its position for user impact and experience through testing.
+
+<Preview
+  content={<Position />}
+  path="floating-action-button/position.tsx"
+/>
+
+## Disabled
+
+Disabling the [`FAB`](https://react-api.syncfusion.com/floating-action-button/overview) signals temporary unavailability, guiding users to refrain from interaction until it’s functional again. When the `disabled` attribute is set, the button cannot change its state.
+
+<Preview
+  content={<Disabled />}
+  path="floating-action-button/disabled.tsx"
+/>
+
+## Accessibility
+
+The [`FAB`](https://react-api.syncfusion.com/floating-action-button/overview) component followed the accessibility guidelines and standards, including [ADA](https://www.ada.gov/), [Section 508](https://www.section508.gov/), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) standards, and [WCAG roles](https://www.w3.org/TR/wai-aria/#roles) that are commonly used to evaluate accessibility.
+
+The accessibility compliance for the `Floating action button` component is outlined below.
+
+| Accessibility Criteria | Compatibility |
+| -- | -- |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Support | <Check/> |
+| [Section 508](https://www.section508.gov/) Support | <Check/> |
+| Screen Reader Support | <Check/> |
+| Right-To-Left Support | <Check/> |
+| Color Contrast | <Check/> |
+| Mobile Device Support | <Check/> |
+| Keyboard Navigation Support | <Check/> |
+| [Accessibility](https://www.npmjs.com/package/@storybook/addon-a11y) Validation | <Check/> |
+
+<Check/> - All features of the component meet the requirement.
+
+<Clock/> - Some features of the component do not meet the requirement.
+
+<Cross/> - The component does not meet the requirement.
+
+### WAI-ARIA attributes
+
+The [`FAB`](https://react-api.syncfusion.com/floating-action-button/overview) component followed the [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/alert/) patterns to meet the accessibility. The following ARIA attributes are used in the Floating Action Button component:
+
+| Attributes | Purpose |
+| --- | --- |
+| <mark>aria-label</mark> | Provides an accessible name for the icon only floating action button. |
+
+### Keyboard interaction
+
+The [`FAB`](https://react-api.syncfusion.com/floating-action-button/overview) component followed the [keyboard interaction](https://www.w3.org/WAI/ARIA/apg/patterns/alert/#keyboardinteraction) guideline, making it easy for people who use assistive technologies (AT) and those who completely rely on keyboard navigation. The following keyboard shortcuts are supported by the Floating action button component.
+
+
+| **Windows** | **Mac** | **To do this** |
+| --- | --- | --- |
+| <kbd>Space</kbd>| <kbd>Space</kbd> | When the floating action button has focus, pressing the space key changes the state of the floating action button. |

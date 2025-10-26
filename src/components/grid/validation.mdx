@@ -1,0 +1,138 @@
+import ColumnValidation from './column-validation.tsx';
+import DynamicValidation from './dynamic-validation.tsx';
+import CustomValidation from './custom-validation.tsx';
+import MultipleValidation from './multiple-validation.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Data Grid - Validation | Syncfusion"
+  description="Data Grid applies validation rules using built-in checks, custom logic, and dynamic conditions to ensure consistent data integrity in editable cells."
+/>
+
+# Data Validation in React Data Grid
+
+The Syncfusion® React Data Grid component ensures accurate data entry through validation features that enforce rules such as required fields, valid formats, and value ranges. Support for both built-in and custom validation logic allows dynamic conditions, complemented by clear error messaging for a seamless experience.
+
+## Why validation matters?
+
+Validation ensure reliable data during operations such as adding, editing, or saving. Built-in rules, such as required fields, and custom validation logic prevent invalid input. Dynamic conditions and clear error messages enhance usability and maintain application integrity, supporting flexible and accurate data entry in the grid. The available key features include
+
+- Column Validation: Apply rules like required or number formats per field.
+- Custom Validation: Use functions for advanced, rule-based logic.
+- Dynamic Validation: Adjust rules based on values in other columns.
+
+## Built-in validation rules
+ 
+Data Grid component includes built-in validation rules for enforcing data accuracy. The following table provides descriptions, usage examples, and valid inputs for these rules.
+
+| Rule         | Description                                                        | Example                                                                 |
+|--------------|--------------------------------------------------------------------|-------------------------------------------------------------------------|
+| `required`   | The input must not be empty.                                       | `required: [true, 'Field is required']` <div>Valid: "a", "1", "-"</div> |
+| `email`      | Must be in valid email format.                                     | `email: [true, 'Invalid email']` <div>Valid: form@example.com</div> |
+| `url`        | Must be in valid URL format.                                       | `url: [true, 'Invalid URL']` <div>Valid: https://syncfusion.com/</div> |
+| `date`       | Must be a valid date format.                                       | `date: [true, 'Invalid date']` <div>Valid: `"05/15/2017"`</div>         |
+| `dateIso`    | Must be valid ISO date format (YYYY-MM-DD).                        | `dateIso: [true, 'Invalid ISO date']` <div>Valid: "2017-05-15"</div>  |
+| `number`     | Must be a valid number.                                            | `number: [true, 'Not a number']` <div>Valid: "1.0", "1"</div>       |
+| `digits`     | Must contain only digits.                                          | `digits: [true, 'Digits only']` <div>Valid: "1" (Invalid: "1a")</div> |
+| `maxLength`  | Input length must be ≤ max.                                        | `maxLength: [5, 'Too long']` <div>Valid: "check" (Invalid: "checking")</div> |
+| `minLength`  | Input length must be ≥ min.                                        | `minLength: [5, 'Too short']` <div>Valid: "testing" (Invalid: "test")</div> |
+| `rangeLength`| Input length must be within range.                                 | `rangeLength: [[4, 5], 'Invalid length']` <div>Valid: "test" (Invalid: "key")</div> |
+| `range`      | Number must be within range.                                       | `range: [[4, 5], 'Out of range']` <div>Valid: "4" (Invalid: "6")</div> |
+| `max`        | Number must be ≤ max.                                              | `max: [3, 'Value too high']` <div>Valid: "3" (Invalid: "4")</div>   |
+| `min`        | Number must be ≥ min.                                              | `min: [4, 'Value too low']` <div>Valid: "5" (Invalid: "2")</div>    |
+| `regex`      | Must match regex pattern.                                          | `regex: [/^[A-z]+$/, 'Letters only']` <div>Valid: "a" (Invalid: "1")</div> |
+| `creditCard` | Must be valid credit card format.                                  | `creditCard: [true, 'Invalid card']` <div>Valid: "4111111111111111"</div> |
+| `tel`        | Must be valid telephone number.                                    | `tel: [true, 'Invalid phone']` <div>Valid: "+12345678901"</div>       |
+| `equalTo`    | Must match value of another field.                                 | `equalTo: ['password', 'Passwords must match']` <div>Valid: Used for confirmation fields</div> |
+ 
+## Column validation
+ 
+Use [`validationRules`](https://react-api.syncfusion.com/data-grid/columnprops#validationrules) property to define input constraints like [`required`](https://react-api.syncfusion.com/data-grid/columnvalidationconfig#required), [`number`](https://react-api.syncfusion.com/data-grid/columnvalidationconfig#number), [`minLength`](https://react-api.syncfusion.com/data-grid/columnvalidationconfig#minlength), [`min`](https://react-api.syncfusion.com/data-grid/columnvalidationconfig#min), and [`max`](https://react-api.syncfusion.com/data-grid/columnvalidationconfig#max). For example, enforce numeric input for the "Order ID" column, minimum character length for the "Customer ID" column, and value range for the "Freight" column. The grid displays error messages automatically for invalid entries.
+ 
+<Preview
+  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<ColumnValidation />}
+  path="grid/column-validation.tsx"
+  scroll={false}
+/>
+
+## Custom validation
+ 
+Data Grid component supports custom validation through a custom function to enforce specific rules, such as ensuring the "Customer ID" starts with "ID-" followed by at least three characters (e.g., ID-XYZ). The [`minLength`](https://react-api.syncfusion.com/data-grid/columnvalidationconfig#minlength) rule is used to ensure a minimum of six characters. If validation fails, a custom error message is displayed in the `.sf-error` element, a built-in class for showing validation errors.
+
+<Preview
+  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<CustomValidation />}
+  path="grid/custom-validation.tsx"
+  scroll={false}
+/>
+
+{/*
+## Dynamic validation based on Dropdown selection
+ 
+Dynamic validation updates rules based on related column values. For example, if `Category` is selected as A, B, or C, the `Value` field must fall within category-specific ranges:
+
+- Category A: 100–500  
+- Category B: 200–800  
+- Category C: 50–300  
+
+This ensures context-aware validation and guides individual with relevant error messages.
+ 
+<Preview
+  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<DynamicValidation />}
+  path="grid/dynamic-validation.tsx"
+  scroll={false}
+/>
+*/}
+## Phone number validation
+
+Phone number validation enforces a consistent format for mobile numbers, typically including a country code. This validation improves data accuracy and uniformity, especially in user profile forms, contact directories, or any grid that captures communication details.
+
+<Snippet content={[{ title: "App.tsx", code: `const phoneRules = {
+    required: true,
+    tel: [true, 'Invalid phone']
+};
+ 
+<Column field='PhoneNumber' headerText='Phone Number' validationRules={phoneRules} width='150' />` }]} />
+
+## Email validation
+
+Email validation ensures that entered email addresses follow correct syntax rules. This process helps prevent invalid entries that could interfere with communication, authentication, or data integrity.
+
+<Snippet content={[{ title: "App.tsx", code: `const emailRules = {
+    required: true,
+    email: [true, 'Enter a valid email address']
+};
+ 
+<Column field='Email' headerText='Email' validationRules={emailRules} width='200' />` }]} />
+ 
+## Credit card validation
+
+Credit card validation ensures that input matches the expected format of a valid card number. This process helps verify the structural integrity of the card number before further processing.
+
+<Snippet content={[{ title: "App.tsx", code: `const creditCardRules = {
+    required: true,
+    creditCard: [true, 'Invalid card']
+};
+ 
+<Column field='CardNumber' headerText='Credit Card' validationRules={creditCardRules} width='180' />` }]} />
+
+The following example demonstrates how built-in and custom validation can be applied during form-based editing. This approach ensures that data entered into the grid meets predefined rules and constraints, enhancing data integrity and experience.
+
+<Preview
+  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<MultipleValidation />}
+  path="grid/multiple-validation.tsx"
+  scroll={false}
+/>

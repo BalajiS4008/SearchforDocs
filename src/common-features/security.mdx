@@ -1,0 +1,29 @@
+import { Link } from 'react-router'
+import { Meta } from '../common/meta';
+
+<Meta
+ title="React components security | Syncfusion"
+ description="Secure React components with best practices against XSS, CSRF, injection attacks: validate inputs, use CSP."
+/>
+
+# React Components Security
+
+Security is a crucial aspect of web application development, aimed at protecting applications from a wide range of threats and vulnerabilities. Best practices include using `HTTPS` to encrypt data in transit, validating and sanitizing user inputs to prevent injection attacks, and implementing robust authentication mechanisms such as multi-factor authentication (MFA).
+
+Syncfusion<sup>®</sup> React components are implemented with these security considerations.
+
+## Security vulnerabilities
+
+Security vulnerabilities in web applications refer to weaknesses or flaws in their design, implementation, or configuration that can be exploited by attackers. These vulnerabilities can compromise the application's integrity, confidentiality, or availability. Below are some common types of security vulnerabilities:
+
+* <a href="https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting" target="_blank" rel="noopener noreferrer">Cross-Site Scripting</a> - XSS is a vulnerability that occurs when a web application allows malicious scripts to be injected into web pages viewed by other users. These scripts can steal session cookies, redirect users to malicious websites, or alter the appearance and behavior of the application. XSS typically arises when user input is not properly validated or encoded before being rendered in the browser.
+
+* <a href="https://developer.mozilla.org/en-US/docs/Glossary/CSRF" target="_blank" rel="noopener noreferrer">Cross-Site Request Forgery</a> - CSRF is a type of web security vulnerability that allows an attacker to force a logged-in user to perform actions on a web application without their consent or knowledge. CSRF attacks exploit the trust that a web application has in the user's browser by tricking it into sending unauthorized requests to the vulnerable application.
+
+* Injection Attacks - These occur when an attacker injects malicious code (such as `SQL` injection, `XML` injection, or command injection) into input fields or parameters of a web application. If the application does not properly sanitize or validate user inputs, it can execute unintended commands or gain unauthorized access to sensitive data.
+
+Syncfusion<sup>®</sup> React components provide support for implementing web applications with enhanced security features.
+
+## Security considerations
+
+Security is a fundamental aspect of software development, and incorporating security measures from the beginning of the development process is essential to protect applications from potential threats. Syncfusion<sup>®</sup> adopts a comprehensive approach to security in the development of its React components, addressing all critical aspects.

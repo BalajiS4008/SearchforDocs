@@ -1,0 +1,241 @@
+/* Performance Rating Styles - Material 3 Light Theme */
+.employee-performance .rating-excellent {
+    background-color: #E6F4EA;
+    color: #137333;
+    font-weight: 500;
+}
+
+.employee-performance .rating-good {
+    background-color: #E8F0FE;
+    color: #1A73E8;
+    font-weight: 500;
+}
+
+.employee-performance .rating-average {
+    background-color: #FEF7E0;
+    color: #B06000;
+    font-weight: 400;
+}
+
+.employee-performance .rating-below-average {
+    background-color: #FCE8E6;
+    color: #C5221F;
+    font-weight: 400;
+}
+
+.employee-performance .rating-poor {
+    background-color: #FAD2CF;
+    color: #B3261E;
+    font-weight: 500;
+}
+
+/* Project Status Styles - Material 3 Light Theme */
+.employee-performance .status-completed {
+    background-color: #E6F4EA;
+    color: #0D652D;
+    font-weight: 500;
+    padding: 6px 12px;
+}
+
+.employee-performance .status-in-progress {
+    background-color: #E8F0FE;
+    color: #1A73E8;
+    font-weight: 400;
+    padding: 6px 12px;
+}
+
+.employee-performance .status-on-hold {
+    background-color: #FEF7E0;
+    color: #B06000;
+    font-weight: 400;
+    padding: 6px 12px;
+}
+
+.employee-performance .status-delayed {
+    background-color: #FCE8E6;
+    color: #C5221F;
+    font-weight: 500;
+    padding: 6px 12px;
+    position: relative;
+}
+
+/* Productivity Score Styles - Material 3 Light Theme */
+.employee-performance .high-productivity {
+    background-color: #D3E3FD;
+    color: #001D35;
+    font-weight: 600;
+}
+
+.employee-performance .good-productivity {
+    background-color: #F8F9FA;
+    color: #3C4043;
+    font-weight: 500;
+}
+
+.employee-performance .low-productivity {
+    background-color: #FEF7E0;
+    color: #B06000;
+    font-weight: 500;
+}
+
+/* Attendance Styles - Material 3 Light Theme */
+.employee-performance .excellent-attendance {
+    background-color: #E6F4EA;
+    color: #137333;
+    font-weight: 500;
+    position: relative;
+}
+
+.employee-performance .excellent-attendance::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2334A853' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17L5.53 12.7a.75.75 0 0 0-1.06 1.06l4 4a.75.75 0 0 0 1.06 0l10-10a.75.75 0 1 0-1.06-1.06L9 16.17z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.employee-performance .poor-attendance {
+    background-color: #FCE8E6;
+    color: #C5221F;
+    font-weight: 500;
+    position: relative;
+    padding-left: 20px;
+}
+
+.employee-performance .poor-attendance::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23EA4335' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* High Achiever Targets - Material 3 Light Theme */
+.employee-performance .high-achiever {
+    background: linear-gradient(135deg, #FFF8E1 0%, #FFFDE7 100%);
+    color: #E65100;
+    font-weight: 600;
+    position: relative;
+}
+
+.employee-performance .high-achiever::after {
+    content: "";
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FF8F00' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.4 7.4h7.6l-6 4.6 2.3 7.1L12 17l-6.3 4.1 2.3-7.1-6-4.6h7.6L12 2z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+/* Material 3 Dark Theme */
+/* Performance Rating Styles - Material 3 Dark Theme */
+.dark-theme .employee-performance .rating-excellent {
+    background-color: #1A3D2A;
+    color: #6AF0A1;
+}
+
+.dark-theme .employee-performance .rating-good {
+    background-color: #1B3A5D;
+    color: #8AB4F8;
+}
+
+.dark-theme .employee-performance .rating-average {
+    background-color: #4A3B1B;
+    color: #FDD663;
+}
+
+.dark-theme .employee-performance .rating-below-average {
+    background-color: #5C2B29;
+    color: #F28B82;
+}
+
+.dark-theme .employee-performance .rating-poor {
+    background-color: #632423;
+    color: #FAD2CF;
+}
+
+/* Project Status Styles - Material 3 Dark Theme */
+.dark-theme .employee-performance .status-completed {
+    background-color: #1A3D2A;
+    color: #6AF0A1;
+}
+
+.dark-theme .employee-performance .status-in-progress {
+    background-color: #1B3A5D;
+    color: #8AB4F8;
+}
+
+.dark-theme .employee-performance .status-on-hold {
+    background-color: #4A3B1B;
+    color: #FDD663;
+}
+
+.dark-theme .employee-performance .status-delayed {
+    background-color: #5C2B29;
+    color: #F28B82;
+}
+
+/* Productivity Score Styles - Material 3 Dark Theme */
+.dark-theme .employee-performance .high-productivity {
+    background-color: #002D53;
+    color: #D1E3FF;
+}
+
+.dark-theme .employee-performance .good-productivity {
+    background-color: #2C2D2E;
+    color: #E8EAED;
+}
+
+.dark-theme .employee-performance .low-productivity {
+    background-color: #4A3B1B;
+    color: #FDD663;
+}
+
+/* Attendance Styles - Material 3 Dark Theme */
+.dark-theme .employee-performance .excellent-attendance {
+    background-color: #1A3D2A;
+    color: #6AF0A1;
+}
+
+.dark-theme .employee-performance .excellent-attendance::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2381C995' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17L5.53 12.7a.75.75 0 0 0-1.06 1.06l4 4a.75.75 0 0 0 1.06 0l10-10a.75.75 0 1 0-1.06-1.06L9 16.17z'/%3E%3C/svg%3E");
+}
+
+.dark-theme .employee-performance .poor-attendance {
+    background-color: #5C2B29;
+    color: #F28B82;
+}
+
+.dark-theme .employee-performance .poor-attendance::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23F28B82' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/%3E%3C/svg%3E");
+}
+
+/* High Achiever Targets - Material 3 Dark Theme */
+.dark-theme .employee-performance .high-achiever {
+    background: linear-gradient(135deg, #4A3B1B 0%, #5C4A21 100%);
+    color: #FFD54F;
+    box-shadow: 0px 1px 3px rgba(255, 213, 79, 0.2);
+}
+
+.dark-theme .employee-performance .high-achiever::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFCA28' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.4 7.4h7.6l-6 4.6 2.3 7.1L12 17l-6.3 4.1 2.3-7.1-6-4.6h7.6L12 2z'/%3E%3C/svg%3E");
+    filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+}

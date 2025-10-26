@@ -1,0 +1,49 @@
+import { gridlocalJSONSnippet, gridlocaluseEffectSnippet, gridlocalreactStateSnippet } from './grid-snippets';
+import LocalData from './local-data.tsx';
+import LocalEvents from './local-events.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Data Grid - Local Data Binding | Syncfusion"
+  description="Data binding in Data Grid connects component state, local arrays, or remote sources to grid rows, enabling dynamic updates and controlled data flow."
+/>
+
+# Local Data Binding in React Data Grid
+
+The Syncfusion® React Data Grid component supports binding local datasets directly to display predefined data without server requests. This method enhances performance and enables offline functionality.
+
+## Assigning local JSON data
+
+The Data Grid component supports data binding by assigning a JSON array of objects to the [`dataSource`](https://react-api.syncfusion.com/data-grid/overview#datasource) property. This approach displays predefined data based on column configurations without network requests. It is ideal for static datasets, and  offline applications.
+
+<Snippet content={gridlocalJSONSnippet}/>
+
+## Loading data with useEffect
+
+The Data Grid component supports loading data using the `useEffect` hook in React, which prepares or fetches data after component mounting. The processed data is then assigned to the [`dataSource`](https://react-api.syncfusion.com/data-grid/overview#datasource) property, ensuring efficient separation of data fetching and rendering logic.
+
+<Snippet content={gridlocaluseEffectSnippet}/>
+
+## Binding with React state
+
+Binding the grid data source to a React state variable by passing the state directly to the [`dataSource`](https://react-api.syncfusion.com/data-grid/overview#datasource) property. It enables the grid to automatically reflect state changes. This approach is ideal for dynamic applications supporting real-time editing, filtering, or data updates.
+
+<Snippet content={gridlocalreactStateSnippet}/>
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<LocalData />} path="grid/local-data.tsx" scroll={false} />
+
+## Events
+
+The Data Grid provides event hooks for rendering phases such as initialization, completion, data loading, and error handling. These event helps to track the grid’s lifecycle and enable components to handle state changes during rendering and data updates.
+
+| Event Name     | Description                     |
+|--------------------|-----------------------------------------------|
+| [`onGridRenderStart`](https://react-api.syncfusion.com/data-grid/overview#ongridrenderstart)           | Fires an event when the grid begins rendering its rows, columns, and headers.   |
+| [`onDataLoad`](https://react-api.syncfusion.com/data-grid/overview#ondataload)           | Fires an event when data is successfully retrieved and DOM initialization is confirmed. |
+| [`onGridRenderComplete`](https://react-api.syncfusion.com/data-grid/overview#ongridrendercomplete)              | Fire an event when the grid is fully loaded into the DOM and ready for user interaction.|
+| [`onError`](https://react-api.syncfusion.com/data-grid/overview#onerror)            | Fires an event when an error occurs during grid rendering or data operations. |
+
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<LocalEvents />} path="grid/local-events.tsx" scroll={false} />

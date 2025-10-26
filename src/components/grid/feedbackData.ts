@@ -1,0 +1,17 @@
+export const feedbackData = [
+  { CustomerID: 'C-001', CustomerName: 'John Smith', Product: 'Smartphone', Feedback: 'Positive', Rating: 4.5, Date: new Date('2025-08-01'), Resolved: true, SupportAgent: 'Ava' },
+  { CustomerID: 'C-002', CustomerName: 'Emily Johnson', Product: 'Laptop', Feedback: 'Negative', Rating: 2.0, Date: new Date('2025-08-02'), Resolved: false, SupportAgent: 'Liam' },
+  { CustomerID: 'C-003', CustomerName: 'Michael Brown', Product: 'Headphones', Feedback: 'Positive', Rating: 4.8, Date: new Date('2025-08-03'), Resolved: true, SupportAgent: 'Noah' },
+  { CustomerID: 'C-004', CustomerName: 'Sarah Davis', Product: 'Smartwatch', Feedback: 'Negative', Rating: 2.5, Date: new Date('2025-08-04'), Resolved: false, SupportAgent: 'Emma' },
+  { CustomerID: 'C-005', CustomerName: 'David Wilson', Product: 'Tablet', Feedback: 'Positive', Rating: 4.2, Date: new Date('2025-08-05'), Resolved: true, SupportAgent: 'Olivia' },
+  { CustomerID: 'C-006', CustomerName: 'Ashley Martinez', Product: 'Monitor', Feedback: 'Positive', Rating: 4.6, Date: new Date('2025-08-06'), Resolved: true, SupportAgent: 'James' },
+  { CustomerID: 'C-007', CustomerName: 'James Anderson', Product: 'Keyboard', Feedback: 'Negative', Rating: 2.8, Date: new Date('2025-08-07'), Resolved: false, SupportAgent: 'Sophia' },
+  { CustomerID: 'C-008', CustomerName: 'Jessica Taylor', Product: 'Mouse', Feedback: 'Positive', Rating: 4.7, Date: new Date('2025-08-08'), Resolved: true, SupportAgent: 'Benjamin' },
+  { CustomerID: 'C-009', CustomerName: 'Christopher Thomas', Product: 'Printer', Feedback: 'Negative', Rating: 3.0, Date: new Date('2025-08-09'), Resolved: false, SupportAgent: 'Mia' },
+  { CustomerID: 'C-010', CustomerName: 'Amanda Moore', Product: 'Router', Feedback: 'Positive', Rating: 4.3, Date: new Date('2025-08-10'), Resolved: true, SupportAgent: 'Lucas' },
+  { CustomerID: 'C-011', CustomerName: 'Matthew Jackson', Product: 'Speaker', Feedback: 'Positive', Rating: 4.9, Date: new Date('2025-08-11'), Resolved: true, SupportAgent: 'Charlotte' },
+  { CustomerID: 'C-012', CustomerName: 'Olivia White', Product: 'Webcam', Feedback: 'Negative', Rating: 2.2, Date: new Date('2025-08-12'), Resolved: false, SupportAgent: 'Henry' },
+  { CustomerID: 'C-013', CustomerName: 'Joshua Harris', Product: 'Charger', Feedback: 'Positive', Rating: 4.4, Date: new Date('2025-08-13'), Resolved: true, SupportAgent: 'Amelia' },
+  { CustomerID: 'C-014', CustomerName: 'Megan Martin', Product: 'Power Bank', Feedback: 'Negative', Rating: 3.1, Date: new Date('2025-08-14'), Resolved: false, SupportAgent: 'Ethan' },
+  { CustomerID: 'C-015', CustomerName: 'Andrew Thompson', Product: 'External HDD', Feedback: 'Positive', Rating: 4.6, Date: new Date('2025-08-15'), Resolved: true, SupportAgent: 'Harper' },
+];

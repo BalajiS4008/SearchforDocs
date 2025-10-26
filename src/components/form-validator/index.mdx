@@ -1,0 +1,127 @@
+import BasicForm from './basic-form';
+import RealTimeValidation from './real-time-validation';
+import CustomValidation from './custom-validation';
+import ConditionalValidation from './conditional-validation';
+import MultiStepForm from './multi-step-form';
+import IntegratedComponents from './integrated-components';
+import CustomErrorPlacement from './custom-error-placement';
+import { Preview } from '../../common/preview';
+import { Check, Cross, Clock } from '../../common/util';
+import { Snippet } from '../../common/snippet';
+import { formValidatorNpm, formValidatorStyles, formValidatorImport, formValidatorSnippet } from './snippets';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta
+ title="React Form Component | Syncfusion"
+ description="The Form Validator component ensures data accuracy by validating user inputs with customizable rules and real-time feedback."
+/>
+
+# React Form
+
+The `Form` is a powerful validation tool for `React` applications that helps manage form state and validation rules. It provides a comprehensive set of built-in validation rules, and customizable error messages. It allows developers to create robust forms with validation feedback, state tracking, and submission handling.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite?section=set-up-the-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let's add the Syncfusion® `React Form` to the project.
+
+### Installing Syncfusion® packages
+
+To use the `Form` in this project, the [`@syncfusion/react-inputs`](https://www.npmjs.com/package/@syncfusion/react-inputs) package needs to be installed using the following command:
+
+<Snippet content={formValidatorNpm}/>
+
+### Adding CSS reference
+
+In this article, the `Material 3` theme is applied using CSS styles, which are available in installed packages. The necessary Material 3 CSS styles for the `Form` and its dependents were imported into the `src/App.css` file.
+
+<Snippet content={formValidatorStyles}/>
+
+### Adding Form component
+
+To include the `Form` in your application, import the `Form`, `FormField` from the `@syncfusion/react-inputs` package in `App.tsx`.
+
+<Snippet content={formValidatorImport}/>
+
+Add the `Form` and `FormField` in application as shown in below code example.
+
+<Snippet content={formValidatorSnippet} />
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+The `Form` component serves as the main container that manages `Form` state, validation, and submission. Each form input must be wrapped in a `FormField` component to connect it with the `Form` validation system. The `FormField` acts as a bridge between your input controls and the `Form` component's state management, ensuring that validation rules are applied and errors are properly tracked for each field.
+
+The following example demonstrates how to create a simple `Form` with validation. The example below illustrates a form with fields for full name, email, event type, and number of participants. Each field has appropriate validation rules defined in a ValidationRules object, creating a structured approach to form validation. The implementation showcases proper `React` state management using useState hooks to track form data and submission status.
+
+**Form Configuration**
+- [`rules`](https://react-api.syncfusion.com/form/overview#rules): Defines validation criteria using built-in rules like `required`, `email`, and `minLength`
+- [`onSubmit`](https://react-api.syncfusion.com/form/overview#onsubmit): Processes form data when successfully submitted and updates UI with submission results
+- [`onFormStateChange`](https://react-api.syncfusion.com/form/overview#onformstatechange): Tracks the current `Form` state including `values`, `errors`, and validation status. The [`formState`](https://react-api.syncfusion.com/form/formstate#props) object provides access to `values` (current field values), `errors` (validation messages), `allowSubmit` (form validity status), and methods like `onChange` (updates field values) and `onBlur` (marks fields as touched).
+
+<Preview content={<BasicForm />} path="form-validator/basic-form.tsx" />
+
+## Real-time validation
+
+The `Form` allows for real-time validation feedback as users interact with form fields. By setting the [`validateOnChange`](https://react-api.syncfusion.com/form/overview#validateonchange) property to `true`, validation will be performed on every input change, providing immediate feedback to users about the validity of their inputs.
+
+<Preview content={<RealTimeValidation />} path="form-validator/real-time-validation.tsx" />
+
+## Custom validation rules
+
+The `Form` supports custom validation rules through the [`customValidator`](https://react-api.syncfusion.com/form/fieldvalidationrules#customvalidator) property. This functionality allows developers to implement complex validation logic beyond the built-in rules, such as password strength validation, domain-specific validation requirements, or conditional validation based on other field values.
+
+Custom validators are defined as functions within the ValidationRules object for each field. When implementing a custom validator, the function receives the current field value as its parameter and should return an empty string when validation passes or an error message string when validation fails. 
+
+<Preview content={<CustomValidation />} path="form-validator/custom-validation.tsx" />
+
+## Conditional validation
+
+Conditional validation allows form fields and their validation rules to change based on values in other fields. This dynamic approach to validation enables creating responsive forms that adapt to user choices. The example below demonstrates an employment application form where selecting different employment types (Employee, Freelancer, or Contractor) causes specific fields to appear with appropriate validation rules for each role type.
+
+<Preview content={<ConditionalValidation />} path="form-validator/conditional-validation.tsx" />
+
+## Multi-step form wizard
+
+The `Form` makes it easy to create step-by-step forms. You can split a large form into smaller steps and validate each step separately. Users complete one step before moving to the next one. This approach makes forms less overwhelming and improves the user experience, especially for forms with many fields.
+
+<Preview content={<MultiStepForm />} path="form-validator/multi-step-form.tsx" />
+
+## Integration with native HTML inputs
+
+The `Form` works seamlessly with standard HTML input elements like `<input>`, `<select>`, and `<checkbox>`. This flexibility allows you to use familiar HTML elements while still getting all the validation and state management benefits of the `Form` system.
+
+<Preview content={<IntegratedComponents />} path="form-validator/integrated-components.tsx" />
+
+## Custom error placement
+
+The `Form` offers flexibility in how and where validation errors are displayed. Instead of showing errors next to each field, you can collect and display them in a centralized location, such as an error summary at the top of the `Form`. This approach is particularly useful for accessibility and creating clean form designs.
+
+<Preview content={<CustomErrorPlacement />} path="form-validator/custom-error-placement.tsx" />
+
+## Built-in validation rules
+
+The Syncfusion® `React Form` provides a comprehensive set of built-in validation rules that can be applied to form fields. These rules help ensure data integrity and proper format before submission.
+
+| Rule | Description | Example |
+|------|-------------|---------|
+| `required` | The form input element must have any input value (non-empty) | **Rule:** `required: [true, 'Field is required']`<br/>**Valid Input:** "a" or "1" or "-" |
+| `email` | The form input element must have a valid email format | **Rule:** `email: [true, 'Invalid email']`<br/>**Valid Input:** "form@syncfusion.com" |
+| `url` | The form input element must have a valid URL format | **Rule:** `url: [true, 'Invalid URL']`<br/>**Valid Input:** "https://syncfusion.com/" |
+| `date` | The form input element must have a valid date format | **Rule:** `date: [true, 'Invalid date']`<br/>**Valid Input:** "05/15/2017" |
+| `dateIso` | The form input element must have a valid ISO date format (YYYY-MM-DD) | **Rule:** `dateIso: [true, 'Invalid ISO date']`<br/>**Valid Input:** "2017-05-15" |
+| `number` | The form input element must have a valid number format | **Rule:** `number: [true, 'Not a number']`<br/>**Valid Input:** "1.0" or "1" |
+| `digits` | The form input element must contain only digit characters | **Rule:** `digits: [true, 'Digits only']`<br/>**Valid Input:** "1" (but "1a" is invalid) |
+| `maxLength` | Input value's length must be less than or equal to the specified maximum | **Rule:** `maxLength: [5, 'Too long']`<br/>**Valid Input:** "check" (but "checking" is invalid) |
+| `minLength` | Input value's length must be greater than or equal to the specified minimum | **Rule:** `minLength: [5, 'Too short']`<br/>**Valid Input:** "testing" (but "test" is invalid) |
+| `rangeLength` | Input value's length must be between the specified range | **Rule:** `rangeLength: [[4, 5], 'Invalid length']`<br/>**Valid Input:** "test" (but "key" is invalid) |
+| `range` | Input value (numeric) must be between the specified range | **Rule:** `range: [[4, 5], 'Out of range']`<br/>**Valid Input:** "4" (but "6" is invalid) |
+| `max` | Input value must be less than or equal to the specified maximum | **Rule:** `max: [3, 'Value too high']`<br/>**Valid Input:** "3" (but "4" is invalid) |
+| `min` | Input value must be greater than or equal to the specified minimum | **Rule:** `min: [4, 'Value too low']`<br/>**Valid Input:** "5" (but "2" is invalid) |
+| `regex` | Input value must match the specified regular expression pattern | **Rule:** `regex: [/^[A-z]+$/, 'Letters only']`<br/>**Valid Input:** "a" (but "1" is invalid) |
+| `creditCard` | The form input element must have a valid credit card number format | **Rule:** `creditCard: [true, 'Invalid card']`<br/>**Valid Input:** "4111111111111111" |
+| `tel` | The form input element must have a valid telephone number format | **Rule:** `tel: [true, 'Invalid phone']`<br/>**Valid Input:** "+12345678901" |
+| `equalTo` | Validates that a field's value equals another field's value | **Rule:** `equalTo: ['password', 'Passwords must match']`<br/>**Valid Input:** Used for confirmation fields |

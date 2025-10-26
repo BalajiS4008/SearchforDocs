@@ -1,0 +1,163 @@
+import { Preview } from '../../common/preview';
+import { Check, Cross, Clock } from '../../common/util';
+import { Snippet } from '../../common/snippet'
+import { TextAreaNpm, TextAreaImport, TextAreaStyles, textareaComponent, textareaImport, textAreaSnippet } from './textarea-snippets';
+import TextAreaOverview from './basictextarea';
+import TextAreaControlledMode from './controlled';
+import TextAreaDefaultValue from './default';
+import DisabledState from './disabled';
+import Sizing from './sizing';
+import LabelMode from './labelMode';
+import ColumnSizing from './column-sizing';
+import TextAreaCharcount from './charatercount';
+import ResizeBoth from './resize';
+import { Link } from 'react-router'
+import ResizeHorizontal from './resize-horizondal';
+import ResizeNone from './resize-none';
+import ResizeVertical from './resize-vertical';
+import Appearance from './appearance';
+import FormSample from './formsupport';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React TextArea Component | Syncfusion"
+  description="The Textarea component provides an auto-resizing HTML textarea that adjusts its height to match the content length."
+/>
+
+# React TextArea
+
+The `TextArea` component enables users to enter and display multiple lines of text.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite#set-up-the-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let’s add the `React TextArea` component to the project.
+
+### Installing Syncfusion® packages
+
+To use the `TextArea` component, install the [`@syncfusion/react-inputs`](https://www.npmjs.com/package/@syncfusion/react-inputs) package:  
+
+<Snippet content={TextAreaNpm}/>
+
+### Adding CSS reference
+
+The following CSS files are available in the Syncfusion® package that needs to be imported in the application.
+
+<Snippet content={TextAreaStyles}/>
+
+### Adding TextArea component
+
+To include the `TextArea` component in your application, import the `TextArea` from the `@syncfusion/react-inputs` package in `App.tsx`.
+
+<Snippet content={textareaImport} />
+
+Add the `TextArea` component in application as shown in below code example.
+
+<Snippet content={textAreaSnippet} />
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+The following example demonstrates the `TextArea` component is rendered with the given text.
+
+<Preview content={<TextAreaOverview />} path="textarea/basictextarea.tsx" />
+
+## Variants
+
+The `TextArea` component enhances user interaction through its three distinct visual variants: `Standard`(default), `Outlined` and `Filled`.
+
+<Preview content={<Appearance />} path="textarea/appearance.tsx" />
+
+## Float label
+
+The floating label functionality offers three distinct behavioral modes: `Never`, `Auto` and `Always`.
+
+<Preview content={<LabelMode />} path="textarea/LabelMode.tsx" />
+
+## Controlled vs Uncontrolled
+
+This component implements both controlled and uncontrolled state management paradigms, offering developers implementation flexibility:
+
+* **Controlled**: External state management via parent props ensures centralized control, predictable data flow, and improved testability in complex interfaces.
+
+* **Uncontrolled**: The component autonomously manages its internal state, minimizing boilerplate and simplifying standalone implementation with few external dependencies.
+
+<Preview content={<TextAreaControlledMode />} path="textarea/controlled.tsx" />
+
+## Default
+
+The `TextArea` component allows an initial value using the [`defaultValue`](https://react-api.syncfusion.com/textarea/overview#defaultvalue) property, making it perfect for default text.
+
+<Preview content={<TextAreaDefaultValue />} path="textarea/default.tsx" />
+
+## Disabled
+
+When the `disabled` attribute is set to true, the `TextArea` component cannot be edited or focused.
+
+<Preview content={<DisabledState />} path="textarea/disabled.tsx" />
+
+## Rows
+
+The [`rows`](https://react-api.syncfusion.com/textarea/overview#rows) property sets `TextArea` component's initial height by specifying the number of visible text lines, enhancing user comfort for input like addresses or comments.
+
+<Preview content={<Sizing />} path="textarea/sizing.tsx" />
+
+## Columns
+
+The [`cols`](https://react-api.syncfusion.com/textarea/overview#cols) property specifies the `TextArea` width in terms of characters per line, allowing for both short and long inputs. For instance, to allow around forty characters per line, set it accordingly.
+
+<Preview content={<ColumnSizing />} path="textarea/column-sizing.tsx" />
+
+## Resizing
+
+The `TextArea` component offers flexible resizing options: `Both` (default), `Horizontal`, `Vertical`, and `None`.
+
+This option enables users to resize the `TextArea` component both vertically and horizontally.
+
+<Preview content={<ResizeBoth />} path="textarea/resize.tsx" />
+
+## Maximum length
+
+The character counter features a `TextArea` with a `maxLength` attribute to limit input and provide instant feedback, maintaining data integrity.
+
+<Preview content={<TextAreaCharcount />} path="textarea/charatercount.tsx" />
+
+## Form support
+
+The `TextArea` component works smoothly with the Form component, as illustrated below.
+
+<Preview content={<FormSample />} path="textarea/formsupport.tsx" />
+
+## Accessibility
+
+The `TextArea` component followed the accessibility guidelines and standards, including [ADA](https://www.ada.gov/), [Section 508](https://www.section508.gov/), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) standards, and [WCAG roles](https://www.w3.org/TR/wai-aria/#roles) that are commonly used to evaluate accessibility.
+
+The accessibility compliance for the `TextArea` component is outlined below.
+
+| Accessibility Criteria | Compatibility |
+| -- | -- |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Support | <Check/> |
+| [Section 508](https://www.section508.gov/) Support | <Check/> |
+| Screen Reader Support | <Check/> |
+| Right-To-Left Support | <Check/> |
+| Color Contrast | <Check/> |
+| Mobile Device Support | <Check/> |
+| Keyboard Navigation Support | <Check/> |
+| [Accessibility](https://www.npmjs.com/package/@storybook/addon-a11y) Validation | <Check/> |
+
+<Check/> - All features of the component meet the requirement.
+
+<Clock/> - Some features of the component do not meet the requirement.
+
+<Cross/> - The component does not meet the requirement.
+
+### WAI-ARIA attributes
+
+The `TextArea` component followed the [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/alert/) patterns to meet the accessibility. The following ARIA attributes are used in the `TextArea` component:
+
+| Attributes | Purpose |
+| --- | --- |
+| <mark>aria-labelledby</mark> | Provides an accessible name for the component. |
+| <mark>aria-multiline</mark>  | Indicates that the component is a multi-line text box. |

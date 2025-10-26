@@ -1,0 +1,128 @@
+import Column from './column';
+import ColumnPlacement from './columnPlacement';
+import ColumnCustomization from './columnCustomization'
+import ColumnGroupedColumn from './columnGroupedColumn'
+import ColumnWidth from './columnWidth'
+import ColumnLiveUpdate from './columnLiveUpdate'
+import ColumnLabel from './columnLabel'
+import ColumnWidthInPixel from './columnWidthInPixel'
+import { Preview } from '../../common/preview';
+import ColumnNegative from './columnNegative'
+import ColumnDrilldown from './columnDrilldown'
+import ColumnWithTrack from './columnWithTrack'
+import ColumnPalette from './columnPalette'
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Column Chart | Syncfusion"
+  description="Column charts use vertical bars to compare category values (count, total, average)."
+/>
+
+# React Column Chart
+
+A column chart visually represents data using vertical bars, making it easy to compare values across different categories or time periods.
+
+## Overview
+
+To visualize data as a column chart, set the [`type`](https://react-api.syncfusion.com/chart/chartseriesprops#type) property to `Column` within the [`ChartSeries`](https://react-api.syncfusion.com/chart/chartseriesprops) component.
+
+<Preview onDemand={true} reset={true} content={<Column />} path="chart/column.tsx" />
+
+## Data label
+
+To display data labels on the column chart, set the [`visible`](https://react-api.syncfusion.com/chart/chartdatalabelprops#visible) property to `true` within the [`ChartDataLabel`](https://react-api.syncfusion.com/chart/chartdatalabelprops) component.
+
+<Preview onDemand={true} reset={true} content={<ColumnLabel />} path="chart/columnLabel.tsx" />
+
+## Column placement
+
+To control the side-by-side arrangement of columns in a chart, set the [`enableSideBySidePlacement`](https://react-api.syncfusion.com/chart/overview#enablesidebysideplacement) property to `false` in the `Chart` component.
+
+- When `false`, columns will overlap if they share the same category axis value.
+- When `true` (default), columns are placed side by side for better visual distinction.-by-side arrangement of the columns.
+
+<Preview onDemand={true} reset={true} content={<ColumnPlacement />} path="chart/columnPlacement.tsx" />
+
+## Negative data
+
+A negative column chart visually represents negative values using downward-facing bars, making it easy to highlight trends and compare positive vs. negative data.
+
+- Negative values extend below the axis baseline
+- Useful for financial data, profit/loss analysis, or temperature variation
+
+<Preview onDemand={true} reset={true} content={<ColumnNegative />} path="chart/columnNegative.tsx" />
+
+## Column drilldown
+
+This drilldown column chart example visualizes the population distribution across different continents. Users can click on the columns to explore further details, allowing for an interactive analysis of population statistics by country within each continent.
+
+<Preview onDemand={true} reset={true} content={<ColumnDrilldown />} path="chart/columnDrilldown.tsx" scroll={false} />
+
+## Grouping column
+
+To group columns together in a chart, use the [`groupName`](https://react-api.syncfusion.com/chart/chartseriesprops#groupname) property in the ChartSeries component. Columns that share the same groupName will be clustered visually under the same category.
+
+<Preview onDemand={true} reset={true} content={<ColumnGroupedColumn />} path="chart/columnGroupedColumn.tsx" />
+
+## Datasource update
+
+We can dynamically replace the entire dataset in a Column chart when the underlying data changes significantly.
+
+This approach is especially useful during:
+- Periodic refreshes (e.g., hourly or daily updates)
+- Batch processing of large datasets
+- Recalculated analytics or simulations
+
+<Preview onDemand={true} reset={true} content={<ColumnLiveUpdate />} path="chart/columnLiveUpdate.tsx" />
+
+## Column with track
+
+This chart compares water usage across different milk types, highlighting cow milk's high environmental impact (628 liters) versus sustainable alternatives like soy (28 liters). The bottle-effect design enhances visualization of sustainability metrics for informed consumer choices.
+
+<Preview onDemand={true} reset={true} scroll={false} content={<ColumnWithTrack />} path="chart/columnWithTrack.tsx" />
+
+## Customizing column spacing and width
+
+You can control the spacing and width of column series in the chart using the following properties:
+
+- [`columnSpacing`](https://react-api.syncfusion.com/chart/chartseriesprops#columnspacing):
+
+    Defines the space between multiple column series.
+    - Accepts values from 0 to 1.
+    - A lower value results in tighter spacing, while a higher value increases the gap between columns.
+
+- [`columnWidth`](https://react-api.syncfusion.com/chart/chartseriesprops#columnwidth):
+
+    Determines the width of each individual column.
+    - Also accepts values from 0 to 1.
+    - A smaller value produces thinner columns, whereas a larger value makes them wider.
+
+These properties allow you to fine-tune the layout and visual balance of your column chart for better readability and presentation.
+
+<Preview onDemand={true} reset={true} content={<ColumnWidth />} path="chart/columnWidth.tsx" scroll={false}  />
+
+## Column width in pixels
+
+To define the exact width of columns in pixels, use the [`columnWidthInPixel`](https://react-api.syncfusion.com/chart/chartseriesprops#columnwidthinpixel) property within the `ChartSeries` Component.
+
+- This property allows you to specify a fixed column width, ensuring consistent sizing regardless of chart size or data density.
+- It is especially useful when you want precise control over the visual layout of your column chart.
+
+<Preview onDemand={true} reset={true} content={<ColumnWidthInPixel />} path="chart/columnWidthInPixel.tsx" scroll={false} />
+
+## Series customization
+
+You can customize the appearance of the column series in the `ChartSeries` component by setting the following properties: 
+
+- [`fill`](https://react-api.syncfusion.com/chart/chartseriesprops#fill) – Sets the color of the column in the series.  
+- [`opacity`](https://react-api.syncfusion.com/chart/chartseriesprops#opacity) – Controls the transparency level of the column, allowing for varying visibility.  
+- [`border`](https://react-api.syncfusion.com/chart/chartseriesprops#border) – Defines the thickness and color of the border around the column.  
+- [`cornerRadius`](https://react-api.syncfusion.com/chart/chartseriesprops#cornerradius) – Specifies the radius of the corners of the columns, allowing for rounded edges.
+
+<Preview onDemand={true} reset={true} content={<ColumnCustomization />} path="chart/columnCustomization.tsx" />
+
+## Customizing data point colors
+
+The [`colorField`](https://react-api.syncfusion.com/chart/chartseriesprops#colorfield) property in the `ChartSeries` component enables you to assign different colors to individual data points based on the values of a specific field in the data source.
+
+<Preview onDemand={true} reset={true} content={<ColumnPalette />} path="chart/columnPalette.tsx" scroll={false}/>

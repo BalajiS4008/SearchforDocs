@@ -1,0 +1,21 @@
+.order-detail .sf-above-limit {    
+    background-color: #ffe0e0;
+    font-weight : bold
+} 
+
+.order-detail .sf-below-limit {
+    background-color: #e0ffe0;
+    font-weight : bold;
+}
+
+.dark-theme .order-detail .sf-above-limit {
+    background-color: #610B0B;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.dark-theme .order-detail .sf-below-limit {
+    background-color: #0B610B;
+    color: #FFFFFF;
+    font-weight: bold;
+}

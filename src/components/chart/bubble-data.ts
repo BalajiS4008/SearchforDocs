@@ -1,0 +1,20 @@
+export const bubbleData = [
+  { x: 92.2, y: 7.8, size: 1.347, toolTipMappingName: 'China', text: 'China', color: '#FFC75F80', tooltipColor: '#5FFFF280' },
+  { x: 74, y: 6.5, size: 1.241, toolTipMappingName: 'India', text: 'India', color: '#FFD93D80', tooltipColor: '#FFE83D80' },
+  { x: 90.4, y: 6.0, size: 0.238, toolTipMappingName: 'Indonesia', text: 'Indonesia', color: '#F9F87180', tooltipColor: '#F9F87180' },
+  { x: 99.4, y: 2.2, size: 0.312, toolTipMappingName: 'United States', text: 'US', color: '#F76E1180', tooltipColor: '#11F75E80' },
+  { x: 88.6, y: 1.3, size: 0.197, toolTipMappingName: 'Brazil', text: 'Brazil', color: '#FF5E7880', tooltipColor: '#B95EFF80' },
+  { x: 99, y: 0.7, size: 0.0818, toolTipMappingName: 'Germany', text: 'Germany', color: '#A0E7E580', tooltipColor: '#E7A0D880' },
+  { x: 72, y: 2.0, size: 0.0826, toolTipMappingName: 'Egypt', text: 'Egypt', color: '#6BCB7780', tooltipColor: '#8DCB6B80' },
+  { x: 99.6, y: 3.4, size: 0.143, toolTipMappingName: 'Russia', text: 'Russia', color: '#2C73D280', tooltipColor: '#2C48D280' },
+  { x: 96.5, y: 0.2, size: 0.128, toolTipMappingName: 'Japan', text: 'Japan', color: '#FFB7B280', tooltipColor: '#B7B2FF80' },
+  { x: 86.1, y: 4.0, size: 0.115, toolTipMappingName: 'MeLiteracy Ion', text: 'MLI', color: '#0081CF80', tooltipColor: '#0080CF80' },
+  { x: 92.6, y: 5.2, size: 0.096, toolTipMappingName: 'Philippines', text: 'PH', color: '#B39CD080', tooltipColor: '#D09C9D80' },
+  { x: 61.3, y: 1.45, size: 0.162, toolTipMappingName: 'Nigeria', text: 'Nigeria', color: '#FFF176', tooltipColor: '' },
+  { x: 82.2, y: 3.97, size: 0.7, toolTipMappingName: 'Hong Kong', text: 'Hong Kong', color: '#00C9A780', tooltipColor: '#00C9A780' },
+  { x: 79.2, y: 4.9, size: 0.162, toolTipMappingName: 'Netherland', text: 'NL', color: '#845EC280', tooltipColor: '#C25E9280' },
+  { x: 72.5, y: 4.5, size: 0.7, toolTipMappingName: 'Jordan', text: 'Jordan', color: '#4D96FF80', tooltipColor: '#4DBBFF80' },
+  { x: 81, y: 2.5, size: 0.21, toolTipMappingName: 'Australia', text: 'Australia', color: '#C34A3680', tooltipColor: '#36C36580' },
+  { x: 66.8, y: 3.9, size: 0.028, toolTipMappingName: 'Mongolia', text: 'MN', color: '#90A4AE', tooltipColor: '' },
+  { x: 78.4, y: 2.9, size: 0.231, toolTipMappingName: 'Taiwan', text: 'Taiwan', color: '#FF967180', tooltipColor: '#89FF7180' }
+]

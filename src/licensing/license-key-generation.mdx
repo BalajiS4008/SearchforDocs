@@ -1,0 +1,57 @@
+
+import { Link } from 'react-router'
+import communityLicense from '/images/license/get-community-license-key.png';
+import activeLicense from '/images/license/active-license.png';
+import activeTrial from '/images/license/active-trial.png';
+import expiredLicense from '/images/license/expired-license.png';
+import noActiveTrialOrLicense from '/images/license/no-active-trial-or-license.png';
+import { Image } from '../common/image';
+import { Meta } from '../common/meta';
+
+<Meta
+  title="React license - key generation guide | Syncfusion"
+  description="Learn how to generate React license keys for trial, community, and paid accounts, including where to get them and platform-specific steps."
+/>
+ 
+# Generate a Syncfusion<sup>®</sup> React License Key
+
+License keys can be generated from the <a aria-label="Opens link in new tab" href="https://syncfusion.com/account/downloads" target="_blank" rel="noopener noreferrer">License & Downloads</a> or <a aria-label="Opens link in new tab" href="https://www.syncfusion.com/account/manage-trials/downloads" target="_blank" rel="noopener noreferrer">Trial & Downloads</a> section of the Syncfusion<sup>®</sup> website.
+
+<Image style={ { width: '100%' } } alt="Get Community License Key" src={communityLicense} />
+
+> - Syncfusion<sup>®</sup> license keys are `version` and `platform specific`. Please refer to the <a aria-label="Opens link in new tab" href="https://www.syncfusion.com/kb/8976/how-to-generate-license-key-for-licensed-products" target="_blank" rel="noopener noreferrer">KB</a> for instructions on generating a license key for the required version and platform.
+> - For guidance on which version of the Syncfusion<sup>®</sup> license key to use in your application, refer to this <a aria-label="Opens link in new tab" href="https://www.syncfusion.com/kb/8951/which-version-syncfusion-license-key-should-i-use-in-my-application" target="_blank" rel="noopener noreferrer">KB</a> article.
+
+## Claim license key
+
+License keys can also be generated from the [Claim License Key](https://www.syncfusion.com/account/claim-license-key) page, depending on the trial or active license associated with your Syncfusion<sup>®</sup> account.
+
+You can get the license key, based on license availability in your Syncfusion<sup>®</sup> account.
+
+### Active license
+
+If your Syncfusion<sup>®</sup> account has a valid license, the license key will be generated from the claim license key page.
+
+<Image style={ { width: '100%' } } alt="Active License" src={activeLicense} />
+
+### Active trial
+
+If your Syncfusion<sup>®</sup> account is associated with a valid trial license, a license key with an expiry date will be generated from the claim license key page.
+
+<Image style={ { width: '100%' } } alt="Active Trial" src={activeTrial} />
+
+### Expired license
+
+If your Syncfusion<sup>®</sup> account has an expired license, you will need to renew your license subscription to obtain a valid license key for the latest Essential Studio<sup>®</sup> version. Meanwhile, a temporary license key valid for five days will be generated.
+
+<Image style={ { width: '100%' } } alt="Expired License" src={expiredLicense} />
+
+### No trial, no license, or expired trial
+
+If your Syncfusion<sup>®</sup> account is not associated with any trial, license, or has an expired trial, you can attempt to claim either a trial or a valid license from the claim license page.
+
+<Image style={ { width: '100%' } } alt="No Trial or No License" src={noActiveTrialOrLicense} />
+
+## See also
+
+* <p><Link to="/licensing/registering-license-keys">How to register Syncfusion<sup>®</sup> license key in an application?</Link></p>

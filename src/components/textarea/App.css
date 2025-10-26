@@ -1,0 +1,50 @@
+  .textarea-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Column styling with fixed height */
+  .textarea-column {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    margin-bottom: 20px;
+    /* Make all columns the same height */
+    height: 100%;
+  }
+  
+  /* Ensure each textbox component takes the same height */
+  .textarea-component,
+  .textarea-component-1 {
+    width: 100%;
+    margin-bottom: 15px;
+    /* Set fixed height for each component container */
+    height: 70px; /* Adjust this value based on your needs */
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+.textarea-heading {
+  margin-top: 15px;
+}
+  
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .textarea-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .textarea-column {
+      width: 100%;
+      max-width: 500px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .textarea-column {
+      min-width: 250px;
+    }
+  }

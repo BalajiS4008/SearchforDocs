@@ -1,0 +1,130 @@
+import FilterTypes from './filter-bar-types.tsx';
+import FilterImmediate from './filter-immediate.tsx';
+import FilterOnEnter from './filter-onenter.tsx';
+import FilterTemplate from './filter-template.tsx';
+import FilterTemplateMode from './filter-template-mode.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Data Grid - Filter Bar | Syncfusion"
+  description="Filter bar in Data Grid enables quick data filtering by column values, supporting streamlined search and contextual record visibility."
+/>
+
+# Filter Bar in React Data Grid
+
+The Syncfusion® React Data Grid component provides a filter bar with input fields at the column level to define filter criteria. Setting [`filterSettings.enabled`](https://react-api.syncfusion.com/data-grid/filtersettings#enabled) to `true` displays the filter row directly below the column headers.
+
+## Filter bar expressions
+
+The following filter expressions (operators) can be entered manually in the filter bar.
+
+| Expression | Example       | Description                                           | Column Type       |
+|------------|---------------|-------------------------------------------------------|-------------------|
+| `=`        | =Tom          | Matches values exactly equal to "Tom".                | String, Number    |
+| `!=`       | !=Tom         | Excludes values exactly matching "Tom".               | String, Number    |
+| `>`        | &gt;500       | Matches values greater than 500.                      | Number            |
+| `<`        | &lt;500       | Matches values less than 500.                         | Number            |
+| `>=`       | &gt;=500      | Matches values greater than or equal to 500.          | Number            |
+| `<=`       | &lt;=500      | Matches values less than or equal to 500.             | Number            |
+| `*`        | *Tom          | Matches values starting with "Tom".                   | String            |
+| `%`        | %son          | Matches values ending with "son".                     | String            |
+| N/A        | =2023-10-15   | Matches values exactly equal to the date "2023-10-15".| Date              |
+| N/A        | =true         | Matches values exactly equal to true.                 | Boolean           |
+
+## Types
+ 
+By default, the grid renders a Syncfusion® React [`TextBox`](https://react.syncfusion.com/textbox) component in the filter bar for each column. Filter values can be entered directly into these input fields. The `TextBox` component accepts all input types as strings, including numeric expressions. The available filter types are:
+ 
+| Filter Type        | Description                                                                |
+|--------------------|-----------------------------------------------------------------------------|
+| `FilterBarType.TextBox`     | Default filter type. Uses a `TextBox` component that accepts any string input, including expressions. |
+| `FilterBarType.NumericTextBox`   | Restricts input to numeric values only by utilizing a `NumericTextBox` component.     |
+| `FilterBarType.DatePicker` | Accepts only date input. Uses a `DatePicker` component for typing or selecting dates. |
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  content={<FilterTypes />}
+  path="grid/filter-bar-types.tsx"
+  onDemand={true}
+  scroll={false}
+/>
+
+## Filter bar modes
+
+The Data Grid component provides two modes for applying filters through the filter bar are `FilterBarMode.Immediate` and `FilterBarMode.OnEnter`. These modes are configured by setting [`filterSettings.mode`](https://react-api.syncfusion.com/data-grid/filtersettings#mode) to the desired option. Each mode provides a unique interaction pattern, selectable based on performance considerations and layout preferences.
+ 
+### Immediate mode
+
+By default, the Data Grid component uses the `FilterBarMode.Immediate` setting for its filter bar. In this mode, filtering occurs in real-time as input is typed. A filter request is automatically triggered every "1500ms" after the last character is entered. If no further input is received within that interval, the current input value is used to execute the filter action.
+
+The delay between filter requests can be adjusted by setting the [`filterSettings.immediateModeDelay`](https://react-api.syncfusion.com/data-grid/filtersettings#immediatemodedelay) property.
+
+<Snippet content={[{ title: "App.tsx", code: 
+  `const filterSettings: FilterSettings = {
+      enabled: true,
+      mode: FilterBarMode.Immediate,
+      type: 'FilterBar',
+      immediateModeDelay: 2000,
+  };` 
+}]} />
+ 
+> This property is applicable only when using `FilterBarMode.Immediate` mode.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  content={<FilterImmediate />}
+  path="grid/filter-immediate.tsx"
+  onDemand={true}
+  scroll={false}
+/>
+
+### OnEnter mode
+ 
+When `filterSettings.mode` is set to `FilterBarMode.OnEnter`, the grid captures the filter input but does not apply filtering until the <kbd>Enter</kbd> key is pressed.
+
+### Optimizing Data Grid component performance with OnEnter filter mode
+
+By default, the Data Grid component sends filter requests to the server at regular intervals in `FilterBarMode.Immediate` mode as input is typed. To enhance performance and reduce frequent server calls, configure the `filterSettings.mode` property to `FilterBarMode.OnEnter`. In this mode, filtering is triggered only when the <kbd>Enter</kbd> key is pressed, optimizing server interactions.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  content={<FilterOnEnter />}
+  path="grid/filter-onenter.tsx"
+  onDemand={true}
+  scroll={false}
+/>
+
+## Filter bar template with custom component
+
+By default, the grid displays a `TextBox` component in the filter bar cell. To render different components such as `DatePicker`, `NumericTextBox`, or `DropdownList`in the filter bar, use the [`filterTemplate`](https://react-api.syncfusion.com/data-grid/columnprops#filtertemplate) property in the grid column configuration.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  content={<FilterTemplateMode />}
+  path="grid/filter-template-mode.tsx"
+  onDemand={true}
+  scroll={false}
+/>
+
+## Hide filter bar for template column
+
+By default, the filter bar is disabled for template columns in the grid. To hide the filter bar input and enable a customized filtering experience, set the column’s `filterTemplate` property.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  content={<FilterTemplate />}
+  path="grid/filter-template.tsx"
+  onDemand={true}
+  scroll={false}
+/>
+ 
+## See also
+
+* <p><Link to="/data-grid/filtering/configuration#prevent-filtering-for-particular-column">Disabling Filtering for Specific Columns</Link></p>
+
+* <p><Link to="/data-grid/filtering/configuration#events">Grid Filtering Event Reference</Link></p>
+
+* <p><Link to="/data-grid/data-binding/custom-data#handling-filtering-operation">Handling Filtering in Custom API Services</Link></p>

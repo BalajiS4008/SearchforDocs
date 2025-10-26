@@ -1,0 +1,64 @@
+import Scatters from './scatters'
+import ScatterCustom from './scatterCustom'
+import ScatterShape from './scatterShape'
+import ScatterSize from './scatterSize'
+import { Preview } from '../../common/preview';
+import ScatterLabel from './scatterLabel'
+import ScatterDynamicUpdate from './scatterDynamicUpdate';
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Scatter Chart | Syncfusion"
+  description="React Chart scatter charts plot points by two numeric variables to reveal correlation, distribution, clusters, and outliers."
+/>
+
+# React Scatter Chart
+
+A scatter chart visualizes relationships between two continuous variables using dots, helping identify trends, correlations, and data distributions effectively.
+
+## Overview
+
+To visualize data as a scatter chart, set the [`type`](https://react-api.syncfusion.com/chart/chartseriesprops#type) property to `Scatter` within the [`ChartSeries`](https://react-api.syncfusion.com/chart/chartseriesprops) component.
+
+<Preview onDemand={true} reset={true} content={<Scatters />} path="chart/scatters.tsx" />
+
+## Data label
+
+To display data labels on the scatter chart, set the [`visible`](https://react-api.syncfusion.com/chart/chartdatalabelprops#visible) property to `true` within the [`ChartDataLabel`](https://react-api.syncfusion.com/chart/chartdatalabelprops) component.
+
+<Preview onDemand={true} reset={true} content={<ScatterLabel />} path="chart/scatterLabel.tsx" />
+
+## Customizing point shape
+
+To modify the shape of data points in the chart, use the [`shape`](https://react-api.syncfusion.com/chart/chartmarkerprops#shape) property within the [`ChartMarker`](https://react-api.syncfusion.com/chart/chartmarkerprops) component.
+
+- This property allows you to choose from various predefined shapes such as `Circle`, `Diamond`, `Triangle`, `Rectangle`, and more.
+
+- Customizing the shape helps differentiate data series visually and enhances chart readability.
+
+<Preview onDemand={true} reset={true} content={<ScatterShape />} path="chart/scatterShape.tsx" />
+
+## Customizing point size
+
+To adjust the size of data points in a Scatter chart, use the [`height`](https://react-api.syncfusion.com/chart/chartmarkerprops#height) and [`width`](https://react-api.syncfusion.com/chart/chartmarkerprops#width) properties inside the `ChartMarker` component. This controls the visual dimensions of each data point.
+
+<Preview onDemand={true} reset={true} content={<ScatterSize />} path="chart/scatterSize.tsx" />
+
+## Series customization
+
+You can customize the appearance of the scatter series in the `ChartSeries` component by setting the following properties:
+- [`fill`](https://react-api.syncfusion.com/chart/chartseriesprops#fill) – Sets the color of the scatter.
+- [`opacity`](https://react-api.syncfusion.com/chart/chartseriesprops#opacity) – Controls the transparency level of the scatter.
+
+<Preview onDemand={true} reset={true} content={<ScatterCustom />} path="chart/scatterCustom.tsx" />
+
+## Dynamic update
+
+We can dynamically replace the entire dataset in a Scatter chart when the underlying data changes significantly.
+
+This approach is especially useful during:
+- Periodic refreshes (e.g., hourly or daily updates)
+- Batch processing of large datasets
+- Recalculated analytics or simulations
+
+<Preview onDemand={true} reset={true} content={<ScatterDynamicUpdate />} path="chart/scatterDynamicUpdate.tsx" />

@@ -1,0 +1,15 @@
+/* 
+  React Component styles
+*/
+@import "../../node_modules/@syncfusion/react-base/styles/material3.css";
+@import "../../node_modules/@syncfusion/react-buttons/styles/material3.css";
+@import "../../node_modules/@syncfusion/react-dropdowns/styles/material3.css";
+@import "../../node_modules/@syncfusion/react-lists/styles/material3.css";
+@import "../../node_modules/@syncfusion/react-inputs/styles/material3.css";
+@import "../../node_modules/@syncfusion/react-popups/styles/material3.css";
+@import "../../node_modules/@syncfusion/react-notifications/styles/material3.css";
+@import "../../node_modules/@syncfusion/react-splitbuttons/styles/material3.css";
+@import "../../node_modules/@syncfusion/react-navigations/styles/material3.css";
+@import "../../node_modules/@syncfusion/react-grid/styles/material3.css";
+@import "../../node_modules/@syncfusion/react-pager/styles/material3.css";
+@import "../../node_modules/@syncfusion/react-calendars/styles/material3.css";

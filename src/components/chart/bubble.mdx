@@ -1,0 +1,60 @@
+import { Preview } from '../../common/preview';
+import Bubble from './bubble'
+import BubbleEmptyPoint from './bubbleEmptyPoint'
+import BubbleVariousColor from './bubbleVariousColor';
+import BubbleCustom from './bubbleCustom'
+import BubbleLabel from './bubbleLabel'
+import BubbleDynamicUpdate from './bubbleDynamicUpdate';
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Bubble Chart | Syncfusion"
+  description="Bubble charts extend scatter plots with a third variable mapped to bubble size."
+/>
+
+# React Bubble Chart
+
+A bubble chart is a data visualization tool that displays three dimensions of data using bubbles. It represents relationships between variables, making it useful for comparing and analyzing data sets effectively. 
+
+## Overview
+
+To visualize data as a bubble chart, set the [`type`](https://react-api.syncfusion.com/chart/chartseriesprops#type) property to `Bubble` within the [`ChartSeries`](https://react-api.syncfusion.com/chart/chartseriesprops) component.
+
+<Preview onDemand={true} reset={true} content={<Bubble />} path="chart/bubble.tsx" />
+
+## Bubble with various color
+
+To customize a bubble chart with multiple colors, use the [`colorField`](https://react-api.syncfusion.com/chart/chartseriesprops#colorfield) property in the `ChartSeries` component. This maps a specific field from the data source to the fill color of each bubble.
+
+Make sure your data source includes a color field with valid color values
+
+<Preview onDemand={true} reset={true} content={<BubbleVariousColor />} path="chart/bubbleVariousColor.tsx" />
+
+## Data label
+
+To display data labels on the bubble chart, set the [`visible`](https://react-api.syncfusion.com/chart/chartdatalabelprops#visible) property to `true` within the [`ChartDataLabel`](https://react-api.syncfusion.com/chart/chartdatalabelprops) component.
+
+<Preview onDemand={true} reset={true} content={<BubbleLabel />} path="chart/bubbleLabel.tsx" />
+
+## Series customization
+
+You can customize the appearance of the bubble series in the `ChartSeries` component by setting the following properties: 
+
+- [`fill`](https://react-api.syncfusion.com/chart/chartseriesprops#fill) – Sets the color of the bubbles in the series.  
+- [`width`](https://react-api.syncfusion.com/chart/chartseriesprops#width) – Defines the thickness of the outline of the bubbles.  
+- [`opacity`](https://react-api.syncfusion.com/chart/chartseriesprops#opacity) – Controls the transparency level of the bubbles, allowing for varying visibility.  
+- [`minRadius`](https://react-api.syncfusion.com/chart/chartseriesprops#minradius) – Specifies the minimum radius of the bubbles, ensuring that smaller values are still visible.  
+- [`maxRadius`](https://react-api.syncfusion.com/chart/chartseriesprops#maxradius) – Specifies the maximum radius of the bubbles, allowing for larger values to be represented effectively.
+
+<Preview onDemand={true} reset={true} content={<BubbleCustom />} path="chart/bubbleCustom.tsx" />
+
+## Datasource update
+
+We can dynamically replace the entire dataset in a Bubble chart when the underlying data changes significantly.
+
+This approach is especially useful during:
+- Periodic refreshes (e.g., hourly or daily updates)
+- Batch processing of large datasets
+- Recalculated analytics or simulations
+
+<Preview onDemand={true} reset={true} content={<BubbleDynamicUpdate />} path="chart/bubbleDynamicUpdate.tsx" />

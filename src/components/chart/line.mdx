@@ -1,0 +1,109 @@
+import LineSeries from './lineSeries';
+import DashLine from './dashLine';
+import LineEmptyPoint from './lineEmptyPoint'
+import LineCustomization from './lineCustomization'
+import LiveUpdateEachSecond from './liveUpdateEachSecond';
+import LineLabel from './lineLabel'
+import LineTransposed from './lineTransposed'
+import ReferenceLine from './referenceLine';
+import LineNegative from './lineNegative'
+import LineVerticalLive from './lineVerticalLive';
+import LineDynamicUpdate from './lineDynamicUpdate'
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { chartNpm, chartImport } from './snippets';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Line Chart & Graph | Syncfusion"
+  description="Line charts connect data points over time to reveal trends and changes."
+/>
+
+# React Line Chart
+
+Line charts visualize data trends over time, connecting data points with lines. They effectively display continuous data, allowing for easy comparison and analysis of multiple datasets in a clear format
+
+## Overview
+
+To visualize data as a line chart, set the [`type`](https://react-api.syncfusion.com/chart/chartseriesprops#type) property to `Line` within the [`ChartSeries`](https://react-api.syncfusion.com/chart/chartseriesprops) component.
+
+<Preview onDemand={true} reset={true} content={<LineSeries />} path="chart/lineSeries.tsx" />
+
+## Data label
+
+To display data labels on the line chart, set the [`visible`](https://react-api.syncfusion.com/chart/chartdatalabelprops#visible) property to `true` within the [`ChartDataLabel`](https://react-api.syncfusion.com/chart/chartdatalabelprops) component.
+
+<Preview onDemand={true} reset={true} content={<LineLabel />} path="chart/lineLabel.tsx" />
+
+## Dashed line
+
+To display dashed lines in your chart series, use the [`dashArray`](https://react-api.syncfusion.com/chart/chartseriesprops#dasharray) property within the `ChartSeries` component.
+
+- `dashArray="5,5"` creates a pattern of 5px dash followed by 5px gap.
+
+<Preview onDemand={true} reset={true} content={<DashLine />} path="chart/dashLine.tsx" />
+
+## Reference line
+
+To display dashed reference lines in your chart, use the `ChartStripLines` component. Reference lines act as visual benchmarks, helping users compare actual data against targets, thresholds, or other key values.
+
+- [`start`](https://react-api.syncfusion.com/chart/striplinerangeprops#start): Specifies the position of the reference line.
+- [`dashArray`](https://react-api.syncfusion.com/chart/striplinestyleprops#dasharray): Defines the dash pattern (e.g., 4,4 for 4px dash and 4px gap).
+- [`text`](https://react-api.syncfusion.com/chart/striplinetextprops): Adds a label to the reference line.
+- [`color`](https://react-api.syncfusion.com/chart/striplinestyleprops#color): Customizes the line color.
+- [`visible`](https://react-api.syncfusion.com/chart/chartstriplineprops#visible): Controls the visibility of the strip line.
+ 
+<Preview onDemand={true} reset={true} content={<ReferenceLine />} path="chart/referenceLine.tsx" />
+
+## Skip missing points
+
+Data points with values of null, undefined, or NaN are treated as empty points in the series. You can customize their appearance and behavior using the [`emptyPointSettings`](https://react-api.syncfusion.com/chart/chartseriesprops#emptypointsettings) property in the `ChartSeries` component. This property supports various modes, including `Gap`, `Zero`, `Average`, and `Drop`, allowing you to control how empty points are rendered or connected in the chart.
+
+<Preview onDemand={true} reset={true} content={<LineEmptyPoint />} path="chart/lineEmptyPoint.tsx" scroll={false} />
+
+## Live point update
+
+React Chart supports live data updates, ensuring your chart reflects the latest information in real time without requiring a page reload.
+Whenever the chart's data source changes, the chart automatically re-renders to display the updated values.
+
+<Preview onDemand={true} reset={true} content={<LiveUpdateEachSecond />} path="chart/liveUpdateEachSecond.tsx" />
+
+## Inverted axes
+
+To switch the X and Y axes in your chart, use the [`transposed`](https://react-api.syncfusion.com/chart/overview#transposed)  property in the `Chart` component. When this property is enabled, the chart is rendered in a transposed format, which can enhance readability and data comparison, especially for horizontal line charts or when working with long category labels.
+
+<Preview onDemand={true} reset={true} content={<LineTransposed />} path="chart/lineTransposed.tsx" />
+
+## Negative data
+
+Charts can display negative values to represent downward trends in performance, metrics, or other data over time.
+A negative line series visually dips below the baseline (usually the X-axis), making it easy to identify declines or losses.
+
+<Preview onDemand={true} reset={true} content={<LineNegative />} path="chart/lineNegative.tsx" />
+
+## Vertical live chart
+
+The vertical live chart displays real-time data updates in a transposed format where data flows vertically. This visualization is particularly effective for showing continuous data streams over time, with new data points being added dynamically at regular intervals.
+
+<Preview onDemand={true} reset={true} content={<LineVerticalLive />} path="chart/lineVerticalLive.tsx" />
+
+## Series customization
+
+You can customize the appearance of the line series in the `ChartSeries` component by setting the following properties:
+- [`fill`](https://react-api.syncfusion.com/chart/chartseriesprops#fill) – Sets the color of the line.
+- [`width`](https://react-api.syncfusion.com/chart/chartseriesprops#width) – Defines the thickness of the line.
+- [`opacity`](https://react-api.syncfusion.com/chart/chartseriesprops#opacity) – Controls the transparency level of the line.
+
+<Preview onDemand={true} reset={true} content={<LineCustomization />} path="chart/lineCustomization.tsx" />
+
+## Datasource update
+
+We can dynamically replace the entire dataset in a Line chart when the underlying data changes significantly.
+
+This is especially useful during:
+- Periodic refreshes (e.g., hourly or daily updates)
+- Batch processing of large datasets
+- Recalculated analytics or simulations
+
+<Preview onDemand={true} reset={true} content={<LineDynamicUpdate />} path="chart/lineDynamicUpdate.tsx" />

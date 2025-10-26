@@ -1,0 +1,36 @@
+import ColumnType from './column-type.tsx';
+import { gridComplexBindingSnippet, gridRemoteDataMangerSnippet, gridComplexNextedColumnSnippet } from './grid-snippets.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Meta } from '../../common/meta';
+import { Link } from 'react-router';
+
+<Meta
+  title="React Data Grid - Column Types | Syncfusion"
+  description="Column types in Data Grid specify formatting, behavior, and value representation to control how each field is rendered and interpreted."
+/>
+
+# Column Types in React Data Grid
+
+The Syncfusion® React Data Grid component uses the [`type`](https://react-api.syncfusion.com/data-grid/columnprops#type) property to define the data format for each column, such as string, number, boolean, date, or datetime. This property ensures appropriate filters and editors are loaded, such as calendars for dates or numeric filters for numbers. When the first cell is empty or null, the `type` property should be manually set to ensure proper functionality. The supported types are:
+
+- `string`: Text data; default for text fields.  
+- `number`: Numeric values; supports decimal and currency formats.  
+- `boolean`: Represents true/false values.  
+- `date`: Date values with customizable display formats.  
+- `datetime`: Combines date and time in a single format.
+
+<Preview  frame={false}
+ className={'sb-padding-10'}
+  className={'sb-padding-10'}
+  scroll={false}
+  onDemand={true}
+  content={<ColumnType />}
+  path="grid/column-type.tsx"
+/>
+
+## See also
+
+* <p><Link to="/data-grid/editing/editing-types">Types of Built-in Editors</Link></p>
+* <p><Link to="/data-grid/filtering/filter-bar#types">Types of Built-in Filter</Link></p>
+

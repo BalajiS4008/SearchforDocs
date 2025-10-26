@@ -1,0 +1,102 @@
+import DefaultDrag from './default-draggable';
+import DefaultDrop from './default-droppable';
+import DragScope from './drag-scoping';
+import DragAxis from './drag-axis';
+import DragHandles from './drag-handles';
+import DragArea from './drag-area';
+import { Preview } from '../common/preview';
+import { Snippet } from '../common/snippet'
+import { dragdropNpm, dragdropImport, dragdropSnippet } from './snippets'
+import { Link } from 'react-router'
+import { Meta } from '../common/meta';
+
+<Meta
+ title="React Drag & Drop - Interactive Components"
+ description="Implement drag and drop functionality in React with Syncfusion® draggable components. Interactive UI elements and sortable lists."
+/>
+
+# Drag and Drop
+
+Syncfusion® React Draggable and Droppable components provides a comprehensive support for implementing drag and drop functionality in React applications.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite?section=set-up-the-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let's add the Syncfusion® React Draggable and Droppable components to the project.
+
+### Installing Syncfusion® packages
+
+To use the Syncfusion® React Draggable and Droppable components in this project, the `@syncfusion/react-base` package needs to be installed using the following command:
+
+<Snippet content={dragdropNpm}/>
+
+## Draggable component
+
+The Draggable component makes DOM elements draggable with extensive configuration options for customizing the drag behavior. To include the `Draggable` component in the application, import the `Draggable` from the `@syncfusion/react-base` package in **App.tsx**.
+
+<Snippet content={dragdropImport}/>
+
+Add the `Draggable` component in application as shown in below code example.
+
+<Snippet content={dragdropSnippet} />
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+The following example demonstrates how to create a simple Draggable component. The example shows a draggable element that can be moved around.
+
+<Preview content={<DefaultDrag />} path="common-features/default-draggable.tsx" />
+
+### Drag helper
+
+The `helper` property in the Draggable component allows to specify a custom visual element that appears when dragging was started. This can be particularly useful for creating clones of the dragged element.
+
+The following example demonstrates the drag-and-sortable list implementation, the Draggable component enhances user interactivity by utilizing a customizable drag helper.
+
+<Preview content={<DragHandles />} path="common-features/drag-handles.tsx" />
+
+## Droppable component
+
+The `Droppable` component marks specific areas where draggable elements can be dropped. It includes features that allow for scoping and filtering drop areas to refine where elements can be accepted. The component also provides event handlers such as `over`, `out`, and `drop` to track and manage interactions during the drag-and-drop process.
+
+### DragDrop context
+
+To use the `Droppable` component properly, wrap both `Draggable` and `Droppable` components inside the `DragDrop` context provider. This context handles the coordination and communication between draggable and droppable items during drag-and-drop actions.
+
+The following example demonstrates how a draggable element can be dropped into a Droppable component:
+
+<Preview content={<DefaultDrop />} path="common-features/default-droppable.tsx" />
+
+### Drag area 
+
+A drag area is a specific area within a user interface that is designated for drag and drop operations. Using this approach, users can constrain the element so that it can only be dragged within a drag area and perform actions. The user can specify the drag area by using the `dragArea` property.
+
+<Preview content={<DragArea />} path="common-features/drag-area.tsx" />
+
+### Drag axis
+
+The Draggable component allows to restrict movement to a specific axis using the `axis` property. This is particularly useful for sliders, or other interactions where users want to constrain movement to a single direction.
+
+Restrict dragging to:
+
+- **Horizontal movement** (`x`): Only allows dragging left and right
+- **Vertical movement** (`y`): Only allows dragging up and down
+
+<Preview content={<DragAxis />} path="common-features/drag-axis.tsx" />
+
+### Drag scoping
+
+Scoping allows to control which draggable elements can be dropped into specific drop zones. This is useful when building complex interfaces where items should only be droppable in certain areas. The `scope` property on both `Draggable` and `Droppable` components enables fine-grained control over drop interactions.
+
+The following example demonstrates how the scope property with the Draggable and Droppable components is used to control where items can be dropped. Also the demo allows users to toggle between two scopes, visually indicating active droppable area and updates the drop interactions.
+
+<Preview content={<DragScope />} path="common-features/drag-scoping.tsx" />
+
+## See also
+
+* <p><Link to="/dialog#draggable-dialog">Syncfusion React Draggable Dialog</Link></p>
+
+
+

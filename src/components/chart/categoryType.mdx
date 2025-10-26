@@ -1,0 +1,48 @@
+import CategoryAxis from './categoryAxis';
+import CategoryLabelPlacement from './categoryLabelPlacement';
+import CategoryRange from './categoryRange';
+import CategoryAxisIsIndex from './categoryAxisIsIndex';
+
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { chartNpm, chartImport } from './snippets';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Chart Category Axis | Syncfusion"
+  description="The category axis in React Chart displays discrete group labels instead of continuous numeric scales, ideal for non-numeric data visualization."
+/>
+
+## Category Axis in React Chart
+
+The Category axis is used to display string-based values (such as names, labels, or categories) instead of numeric or date values. To enable it, set the [`valueType`](https://react-api.syncfusion.com/chart/chartaxisprops#valuetype) property to `Category` in the axis configuration.
+
+<Preview onDemand={true} reset={true} content={<CategoryAxis />} path="chart/categoryAxis.tsx" />
+
+### Label placement
+
+By default, category labels are positioned between the ticks on the axis. However, you can change their placement to appear directly on the ticks by setting the [`placement`](https://react-api.syncfusion.com/chart/chartaxislabelprops#placement) property to `OnTicks`.
+
+<Preview onDemand={true} reset={true} content={<CategoryLabelPlacement />} path="chart/categoryLabelPlacement.tsx" scroll={false} />
+
+### Ranges
+
+You can control which category labels are shown on a chart by setting the following properties in the axis configuration:
+- [`minimum`](https://react-api.syncfusion.com/chart/chartaxisprops#minimum): The starting index of the visible categories.
+- [`maximum`](https://react-api.syncfusion.com/chart/chartaxisprops#maximum): The ending index of the visible categories.
+- [`interval`](https://react-api.syncfusion.com/chart/chartaxisprops#interval): The spacing between displayed labels.
+
+This allows you to:
+- Limit the visible range to focus on a subset of categories.
+- Reduce clutter by skipping labels at regular intervals.
+- Improve readability when dealing with large datasets.
+
+<Preview onDemand={true} reset={true} content={<CategoryRange />} path="chart/categoryRange.tsx" />
+
+### Indexed category axis
+
+In a chart, the category axis typically displays labels based on the values in your data source. However, you can choose to render the axis based on the index positions of the data items instead.
+To do this, set the [`indexed`](https://react-api.syncfusion.com/chart/chartaxisprops#indexed) property to `true` in the axis configuration
+
+<Preview onDemand={true} reset={true} content={<CategoryAxisIsIndex />} path="chart/categoryAxisIsIndex.tsx" scroll={false} />

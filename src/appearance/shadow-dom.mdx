@@ -1,0 +1,61 @@
+import { Snippet } from '../common/snippet';
+import { Link } from 'react-router'
+import { messageSnippet, shadowDomSnippet, messageStyles, shadowDomStyles } from './snippet';
+import { Preview } from '../common/preview';
+import DefaultMessage from '../components/message/message';
+import { Meta } from '../common/meta';
+
+<Meta
+ title="React Shadow DOM - Style Encapsulation"
+ description="Use Shadow DOM with Syncfusion® React components for style isolation. Encapsulated styling and robust component architecture."
+/>
+
+# Shadow Dom support in Syncfusion<sup>®</sup> React Components
+
+This guide shows you how to use Shadow DOM with Syncfusion<sup>®</sup> React components to achieve DOM and style encapsulation in your React applications.
+
+## What is Shadow DOM?
+
+Shadow DOM is a web standard that allows for encapsulation of a component’s DOM and styles. When a component uses Shadow DOM, its element structure and styles are hidden from the rest of the document, preventing style and DOM conflicts. This enables better style isolation and more robust, reusable components.
+
+## Create a Vite project
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite#create-a-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let’s add the React components to the project.
+
+## Adding Syncfusion<sup>®</sup> React components
+
+To add Syncfusion<sup>®</sup> React Message component follow these steps:
+
+1\. Install the necessary dependencies for React components.
+
+<Snippet content={[ { title: "CMD", code: 'npm install @syncfusion/react-notifications --save' }]} />
+
+2\. Add the Message component in application as shown in below code example.
+
+<Snippet content={messageSnippet} />
+
+## Integrate React components with Shadow DOM
+
+Syncfusion<sup>®</sup> React components can be seamlessly rendered inside a Shadow DOM to achieve style and DOM encapsulation. Follow these steps:
+
+1\. To initialize your React application within a Shadow DOM root, add the following code to your **main.tsx** file.
+
+<Snippet content={shadowDomSnippet} />
+
+2\. Add the required CSS references as follows in **src/App.css** file.
+
+<Snippet content={messageStyles} />
+
+3\. Styles imported normally will not apply inside the Shadow DOM. To ensure your styles are correctly applied to elements within the Shadow DOM, users need to inject them manually. For example, you can include the following code in your **main.tsx** file:
+
+<Snippet content={shadowDomStyles} />
+
+## Run the project
+
+Execute the following command to run the project:
+
+<Snippet content={[ { title: "npm", code: 'npm run dev' } ]} />
+
+The output will appear as follows:
+
+<Preview content={<DefaultMessage />} header={false} />

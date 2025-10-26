@@ -1,0 +1,70 @@
+import OverviewTitle from './overviewTitle'
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { chartNpm, chartImport, chartSnippet, chartTitle, chartMarker, chartLegend, chartLabel, chartTooltip } from './snippets';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Chart Getting Started | Syncfusion"
+  description="Get started with React Chart by installing packages, adding charts, configuring series, axes, and tooltips, and running the app using Vite."
+/>
+
+# Getting started with React Chart
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite#set-up-the-vite-project">`Vite`</Link> documentation. Once that Vite project is ready to run with default settings, let’s add the React `Chart` component to the project.
+
+## Prerequisites
+
+- Node.js 20 or later.
+- The application is compatible with macOS, Windows, and Linux operating systems.
+
+## Installing Syncfusion® packages
+
+To use the chart component, install the [`@syncfusion/react-charts`](https://www.npmjs.com/package/@syncfusion/react-charts) package:
+
+<Snippet content={chartNpm}/>
+
+## Adding Chart component
+
+To include the `Chart` component in your application, import the `Chart` from `@syncfusion/react-charts` package in **App.tsx**.
+
+<Snippet content={chartImport}/>
+
+Add the `Chart` component in application as shown in below code example.
+
+<Snippet content={chartSnippet}/>
+
+## Chart title
+
+Use the [`text`](https://react-api.syncfusion.com/chart/charttitleprops#text) property of the [`ChartTitle`](https://react-api.syncfusion.com/chart/charttitleprops) component to display a chart title that provides users with a quick understanding of the data being visualized.
+
+<Snippet content={chartTitle}/>
+
+## Marker
+
+Data markers are used to provide information about the data points in a series. You can add a shape to visually enhance each data point. To display markers on the chart, set the [`visible`](https://react-api.syncfusion.com/chart/chartmarkerprops#visible) property to `true` in the [`ChartMarker`](https://react-api.syncfusion.com/chart/chartmarkerprops) component.
+
+<Snippet content={chartMarker}/>
+
+## DataLabel
+
+Data labels in a chart provide additional information about individual data points in the series. To enable labels for the data points, set the [`visible`](https://react-api.syncfusion.com/chart/chartdatalabelprops#visible) property to `true` in the [`ChartDataLabel`](https://react-api.syncfusion.com/chart/chartdatalabelprops) component.
+
+<Snippet content={chartLabel}/>
+
+## Tooltip
+
+The chart displays details about data points through tooltips when the mouse hovers over them. You can enable this feature by setting the [`enable`](https://react-api.syncfusion.com/chart/charttooltipprops#enable) property to `true` in the [`ChartTooltip`](https://react-api.syncfusion.com/chart/charttooltipprops) component.
+
+<Snippet content={chartTooltip}/>
+
+## Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+After run the project, we have to show the chart.
+
+<Preview onDemand={true} reset={true} content={<OverviewTitle />} path="chart/overviewTitle.tsx" />

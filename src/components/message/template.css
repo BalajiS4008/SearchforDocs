@@ -1,0 +1,28 @@
+.msg-template-section .sf-btn.msg-hidden {
+    display: none;
+}
+
+.msg-template-section .sf-message h1 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.msg-template-section .sf-message p {
+    margin: 8px 0 4px;
+}
+
+.msg-template-section .sf-message .sf-btn {
+    display: inline-flex;
+    padding: 0 !important;
+    margin-right: 5px;
+}
+
+.msg-template-section .sf-btn.sf-link {
+    background: transparent;
+    border-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    color: #0000EE;
+}

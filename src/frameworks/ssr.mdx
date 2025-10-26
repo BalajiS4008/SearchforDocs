@@ -1,0 +1,89 @@
+import { Link } from 'react-router';
+import { Snippet } from '../common/snippet';
+import { ssrReactSetUP, ssrAdditionals, ssrServerRoot, ssrServer, ssrIndex, ssrApp, ssrJson, ssrBuild, ssrServe } from './snippets';
+import { fabBtnPackage } from '../getting-started/snippets';
+import { Meta } from '../common/meta';
+import FloatingActionButton from '../components/floating-action-button/color';
+import { Preview } from '../common/preview';
+
+<Meta
+ title="React components in Server Side Rendering | Syncfusion"
+ description="Integrate React components with server-side rendering using Express.js to build fast, SEO-friendly applications with SSR support."
+/>
+
+# Integration of React Components with Server Side Rendering
+This guide walks you through setting up Syncfusion React components with server-side rendering (SSR) using `Express.js`.
+
+## What is SSR?
+
+Server-Side Rendering (SSR) is a technique where a React application is rendered on the server instead of in the browser, allowing the server to generate and send fully rendered `HTML` to the client. This results in a faster initial page load, as users see meaningful content immediately without waiting for `JavaScript` to execute. It also improves SEO, since search engines can crawl the complete HTML content, enhances user experience on slower networks by reducing perceived loading time.
+
+SSR works by processing the React components on the server using tools like `ReactDOMServer`, generating HTML, and sending it to the browser, where React then hydrates the content to make it interactive.
+
+## Prerequisites
+
+<p><Link to="/overview/system-requirements">System requirements for Syncfusion<sup>®</sup> React UI components</Link></p>
+
+## Set up the React project
+
+To get started with `SSR` and Syncfusion<sup>®</sup> React components, set up a basic React application using Create React App.
+
+<Snippet content={ssrReactSetUP}/>
+
+## Add Syncfusion<sup>®</sup> React packages
+
+To use Syncfusion<sup>®</sup> React components in the project, install the corresponding npm package. This guide uses the React <Link to="/floating-action-button">`FAB`</Link> component as an example. To use the React `FAB` component in the project, the `@syncfusion/react-buttons` package needs to be installed using the following command:
+
+<Snippet content={fabBtnPackage} />
+
+### Install SSR dependencies
+
+For server-side rendering functionality with `Express`, install additional packages. Run the following command to install all the required dependencies:
+
+<Snippet content={ssrAdditionals}/>
+
+## Configure server
+
+* First, create a `server` directory and create a file called `root.js` into it, which will be the entry point for the SSR process:
+
+<Snippet content={ssrServerRoot}/>
+
+* The server component handles rendering the React application on the server and sending it to the client. Here's how to configure it:
+
+<Snippet content={ssrServer}/>
+
+## Configure client
+
+The client-side React application needs to be structured to work correctly with SSR:
+
+* Now, let's update the client entry point file `src/index.js`. This file will hydrate the React application on the client side after the initial server-side render:
+
+<Snippet content={ssrIndex}/>
+
+* Update `src/App.js` file that will contains Syncfusion<sup>®</sup> React component. This component will be rendered both on the server and client sides:
+
+<Snippet content={ssrApp}/>
+
+## Run the project
+
+Before running the project, update the `package.json` to include the server script for running the SSR implementation.
+
+1. Add the following script to the `package.json` file:
+
+<Snippet content={ssrJson}/>
+
+2. First, build the production version of the React application:
+
+<Snippet content={ssrBuild}/>
+
+3. After building the application, start the `Express` server that handles SSR:
+
+<Snippet content={ssrServe}/>
+
+The output will appear as follows:
+
+<Preview content={<FloatingActionButton />} header={false} />
+
+## See also
+
+* <p><Link to="/floating-action-button">Syncfusion React FAB Component</Link></p>

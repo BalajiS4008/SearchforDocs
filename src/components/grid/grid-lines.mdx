@@ -1,0 +1,27 @@
+import GridLines from './grid-lines.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Data Grid - Border Lines | Syncfusion"
+  description="Customize border lines in Data Grid with horizontal, vertical, both, or no-line options to enhance visual presentation and layout clarity."
+/>
+
+# Grid Lines in React Data Grid
+
+The Syncfusion® React Data Grid component allows configuration of row and column separator visibility through the [`gridLines`](https://react-api.syncfusion.com/data-grid/overview#gridlines) property. Supported values include:
+
+- `Default`: Horizontal lines only. 
+- `None`: No lines. 
+- `Both`: Horizontal and vertical lines.  
+- `Horizontal`: Horizontal lines only.
+- `Vertical`: Vertical lines only.
+
+<Preview  frame={false} 
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<GridLines />}
+  path="grid/grid-lines.tsx"
+  scroll={false}
+/>

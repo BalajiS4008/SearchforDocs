@@ -1,0 +1,62 @@
+import CellUpdateEdit from './cell-edit-method.tsx';
+import RowUpdateEdit from './row-edit-method.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Data Grid - Custom Edit | Syncfusion"
+  description="Custom editing features in Data Grid, including programmatic cell and row updates."
+/>
+
+# Custom Edit in React Data Grid
+
+The Syncfusion® React Data Grid component provides powerful methods to programmatically update data without direct interaction. These methods enable modifications to individual cells or entire rows within the grid, providing flexible control over data updates.
+
+## Update cell value externally
+ 
+Use [`setCellValue`](https://react-api.syncfusion.com/data-grid/overview#setcellvalue) method to update the value of a specific cell identified by its row key and column field. This refreshes only the targeted cell, without affecting other cells in the grid. The available parameters are
+
+| Property                    | Type                                | Description                                                                 |
+|----------------------------|-------------------------------------|-----------------------------------------------------------------------------|
+| `key`                      | string                            | Primary key value identifying the row.                                      |
+| `field`                    | string                            | Column field name specifying which cell to update.                          |
+| `value`                    | string \| number \| boolean \| Date | New value to apply to the specified cell.                                   |
+| `isDataSourceChangeRequired` | boolean _(optional)_             | If `true`, both the UI and data source are updated.<br/>If not set or `false`, only the UI is updated for display. |
+
+> To perform cell updates, the grid requires at least one column with [`columns.isPrimaryKey`](https://react-api.syncfusion.com/data-grid/columnprops#isprimarykey) property set to `true` to uniquely identify each row.
+
+In the example, the "Title" column value for the row with "Book ID" 202 is updated using its primary key.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<CellUpdateEdit />}
+  path="grid/cell-edit-method.tsx"
+  scroll={false}
+/>
+
+
+## Update row value externally
+
+Use [`setRowData`](https://react-api.syncfusion.com/data-grid/overview#setrowdata) method to update an entire row by specifying the primary key. The row's data is replaced, and only that row is refreshed in the grid. The available parameters are
+
+| Property                    | Type      | Description                                                                 |
+|----------------------------|-----------|-----------------------------------------------------------------------------|
+| `key`                      | string  | Primary key value identifying the row.                                       |
+| `data`                     | object  | New data to apply to the row.                                               |
+| `isDataSourceChangeRequired` | boolean _(optional)_ | If `true`, both the UI and data source are updated.<br/>If not set or `false`, only the UI is updated for display. |
+
+> To perform row updates, the grid requires at least one column with [`columns.isPrimaryKey`](https://react-api.syncfusion.com/data-grid/columnprops#isprimarykey) property set to `true` to uniquely identify each row.
+
+In this example, the row with the "Product ID" value "P-002" is updated, specifically modifying the "Product" column.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<RowUpdateEdit />}
+  path="grid/row-edit-method.tsx"
+  scroll={false}
+/>
+
+> If the optional `isDataSourceChangeRequired` parameter is not set, updates will apply only to the UI and will not affect the original data source. The Data Grid component performs all data operations based on the original data source.

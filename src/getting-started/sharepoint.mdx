@@ -1,0 +1,72 @@
+import { Snippet } from '../common/snippet';
+import { Link } from 'react-router';
+import { sharepointCreation, sharepointSnippets } from './snippets';
+import { Meta } from '../common/meta';
+import { Preview } from '../common/preview';
+import TextBoxBasic from '../components/textbox/textbox';
+
+<Meta
+ title="React components in SharePoint | Syncfusion"
+ description="Integrate React components into SharePoint Framework (SPFx), a modern model for building client-side custom solutions on SharePoint."
+/>
+
+# Getting Started with SharePoint Framework using React Components
+
+This article provides a step-by-step guide for setting up a <a href="https://learn.microsoft.com/en-us/sharepoint/dev/" target="_blank" rel="noopener noreferrer">SharePoint</a> project and integrating the Syncfusion React components.
+
+The `SharePoint Framework (SPFx)` is a development model and framework provided by Microsoft for building custom solutions and extensions for `SharePoint` and `Microsoft Teams`. It is a modern, client-side framework that allows developers to create web parts, extensions, and customizations that can be deployed and used within SharePoint sites and Teams applications.
+
+## Prerequisites 
+
+* <p><Link to="/overview/system-requirements">System requirements for Syncfusion<sup>®</sup> React UI components</Link></p>
+
+* <p><a href="https://learn.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment" target="_blank" rel="noopener noreferrer">System requirements for the SharePoint Framework Development Environment</a></p>
+
+## Set up the SharePoint project
+
+Create a new `SPFx` project using the following command:
+
+1\. To initiate the creation of a new <a href="https://learn.microsoft.com/en-us/sharepoint/dev/" target="_blank" rel="noopener noreferrer">SharePoint</a> project, run the following commands:
+
+<Snippet content={[{ title: "CMD", code: 'yo @microsoft/sharepoint' }]} />
+
+2\. Let's specify the name of the project as `my-project` and the name of the WebPart as `App`. During setup, you will be prompted with a series of configuration questions. Specify the appropriate options based on your requirements:
+
+<Snippet content={sharepointCreation} />
+
+3\. To establish trust for the certificate in the development environment, run the following command:
+
+<Snippet content={[{ title: "CMD", code: 'gulp trust-dev-cert' }]} />
+
+Once the `my-project` setup is complete with the default configuration, you're ready to add Syncfusion<sup>®</sup> React components to the project.
+
+## Add Syncfusion<sup>®</sup> React packages
+
+Syncfusion<sup>®</sup> React component packages are available on <a href="https://www.npmjs.com/~syncfusionorg" target="_blank" rel="noopener noreferrer">npmjs.com</a>. To use Syncfusion<sup>®</sup> React components in the project, install the corresponding npm package.
+
+In this article, we’ll use the React `TextBox` component as an example. To install it, run the following command:
+
+<Snippet content={[{ title: "CMD", code: 'npm install @syncfusion/react-inputs --save' }]} />
+
+## Import Syncfusion<sup>®</sup> CSS styles
+
+Syncfusion<sup>®</sup> React components are styled using <Link to="/appearance/built-in-themes">built-in themes</Link>. To apply consistent styling, create an `index.scss` file in the `/src/webparts/app/components/` directory. Then, import the necessary `Material3` SCSS styles for the `TextBox` component and its dependencies into this file. 
+
+<Snippet content={[{ title: "index.scss", code: `@import '~@syncfusion/react-base/styles/material3.scss';
+@import '~@syncfusion/react-inputs/styles/material3.scss';` }]} />
+
+## Add Syncfusion<sup>®</sup> React component
+
+Add the React `TextBox` component inside the `~/src/webparts/app/components/App.tsx` file, as shown in the below code example.
+
+<Snippet content={sharepointSnippets} />
+
+## Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "App.tsx", code: "gulp serve" }]} />
+
+The output will appear as follows:
+
+<Preview content={<TextBoxBasic />} header={false} className="sb-padding-bottom-30" />

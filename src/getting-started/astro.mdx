@@ -1,0 +1,93 @@
+import { Snippet } from '../common/snippet';
+import { Link } from 'react-router';
+import { astroProjectConfig, astroConfig, astroMsgSnippet, astroStyles, astroIndexSnippet, runSample } from './snippets';
+import { Preview } from '../common/preview';
+import DefaultMessage from '../components/message/message';
+import { Meta } from '../common/meta';
+
+<Meta
+ title="React components in Astro | Syncfusion"
+ description="Integrate React components into Astro projects, the web framework designed for creating content-driven websites."
+/>
+
+# Getting Started with an Astro App using React Components
+
+This guide shows you how to set up an `Astro` application and integrating Syncfusion<sup>®</sup> React components.
+
+## What is Astro?
+
+`Astro` is a modern web framework for building fast, content-driven sites. It focuses on performance and is ideal for static websites, blogs, and documentation. Developers use `Astro` to create lightweight, highly optimized projects with ease.
+
+## Prerequisites
+
+* <p><Link to="/overview/system-requirements">System requirements for Syncfusion<sup>®</sup> React UI components</Link></p>
+
+* <p><a href="https://docs.astro.build/en/install-and-setup/#prerequisites" target="_blank" rel="noopener noreferrer">System requirements for Astro Application</a></p>
+
+## Create an Astro project
+
+To create a new `Astro` project, use the following command:
+
+<Snippet content={[{ title: "CMD", code: 'npm create astro@latest' }]} />
+
+After running the command, follow the prompts to configure your `Astro` project:
+
+<Snippet content={astroProjectConfig} />
+
+## Add React support to Astro project
+
+React is one of the most popular UI libraries that can be seamlessly integrated with `Astro` projects. Follow these steps to add React support to your `Astro` project.
+
+1\. Install React and `Astro` React packages
+
+Install the necessary React packages and the `Astro` React packages:
+
+<Snippet content={[{ title: "CMD", code: 'npm i react react-dom @astrojs/react' }]} />
+
+2\. Integrate React with `Astro`
+
+Open your `astro.config.mjs` file and add the React integration code:
+
+<Snippet content={astroConfig} />
+
+## Install Syncfusion<sup>®</sup> React packages
+
+Syncfusion<sup>®</sup> React components are available on [npmjs.com](https://www.npmjs.com/search?q=react). To integrate them into your project, install the required npm package.
+
+To use the React `Message` component, install the `@syncfusion/react-notifications` package:
+
+<Snippet content={[ { title: "CMD", code: `npm install @syncfusion/react-notifications --save` } ]} />
+
+## Add the Syncfusion<sup>®</sup> React component
+
+To use the `Message` component in your application, create a new file named `message.tsx` in the `src/components/` directory. Then, add the following sample code to include the `Message` in your `Astro` project.
+
+<Snippet content={astroMsgSnippet} />
+
+## Import Syncfusion<sup>®</sup> CSS styles
+
+Import themes for our React components using CSS or SASS from npm packages. For details on built-in themes and usage, refer to the <Link to="/appearance/built-in-themes">themes topic</Link>.
+
+In this guide, we apply the `Material3` theme with CSS styles in the `src/components/message.tsx` file:
+
+<Snippet content={astroStyles} />
+
+> Ensure CSS styles are imported in the correct dependency order.
+
+## Display the message component in the Astro page
+
+To show the `Message` component on your page, import and place it in your `src/pages/index.astro` file:
+
+<Snippet content={astroIndexSnippet} />
+
+> Use `client:only="react"` for Syncfusion<sup>®</sup> React components because these components depend entirely on React’s runtime and cannot be server-rendered by `Astro`.
+
+## Run the project
+
+To run the project, use the following command:
+
+<Snippet content={runSample} />
+
+The output will appear as follows:
+
+<Preview content={<DefaultMessage />} header={false} />

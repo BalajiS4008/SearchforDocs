@@ -1,0 +1,147 @@
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import ToolbarSearch from './toolbar-search.tsx';
+import InitialSearch from './initial-search.tsx';
+import ExternalSearch from './external-search.tsx';
+import SearchOperators from './search-operators.tsx';
+import SpecificSearch from './specific-columns-search.tsx';
+import IgnoreAccentSearch from './ignore-accent-search.tsx';
+import SearchEvents from './search-events.tsx';
+import GetSearchRecords from './retrieve-searched-record.tsx';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Data Grid - Search | Syncfusion"
+  description="Data Grid enables fast search and filtering with accent-insensitive matching for multilingual data exploration across international datasets."
+/>
+
+# Searching in React Data Grid
+ 
+ The Syncfusion® React Data Grid includes a built-in search feature that efficiently filters records based on a specified search value. It helps quickly locate and display relevant data from the grid’s data source. To enable this feature, set the [`searchSettings.enabled`](https://react-api.syncfusion.com/data-grid/searchsettings#enabled) property to `true`.
+
+## Enabling search in the Data Grid toolbar
+ 
+The Data Grid component adds a search box to the grid’s toolbar, enabling quick filtering of records based on text entered in the search box. To enable this feature, add the `Search` item to the [`toolbar`](https://react-api.syncfusion.com/data-grid/overview#toolbar) property.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<ToolbarSearch/>}
+  path="grid/toolbar-search.tsx"
+  scroll={false}
+/>
+
+## Programmatic search
+
+The Data Grid component supports programmatic search using the [`search`](https://react-api.syncfusion.com/data-grid/overview#search) method instead of the built-in search box.
+
+- To perform a search, call search('text') with the desired string. Matching records across all searchable columns will be displayed.
+
+- To clear the search, call search('') with an empty string. This resets the view and shows all records.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<ExternalSearch/>}
+  path="grid/external-search.tsx"
+  scroll={false}
+/>
+ 
+> By default, the search applies to all visible and invisible columns.
+ 
+## Initializing Data Grid with predefined search value
+
+To render the grid with a predefined search value, set the desired search value in the [`searchSettings`](https://react-api.syncfusion.com/data-grid/overview#searchsettings) property during grid initialization. This ensures that only records matching the specified search value are displayed when the grid loads.
+
+Configure the relevant `searchSettings` properties to apply the predefined search during grid initialization.
+
+| Property      | Description                                                                                     |
+|---------------|-------------------------------------------------------------------------------------------------|
+| `fields`      | Specifies the fields in which the search operation needs to be performed.                       |
+| `operator`    | Specifies the operator to be used for the search operation.                                    |
+| `value`         | Specifies the value to be searched.                                                        |
+| `ignoreCase`  | Specifies whether the search operation should be case-sensitive or case-insensitive. This setting is optional.         |
+| `ignoreAccent`| When enabled, ignores diacritic characters or accents in text during the search operation. This setting is optional.     |
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<InitialSearch/>}
+  path="grid/initial-search.tsx"
+  scroll={false}
+/>
+
+## Search operators
+
+The [`searchSettings.operator`](https://react-api.syncfusion.com/data-grid/searchsettings#operator) property defines how search values are compared. By default, it uses the `contains` operator, which returns records that include the specified search term. The following operators are supported in searching:
+
+Operator |Description
+-----|-----
+`startswith` |Checks whether a value begins with the specified value.
+`endswith` |Checks whether a value ends with the specified value.
+`contains` |Checks whether a value contains with the specified value.
+`wildcard` |Uses the `*` symbol to define the [wildcard search patterns](https://react.syncfusion.com/data-grid/filtering/configuration#wildcard-filtering). For example, `te*` matches values like "test" and "team".
+`like` |Uses the `%` symbol to define the [LIKE search patterns](https://react.syncfusion.com/data-grid/filtering/configuration#like-filtering). For example, `%box` matches values ending with "box".
+`equal` |Checks whether a value equal to the specified value.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<SearchOperators/>}
+  path="grid/search-operators.tsx"
+  scroll={false}
+/>
+
+## Restricting search to specific columns
+ 
+To restrict search operations to specific columns, assign an array of field names using the [`searchSettings.fields`](https://react-api.syncfusion.com/data-grid/searchsettings#fields) property. This ensures that only the specified columns are considered during search, which enhances query efficiency and overall performance, especially when working with large datasets. 
+
+In the example below, the search operation is restricted to the "Language," "Rating," and "Published Year" columns by setting `searchSettings.fields` to ['Language', 'Rating', 'PublishedYear'].
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<SpecificSearch/>}
+  path="grid/specific-columns-search.tsx"
+  scroll={false}
+/>
+
+## Ignore accent while searching
+
+Enabling the [`searchSettings.ignoreAccent`](https://react-api.syncfusion.com/data-grid/searchsettings#ignoreaccent) property to `true` makes the search treat accented and non-accented characters as equal (for example, matching "Oxford Stréét" with "Oxford Street"). This improves search accuracy in datasets containing special characters in multiple languages.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<IgnoreAccentSearch />}
+  path="grid/ignore-accent-search.tsx"
+  scroll={false}
+/>
+
+## Retrieve searched records by external button
+
+To get the searched records, use the grid’s [`getData()`](https://react-api.syncfusion.com/data-grid/overview#getdata) method. This method returns results based on active queries applied to the grid. When paging is enabled, `getData()` returns only the records on the current page. To retrieve all searched records without pagination limits, call `getData(false)`.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<GetSearchRecords />}
+  path="grid/retrieve-searched-record.tsx"
+  scroll={false}
+/>
+
+## Events
+
+The Data Grid component provides event hooks that trigger when a search action is completed.
+
+| Event | Description |
+|----------|---------------------------|
+| [`onSearch`](https://react-api.syncfusion.com/data-grid/overview#onsearch) | Fires after a searching operation completed on the grid. Provides search result details for post-search actions such as updating UI elements, logging, or triggering dependent logic. |
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<SearchEvents />}
+  path="grid/search-events.tsx"
+  scroll={false}
+/>

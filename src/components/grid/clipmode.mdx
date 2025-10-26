@@ -1,0 +1,48 @@
+import ClipMode from './clip-mode.tsx';
+import ClipModeColumn from './clip-mode-column.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Data Grid - Clip Mode | Syncfusion"
+  description="Data Grid manages cell overflow using clip mode for truncation and tooltips to display full content, enhancing layout clarity and text readability."
+/>
+
+
+# Clip Mode in React Data Grid
+
+The clip mode feature in the Syncfusion® React Data Grid component controls how cell text is displayed when it exceeds the available width. It manages overflow by truncating the text, adding an ellipsis, or adding an ellipsis with a tooltip.
+
+ 
+| Clip Mode             | Description                                                              |
+|-----------------------|--------------------------------------------------------------------------|
+| `Clip`               | Truncates overflowed content with no visual indicator.                   |
+| `Ellipsis`            | Hides extra content and appends (...) to indicate more text is present.  |
+| `EllipsisWithTooltip` | Adds (...) and displays the full text in a tooltip on hover.             |
+ 
+### Applying clip mode to the entire Data Grid component
+
+The clip mode feature applies to the entire Data Grid component by setting the [`clipMode`](https://react-api.syncfusion.com/data-grid/columnprops#clipmode) property in the grid configuration. This ensures consistent handling of text overflow across all data and header cells.
+
+
+<Snippet content={[{ title: "App.tsx", code: `<Grid clipMode={ClipMode.EllipsisWithTooltip}>
+  // Column definitions here.
+</Grid>` }]} />
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<ClipMode />} path="grid/clip-mode.tsx" scroll={false} />
+
+### Applying the clip mode only to a specific column
+
+The `clipMode` property can be set on individual columns to control how text overflow is handled for each column. This allows precise customization, enabling selected columns to truncate text, display ellipses, or display ellipses with tooltips.
+
+<Snippet content={[{ title: "App.tsx", code: `<Grid>
+    <Columns>
+        <Column field='FullDescription' headerText='Product Description' clipMode={ClipMode.EllipsisWithTooltip} width='200' />
+    </Columns>
+ </Grid>` }]} />
+
+ <Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<ClipModeColumn />} path="grid/clip-mode-column.tsx" scroll={false} />
+
+

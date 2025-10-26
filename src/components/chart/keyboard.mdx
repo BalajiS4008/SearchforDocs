@@ -1,0 +1,36 @@
+
+import Keyboard from './keyboard'
+import { Preview } from '../../common/preview';
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Chart Keyboard Navigation | Syncfusion"
+  description="Keyboard navigation lets charts be operated via keys with focus management and shortcuts. Supports series toggle, tooltip cancel, zoom, and pan."
+/>
+
+## Keyboard Interaction in React Chart
+
+The Chart component followed the keyboard interaction guideline, making it easy for people who use assistive technologies (AT) and those who completely rely on keyboard navigation. The following keyboard shortcuts are supported by the Chart component.
+
+Here’s the updated table with an additional column that converts the Windows key combinations to their Mac equivalents:
+
+| Windows                         | macOS                               | Action                                          |
+|---------------------------------|-------------------------------------|---------------------------------------------------------|
+| <kbd>Alt</kbd> + <kbd>J</kbd>   | <kbd>Option</kbd> + <kbd>J</kbd>    | Moves the focus to the chart element.                  |
+| <kbd>Tab</kbd>                  | <kbd>Tab</kbd>                      | Moves the focus to the next element in the chart.      |
+| <kbd>Shift</kbd> + <kbd>Tab</kbd> | <kbd>Shift</kbd> + <kbd>Tab</kbd> | Moves the focus to the previous element in the chart.   |
+| <kbd>Down Arrow</kbd>           | <kbd>Down Arrow</kbd>               | Moves the focus to the data point left side from the selected point. |
+| <kbd>Up Arrow</kbd>             | <kbd>Up Arrow</kbd>                 | Moves the focus to the data point right side from the selected point. |
+| <kbd>Left Arrow</kbd>           | <kbd>Left Arrow</kbd>               | Moves the focus to the next series in the chart.       |
+| <kbd>Right Arrow</kbd>          | <kbd>Right Arrow</kbd>              | Moves the focus to the previous series in the chart.    |
+| <kbd>ESC</kbd>                  | <kbd>ESC</kbd>                      | Cancel the tooltip for the data point.                  |
+| <kbd>Down/Left Arrow</kbd>      | <kbd>Down/Left Arrow</kbd>          | Moves the focus to the legend left side from the selected legend. |
+| <kbd>Up/Right Arrow</kbd>       | <kbd>Up/Right Arrow</kbd>           | Moves the focus to the legend right side from the selected legend. |
+| <kbd>Enter/Space</kbd>          | <kbd>Return/Space</kbd>             | Toggles the visibility of the corresponding series.     |
+| <kbd>Ctrl</kbd> + <kbd>+</kbd>  | <kbd>Command</kbd> + <kbd>+</kbd>   | Zoom in the chart.                                     |
+| <kbd>Ctrl</kbd> + <kbd>-</kbd>  | <kbd>Command</kbd> + <kbd>-</kbd>   | Zoom out the chart.                                    |
+| <kbd>Down/Up Arrow</kbd>        | <kbd>Down/Up Arrow</kbd>            | Pan the chart vertically.                               |
+| <kbd>Left/Right Arrow</kbd>     | <kbd>Left/Right Arrow</kbd>         | Pan the chart horizontally.                             |
+| <kbd>R</kbd>                    | <kbd>R</kbd>                        | Reset the zoomed chart.                                |
+
+<Preview onDemand={true} reset={true} content={<Keyboard />} path="chart/keyboard.tsx" />

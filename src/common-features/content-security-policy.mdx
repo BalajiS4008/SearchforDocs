@@ -1,0 +1,24 @@
+import { Link } from 'react-router';
+import { Snippet } from '../common/snippet';
+import { CSPGoogleTag } from './snippets';
+import { Meta } from '../common/meta';
+
+<Meta
+ title="React CSP - Content Security Policy Setup"
+ description="Configure Content Security Policy for Syncfusion® React components. Secure your React app against XSS attacks with proper CSP settings."
+/>
+
+# Content Security Policy 
+
+Content Security Policy (CSP) is a security feature implemented by web browsers that helps to protect against attacks such as cross-site scripting (XSS) and data injection. It controls the sources from which content can be loaded on a web page.
+
+When enabling a strict <a href="https://csp.withgoogle.com/docs/strict-csp.html" target="_blank" rel="noopener noreferrer">Content Security Policy (CSP)</a>, certain browser features are disabled by default. To use Syncfusion<sup>®</sup> React components in strict CSP mode, you must include specific directives in your CSP `<meta>` tag.
+
+* Syncfusion<sup>®</sup> `Material 3` built-in themes contain a reference to the <a href="https://fonts.googleapis.com/css?family=Roboto:400,500" target="_blank" rel="noopener noreferrer">`Roboto's external font`</a>, which is also blocked. To allow them, add the <a href="https://fonts.googleapis.com/css?family=Roboto:400,500" target="_blank" rel="noopener noreferrer">`external font`</a> reference to the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/style-src" target="_blank" rel="noopener noreferrer">`style-src`</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/font-src" target="_blank" rel="noopener noreferrer">`font-src`</a> directives in the above meta tag.
+
+The resultant meta tag is included within the `<head>` tag and resolves the CSP violation on the application's side when utilizing Syncfusion<sup>®</sup> React components with material3 themes.
+
+<Snippet content={CSPGoogleTag} />
+
+> In development, if your application appends `<style>` tags dynamically in the `<head>` section of the document, you may need to include `unsafe-inline` in the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy#unsafe-inline" target="_blank" rel="noopener noreferrer">`style-src 'self' 'unsafe-inline'`</a> in your Content Security Policy (CSP) to avoid style-related CSP errors. 
+However, in production, styles are typically extracted into separate CSS files and linked using `<link>` tags, so 'unsafe-inline' is typically not required.

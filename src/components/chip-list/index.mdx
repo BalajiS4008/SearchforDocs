@@ -1,0 +1,189 @@
+import UserChipList from './basic-chip-list';
+import SeasonSelectionChips from './single-selection';
+import ShapeSelectionChips from './multiple-selection';
+import RemovableColorChips from './removable-chips';
+import CategoryColorChips from './customization';
+import ControlledValue from './controlled-value';
+import RemovableFrameworkChips from './controlled-chips';
+import CustomSelectIcon from './custom-icon';
+import CustomRemoveIcon from './custom-remove';
+import { Preview } from '../../common/preview';
+import { Check, Cross, Clock } from '../../common/util';
+import { Snippet } from '../../common/snippet';
+import { chipListNpm, chipListImport, chipListStyles, chipListSnippet } from './chip-list-snippets'
+import { Link } from 'react-router'
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Chip List Component | Syncfusion"
+  description="The ChipList component displays a collection of interactive chips, allowing selection, customization, and dynamic item management."
+/>
+
+# React Chip List
+
+The `ChipList` component is a specialized container that manages collections of `Chip` elements in a cohesive, organized manner. While individual `Chip` components represent discrete pieces of information, the `ChipList` provides structure and consistent behavior for multiple chips displayed together.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite#set-up-the-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let’s add the `React ChipList` component to the project.
+
+### Installing Syncfusion® packages
+
+To use the `React ChipList` component in this project, the [`@syncfusion/react-buttons`](https://www.npmjs.com/package/@syncfusion/react-buttons) package needs to be installed using the following command:
+
+<Snippet content={chipListNpm}/>
+
+### Adding CSS reference
+
+In this article, the `Material 3` theme is applied using CSS styles, which are available in installed packages. The necessary Material CSS styles for the `ChipList` component and its dependents were imported into the `src/App.css` file.
+
+<Snippet content={chipListStyles}/>
+
+### Adding ChipList component
+
+To include the `ChipList` component in your application, import the `ChipList` from the `@syncfusion/react-buttons` package in `App.tsx`.
+
+<Snippet content={chipListImport} />
+
+Add the `ChipList` component in application as shown in below code example.
+
+<Snippet content={chipListSnippet} />
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+The `ChipList` component renders a collection of chip with consistent styling and behavior. This example shows chips with avatars and icons, demonstrating how to display user information in a compact, recognizable format ideal for user lists, participant rosters, or assignee selections.
+
+<Preview 
+  content={<UserChipList />} 
+  path="chip-list/basic-chip-list.tsx"
+/>
+
+## Single selection
+
+Enable selection of exactly one option from a group with the single-selection `ChipList`. This interaction pattern is ideal for mutually exclusive choices where only one option can be active at a time, such as filter categories, view modes, or exclusive settings. To enable single selection mode, set the [`selection`](https://react-api.syncfusion.com/chiplist/overview#selection) property to `single`. This ensures that only one chip can be selected at a time.
+
+<Preview 
+  content={<SeasonSelectionChips />} 
+  path="chip-list/single-selection.tsx"
+/>
+
+## Multiple selection
+
+Allow users to select multiple options simultaneously with multiple-selection `ChipList`. This example demonstrates predefined selections with chips at indexes 0 and 1 already selected. To enable multiple selection mode, set the [`selection`](https://react-api.syncfusion.com/chiplist/overview#selection) property to `multiple`. Use the [`selectedChips`](https://react-api.syncfusion.com/chiplist/overview#selectedchips) property to preselect chips by specifying an array of indexes.
+
+<Preview 
+  content={<ShapeSelectionChips />} 
+  path="chip-list/multiple-selection.tsx"
+/>
+
+## Removable chips
+
+Combine selection with removal functionality to create dynamic `ChipList` where users can both select and remove options. This pattern is particularly useful for managing applied filters, selected features, or chosen categories where users need to both indicate preferences and remove unwanted options. To make chips removable, set the [`removable`](https://react-api.syncfusion.com/chiplist/overview#removable) property to `true`. This adds a delete icon to each chip and enables removal functionality.
+
+<Preview 
+  content={<RemovableColorChips />} 
+  path="chip-list/removable-chips.tsx"
+  reset={true}
+/>
+## Customization
+
+Enhance the appearance and functionality of `ChipList` components with various customization options to better match your application's design requirements.
+
+### Color customization
+
+This example demonstrates how chips can be customized with different background colors to visually distinguish categories. Use the `className` property to apply custom styles directly to individual chips. In this example, different background colors with white text are applied to categorize content visually.
+
+<Preview 
+  content={<CategoryColorChips />} 
+  path="chip-list/customization.tsx"
+/>
+
+### Custom select icon
+
+Custom select icons replace the default selection indicator with custom SVG graphics for a more branded look, while maintaining the chip's selection functionality. The example shows color-coded chips with custom selection styles. To customize the selection icon, add a `className` to the `ChipList` and use CSS to override the default icon styling.
+
+<Preview 
+  content={<CustomSelectIcon />} 
+  path="chip-list/custom-icon.tsx"
+/>
+
+### Custom remove icon
+
+Custom remove icons replace the default deletion button with custom SVG graphics, creating a more cohesive design. This example replaces the standard remove icon with a circular minus symbol while maintaining the chip's removal functionality. To customize the remove icon, add a `className` to the `ChipList` and use CSS to override the default icon styling.
+<Preview 
+  content={<CustomRemoveIcon />} 
+  path="chip-list/custom-remove.tsx"
+  reset={true}
+/>
+
+## Controlled mode
+
+Controlled mode in the `ChipList` component allows you to explicitly manage the component's state through `React` state hooks instead of relying on the component's internal state. This gives you more control over the component's behavior and enables integration with other parts of your application.
+
+### Controlled selection
+
+The `ChipList` component allows you to control which chips are selected by using the [`selectedChips`](https://react-api.syncfusion.com/chiplist/overview#selectedchips) property along with the [`onSelect`](https://react-api.syncfusion.com/chiplist/overview#onselect) event handler. This approach gives you complete control over the selection state, making it easy to implement custom logic or synchronize selections with other components in your application.
+
+<Preview 
+  content={<ControlledValue />} 
+  path="chip-list/controlled-value.tsx"
+/>
+
+### Controlled chips
+
+You can also control the actual collection of chips displayed in the `ChipList` component. By providing the [`chips`](https://react-api.syncfusion.com/chiplist/overview#chips) array as a state variable and handling the [`onDelete`](https://react-api.syncfusion.com/chiplist/overview#ondelete) event, you can dynamically manage the chips based on user interactions or application logic.
+
+<Preview 
+  content={<RemovableFrameworkChips />} 
+  path="chip-list/controlled-chips.tsx"
+  reset={true}
+/>
+
+## Accessibility
+
+The `ChipList` component followed the accessibility guidelines and standards, including [ADA](https://www.ada.gov/), [Section 508](https://www.section508.gov/), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) standards, and [WCAG roles](https://www.w3.org/TR/wai-aria/#roles) that are commonly used to evaluate accessibility.
+
+The accessibility compliance for the `ChipList` component is outlined below.
+
+| Accessibility Criteria | Compatibility |
+| -- | -- |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Support | <Check/> |
+| [Section 508](https://www.section508.gov/) Support | <Check/> |
+| Screen Reader Support | <Check/> |
+| Right-To-Left Support | <Check/> |
+| Color Contrast | <Check/> |
+| Mobile Device Support | <Check/> |
+| Keyboard Navigation Support | <Check/> |
+| [Accessibility](https://www.npmjs.com/package/@storybook/addon-a11y) Validation | <Check/> |
+
+<Check/> - All features of the component meet the requirement.
+
+<Clock/> - Some features of the component do not meet the requirement.
+
+<Cross/> - The component does not meet the requirement.
+
+### WAI-ARIA attributes
+
+The `ChipList` component followed the [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/) patterns to meet the accessibility. The following ARIA attributes are used in the `ChipList` component:
+
+| Attributes | Purpose |
+| --- | --- |
+| <mark>role=listbox</mark> | Indicates the `ChipList` component as `listbox`. |
+| <mark>role=option</mark> | Identifies each chip as a selectable item within the `ChipList`. |
+| <mark>aria-disabled</mark> | Indicates element is perceivable but disabled. |
+| <mark>aria-selected</mark> | Indicates the chip is selected. |
+| <mark>aria-multiselectable</mark> | Indicates multiple items to be selected. |
+
+
+### Keyboard interaction
+
+The `ChipList` component followed the [keyboard interaction](https://www.w3.org/WAI/ARIA/apg/patterns/button/#keyboardinteraction) guideline, making it easy for people who use assistive technologies (AT) and those who completely rely on keyboard navigation. The following keyboard shortcuts are supported by the `ChipList` component.
+
+| **Windows** | **Mac** | **To do this** |
+| --- | --- | --- |
+| <kbd>Delete , Backspace</kbd>| <kbd>Fn + delete , delete </kbd> | Deletes the targeted chip from the chip collection. |
+| <kbd>Enter , Space</kbd> | <kbd>Enter , Space</kbd>| Selects the targeted chip from the chip collection. |

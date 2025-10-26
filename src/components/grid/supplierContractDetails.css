@@ -1,0 +1,14 @@
+.supplier-contracts .sf-grid-header-row .sf-cell {
+  background-color:  #e90b7b24;
+  color: #000000;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.supplier-contracts .sf-grid-header-cell {
+  font-size: 18px;
+}
+
+.dark-theme .supplier-contracts .sf-grid-header-row .sf-cell {
+    background-color: #b9236ead;
+    color: #ffffff;
+}

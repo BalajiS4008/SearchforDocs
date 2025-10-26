@@ -1,0 +1,59 @@
+import LogAxis from './logAxis';
+import LogRange from './logRange';
+import LogBase from './logBase';
+import LogInterval from './logInterval';
+
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { chartNpm, chartImport } from './snippets';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Chart Log Axis | Syncfusion"
+  description="Logarithmic axis scale values by orders of magnitude using a log base, compressing wide ranges."
+/>
+
+## Logarithmic Axis in React Chart
+
+To display data on a logarithmic scale, set the [`valueType`](https://react-api.syncfusion.com/chart/chartaxisprops#valuetype) property to `Logarithmic` in the corresponding axis configuration. This is especially useful for visualizing data that spans several orders of magnitude, such as exponential growth or scientific measurements.
+
+<Preview onDemand={true} reset={true} content={<LogAxis />} path="chart/logAxis.tsx" />
+
+### Range
+
+In a chart with a logarithmic axis, the range is usually calculated automatically based on the data values. This ensures that the axis scales appropriately to represent exponential changes.
+However, if you want more control over the axis—for example, to zoom in on a specific data range or to maintain consistency across multiple charts you can manually set the axis range using the `minimum` and `maximum` properties.
+
+<Preview onDemand={true} reset={true} content={<LogRange />} path="chart/logRange.tsx" />
+
+### Log base
+
+In a logarithmic chart, the axis values are typically displayed as powers of a base number commonly base 10. However, you can change this base using the [`logBase`](https://react-api.syncfusion.com/chart/chartaxisprops#logbase) property in the axis configuration.
+For example: logBase = 5;
+
+This will display axis values as powers of 5, such as:
+- 5^{-2} = 0.04
+- 5^{-1} = 0.2
+- 5^0 = 1
+- 5^1 = 5
+- 5^2 = 25
+
+<Preview onDemand={true} reset={true} content={<LogBase />} path="chart/logBase.tsx" />
+
+### Interval
+
+When using a logarithmic axis, you can adjust how frequently labels appear by setting the [`interval`](https://react-api.syncfusion.com/chart/chartaxisprops#interval) property. This controls the spacing between axis labels based on powers of the logarithmic base.
+For example, if:
+- logBase = 10
+- interval = 2
+Then the axis will display labels at every second power of 10, such as:
+- 10^0 = 1
+- 10^2 = 100
+- 10^4 = 10,000
+- …
+
+This helps reduce visual clutter and emphasizes key data points especially useful when dealing with large ranges or exponential growth.
+ 
+
+<Preview onDemand={true} reset={true} content={<LogInterval />} path="chart/logInterval.tsx" />

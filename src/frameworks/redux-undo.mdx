@@ -1,0 +1,77 @@
+import { Snippet } from '../common/snippet';
+import { Link } from 'react-router'
+import { reduxUndoSlice, reduxUndoStore, reduxUndoMain, reduxUndoTextbox, reduxUndoSnippet } from './snippets';
+import { Image } from '../common/image';
+import { Meta } from '../common/meta';
+
+<Meta
+ title="React components in Redux Undo | Syncfusion"
+ description="Integrate React components with Redux Undo to implement robust undo/redo functionality."
+/>
+
+# Integration of React Components with Redux Undo
+
+This guide demonstrates how to integrate Syncfusion<sup>®</sup> React components with a `Redux Undo`.
+
+## What is Redux Undo?
+
+<a href="https://github.com/omnidan/redux-undo" target="_blank" rel="noopener noreferrer">Redux Undo</a> is a higher-order reducer for Redux, designed to add `undo/redo` functionality to your application's state management. It works by wrapping your existing reducer and managing a history of past, present, and future states allowing users to `undo` or `redo` changes to the application state with ease.
+
+## Set up the React project
+
+1\. Create a new React project using <Link to="/getting-started/vite#create-a-vite-project">Vite</Link>.
+
+2\. Install the necessary `Redux` dependencies by running the following command:
+
+<Snippet content={[ { title: "CMD", code: 'npm install @reduxjs/toolkit react-redux redux-undo --save' }]} />
+
+## Configure the Redux slice
+
+Setting up a Redux slice means creating a specific section of your application’s state, along with the actions and reducers that can modify this state. 
+
+By wrapping your Redux slice reducer with the `undoable` function from `redux-undo`, you can add built-in `undo` and `redo` capabilities to your state. Create a new file named `textboxSlice.tsx` and add the following code snippet.
+
+<Snippet content={reduxUndoSlice} />
+
+## Set Up the Redux store
+
+After creating the Redux slice, you need to set up the `Redux store` to combine your reducers and manage your application's state.
+
+Create a new file named `store.tsx` and add the following code:
+
+<Snippet content={reduxUndoStore} />
+
+## Integrate the Redux store with React
+
+To make the `Redux store` available throughout your React application, you need to wrap your main App component with the `Provider` from `react-redux` in `main.tsx` file. This allows any nested component to access the Redux store state and dispatch actions.
+
+<Snippet content={reduxUndoMain} />
+
+## Add Syncfusion<sup>®</sup> React components
+
+To add Syncfusion<sup>®</sup> React `Textbox` component to your application, follow these steps:
+
+1\. Install the necessary dependencies for React components.
+
+<Snippet content={[ { title: "CMD", code: 'npm install @syncfusion/react-inputs --save' }]} />
+
+2\. Add the `TextBox` component to the application
+
+<Snippet content={reduxUndoTextbox} />
+
+## Connect the TextBox component to Redux Undo
+
+This section shows how to connect the `TextBox` component to your `Redux store` with `undo` and `redo` support. When you connect the `TextBox` component to your Redux store using `redux-undo`, the values entered in the `TextBox` can be easily undone and redone.
+
+<Snippet content={reduxUndoSnippet} />
+
+## Run the project
+
+Execute the following command to run the project:
+
+<Snippet content={[ { title: "npm", code: 'npm run dev' } ]} />
+
+The output will appear as follows:
+
+<Image style={ { width: '100%', paddingBottom: '20px'} } alt="Redux Undo Sample" src={'/images/framework/redux-undo.png'} hasDarkImage={true} />
+

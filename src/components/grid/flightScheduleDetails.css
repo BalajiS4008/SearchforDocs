@@ -1,0 +1,43 @@
+.flight-schedule-view .customcss {
+    background-color:  #e90b7b24;
+    color: #000000;
+}
+
+.flight-schedule-view .customcss1 {
+    background-color:  #e90b7b24;
+    color: #000000;
+}
+
+.flight-schedule-view .customcss1 span {
+    font-weight: bold;
+}
+
+.flight-schedule-view .departure-date-temp,
+.flight-schedule-view .arrival-date-temp {
+    display: inline-flex;
+}
+
+.flight-schedule-view .departure-date-temp svg {
+    margin-right: 4px;
+    margin-top: 2px;
+}
+
+.flight-schedule-view .arrival-date-temp svg {
+    margin-right: 5px;
+    margin-top: 2px;
+}
+
+.dark-theme .flight-schedule-view .customcss {
+    background-color: #b9236ead;
+    color: #ffffff;
+}
+
+.dark-theme .flight-schedule-view .customcss1 {
+    background-color: #b9236ead;
+    color: #ffffff;
+}
+
+.dark-theme .flight-schedule-view .departure-date-temp svg path,
+.dark-theme .flight-schedule-view .arrival-date-temp svg path {
+    fill: #ffffff;
+}

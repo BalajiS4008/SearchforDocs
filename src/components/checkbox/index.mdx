@@ -1,0 +1,173 @@
+import { checkboxNpm, checkboxImport, checkboxStyles, checkboxComponent } from './snippets';
+import Overview from './overview.tsx';
+import Label from './label.tsx';
+import Size from './size.tsx';
+import Intermediate from './intermediate.tsx';
+import LabelPosition from './labelPosition.tsx';
+import FormSubmit from './form-submit.tsx';
+import Color from './color.tsx';
+import Frame from './frame.tsx';
+import Default from './default.tsx';
+import { Preview } from '../../common/preview';
+import { Check, Cross, Clock } from '../../common/util';
+import { Snippet } from '../../common/snippet';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta
+ title="React Checkbox Component | Syncfusion"
+ description="The Checkbox component lets users select multiple options with customizable styles, states, and seamless integration into forms."
+/>
+
+# React Checkbox
+
+The [`Checkbox`](https://react-api.syncfusion.com/checkbox/overview) component is a versatile UI element enabling binary selections in forms, with customizable colors for enhanced clarity.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite#set-up-the-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let’s add the React `Checkbox` component to the project.
+
+### Installing Syncfusion® packages
+
+To use the [`Checkbox`](https://react-api.syncfusion.com/checkbox/overview) component, install the [`@syncfusion/react-buttons`](https://www.npmjs.com/package/@syncfusion/react-buttons) package:  
+
+<Snippet content={checkboxNpm}/>
+
+### Adding CSS reference
+
+Import the [`Checkbox`](https://react-api.syncfusion.com/checkbox/overview) component’s required CSS references as follows in **src/App.css**.
+
+<Snippet content={checkboxStyles}/>
+
+### Adding Checkbox component
+
+To include the [`Checkbox`](https://react-api.syncfusion.com/checkbox/overview) component in your application, import the [`Checkbox`](https://react-api.syncfusion.com/checkbox/overview) from the `@syncfusion/react-buttons` package in **App.tsx**.
+
+<Snippet content={checkboxImport}/>
+
+Add the [`Checkbox`](https://react-api.syncfusion.com/checkbox/overview) component in application as shown in below code example.
+
+<Snippet content={checkboxComponent}/>
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+The following example demonstrates how to render a simple [`Checkbox`](https://react-api.syncfusion.com/checkbox/overview) component. By setting the `defaultChecked` attribute to true, the checkbox will be checked by default.
+
+<Preview content={<Default />} path="checkbox/default.tsx" />
+
+## Types
+
+This section shows how to create and use basic [`Checkbox`](https://react-api.syncfusion.com/checkbox/overview) in your application, highlighting their various states: checked, unchecked, disabled, and indeterminate. The disabled attribute renders the checkbox inactive.
+
+<Preview
+  content={<Overview />}
+  path="checkbox/overview.tsx"
+/>
+
+## Size
+
+Easily customize the Checkbox's [`size`](https://react-api.syncfusion.com/checkbox/overview#size) to match your design requirements using its built-in sizing properties.
+
+<Preview
+  content={<Size />}
+  path="checkbox/size.tsx"
+/>
+
+## Label
+
+Incorporating labels for [`Checkbox`](https://react-api.syncfusion.com/checkbox/overview) enhances accessibility and usability by clearly indicating the purpose or option linked to each checkbox.
+
+<Preview
+  content={<Label />}
+  path="checkbox/label.tsx"
+/>
+
+## Label placement
+
+Adjust label placement relative to the [`Checkbox`](https://react-api.syncfusion.com/checkbox/overview) for design needs.
+
+<Preview
+  content={<LabelPosition />}
+  path="checkbox/labelPosition.tsx"
+/>
+
+## Intermediate
+
+[`Checkbox`](https://react-api.syncfusion.com/checkbox/overview) can also have an indeterminate state, useful for parent-child relationships where a parent's state reflects its children's selections.
+
+<Preview
+  content={<Intermediate />}
+  path="checkbox/intermediate.tsx"
+/>
+
+## Customization
+
+### Color
+
+Custom [`Checkbox`](https://react-api.syncfusion.com/checkbox/overview) colors are achieved through [`color`](https://react-api.syncfusion.com/checkbox/overview#color) property, allowing you to style its appearance and states for better design integration and visual appeal.
+
+<Preview
+  content={<Color />}
+  path="checkbox/color.tsx"
+/>
+
+### Frame
+
+This CSS-styled custom [`Checkbox`](https://react-api.syncfusion.com/checkbox/overview) enhances the default design, improving size, color, and border for a modern, sleek appearance.
+
+<Preview
+  content={<Frame />}
+  path="checkbox/frame.tsx"
+/>
+
+## Form validation
+
+Implement [`Checkbox`](https://react-api.syncfusion.com/checkbox/overview) validation strategies to ensure user input is correctly validated and formatted before submission for a smooth user experience.
+
+<Preview
+  content={<FormSubmit />}
+  path="checkbox/form-submit.tsx"
+/>
+
+## Accessibility
+
+The [`Checkbox`](https://react-api.syncfusion.com/checkbox/overview) component followed the accessibility guidelines and standards, including [ADA](https://www.ada.gov/), [Section 508](https://www.section508.gov/), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) standards, and [WCAG roles](https://www.w3.org/TR/wai-aria/#roles) that are commonly used to evaluate accessibility.
+
+The accessibility compliance for the [`Checkbox`](https://react-api.syncfusion.com/checkbox/overview) component is outlined below.
+
+| Accessibility Criteria | Compatibility |
+| -- | -- |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Support | <Check/> |
+| [Section 508](https://www.section508.gov/) Support | <Check/> |
+| Screen Reader Support | <Check/> |
+| Right-To-Left Support | <Check/> |
+| Color Contrast | <Check/> |
+| Mobile Device Support | <Check/> |
+| Keyboard Navigation Support | <Check/> |
+| [Accessibility](https://www.npmjs.com/package/@storybook/addon-a11y) Validation | <Check/> |
+
+<Check/> - All features of the component meet the requirement.
+
+<Clock/> - Some features of the component do not meet the requirement.
+
+<Cross/> - The component does not meet the requirement.
+
+### WAI-ARIA attributes
+
+The [`Checkbox`](https://react-api.syncfusion.com/checkbox/overview) component followed the [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/alert/) patterns to meet the accessibility. The following ARIA attributes are used in the Checkbox component:
+
+| Attributes | Purpose |
+| --- | --- |
+| <mark>aria-disabled</mark> | Indicates that the element is perceivable but disabled, so it is not editable or otherwise operable. |
+
+### Keyboard interaction
+
+The [`Checkbox`](https://react-api.syncfusion.com/checkbox/overview) component followed the [keyboard interaction](https://www.w3.org/WAI/ARIA/apg/patterns/alert/#keyboardinteraction) guideline, making it easy for people who use assistive technologies (AT) and those who completely rely on keyboard navigation. The following keyboard shortcuts are supported by the Checkbox component.
+
+| **Windows** | **Mac** | **To do this** |
+| --- | --- | --- |
+| <kbd>Space</kbd>| <kbd>Space</kbd> | When the Checkbox has focus, pressing the Space key changes the state of the Checkbox. |

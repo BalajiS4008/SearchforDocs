@@ -1,0 +1,77 @@
+import { Snippet } from '../common/snippet';
+import { Preview } from '../common/preview';
+import { Link } from 'react-router';
+import { inlineStyles, classNameStyles, themeContext, buttonThemeContext, globalStyles } from './snippet';
+import InlineStyles from './inline-styles';
+import ClassNameStyles from './class-styles';
+import { Meta } from '../common/meta';
+
+<Meta
+ title="React Theme Customization - Styling Guide"
+ description="Complete guide to customize Syncfusion® React themes. Multiple styling approaches including CSS, inline styles, and React Context."
+/>
+
+# Theme Customization in Syncfusion<sup>®</sup> React Components
+
+This guide demonstrates various ways to customize the appearance of Syncfusion<sup>®</sup> React Components, enabling you to design the UI according to your application's requirements.
+
+## Inline styles via style Prop
+
+Styles can be applied directly to a React component by using the `style` prop. This prop accepts a JavaScript object that defines the desired CSS properties and values.
+
+<Snippet content={inlineStyles} />
+
+<Preview content={<InlineStyles />} path="appearance/inline-styles.tsx" />
+
+## External stylesheets
+
+Define styles in an external **CSS** file and apply them using the `className` prop.
+
+<Snippet content={[{ title: "App.css", code: `.sf-btn.button-green {
+        color: white;
+        background: green;
+        font-size: 18px;
+}` }]} />
+
+**Example:**
+
+<Snippet content={classNameStyles} />
+
+<Preview content={<ClassNameStyles />} path="appearance/class-styles.tsx" />
+
+## Theming using the React context API
+
+Use React’s Context API to define and provide a theme across your application. This approach allows centralized control over component styles.
+
+<Snippet content={themeContext} />
+
+This example shows how the Button component can consume the theme context to apply consistent, centralized theming throughout the app.
+
+<Snippet content={buttonThemeContext} />
+
+## Using styled-components
+
+The <a href="https://styled-components.com/" target="_blank" rel="noopener noreferrer">styled-component library</a> library allows you to write actual CSS in your JavaScript, enabling dynamic styling and scoped styles.
+
+For more details on styled-components features in React Components, refer to the <Link to="/appearance/styled-component-support">styled-component documentation</Link>.
+
+## Applying global styles
+
+Users can apply global styles using either traditional CSS or styled-components.
+
+### Using regular CSS
+
+Global CSS styles are typically placed in a file like `global.css`. This file contains style rules that apply to HTML elements everywhere in your application. By defining styles in one place, you can ensure consistent formatting and colors across different pages and components.
+
+<Snippet content={[{ title: "global.css", code: `body { 
+    background: #fafafa; 
+}
+h1 { 
+    color: #1976d2; 
+}` }]} />
+
+### Using styled-components with global Styles
+
+Use styled-components to define and apply global styles across your application.
+
+<Snippet content={globalStyles} />

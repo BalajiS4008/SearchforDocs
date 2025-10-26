@@ -1,0 +1,156 @@
+:root {
+  --preview-color: #7925ff;
+  --layout: white;
+  --background: #ffffff;
+  --layout-border: #f0f0f0;
+  --layout-hover: #f9f9f9;
+  --text-color: #49454E;
+  --color: black;
+}
+
+.dark-theme {
+  --layout: var(--preview-background-color);
+  --background: black;
+  --color: white;
+  --layout-border: #3a3535;
+  --layout-hover: #3a3535;
+}
+
+.draggable {
+  width: 100px;
+  height: 40px;
+  background: var(--preview-bg-color);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: move;
+  font-weight: 500;
+  color: var(--preview-color);
+  touch-action: none;
+}
+
+.droppable {
+  width: 200px;
+  height: 100px;
+  background: var(--sidebar-background-color);
+  border: 2px dashed #ccc;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto;
+  font-weight: 500;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  touch-action: none;
+}
+
+.drag-handle {
+  cursor: grab;
+  padding: 5px;
+  margin-right: 10px;
+  color: #666;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+.scoped-container {
+  padding-left: 40px;
+}
+
+.list-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.draggable-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: var(--layout);
+  color: var(--text-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  touch-action: none;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--layout-border);
+  cursor: move;
+  transition: background-color 0.2s ease;
+}
+
+.list-item-clone {
+  background-color: var(--background);
+  color: var(--color);
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.list-item:hover {
+  background-color: var(--layout-border);
+}
+
+.handle {
+  margin-right: 12px;
+  color: var(--color);
+  cursor: grab;
+}
+
+.handle:active {
+  cursor: grabbing;
+}
+
+.item-content {
+  flex: 1;
+  font-size: 14px;
+}
+
+.list-item-clone {
+  width: calc(100% - 40px);
+  max-width: 460px;
+  border-radius: 8px;
+  border: 2px dashed #3498db;
+}
+
+.draggable-demo {
+  user-select: none;
+}
+
+#dragarea p {
+  padding-top: 23px;
+  text-align: center;
+
+}
+
+#dragarea {
+  line-height: 170px;
+  font-size: 14px;
+  height: 200px;
+  width: 750px;
+  background: var(--sidebar-background-color);
+  color: var(--text-color);
+  touch-action: none;
+}
+
+.draggable-demo .sf-icons {
+  padding-top: 5px;
+}
+
+@media (max-width: 580px) {
+  .scoped-container {
+    padding-left: 0px;
+  }
+  .drag-axis .droppable {
+    width: 150px;
+  }
+}

@@ -1,0 +1,165 @@
+import Accessibility from './accessibility.tsx';
+import KeyboardNavigation from './keyboard-navigation.tsx';
+import { Check, Cross, Clock } from '../../common/util';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Meta } from '../../common/meta';
+
+<Meta
+   title="React Data Grid - Accessibility | Syncfusion"
+  description="Data Grid supports accessibility features such as ARIA roles, keyboard navigation, and screen reader compatibility aligned with global standards."
+/>
+
+# React Data Grid Accessibility
+
+The Syncfusion® Data Grid component followed the accessibility guidelines and standards, including [ADA](https://www.ada.gov/), [Section 508](https://www.section508.gov/), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) standards, and [WCAG roles](https://www.w3.org/TR/wai-aria/#roles) that are commonly used to evaluate accessibility.
+
+The accessibility compliance for the grid component is outlined below:
+
+| Accessibility Criteria | Compatibility |
+| -- | -- |
+| WCAG 2.2 Support | <Clock/> |
+| Section 508 Support | <Clock/> |
+| Screen Reader Support | <Check/> |
+| Right-To-Left Support | <Check/> |
+| Color Contrast | <Check/> |
+| Mobile Device Support | <Check/> |
+| Keyboard Navigation Support | <Clock/> |
+| Accessibility Validation | <Clock/> |
+| Axe-core Accessibility Validation | <Clock/> |
+
+<Check/> - All features of the component meet the requirement.
+
+<Clock/> - Some features of the component do not meet the requirement.
+
+<Cross/> - The component does not meet the requirement.
+
+## WAI-ARIA attributes
+
+The Data Grid component complies with [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/grid/) design patterns to support accessibility requirements. It includes the following ARIA attributes:
+
+| Attributes | Purpose |
+| --- | --- |
+| `role=grid` | To represent the element containing the grid component. |
+| `role=row`  | To represent the element containing the cells of the row in the grid. |
+| `role=rowgroup` | To represent the group of rows in the grid. |
+| `role=columnheader` | To represent the cell in a row contains header information for a column in the grid. |
+| `role=gridcell` | To represent a cell in the grid component. |
+| `role=button` | To represent the element that acts as a button in the grid. |
+| `role=search` | To represent the element that acts as a search region in the grid. |
+| `role=presentation` | To represent the element to be not available for accessibility concerns. |
+| `role=navigation` | To represent the element containing pager elements to navigate from one page to another. |
+| `aria-colindex` | Defines the column index of the column with respect to the total number of columns within the grid. |
+| `aria-rowindex` | Defines row index of the row with respect to the total number of rows within the grid.  |
+| `aria-selected` | Indicates the current selected state of the rows and cells in the grid. |
+| `aria-sort` | Indicates whether the column is sorted in ascending or descending order. |
+| `aria-busy`| Indicates that an element is still being updated, so assistive technologies should wait before announcing changes. |
+
+The Data Grid component is structured with a two-table architecture for its header and content. To enhance accessibility for screen readers, roles and ARIA attributes are incorporated for the grid parent and all its child elements. Although this architectural approach may have some limitations with accessibility checker tools. It's important to note that these limitations do not affect the readability of the grid content over screen readers.
+
+The accessibility checker tools highlights the following known issues:
+
+* aria-required-children: This warning appears when rendering the grid without any features, as it contains textarea and grid content. Additionally, it appears when enabling features such as the toolbar.
+
+* An explicit ARIA 'role' is not valid for `<tr>` element within an ARIA role 'grid' per the ARIA in HTML specification. The same issue will be thrown for `<th>` and  `<td>` elements.
+
+* Scrollable region must have keyboard access.
+
+* Form element must have labels specially having checkbox input.
+
+* The element with role "rowgroup" is not contained in or owned by an element with one of the following roles: 'grid', 'table'. 
+
+## Keyboard shortcuts
+
+The Data Grid component follows the [keyboard shortcuts](https://www.w3.org/WAI/ARIA/apg/patterns/alert/#keyboardinteraction) guideline, ensuring accessibility for user of assistive technologies (AT) and those who depend exclusively on keyboard navigation. The following keyboard shortcuts are supported by the grid component.
+ 
+### <b>Pager</b>
+
+| Windows                                | macOS                          | Action                                 |
+|----------------------------------------|--------------------------------|----------------------------------------|
+| <kbd>Tab</kbd>                         | <kbd>Tab</kbd>                 | Move focus to the next pager item.     |
+| <kbd>Shift + Tab</kbd>                 | <kbd>Shift + Tab</kbd>         | Move focus to the previous pager item. |
+| <kbd>Enter</kbd> / <kbd>Space</kbd>    | <kbd>Enter</kbd> / <kbd>Space</kbd> | Select the focused page.          |
+| <kbd>PageUp</kbd> / <kbd>←</kbd>       | <kbd>←</kbd>                   | Navigate to the previous page.         |
+| <kbd>PageDown</kbd> / <kbd>→</kbd>     | <kbd>→</kbd>                   | Navigate to the next page.             |
+| <kbd>Home</kbd> / <kbd>Ctrl + Alt + PageUp</kbd> | <kbd>Fn + ←</kbd>         | Navigate to the first page.            |
+| <kbd>End</kbd> / <kbd>Ctrl + Alt + PageDown</kbd> | <kbd>Fn + →</kbd>         | Navigate to the last page.             |
+
+
+### <b>Focus</b>
+
+| Windows                  | macOS                      | Action                                                  |
+|--------------------------|----------------------------|---------------------------------------------------------|
+| <kbd>Home</kbd>          | <kbd>Fn + ←</kbd>          | Move focus to the first cell of the current row.        |
+| <kbd>End</kbd>           | <kbd>Fn + →</kbd>          | Move focus to the last cell of the current row.         |
+| <kbd>Ctrl + Home</kbd>   | <kbd>⌘ + Fn + ←</kbd>      | Move focus to the first cell of the first row.          |
+| <kbd>Ctrl + End</kbd>    | <kbd>⌘ + Fn + →</kbd>      | Move focus to the last cell of the last row.            |
+| <kbd>↑</kbd>             | <kbd>↑</kbd>               | Move focus upward.                                      |
+| <kbd>↓</kbd>             | <kbd>↓</kbd>               | Move focus downward.                                    |
+| <kbd>→</kbd>             | <kbd>→</kbd>               | Move focus to the right.                                |
+| <kbd>←</kbd>             | <kbd>←</kbd>               | Move focus to the left.                                 |
+| <kbd>Alt + J</kbd>       | <kbd>⌥ + J</kbd>           | Move focus to the entire grid.                          |
+| <kbd>Alt + W</kbd>       | <kbd>⌥ + W</kbd>           | Move focus to the grid content element.                 |
+
+
+### <b>Selection</b>
+
+| Windows                  | macOS                      | Action                                                  |
+|--------------------------|----------------------------|---------------------------------------------------------|
+| <kbd>↑</kbd>             | <kbd>↑</kbd>               | Move focus upward from the current cell.                              |
+| <kbd>↓</kbd>             | <kbd>↓</kbd>               | Move focus downward from the current cell.                            |
+| <kbd>→</kbd>             | <kbd>→</kbd>               | Move focus to the right cell.                           |
+| <kbd>←</kbd>             | <kbd>←</kbd>               | Move focus to the left cell.                            |
+| <kbd>Shift + ↑</kbd>     | <kbd>Shift + ↑</kbd>       | Extend selection upward.                                |
+| <kbd>Shift + ↓</kbd>     | <kbd>Shift + ↓</kbd>       | Extend selection downward.                              |
+| <kbd>Enter</kbd>         | <kbd>Enter</kbd>           | Move focus downward from the current cell.              |
+| <kbd>Shift + Enter</kbd> | <kbd>Shift + Enter</kbd>   | Move focus upward from the current cell.                |
+| <kbd>Esc</kbd>           | <kbd>Esc</kbd>             | Clear all selected rows.                                |
+
+
+### <b>Editing</b>
+
+| Windows                                | macOS                          | Action                                 |
+|----------------------------------------|--------------------------------|----------------------------------------|
+| <kbd>F2</kbd>                          | <kbd>F2</kbd>                  | Start editing the selected row.        |
+| <kbd>Enter</kbd>                       | <kbd>Enter</kbd>               | Save the current form.                 |
+| <kbd>Insert</kbd>                      | <kbd>⌘ + ⌥ + Enter</kbd>      | Create a new form.                     |
+| <kbd>Esc</kbd>                         |  <kbd>Esc</kbd>                | Cancel the edit                        |
+| <kbd>Delete</kbd>                      | <kbd>Delete</kbd>              | Delete the selected record.     |
+| <kbd>Tab</kbd>                         | <kbd>Tab</kbd>                 | Move to the next editable cell.         |
+| <kbd>Shift + Tab</kbd>                 | <kbd>Shift + Tab</kbd>         | Move to the previous editable cell.     |
+| <kbd>Shift + Enter</kbd>               | <kbd>Shift + Enter</kbd>       | Save the current form.                 |
+
+### <b>Sorting</b>
+
+| Windows                  | macOS                      | Action                                                  |
+|--------------------------|----------------------------|---------------------------------------------------------|
+| <kbd>Enter</kbd>         | <kbd>Enter</kbd>           | Sort the focused column (ascending/descending).         |
+| <kbd>Ctrl + Enter</kbd>  | <kbd>⌘ + Enter</kbd>       | Apply multi-column sorting.                             |
+| <kbd>Shift + Enter</kbd> | <kbd>Shift + Enter</kbd>   | Clear sorting for the focused column.                   |
+
+
+### Prevent default key action behavior
+Setting [`allowKeyboard`](https://react-api.syncfusion.com/data-grid/overview#allowkeyboard) to `false` effectively disables all built-in keyboard interactions within the grid component.
+
+
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<KeyboardNavigation />}
+  path="grid/keyboard-navigation.tsx"
+  scroll={false}
+/>
+
+## Ensuring accessibility
+
+The Data Grid component's accessibility levels are ensured through an [accessibility-checker](https://www.npmjs.com/package/accessibility-checker) and [axe-core](https://www.npmjs.com/package/axe-core) software tools during automated testing. The accessibility compliance of the grid is shown in the following sample.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<Accessibility />}
+  path="grid/accessibility.tsx"
+  scroll={false}
+/>

@@ -1,0 +1,241 @@
+import BasicDialog from './basic-dialog';
+import ConfirmationDialog from './confirmation-dialog';
+import AlertDialog from './alert-dialog';
+import PositionDialog from './position-dialog';
+import FormDialog from './form-dialog';
+import FullScreenDialog from './fullscreen-dialog';
+import NonModalDialog from './non-modal-dialog';
+import ActionButtonsDialog from './action-buttons-dialog';
+import DraggableDialog from './draggable-dialog';
+import ResizableDialog from './resizable-dialog';
+import MultipleDialogs from './multiple-dialogs';
+import AnimationDialog from './animation-dialog';
+import InitialFocusDialog from './initial-focus-dialog';
+import ScrollingDialog from './scrolling-dialog';
+import TargetDialog from './target-dialog';
+import { Preview } from '../../common/preview';
+import { Check, Cross, Clock } from '../../common/util';
+import { Snippet } from '../../common/snippet'
+import { dialogNpm, dialogImport, dialogStyles, dialogSnippet } from './dialog-snippets'
+import { Link } from 'react-router'
+import { Meta } from '../../common/meta';
+
+<Meta
+ title="React Dialog Component | Syncfusion"
+ description="The Dialog component displays modal windows for alerts, confirmations, or forms with customizable content and responsive design."
+/>
+
+# React Dialog
+
+The `React Dialog` component is a pop-up window that appears in front of app content to show important information, collecting user input, showing forms, or presenting detailed content.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite#set-up-the-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let's add the `React Dialog` component to the project.
+
+### Installing Syncfusion® packages
+
+To use the `React Dialog` component in this project, the [`@syncfusion/react-popups`](https://www.npmjs.com/package/@syncfusion/react-popups) package needs to be installed using the following command:
+
+<Snippet content={dialogNpm}/>
+
+### Adding CSS reference
+
+In this article, the `Material 3` theme is applied using CSS styles, which are available in installed packages. The necessary Material CSS styles for the `Dialog` component and its dependents were imported into the `src/App.css` file.
+
+<Snippet content={dialogStyles}/>
+
+### Adding Dialog component
+
+To include the `Dialog` component in your application, import the `Dialog` from the `@syncfusion/react-popups` package in `App.tsx`.
+
+<Snippet content={dialogImport} />
+
+Add the `Dialog` component in application as shown in below code example.
+
+<Snippet content={dialogSnippet} />
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+The following example demonstrates a basic `Dialog` with simple content and header. The dialog can be opened and closed using the [`open`](https://react-api.syncfusion.com/dialog/overview#open) property.
+
+<Preview 
+  content={<BasicDialog />} 
+  path="dialog/basic-dialog.tsx"
+/>
+
+## Confirmation dialog
+
+Confirmation dialog is a pop-up that appears before performing an important action, with buttons like "Yes/No" to confirm or cancel the action.
+
+<Preview 
+  content={<ConfirmationDialog />} 
+  path="dialog/confirmation-dialog.tsx"
+/>
+
+## Alert dialog
+
+Alert dialogs display important information that requires user acknowledgment. They usually contain a message and a single action button like "OK".
+
+<Preview 
+  content={<AlertDialog />} 
+  path="dialog/alert-dialog.tsx"
+/>
+
+## Positioning
+
+The `Dialog` component can be positioned at different locations on the screen using the [`position`](https://react-api.syncfusion.com/dialog/overview#position) property. This allows you to control where the dialog appears relative to the viewport.
+
+<Preview 
+  content={<PositionDialog />} 
+  path="dialog/position-dialog.tsx"
+/>
+
+## Form dialog
+
+Form dialogs contain interactive form elements and are commonly used for data entry, settings, or user input scenarios. They typically include form validation and submit/cancel actions.
+
+<Preview 
+  content={<FormDialog />} 
+  path="dialog/form-dialog.tsx"
+/>
+
+## Full screen mode
+ 
+The [`fullscreen`](https://react-api.syncfusion.com/dialog/overview#fullscreen) property allows the dialog to occupy the entire viewport, making it ideal for showing lots of complex contents or mobile interfaces where maximum screen is needed.
+ 
+<Preview 
+  content={<FullScreenDialog />} 
+  path="dialog/fullscreen-dialog.tsx"
+/>
+
+## Non-modal dialog
+ 
+The [`modal`](https://react-api.syncfusion.com/dialog/overview#modal) property determines whether the dialog is modal or non-modal. Non-modal dialogs allow users to interact with the background content while the dialog is open. This is useful for tool windows or information panels that don't require exclusive focus.
+ 
+<Preview 
+  content={<NonModalDialog />} 
+  path="dialog/non-modal-dialog.tsx"
+/>
+
+## Action buttons
+ 
+Dialogs can include custom action buttons in the footer area. These buttons typically handle user decisions like "Upload", "Cancel", etc.
+ 
+<Preview 
+  content={<ActionButtonsDialog />} 
+  path="dialog/action-buttons-dialog.tsx"
+/>
+
+## Draggable dialog
+ 
+The [`draggable`](https://react-api.syncfusion.com/dialog/overview#draggable) property allows the dialog to be moved around the screen by clicking and dragging the header area. This provides flexibility in positioning for better user experience.
+
+<Preview 
+  content={<DraggableDialog />} 
+  path="dialog/draggable-dialog.tsx"
+/>
+
+## Resizable dialog
+ 
+The [`resizable`](https://react-api.syncfusion.com/dialog/overview#resizable) property allows users to adjust the dialog size by dragging the edges or corners. This is particularly useful for dialogs contains different amounts of content that might need more or less space.
+
+The [`resizeHandles`](https://react-api.syncfusion.com/dialog/overview#resizehandles) property controls which parts of the dialog can be dragged to resize it. You can specify individual directions like `South` (bottom edge), `East` (right edge), `NorthWest` (top-left corner), or use `All` to allow resizing from any edge or corner. This flexibility ensures that the dialog can be resized in a way that best suits the user's needs.
+ 
+<Preview 
+  content={<ResizableDialog />} 
+  path="dialog/resizable-dialog.tsx"
+/>
+
+## Multiple dialogs
+ 
+Multiple dialogs can be opened simultaneously with proper z-index management. This demonstrates how nested or layered dialogs behave in the application.
+ 
+<Preview 
+  content={<MultipleDialogs />} 
+  path="dialog/multiple-dialogs.tsx"
+/>
+
+## Animation
+ 
+The [`animation`](https://react-api.syncfusion.com/dialog/overview#animation) property allows you to specify custom animations for opening and closing the dialog. Custom animations can enhance the user experience and provide visual feedback.
+ 
+<Preview 
+  content={<AnimationDialog />} 
+  path="dialog/animation-dialog.tsx"
+/>
+
+## Initial focus
+ 
+The [`initialFocusRef`](https://react-api.syncfusion.com/dialog/overview#initialfocusref) property allows you to set the initial focus to a specific element when the dialog is opened. This improves accessibility and user experience by directing attention to the most relevant control. 
+ 
+<Preview 
+  content={<InitialFocusDialog />} 
+  path="dialog/initial-focus-dialog.tsx"
+/>
+
+## Target 
+
+The [`target`](https://react-api.syncfusion.com/dialog/overview#target) property allows you to render the dialog within a specific HTML element instead of the default document body. This is useful for creating contained experiences where the dialog should be scoped to a particular area of the page.
+
+<Preview 
+  content={<TargetDialog />} 
+  path="dialog/target-dialog.tsx"
+/>
+
+## Scrolling long content
+ 
+When dialog content exceeds the available space, scrollbars are automatically added to maintain usability while keeping the dialog within viewport bounds.
+ 
+<Preview 
+  content={<ScrollingDialog />} 
+  path="dialog/scrolling-dialog.tsx"
+/>
+ 
+## Accessibility
+ 
+The `Dialog` component follows accessibility guidelines and standards, including [ADA](https://www.ada.gov/), [Section 508](https://www.section508.gov/), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) standards, and [WCAG roles](https://www.w3.org/TR/wai-aria/#roles) that are commonly used to evaluate accessibility.
+ 
+The accessibility compliance for the `Dialog` component is outlined below.
+ 
+| Accessibility Criteria | Compatibility |
+| -- | -- |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Support | <Check/> |
+| [Section 508](https://www.section508.gov/) Support | <Check/> |
+| Screen Reader Support | <Check/> |
+| Right-To-Left Support | <Check/> |
+| Color Contrast | <Check/> |
+| Mobile Device Support | <Check/> |
+| Keyboard Navigation Support | <Check/> |
+| [Accessibility](https://www.npmjs.com/package/@storybook/addon-a11y) Validation | <Check/> |
+ 
+<Check/> - All features of the component meet the requirement.
+ 
+<Clock/> - Some features of the component do not meet the requirement.
+ 
+<Cross/> - The component does not meet the requirement.
+ 
+### WAI-ARIA attributes
+ 
+The `Dialog` component follows the [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/) patterns to meet accessibility requirements. The following ARIA attributes are used in the Dialog component:
+ 
+| Attributes | Purpose |
+| --- | --- |
+| <mark>role="dialog"</mark> | Identifies the element as a `Dialog` container. |
+| <mark>aria-modal</mark> | Indicates whether the `Dialog` is modal or non-modal. |
+| <mark>aria-labelledby</mark> | References the element that labels the `Dialog`. |
+| <mark>aria-describedby</mark> | References the element that describes the `Dialog` content. |
+ 
+### Keyboard interaction
+ 
+The `Dialog` component follows the [keyboard interaction](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/#keyboardinteraction) guidelines, making it accessible for people who use assistive technologies (AT) and those who rely on keyboard navigation. The following keyboard shortcuts are supported:
+ 
+| **Windows** | **Mac** | **To do this** |
+| --- | --- | --- |
+| <kbd>Esc</kbd> | <kbd>Esc</kbd> |  Closes the `Dialog`. |
+| <kbd>Tab</kbd> | <kbd>Tab</kbd> | Moves focus to the next focusable element within the `Dialog` (modal) or in the document including elements outside the `Dialog` (non-modal). |
+| <kbd>Shift</kbd> + <kbd>Tab</kbd> | <kbd>⇧</kbd> + <kbd>Tab</kbd>| Moves focus to the previous focusable element within the `Dialog` (modal) or in the document including elements outside the `Dialog` (non-modal). |

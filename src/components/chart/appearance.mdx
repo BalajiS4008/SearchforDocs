@@ -1,0 +1,86 @@
+import Chart from './chart'
+import ChartArea from './chartArea'
+import ChartTitle from './chartTitle'
+import ChartSubtitle from './chartSubtitle'
+import ChartSize from './chartSize'
+import ChartContainer from './chartContainer'
+import SmartLabelPalette from './smartLabelPalette'
+import { Meta } from '../../common/meta';
+import { Preview } from '../../common/preview';
+
+<Meta title="React Chart Layout and Styling | Syncfusion"
+  description="React Chart layout and styling features manage visual elements such as background, borders, margins, titles, chart size, and color palettes."
+/>
+
+# Customizing React Chart Appearance
+
+You can enhance the overall look and feel of a chart by configuring the following properties in the `Chart` component:
+- [`background`](https://react-api.syncfusion.com/chart/overview#background): Sets the chart’s background using a solid color or an image.
+- [`border`](https://react-api.syncfusion.com/chart/overview#border): Defines the border’s color, width, and style to visually frame the chart.
+- [`margin`](https://react-api.syncfusion.com/chart/overview#margin): Controls the spacing around the chart, helping with layout and positioning. 
+
+
+<Preview onDemand={true} reset={true} content={<Chart />} path="chart/chart.tsx" />
+
+## Chart area
+
+The chart area refers to the region where data is plotted, excluding elements such as titles, legends, and axes.
+You can customize this area using the [`ChartArea`](https://react-api.syncfusion.com/chart/chartareaprops) component by adjusting the following properties:
+
+- [`background`](https://react-api.syncfusion.com/chart/chartareaprops#background): Sets the background color or image behind the plotted data.
+- [`border`](https://react-api.syncfusion.com/chart/chartareaprops#border): Defines the outline around the chart area for better visual separation.
+- [`margin`](https://react-api.syncfusion.com/chart/chartareaprops#margin): Manages internal spacing within the chart layout to ensure proper alignment and clarity.
+
+<Preview onDemand={true} reset={true} content={<ChartArea />} path="chart/chartArea.tsx" />
+
+## Chart title
+
+To display a title on the chart, use the [`text`](https://react-api.syncfusion.com/chart/charttitleprops#text) property within the [`ChartTitle`](https://react-api.syncfusion.com/chart/charttitleprops) component.
+
+You can customize the title’s appearance using the following properties:
+
+- [`fontSize`](https://react-api.syncfusion.com/chart/charttitleprops#fontsize) – Sets the font size of the title text.
+- [`background`](https://react-api.syncfusion.com/chart/charttitleprops#background) – Defines the background color behind the title.
+- [`color`](https://react-api.syncfusion.com/chart/charttitleprops#color) – Specifies the color of the title text.
+- [`position`](https://react-api.syncfusion.com/chart/charttitleprops#position) – Determines the placement of the title (e.g., `top`, `bottom`).
+- [`align`](https://react-api.syncfusion.com/chart/charttitleprops#align) – Aligns the title text (e.g., `center`, `left`).
+- [`border`](https://react-api.syncfusion.com/chart/charttitleprops#border) – Adds a border around the title for visual emphasis.
+
+<Preview onDemand={true} reset={true} content={<ChartTitle />} path="chart/chartTitle.tsx" />
+
+## Chart subtitle
+
+Use the [`text`](https://react-api.syncfusion.com/chart/charttitleprops#text) property in the [`ChartSubtitle`](https://react-api.syncfusion.com/chart/charttitleprops) component to display a subtitle below the main chart title.
+
+You can customize the subtitle’s appearance using the following properties:
+
+- [`fontSize`](https://react-api.syncfusion.com/chart/charttitleprops#fontsize) – Sets the font size of the subtitle.
+- [`background`](https://react-api.syncfusion.com/chart/charttitleprops#background) – Defines the background color.
+- [`color`](https://react-api.syncfusion.com/chart/charttitleprops#color) – Specifies the text color.
+- [`position`](https://react-api.syncfusion.com/chart/charttitleprops#position) – Determines the placement relative to the chart.
+- [`align`](https://react-api.syncfusion.com/chart/charttitleprops#align) – Aligns the subtitle text (e.g., `left`, `center`).
+- [`border`](https://react-api.syncfusion.com/chart/charttitleprops#border) – Adds a border around the subtitle for visual emphasis
+
+<Preview onDemand={true} reset={true} content={<ChartSubtitle />} path="chart/chartSubtitle.tsx" />
+
+## Chart dimension
+
+Chart dimensions can be defined using fixed pixel values or percentages for precise sizing. They can also be adjusted relative to the parent container for a responsive layout, allowing the chart to adapt to different screen sizes and layouts
+
+### Size for container
+
+The chart can automatically adjust to fit its container. Set the size using inline styles or CSS classes:
+
+<Preview onDemand={true} reset={true} content={<ChartContainer />} path="chart/chartContainer.tsx" />
+
+### Size for chart
+
+To set a specific size directly on the chart, use the [`height`](https://react-api.syncfusion.com/chart/overview#height) and [`width`](https://react-api.syncfusion.com/chart/overview#width) properties in the ChartComponent. These can be defined in pixels or percentages
+
+<Preview onDemand={true} reset={true} content={<ChartSize />} path="chart/chartSize.tsx" scroll={false} />
+
+## Custom color palette
+
+The default colors of chart series or data points can be customized by providing a custom color palette using the [`palettes`](https://react-api.syncfusion.com/chart/overview#palettes) property.
+
+<Preview onDemand={true} reset={true} content={<SmartLabelPalette />} path="chart/smartLabelPalette.tsx"  />

@@ -1,0 +1,76 @@
+import { Snippet } from '../common/snippet';
+import { Link } from 'react-router'
+import { messageStyles, dotnetSnippet, dotnetRoutes, dotnetNavMenu } from './snippets';
+import { Preview } from '../common/preview';
+import DefaultMessage from '../components/message/message';
+import { Meta } from '../common/meta';
+
+<Meta
+ title="React components in .NET core | Syncfusion"
+ description="Integrate React components with .NET Core, a cross-platform framework for Windows, macOS, and Linux."
+/>
+
+# Integration of React Components with .NET Core
+
+This guide demonstrates how to add Syncfusion<sup>®</sup> React components into a `.NET Core` React project.
+
+<a href="https://learn.microsoft.com/en-us/dotnet/core/get-started" target="_blank" rel="noopener noreferrer">.NET Core</a> is a modern, open-source, cross-platform framework from Microsoft for building web, cloud, and desktop applications. Users can easily incorporate these Syncfusion<sup>®</sup> React components into a `.NET Core` generated React app to quickly build feature-rich, visually appealing user interfaces.
+
+## Prerequisites
+
+- <a href="https://dotnet.microsoft.com/download" target="_blank" rel="noopener noreferrer">.NET Core SDK 6.0 or later</a>
+
+- <p><Link to="/overview/system-requirements">System requirements for Syncfusion<sup>®</sup> React UI components</Link></p>
+
+## Create a .NET Core React project
+
+Create a new `.NET Core` React project using the CLI, which scaffolds a React `SPA` template with `ASP.NET Core` backend.
+
+<Snippet content={[ { title: "CMD", code: 'dotnet new react -n MyReactApp\ncd MyReactApp' }]} />
+
+## Install Syncfusion<sup>®</sup> React packages
+
+Syncfusion<sup>®</sup> React components are available on [npmjs.com](https://www.npmjs.com/search?q=react). To integrate them into your project, install the required npm package.
+
+1\. Navigate to the `ClientApp` directory:
+
+<Snippet content={[ { title: "CMD", code: 'cd ClientApp' }]} />
+
+2\. To use the React `Message` component, install the `@syncfusion/react-notifications` package:
+
+<Snippet content={[ { title: "CMD", code: 'npm install @syncfusion/react-notifications --save' }]} />
+
+## Add CSS reference
+
+Import the `Message` component’s required CSS references in `ClientApp/src/custom.css` file.
+
+<Snippet content={messageStyles} />
+
+## Add Syncfusion<sup>®</sup> React component
+
+To add the React `Message` component in your `.NET Core` project, follow these steps:
+
+1\. In the `ClientApp/src/components` folder, create a new file named `MessageComponent.js` and add the following code:
+
+<Snippet content={dotnetSnippet} />
+
+2\. Register your new component in the app by editing `ClientApp/src/AppRoutes.js` and adding an import and route, for example:
+
+<Snippet content={dotnetRoutes} />
+
+3\. Add navigation to your NavMenu in `ClientApp/src/components/NavMenu.js`:
+
+<Snippet content={dotnetNavMenu} />
+
+## Run the .NET Core React application
+
+Back in the root directory, run your application using:
+
+<Snippet content={[ { title: "CMD", code: 'dotnet run' }]} />
+
+> Once the application has started, it will be running at a URL similar to http://localhost:5***/ in your terminal.
+After the application is running, click the `React` link in the navigation bar to view the Syncfusion® React components.
+
+The output will appear as follows:
+
+<Preview content={<DefaultMessage />} header={false} />

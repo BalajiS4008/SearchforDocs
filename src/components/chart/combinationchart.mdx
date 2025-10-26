@@ -1,0 +1,25 @@
+import CombinationChart from './combinationchart';
+import MultipleAxes from './multipleaxes';
+import { Preview } from '../../common/preview';
+import { Meta } from '../../common/meta';
+
+<Meta title="React Combination Chart | Syncfusion"
+  description="React combination charts display multiple chart types such as column and line in a single view for comparative data visualization."
+/>
+
+# React Combination Chart
+
+A combination chart allows you to display different types of data series—such as columns, lines within a single chart. This is especially useful when comparing related metrics that benefit from distinct visual representations.
+
+For example:
+- Use columns to show sales volume
+- Use a line to show profit margin
+
+<Preview onDemand={true} reset={true} content={<CombinationChart />} path="chart/combinationchart.tsx" />
+
+## Combination chart with multiple axes
+
+When the metrics have different units or scales (e.g., dollars vs. percentages), plotting them on the same axis can distort the visualization. That’s where multiple axes come in.
+You can add additional Y axes (or even X axes) to the chart and map each series to its corresponding axis using a unique name.
+
+<Preview onDemand={true} reset={true} content={<MultipleAxes />} path="chart/multipleaxes.tsx" />

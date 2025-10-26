@@ -1,0 +1,42 @@
+.sf-selected .highlight-day {
+    background-color: white;
+    position: relative;
+    border-radius: 50%;
+}
+
+.component-section.controlled-container {
+    max-width: none;
+}
+
+.sf-special-indicator {
+    position: relative;
+    right: 15px;
+    bottom: 5px;
+}
+
+.weekDays-radio {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+.radio-button {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.view-options {
+    margin-bottom: 20px;
+}
+
+.content {
+    margin-bottom: 10px;
+}
+
+.sf-special {
+    display: inline-flex;
+}

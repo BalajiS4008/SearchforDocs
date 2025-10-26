@@ -1,0 +1,81 @@
+.numericnumerictectbox-control-section {
+    margin-bottom: 10px;
+}
+
+.column-container-numeric {
+    display: flex;
+    gap: 200px;
+  }
+  
+  .column-item-numeric {
+    flex: 1;
+  }
+
+  .numerictectbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Column styling with fixed height */
+  .numerictectbox-column {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  /* Ensure each numerictectbox component takes the same height */
+  .numerictectbox-component {
+    width: 100%;
+    margin-bottom: 15px;
+    height: 70px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .numeric-button {
+    margin-top: 12px;
+    height: 36px;
+}
+
+.cust-button {
+    display: block;
+}
+.cust-button.hidden {
+    display: none;
+}
+
+.numeric-switch-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.numeric-button-toggle {
+    margin-right: 10px;
+}
+  
+.numeric-range-options {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    width: 500px;
+}
+
+.numeric-range-label {
+    margin-right: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.numeric-radio-group {
+    display: flex;
+    align-items: center;
+}
+
+.numeric-radio-option {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}

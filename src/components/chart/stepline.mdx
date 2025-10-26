@@ -1,0 +1,70 @@
+import Stepline from './stepline'
+import SteplineEmpty from './steplineEmpty'
+import SteplineCustomization from './steplineCustomization'
+import SteplineLabel from './steplineLabel'
+import SteplineNoriser from './steplineNoriser'
+import SteplineTransposed from './steplineTransposed'
+import SteplineStep from './steplineStep';
+import { Preview } from '../../common/preview';
+import { Meta } from '../../common/meta';
+
+<Meta title="React Step Line Chart | Syncfusion"
+  description="React Chart step line charts connect points with horizontal and vertical segments, showing discrete changes."
+/>
+
+# React Step Line Chart
+
+A step line chart displays data points connected by horizontal and vertical lines, resembling steps. It's used to visualize changes over time, particularly for discrete data or events.
+
+## Overview
+
+To visualize data as a stepline chart, set the [`type`](https://react-api.syncfusion.com/chart/chartseriesprops#type) property to `StepLine` within the [`ChartSeries`](https://react-api.syncfusion.com/chart/chartseriesprops) component.
+
+<Preview onDemand={true} reset={true} content={<Stepline />} path="chart/stepline.tsx" />
+
+## Data label
+
+To display data labels on the stepline chart, set the [`visible`](https://react-api.syncfusion.com/chart/chartdatalabelprops#visible) property to `true` within the [`ChartDataLabel`](https://react-api.syncfusion.com/chart/chartdatalabelprops) component.
+
+<Preview onDemand={true} reset={true} content={<SteplineLabel />} path="chart/steplineLabel.tsx" />
+
+## Skip missing points
+
+Data points with values of null, undefined, or NaN are treated as empty points in the series. You can customize their appearance and behavior using the [`emptyPointSettings`](https://react-api.syncfusion.com/chart/chartseriesprops#emptypointsettings) property in the `ChartSeries` component. This property supports various modes, including `Gap`, `Zero`, `Average`, and `Drop`, allowing you to control how empty points are rendered or connected in the chart.
+
+<Preview onDemand={true} reset={true} content={<SteplineEmpty />} path="chart/steplineEmpty.tsx" scroll={false} />
+
+## Inverted axes
+
+To switch the X and Y axes in your chart, use the [`transposed`](https://react-api.syncfusion.com/chart/overview#transposed)  property in the `Chart` component. When this property is enabled, the chart is rendered in a transposed format, which can enhance readability and data comparison, especially for horizontal spline charts or when working with long category labels.
+
+<Preview onDemand={true} reset={true} content={<SteplineTransposed />} path="chart/steplineTransposed.tsx" />
+
+## No risers
+
+In a Step Line chart, vertical lines (called risers) connect horizontal segments to indicate changes between data points.
+To render the step series without risers, set the [`noRisers`](https://react-api.syncfusion.com/chart/chartseriesprops#norisers) property to `true` in the `ChartSeries` component
+
+<Preview onDemand={true} reset={true} content={<SteplineNoriser />} path="chart/steplineNoriser.tsx" />
+
+## Step position
+
+The [`step`](https://react-api.syncfusion.com/chart/chartseriesprops#step) property in the `ChartSeries` component controls the alignment of steps in step-based chart types. The available options are:
+
+- `Left` - Steps originate from the left side of the second point in each pair. 
+- `Center` - Steps are centered between two consecutive data points. 
+- `Right` - Steps begin from the right side of the first point. 
+
+By adjusting the [`step`](https://react-api.syncfusion.com/chart/chartseriesprops#step) property, you can control the visual flow and interpretative style of your step charts more effectively.
+
+<Preview onDemand={true} reset={true} content={<SteplineStep />} path="chart/steplineStep.tsx" scroll={false} />
+
+## Series customization
+
+You can customize the appearance of the stepline series in the `ChartSeries` component by setting the following properties:
+- [`fill`](https://react-api.syncfusion.com/chart/chartseriesprops#fill) – Sets the color of the line.
+- [`width`](https://react-api.syncfusion.com/chart/chartseriesprops#width) – Defines the thickness of the line.
+- [`opacity`](https://react-api.syncfusion.com/chart/chartseriesprops#opacity) – Controls the transparency level of the line.
+- [`dashArray`](https://react-api.syncfusion.com/chart/chartseriesprops#dasharray) - Defines the pattern of dashes and gaps in lines.
+
+<Preview onDemand={true} reset={true} content={<SteplineCustomization />} path="chart/steplineCustomization.tsx" />

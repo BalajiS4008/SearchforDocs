@@ -1,0 +1,75 @@
+import { Snippet } from '../common/snippet';
+import { Preview } from '../common/preview';
+import { Link } from 'react-router'
+import { textboxSliceSnippet, reduxStore, reduxStoreMain, textboxSnippet, connectTextbox } from './snippets';
+import { Meta } from '../common/meta';
+import ReduxStore from './redux-store';
+
+<Meta
+ title="React components in Redux Store | Syncfusion"
+ description="Integrate React components with Redux, the JavaScript library for predictable and maintainable global state management."
+/>
+
+# Integration of React Components with Redux Store
+
+This guide demonstrates how to integrate Syncfusion<sup>®</sup> React components with a global state managed by `Redux Store`.
+
+## What is Redux store?
+
+<a href="https://redux.js.org/api/store" target="_blank" rel="noopener noreferrer">Redux Store</a>  is the centralized place that holds the entire state of the app. It provides methods to access, update, and subscribe to changes in the state. Redux centralizes state management, making it easier to debug and maintain complex applications.
+
+## Set up the React project
+
+1\. Create a new React project using <Link to="/getting-started/vite#create-a-vite-project">Vite</Link>.
+
+2\. Install the necessary `Redux` dependencies by running the following command:
+
+<Snippet content={[ { title: "CMD", code: 'npm install @reduxjs/toolkit react-redux --save' }]} />
+
+## Configure the Redux slice
+
+A Redux slice combines the state, actions, and reducer logic for a single feature into one file, making it easier to organize and maintain related state in your React application. Create a new file named `textboxSlice.tsx` and add the following code snippet.
+
+<Snippet content={textboxSliceSnippet} />
+
+## Set up the Redux store
+
+After creating the Redux slice, you need to set up the Redux store to combine your reducers and manage your application's state.
+
+Create a new file named `store.tsx` and add the following code:
+
+<Snippet content={reduxStore} />
+
+## Integrating the Redux store with React
+
+To make the `Redux store` available throughout your React application, you need to wrap your main App component with the `Provider` from `react-redux` in `main.tsx` file. This allows any nested component to access the `Redux store` state and dispatch actions.
+
+<Snippet content={reduxStoreMain} />
+
+## Adding Syncfusion<sup>®</sup> React components
+
+To add Syncfusion<sup>®</sup> React `Textbox` component to your application, follow these steps:
+
+1\. Install the necessary dependencies for React components.
+
+<Snippet content={[ { title: "CMD", code: 'npm install @syncfusion/react-inputs --save' }]} />
+
+2\. Add the `TextBox` component to the application
+
+<Snippet content={textboxSnippet} />
+
+## Connect the TextBox component to Redux store
+
+The value of the Syncfusion<sup>®</sup> `TextBox` component is now managed by the `Redux store` . Whenever you type in the `TextBox`, the value is updated in the Redux store, and any component connected to the store will receive the updated value automatically. This approach provides a single source of truth for your application's state and makes it easy to manage and share the `TextBox` value across different parts of your application.
+
+<Snippet content={connectTextbox} />
+
+## Run the project
+
+Execute the following command to run the project:
+
+<Snippet content={[ { title: "npm", code: 'npm run dev' } ]} />
+
+The output will appear as follows:
+
+<Preview content={<ReduxStore />} header={false} />

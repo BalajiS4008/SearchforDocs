@@ -1,0 +1,70 @@
+import RemoteData from './remote-data.tsx';
+import WebApiAdaptor from './web-api-adaptor.tsx';
+import URLAdaptor from './url-adaptor.tsx';
+import ODataV4Adaptor from './odataV4-adaptor.tsx';
+import UseEffectFetchData from './useeffect-fetch-data.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Chart Remote Data Binding | Syncfusion"
+  description="React Chart remote data binding connects charts to external APIs or services via DataManager, Fetch, or OData, enabling live updates and large datasets."
+/>
+
+# Remote Data Binding in React Chart
+
+Remote data binding connects UI components directly to server-side data sources, allowing applications to fetch, display, and manipulate data stored on remote servers.
+
+## Remote data binding using useEffect and Fetch API
+
+The Chart component supports remote data binding using React’s `useEffect` and the native `Fetch` API. It allows seamless integration with external data services like `OData` by directly assigning fetched data to the chart. This approach ensures a lightweight and flexible way to populate the chart with dynamic, server-side data.
+
+<Preview onDemand={true} reset={true}
+  content={<UseEffectFetchData />}
+  path="chart/useeffect-fetch-data.tsx"
+/>
+
+## Remote data binding using Syncfusion DataManager
+
+Remote data binding connects UI components to external sources like APIs for efficient handling of large datasets. The `@syncfusion/react-data` package provides built-in adaptors, which are responsible for managing communication between the UI and the service. Configure `DataManager` with a `url` for the endpoint and an `adaptor` to handle data requests and responses.
+
+<Preview onDemand={true} reset={true}
+  content={<RemoteData />}
+  path="chart/remote-data.tsx"
+/>
+
+**Key features of Remote data binding**
+ 
+- **Adaptors for different backends**: DataManager provides built-in adaptors for `OData`, `REST`, `WebAPI`, and `custom services`, each designed to meet specific server protocol requirements.
+
+## Overview of DataManager Adaptors
+
+### URL Adaptor
+ 
+The `UrlAdaptor` is the foundation for connecting UI controls to custom APIs or remote services via URLs. It is ideal for scenarios requiring tailored logic for data handling and CRUD operations. The adaptor returns data in a `result` and `count` format, optimized for display in the chart.
+ 
+**Example**: Custom API services with unique data processing needs.
+ 
+<Preview onDemand={true} reset={true}
+  content={<URLAdaptor />}
+  path="chart/url-adaptor.tsx"
+/>
+ 
+### ODataV4 Adaptor
+ 
+The `ODataV4Adaptor` is designed for **OData v4 services**, offering robust support for data fetching and CRUD operations in the chart. It ensures compatibility with the advanced features of OData v4.
+  
+<Preview onDemand={true} reset={true}
+  content={<ODataV4Adaptor />}
+  path="chart/odataV4-adaptor.tsx"
+/>
+ 
+### Web API Adaptor
+ 
+The `WebApiAdaptor`, an extension of `ODataAdaptor`, is tailored for Web APIs with `OData` endpoints. It ensures efficient communication between the Syncfusion Chart component and OData-based APIs, provided the endpoint supports OData-formatted queries.
+ 
+<Preview onDemand={true} reset={true}
+  content={<WebApiAdaptor />}
+  path="chart/web-api-adaptor.tsx"
+/>

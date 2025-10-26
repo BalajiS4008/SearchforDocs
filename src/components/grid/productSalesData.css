@@ -1,0 +1,236 @@
+.sales-detail  .sf-grid-header-cell {
+    height: auto;
+    min-height: 20px;
+}
+.sf-payment-info img{
+    margin-right: 5px;
+    margin-bottom: -4px;
+}
+
+.sales-detail .checkbox {
+    padding: 10px;
+}
+
+/* Chip Styles */
+.sales-detail .sf-chip-list.sf-chip,
+.sales-detail .sf-chip-list .sf-chip {
+    border-radius: 16px;
+    margin: 0;
+    pointer-events: none;
+}
+
+.sales-detail .sf-chip-list.sf-chip,
+.sales-detail .sf-chip-list .discount-none.sf-chip {
+    border-color: #6750A4;
+}
+
+.sales-detail .sf-chip-list.sf-chip,
+.sales-detail .sf-chip-list .discount-low.sf-chip {
+    border-color: #01579B;
+}
+
+.sales-detail .sf-chip-list.sf-chip,
+.sales-detail .sf-chip-list .discount-medium.sf-chip {
+    border-color: #205107;
+}
+
+.sales-detail .sf-chip-list.sf-chip,
+.sales-detail .sf-chip-list .discount-high.sf-chip {
+    border-color: #B3261E;
+}
+
+/* Chip Text */
+.sales-detail .sf-chip-list .discount-none span {
+    color: #6750A4;
+}
+
+.sales-detail .sf-chip-list .discount-low span {
+    color: #01579B;
+}
+
+.sales-detail .sf-chip-list .discount-medium span {
+    color: #205107;
+}
+
+.sales-detail .sf-chip-list .discount-high span {
+    color: #B3261E;
+}
+
+.sales-detail .star-full {
+  color: #EDC554;
+  font-size: 20px;
+}
+
+.sales-detail .star-half {
+  color: #cac4d0;
+  font-size: 20px;
+}
+
+.sales-detail .star-empty {
+  color: #e7e0ec;
+  font-size: 20px;
+}
+
+.sales-detail .flex {
+    margin-bottom: 13px;
+}
+
+.sales-detail .sf-grid-content-container .sf-product-info,
+.sales-detail .sf-grid-content-container .sf-payment-info {
+    display: flex;
+    align-items: center;
+}
+
+.sales-detail .sf-grid-content-container .sf-product-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.sales-detail .sf-grid-content-container .sf-payment-info {
+    border-radius: 8px;
+    height: 35px;
+}
+
+.sales-detail .sf-grid-content-container .sf-payment-info img {
+    width: 35px;
+    height: 65%;
+    opacity: 0.9;
+    margin-right: 3px;
+}
+
+.sales-detail .sf-grid-content-container .sf-product-info span {
+    margin: 10px;
+}
+
+.sales-detail .sf-activecolor {
+    background-color: #D0F8CE;
+    color: #256029;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.sales-detail .sf-inactivecolor {
+    background-color: #FDE0DC;
+    color: #B00020;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+#pbarlabel {
+    position: relative;
+    left: 10px;
+    line-height: 25px;
+    font-size: 11px;
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+#myBar {
+    position: absolute;
+    height: 100%;
+    background-color: #27ae60;
+    border-radius: 4px;
+}
+
+#myBar.progressdisable {
+    background-color: #E46962;
+}
+
+/* Progress Bar */
+#myProgress {
+    position: relative;
+    height: 25px;
+    width: 10em;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+}
+
+.dark-theme #pbarlabel {
+    color: #000000;
+}
+
+.dark-theme #myBar {
+    background-color: #388e3c;
+}
+
+.dark-theme #myBar.progressdisable {
+    background-color: #d32f2f;
+}
+
+.dark-theme #myProgress {
+    background-color: #424242;
+}
+
+
+.dark-theme .sales-detail .discount-none.sf-chip {
+    border-color: #D0BCFF;
+}
+
+.dark-theme .sales-detail .discount-none span {
+    color: #D0BCFF;
+}
+
+.dark-theme .sales-detail .discount-low.sf-chip {
+    border-color: #74B2DD;
+}
+
+.dark-theme .sales-detail .discount-low span {
+    color: #74B2DD;
+}
+
+.dark-theme .sales-detail .discount-medium.sf-chip {
+    border-color: #81C784;
+}
+
+.dark-theme .sales-detail .discount-medium span {
+    color: #81C784;
+}
+
+.dark-theme .sales-detail .discount-high.sf-chip {
+    border-color: #FF8A80;
+}
+
+.dark-theme .sales-detail .discount-high span {
+    color: #FF8A80;
+}
+
+.dark-theme .sales-detail .star-full {
+    color: #FFD700;
+}
+
+.dark-theme .sales-detail .star-half {
+    color: #5a5a5a;
+}
+
+.dark-theme .sales-detail .star-empty {
+    color: #424242;
+}
+
+.dark-theme .sales-detail .sf-activecolor {
+    background-color: #2E7D32;
+    color: #C8E6C9;
+}
+
+.dark-theme .sales-detail .sf-inactivecolor {
+    background-color: #C62828;
+    color: #FFCDD2;
+}
+
+.dark-theme .pbar {
+    background-color: #424242;
+  }
+  
+  .dark-theme .bar {
+    background-color: #388e3c;
+  }
+  
+  .dark-theme .barlabel {
+    color: #000000;
+  }
+
+  .dark-theme .sf-payment-info img{
+    background: white;
+  }

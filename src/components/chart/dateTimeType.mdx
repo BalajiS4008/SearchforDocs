@@ -1,0 +1,78 @@
+import DataTimeAxis from './dataTimeAxis';
+import DataTimeRange from './dataTimeRange';
+import DataTimeInterval from './dataTimeInterval';
+import DataTimeLabelFormat from './dataTimeLabelFormat';
+
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { chartNpm, chartImport } from './snippets';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Chart DateTime Axis | Syncfusion"
+  description="DateTime axis plot time-based values with automatic scaling, intervals, and formatted labels."
+/>
+
+## DataTime Axis in React Chart
+
+To display time-based data on the chart, set the [`valueType`](https://react-api.syncfusion.com/chart/chartaxisprops#valuetype) property to `DateTime` in the relevant `axis` component. This allows the axis to interpret and render date and time values accurately.
+
+<Preview onDemand={true} reset={true} content={<DataTimeAxis />} path="chart/dataTimeAxis.tsx" />
+
+### Range
+
+By default, the range of a DateTime axis is automatically calculated based on the earliest and latest dates in your data. This ensures that all time-based data points are visible.
+However, you can manually define the visible range by setting the `minimum` and `maximum` properties in the axis configuration
+
+<Preview onDemand={true} reset={true} content={<DataTimeRange />} path="chart/dataTimeRange.tsx" />
+
+### Interval and range customization
+
+You can control how time intervals are displayed on a DateTime axis using the [`interval`](https://react-api.syncfusion.com/chart/chartaxisprops#interval) and [`intervalType`](https://react-api.syncfusion.com/chart/chartaxisprops#intervaltype) properties in the axis configuration.
+
+**Supported intervalType values**:
+
+- `Auto`
+- `Years`
+- `Months`
+- `Days`
+- `Hours`
+- `Minutes`
+- `Seconds`
+
+**Range Padding**
+
+You can customize the spacing around the minimum and maximum values of an axis using the [`rangePadding`](https://react-api.syncfusion.com/chart/chartaxisprops#rangepadding) property. This helps improve the readability and visual balance of your charts.
+
+**Supported Padding Types**
+
+- `None` - No padding is applied. The axis range strictly matches the data values.
+
+- `Round` - Rounds the minimum and maximum values to the nearest whole number or logical boundary for a cleaner look.
+
+- `Additional` - Adds a fixed amount of extra space beyond the data range to ensure visual breathing room.
+
+- `Normal` - Applies a moderate, default padding that balances aesthetics and data fit.
+
+- `Auto` - Automatically determines the best padding based on the data and chart type.
+
+<Preview onDemand={true} reset={true} content={<DataTimeInterval />} path="chart/dataTimeInterval.tsx" scroll={false} />
+
+### Label format
+
+You can format and parse date values on the axis using the [`format`](https://react-api.syncfusion.com/chart/chartaxislabelprops#format) property. This supports all `Globalize date formats`, allowing you to display dates in various styles such as:
+
+- `EEEE` – Full weekday name (e.g., Monday)
+
+- `yMd` – Year, month, and day (e.g., 7/27/2025)
+
+- `MMM` – Abbreviated month (e.g., Jul)
+
+- `hm` – Hour and minute (e.g., 5:30 PM)
+
+- `hms` – Hour, minute, and second (e.g., 5:30:00 PM)
+
+A toggle button can be used to change the date format dynamically.
+
+<Preview onDemand={true} reset={true} content={<DataTimeLabelFormat />} path="chart/dataTimeLabelFormat.tsx" scroll={false} />

@@ -1,0 +1,16 @@
+import ChefSample from './chef-sample.tsx';
+import { Preview } from '../../common/preview';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Data Grid - Kitchen Order Management | Syncfusion"
+  description="Data Grid dynamically updates state to reflect UI changes and user interactions, enabling real-time feedback and synchronized component behavior."
+/>
+
+# Kitchen Order Management with React Data Grid
+ 
+The Data Grid component integrates seamlessly with React’s state-driven architecture to enable smooth and efficient workflow updates. By centrally managing state, the application automatically tracks status transitions such as "Not Started", "Preparing", "Food Ready", and "New Order" as demonstrated in the sample. These updates cascade across dependent components without requiring manual UI adjustments, streamlining synchronization, and reducing complexity.
+ 
+This architecture suits dynamic, real-world applications. Status changes are consistently reflected in both the grid and auxiliary UI elements, such as visual status banners, ensuring a unified and responsive user experience throughout the interface.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<ChefSample />} path="grid/chef-sample.tsx" scroll={false} />

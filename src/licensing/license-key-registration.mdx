@@ -1,0 +1,148 @@
+import { Snippet } from '../common/snippet';
+import { Link } from 'react-router'
+import { registerLicenseSnippet, githubActionsSnippet, azurePipelinesSnippet, linuxBuildSnippet } from './snippets';
+import bashScript from '/images/license/bash-script.png';
+import { Image } from '../common/image';
+import { Meta } from '../common/meta';
+
+<Meta
+title="React license key - registration guide | Syncfusion"
+description="How to register Syncfusion React license keys. Step-by-step activation process for development, deployment, and CI/CD environments."
+/>
+ 
+# Register Syncfusion<sup>®</sup> License Key in React Application
+
+The Syncfusion<sup>®</sup> license key must be registered if your project references any of our React packages. The generated license key is a string that should be registered after importing any Syncfusion<sup>®</sup> React package.
+
+> Syncfusion<sup>®</sup> license validation is done offline during application execution, so it does not require internet access. Applications registered with a Syncfusion<sup>®</sup> license key can be deployed on any system that does not have internet connectivity.
+
+Generate the <Link to="/licensing/generating-license-keys">Syncfusion<sup>®</sup> license key</Link> and register it in one of the following ways,
+
+* <p><Link to="/licensing/registering-license-keys#register-syncfusion-license-key-in-the-project">Register the license key in the project</Link></p>
+
+* <p><Link to="/licensing/registering-license-keys#register-syncfusion-license-key-using-the-npx-command">Register the license key using the npx command</Link></p>
+
+## Register Syncfusion<sup>®</sup> license key in the project
+
+Register the license key in the `main.tsx` file of the React project.
+
+<Snippet content={registerLicenseSnippet} />
+
+## Register Syncfusion<sup>®</sup> license key using the npx command
+
+Register the Syncfusion<sup>®</sup> license key via the `npx` command using one of the following methods:
+
+* <p><Link to="/licensing/registering-license-keys#register-the-license-key-with-the-license-file">Register the license key with the license file</Link></p>
+
+* <p><Link to="/licensing/registering-license-keys#register-the-license-key-with-the-environment-variable">Register the license key with the environment variable</Link></p>
+
+>If both the license text file and the environment variable are used for license registration, priority is set to `syncfusion-license.txt` file. If you want to use the environment variable for license registration, then remove the license text file from the application.
+
+### Register the license key with the license file
+
+The following steps show how to register the Syncfusion<sup>®</sup> license key with the license text file.
+
+* Create the `syncfusion-license.txt` file in the application root directory and paste the license key.
+
+* Open the command prompt in the application root directory and activate the license key by using the below command,
+
+<Snippet content={[ { title: "CMD", code: `npx syncfusion-license activate` } ]} />
+
+* Once the Syncfusion<sup>®</sup> license key is activated, the following console message will appear.
+
+  `License message`: (INFO) Syncfusion License imported successfully.
+
+* Remove the `.cache` folder from node modules in the application.
+
+* Now run the application. The license validation message will not appear in the application. 
+
+>If you don't want to use the license text file in the application, refer to this <Link to="/licensing/registering-license-keys#register-the-license-key-with-the-environment-variable">link</Link> to use an environment variable and register the Syncfusion<sup>®</sup> license key.
+
+### Register the license key with the environment variable
+
+You can set the environment variable as `SYNCFUSION_LICENSE` in the system and paste the license key as a value. It can be used in all applications on your machine.
+
+The following steps show how to set environment variable in different operating systems and register the Syncfusion<sup>®</sup> license key.
+
+* Set the environment variable in different operating systems like below,
+
+#### Windows
+
+* Open the command prompt and use <a aria-label="Opens link in new tab" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/setx" target="_blank" rel="noopener noreferrer">setx</a> command to add the new environment variable.
+
+<Snippet content={[ { title: "CMD", code: `setx SYNCFUSION_LICENSE "license key"` } ]} />
+
+#### Mac
+
+* Open the terminal and use the `env` command to view the variables list.
+
+* You can set the environment variable by using below command,
+
+<Snippet content={[ { title: "CMD", code: `echo 'export SYNCFUSION_LICENSE="license key"' >> ~/.bash_profile` } ]} />
+
+* If you want to modify the environment variable in the `bash` profile. Use the below command,
+
+<Snippet content={[ { title: "CMD", code: `nano .bash_profile` } ]} />
+
+* Once modified the variable. Press `ctrl+x` to exit then `Y` and `Enter` button to save the changes.
+
+* Close the terminal and open it again to see the environment variables changes using `env` command.
+
+#### Linux
+
+* Open the terminal and use the `env` command to view the variables list.
+
+* You can set or modify the <a aria-label="Opens link in new tab" href="https://help.ubuntu.com/community/EnvironmentVariables" target="_blank" rel="noopener noreferrer">environment variable</a> by using below command,
+
+<Snippet content={[ { title: "CMD", code: `export SYNCFUSION_LICENSE='license key'` } ]} />
+
+* Once set the `SYNCFUSION_LICENSE` environment variable, restart the IDE or application terminal before using the license activation command.
+
+* Open the command prompt in the application root directory and activate the license key by using the below command,
+
+<Snippet content={[ { title: "CMD", code: `npx syncfusion-license activate` } ]} />
+
+* Once the Syncfusion<sup>®</sup> license key is activated, the following console message will appear.
+
+  `License message`: (INFO) Syncfusion License imported successfully.
+
+* Remove the `.cache` folder from node modules in the application.
+
+* Now run the application. The license validation message will not appear in the application.
+
+### Register Syncfusion<sup>®</sup> license key in CI services
+
+The following sections show how to use an environment variable in CI services.
+
+#### GitHub actions
+
+* Create a <a aria-label="Opens link in new tab" href="https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository" target="_blank" rel="noopener noreferrer">new Repository Secret</a> or an <a aria-label="Opens link in new tab" href="https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-an-organization" target="_blank" rel="noopener noreferrer">Organization Secret</a>. Set the name of the secret to `SYNCFUSION_LICENSE` and use the license key as a value.
+
+* Add the Syncfusion<sup>®</sup> license activation command after running npm install or yarn like below,
+
+<Snippet content={githubActionsSnippet} />
+
+#### Azure Pipelines (YAML)
+
+* Create a new <a aria-label="Opens link in new tab" href="https://docs.microsoft.com/en-[REDACTED]?view=azure-devops&tabs=yaml%2Cbatch" target="_blank" rel="noopener noreferrer">User-defined Variable</a> named `SYNCFUSION_LICENSE`. Use the license key as a value.
+
+* Add the Syncfusion<sup>®</sup> license activation command after running `npm install` or `yarn` like below,
+
+The following example shows the syntax for `Windows` build agents.
+
+<Snippet content={azurePipelinesSnippet} />
+
+The following example shows the syntax for `Linux` build agents.
+
+<Snippet content={linuxBuildSnippet} />
+
+#### Azure Pipelines (Classic)
+
+* Create a new <a aria-label="Opens link in new tab" href="https://learn.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch" target="_blank" rel="noopener noreferrer">User-defined Variable</a> named `SYNCFUSION_LICENSE`. Use the license key as a value.
+
+* Add the Syncfusion<sup>®</sup> license activation command after running `npm install` or `yarn` using bash task like below,
+
+<Snippet content={[ { title: "CMD", code: `# Activate the license
+npx syncfusion-license activate` } ]} />
+
+<Image alt="Bash task" style={{ paddingBottom: '20px' }} src={bashScript} />

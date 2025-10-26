@@ -1,0 +1,43 @@
+import { Link } from 'react-router';
+import { Snippet } from '../common/snippet';
+import { Preview } from '../common/preview';
+import { muiSnippets } from './snippets';
+import { Meta } from '../common/meta';
+import MaterialUI from './material-UI';
+
+<Meta
+ title="Integration of Material-UI components | Syncfusion"
+ description="Integrate Material-UI components into React components to enhance UI flexibility with Material Design elements."
+/>
+
+# Integration of Material-UI Components
+
+<a href="https://mui.com/" target="_blank" rel="noopener noreferrer">Material-UI</a> is a popular library for building user interfaces in React applications. It offers a comprehensive set of pre-designed, customizable UI components based on Material Design principles. These components include buttons, forms, navigation bars, modals, cards, and more, making it easy to create visually appealing and responsive user interfaces.
+
+The Syncfusion<sup>®</sup> `Material 3` theme is designed to follow the Material-UI guidelines, ensuring a consistent appearance with `Material-UI` components. This makes it seamless to integrate Syncfusion<sup>®</sup> React components with existing Material-UI components, allowing you to create a unified and visually appealing application.
+
+This guide will provide you with a step-by-step process for integrating `Material-UI` component into the Syncfusion<sup>®</sup> React `Message` component.
+
+## Set up the React project
+
+1\. Set up a new React project by referring to the Syncfusion<sup>®</sup> React `Message` component's <Link to="/message#getting-started">Getting Started</Link> documentation.
+
+2\. Install the necessary `Material-UI` dependencies using the command:
+
+<Snippet content={[ { title: "CMD", code: 'npm install @mui/material @emotion/react @emotion/styled --save' }]} />
+
+## Integrate Material-UI components
+
+Integrate `Material-UI` components with the React `Message` component by directly including them as children. You can structure the Material-UI components inside a custom function and render the output within the `Message` component, as shown in the code snippet below:
+
+<Snippet content={muiSnippets} />
+
+## Run the project
+
+Execute the following command to run the project:
+
+<Snippet content={[ { title: "npm", code: 'npm run dev' } ]} />
+
+The output will appear as follows:
+
+<Preview content={<MaterialUI />} header={false} />

@@ -1,0 +1,50 @@
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import Internationalization from './internationalization.tsx';
+import { Meta } from '../../common/meta';
+
+<Meta title="React Chart Localization | Syncfusion"
+  description="Localization adapts charts to languages and regions with CLDR data, translations, locale, and formatting for numbers, dates, and times."
+/>
+
+## Localization in React Chart
+
+The Chart provides a built-in [Localization](https://react.syncfusion.com/common-features/localization) library, allowing you to customize the data displayed in the chart for different languages and cultural preferences. You can easily change static text on various elements to languages such as Arabic, German, French, and more by defining the `locale` property and providing a translation object.
+
+**Configuration steps:**
+
+1. Choose the desired [locale](https://github.com/syncfusion/react-locale/) for your application.
+2. Install the CLDR (Unicode Common Locale Data Repository) package for culture-specific formatting.
+    
+    <Snippet content={[{ title: "npm", code: `npm install react-cldr-data` }]} />
+
+3. Import the `L10n` class, `loadCldr` function from the `@syncfusion/react-base` package.
+4. Import the required localization files for your chosen language and the necessary CLDR data files:
+  
+    <Snippet content={[ { title: "App.tsx", code: `import { L10n, loadCldr } from "@syncfusion/react-base";
+    import Localization from './locale.json';
+    import enNumberData from "@syncfusion/react-cldr-data/main/en/numbers.json";
+    import enTimeZoneData from "@syncfusion/react-cldr-data/main/en/timeZoneNames.json";` } ]} />
+
+5. Call the `loadCldr` function with the imported data to enable formatting and parsing for the selected culture:
+
+   <Snippet content={[ { title: "App.tsx", code: `loadCldr(enNumberData, enTimeZoneData);` } ]} />
+
+6. Use the `L10n.load` method to load your translation object.
+7. Set the `locale` property of the Chart to apply the selected language.
+
+## Internationalization
+
+The Chart Internationalization library enables localized display of numbers, dates, and times based on the selected language and region. You can customize the appearance of these values by setting format strings in the [`format`](https://react-api.syncfusion.com/chart/chartaxislabelprops#format) property.
+
+The following sample demonstrates usage for **en-US (English)**, **de (German - Germany)**, **fr-CH (French - Switzerland)**, **ar (Arabic)**, and **zh (Chinese - China)** based on locale selection. The data in chart updates its number, date, and time formatting according to the selected culture.
+
+<Preview
+  reset={true}
+  onDemand={true}
+  content={<Internationalization />}
+  path="chart/internationalization.tsx"
+  scroll={false}
+/> 
+
+

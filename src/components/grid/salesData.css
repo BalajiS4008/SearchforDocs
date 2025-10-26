@@ -1,0 +1,49 @@
+.sales-details {
+    margin-top: 10px;
+}
+
+#pbarlabel {
+    position: relative;
+    left: 10px;
+    line-height: 25px;
+    font-size: 11px;
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+#myBar {
+    position: absolute;
+    height: 100%;
+    background-color: #27ae60;
+    border-radius: 4px;
+}
+
+#myBar.progressdisable {
+    background-color: #E46962;
+}
+
+/* Progress Bar */
+#myProgress {
+    position: relative;
+    height: 25px;
+    width: 10em;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+}
+
+.dark-theme #pbarlabel {
+    color: #000000;
+}
+
+.dark-theme #myBar {
+    background-color: #388e3c;
+}
+
+.dark-theme #myBar.progressdisable {
+    background-color: #d32f2f;
+}
+
+.dark-theme #myProgress {
+    background-color: #424242;
+}

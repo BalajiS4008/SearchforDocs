@@ -1,0 +1,140 @@
+export const employeeDetails: object[] = [
+  {
+    "FirstName": "David",
+    "LastName": "Jones",
+    "Email": "david.jones@company.com",
+    "Phone": "+1-334-902-3993",
+    "Department": "Marketing",
+    "Role": "Manager",
+    "Location": "San Francisco, USA",
+    "HireDate": new Date(1449889901523),
+    "IsActive": false,
+    "ProfileImage": "https://company.com/images/emp10000.jpg",
+    "Skills": [
+      "Communication",
+      "Leadership",
+      "SEO"
+    ],
+    "PerformanceScore": 86,
+    "LastReviewDate": new Date(1723950701523),
+    "ManagerId": "EMP191",
+    "LinkedIn": "linkedin.com/in/david0",
+    "Experience": 9.6,
+    "EmployeeID": 10000
+  },
+  {
+    "FirstName": "Emma",
+    "LastName": "Brown",
+    "Email": "emma.brown@company.com",
+    "Phone": "+1-742-204-5269",
+    "Department": "Sales",
+    "Role": "QA Analyst",
+    "Location": "Chicago, USA",
+    "HireDate": new Date(1521169901523),
+    "IsActive": true,
+    "ProfileImage": "https://company.com/images/emp10001.jpg",
+    "Skills": [
+      "Node.js",
+      "Python",
+      "React"
+    ],
+    "PerformanceScore": 82,
+    "LastReviewDate": new Date(1744168301523),
+    "ManagerId": "EMP180",
+    "LinkedIn": "linkedin.com/in/emma1",
+    "Experience": 7.4,
+    "EmployeeID": 10001
+  },
+  {
+    "FirstName": "Emily",
+    "LastName": "Brown",
+    "Email": "emily.brown@company.com",
+    "Phone": "+1-179-707-9780",
+    "Department": "Finance",
+    "Role": "DevOps Engineer",
+    "Location": "Chicago, USA",
+    "HireDate": new Date(1524453101523),
+    "IsActive": false,
+    "ProfileImage": "https://company.com/images/emp10003.jpg",
+    "Skills": [
+      "SEO",
+      "Java",
+      "Leadership"
+    ],
+    "PerformanceScore": 91,
+    "LastReviewDate": new Date(1734318701523),
+    "ManagerId": "EMP145",
+    "LinkedIn": "linkedin.com/in/emily3",
+    "Experience": 7.3,
+    "EmployeeID": 10003
+  },
+  {
+    "FirstName": "Michael",
+    "LastName": "Martinez",
+    "Email": "michael.martinez@company.com",
+    "Phone": "+1-512-334-6660",
+    "Department": "Sales",
+    "Role": "Developer",
+    "Location": "Chicago, USA",
+    "HireDate": new Date(1439694701523),
+    "IsActive": true,
+    "ProfileImage": "https://company.com/images/emp10004.jpg",
+    "Skills": [
+      "React",
+      "Node.js",
+      "Communication"
+    ],
+    "PerformanceScore": 52,
+    "LastReviewDate": new Date(1727147501523),
+    "ManagerId": "EMP146",
+    "LinkedIn": "linkedin.com/in/michael4",
+    "Experience": 9.9,
+    "EmployeeID": 10004
+  },
+  {
+    "FirstName": "James",
+    "LastName": "Williams",
+    "Email": "james.williams@company.com",
+    "Phone": "+1-745-257-1661",
+    "Department": "Sales",
+    "Role": "Recruiter",
+    "Location": "San Francisco, USA",
+    "HireDate": new Date(1693192301524),
+    "IsActive": true,
+    "ProfileImage": "https://company.com/images/emp10006.jpg",
+    "Skills": [
+      "Node.js",
+      "React",
+      "Java"
+    ],
+    "PerformanceScore": 78,
+    "LastReviewDate": new Date(1739934701524),
+    "ManagerId": "EMP127",
+    "LinkedIn": "linkedin.com/in/james6",
+    "Experience": 1.9,
+    "EmployeeID": 10006
+  },
+  {
+    "FirstName": "Sarah",
+    "LastName": "Smith",
+    "Email": "sarah.smith@company.com",
+    "Phone": "+1-384-933-1262",
+    "Department": "Sales",
+    "Role": "Accountant",
+    "Location": "New York, USA",
+    "HireDate": new Date(1490411501524),
+    "IsActive": true,
+    "ProfileImage": "https://company.com/images/emp10007.jpg",
+    "Skills": [
+      "Python",
+      "React",
+      "Java"
+    ],
+    "PerformanceScore": 88,
+    "LastReviewDate": new Date(1736219501524),
+    "ManagerId": "EMP129",
+    "LinkedIn": "linkedin.com/in/sarah7",
+    "Experience": 8.3,
+    "EmployeeID": 10007
+  }
+]

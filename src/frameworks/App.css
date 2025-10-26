@@ -1,0 +1,13 @@
+.redux-sample .error-message {
+    color: red;
+    margin-top: 2;
+}
+
+.redux-sample .redux-textbox {
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+.redux-sample .sf-btn {
+  margin-top: 10px;
+}

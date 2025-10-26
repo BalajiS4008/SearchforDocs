@@ -1,0 +1,52 @@
+import { Snippet } from '../common/snippet';
+import { cdnImportMap, cdnImportStyle, cdnComponent } from './snippets';
+import { Link } from 'react-router';
+import { Preview } from '../common/preview';
+import DefaultMessage from '../components/message/message';
+import { Meta } from '../common/meta';
+
+<Meta
+ title="Single Page Application | Syncfusion"
+ description="Integrate React components in a Single Page Application (SPA) for fast, dynamic web apps with no page reloads."
+/>
+
+# Getting Started with Single Page Application
+
+This section guides you through integrating Syncfusion® React components into a browser-based project using a `CDN` services such as [esm.sh](https://esm.sh/), without the need for a build step. This approach is ideal for quick embedding components in environments where bundling tools like `Webpack` or `Vite` are not used.
+
+## What is esm.sh?
+
+`esm.sh` is an ES Module CDN (Content Delivery Network) that converts npm packages into native ES Modules (ESM), It allows you to load Syncfusion<sup>®</sup> React packages directly in the browser, providing a modern approach to using ECMAScript modules in `HTML` documents.
+
+## Prerequisites
+
+<p><Link to="/overview/system-requirements">System requirements for Syncfusion<sup>®</sup> React UI components</Link></p>
+
+## Import map configuration
+
+This guide uses the React <Link to="/message">`Message`</Link> component as an example. To begin, configure your module paths for React and Syncfusion packages in your `HTML` file using the following code:
+
+<Snippet content={cdnImportMap} />
+
+## Add Syncfusion styles
+
+Syncfusion<sup>®</sup> React components are styled using <Link to="/appearance/built-in-themes">built-in themes</Link>, include the following CSS link in the HTML `<head>`:
+
+<Snippet content={cdnImportStyle} />
+
+
+## Add Syncfusion<sup>®</sup> React component
+
+Now, add the required script to the `HTML` to render a Syncfusion<sup>®</sup> component using React, here is how the complete html should look: 
+
+<Snippet content={cdnComponent} />
+
+## Run the project
+
+Open the `index.html` file in the web browser and it will render the Syncfusion® React `Message` component. The output will appear as follows:
+
+<Preview content={<DefaultMessage />} header={false} />
+
+## See also
+
+* <p><Link to="/message">Syncfusion React Message Component</Link></p>

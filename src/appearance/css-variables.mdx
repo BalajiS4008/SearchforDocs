@@ -1,0 +1,64 @@
+import { Snippet } from '../common/snippet';
+import { Preview } from '../common/preview';
+import { material3CSS } from './snippet';
+import CustomizationCSS from './customization';
+import LightDarkMode from './switch-light-dark';
+import material3Default from '/images/appearance/material3-default.png';
+import material3Customize from '/images/appearance/material3-customize.png';
+import material3Dark from '/images/appearance/material3-dark.png';
+import { Meta } from '../common/meta';
+
+<Meta
+ title="CSS theme variables for React components | Syncfusion"
+ description="CSS theme variables enable dynamic customization of React component themes, facilitating flexible and efficient styling."
+/>
+
+# CSS Theme Variables for React Components
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" target="_blank" rel="noopener noreferrer">CSS variables</a>, also known as custom properties, are values defined in CSS that can be reused throughout a CSS file. They are identified by their name, which must begin with two hyphens (--) followed by an identifier. These variables can be assigned any valid CSS value, such as colors, lengths, or fonts. To retrieve the value of a CSS variable, the `var()` function is used.
+
+Syncfusion<sup>®</sup> offers a modern, highly customizable theme, built with CSS variables, that ensures a consistent and visually appealing design across all Syncfusion<sup>®</sup> components.
+
+## CSS themes - Syncfusion<sup>®</sup> React components
+
+The <a href="https://m3.material.io/" target="_blank" rel="noopener noreferrer">Material 3</a> theme has been introduced across all the Syncfusion<sup>®</sup> React components, featuring both `light` and `dark` variants. This theme leverages CSS variables for straightforward color customization, enabling seamless switching between light and dark modes to accommodate diverse user preferences and application requirements.
+
+> In the Material 3 theme, CSS variables with `rgb()` values are used for color variables. The use of `hex` values in this context may lead to improper functionality. For example, in previous versions of the Material theme or other themes, the primary color variable was defined as follows: $primary: #6200ee;. However, in the Material 3 theme, the primary color variable is defined as follows: `--sf-color-primary: 98, 0, 238;`.
+
+### Utilization of CSS variables in modern themes
+
+The Syncfusion<sup>®</sup> modern theme simplifies the process of customizing components colors by using CSS variables. It has its own way of setting these variables. This ensures consistent and efficient styling across all components in your application.
+
+Below is the example of how CSS variables can be defined and used within this theme:
+
+<Snippet content={material3CSS} />
+
+### Color customization in themes
+
+CSS variables enable dynamic, real-time modification of color values, independent of static CSS files. This flexibility facilitates the creation of interactive experiences where colors respond to user interactions and other dynamic conditions.
+
+#### Customization using CSS
+
+Below is an example of how to customize the `Material 3` theme using a CSS class:
+
+<Preview content={<CustomizationCSS />} path="appearance/customization.tsx" />
+
+**Default Material 3 primary value**
+
+<img style={ { width: '100%' } } alt="default primary value" src={material3Default} />
+
+**Customized Material 3 primary value**
+
+<img style={ { width: '100%' } } alt="customized primary value" src={material3Customize} />
+
+### Switching light and dark mode with CSS variables
+
+Experience seamless light and dark mode switching with our modern theme. It provides distinct CSS variables within a single file, ensuring flexible and effortless transitions. To enable dark mode, simply append the `sf-dark-mode` class to your application's `<body>` element. Once applied, the theme will switch to dark mode effortlessly.
+
+<Preview content={<LightDarkMode />} path="appearance/switch-light-dark.tsx" />
+
+Please refer to the example image below for visual guidance:
+
+`Material 3` dark mode
+
+<img style={ { width: '100%', paddingBottom: '20px' } } alt="dark mode" src={material3Dark} />

@@ -1,0 +1,91 @@
+import Tooltip from './tooltip'
+import TooltipFixed from './tooltipFixed'
+import TooltipFormat from './tooltipFormat'
+import TooltipCustomization from './tooltipCustomization'
+import TooltipShared from './tooltipShared'
+import TooltipMapping from './tooltipMapping'
+import TooltipHeader from './tooltipHeader';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { chartNpm, chartImport } from './snippets';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta title="React Chart Tooltip | Syncfusion"
+  description="React Chart tooltips show data on hover or tap, revealing values and labels near points and support shared tips, format, templates, positioning, and styling."
+/>
+
+# Tooltip in React Chart
+
+A tooltip in charts provides additional information about a data point when hovered over or clicked. It enhances understanding by displaying contextual details without cluttering the visual representation
+
+## Default tooltip
+
+By default, tooltips are disabled in the chart. To enable them and display data details when hovering over data points, set the [`enable`](https://react-api.syncfusion.com/chart/charttooltipprops#enable) property to `true` in the [`ChartTooltip`](https://react-api.syncfusion.com/chart/charttooltipprops) component.
+
+<Preview onDemand={true} reset={true} content={<Tooltip />} path="chart/tooltip.tsx" />
+
+## Shared tooltip
+
+To display data from multiple series or points at once, set the [`shared`](https://react-api.syncfusion.com/chart/charttooltipprops#shared) property to `true` in the `ChartTooltip` component. This is especially useful in multi-series charts, where comparing values across different datasets is important
+
+<Preview onDemand={true} reset={true} content={<TooltipShared />} path="chart/tooltipShared.tsx" />
+
+## Custom tooltip content
+
+By default, the tooltip displays the x and y values of points. To show additional information from the data source in the tooltip, you can use the [`tooltipField`](https://react-api.syncfusion.com/chart/chartseriesprops#tooltipfield) property. Utilize the `${point.tooltip}` placeholder to display the specified tooltip content.
+
+<Preview onDemand={true} reset={true} content={<TooltipMapping />} path="chart/tooltipMapping.tsx" />
+
+## Fixed tooltip
+
+By default, tooltips follow the mouse pointer. But if you want the tooltip to appear at a specific location on the chart regardless of where the user hovers, you can use the [`location`](https://react-api.syncfusion.com/chart/charttooltipprops#location) property in the `ChartTooltip` component.
+
+<Preview onDemand={true} reset={true} content={<TooltipFixed />} path="chart/tooltipFixed.tsx" />
+
+## Format the tooltip
+
+You can customize the content displayed in tooltips using the [`format`](https://react-api.syncfusion.com/chart/charttooltipprops#format) property in the `ChartTooltip` component. This allows you to define a template string with dynamic placeholders that automatically display relevant data values.
+
+**Common placeholders include:**
+- `${series.name}` – Displays the name of the data series.
+- `${point.x}` – Shows the value on the X-axis.
+- `${point.y}` – Shows the value on the Y-axis.
+
+Using these placeholders helps make tooltips more informative, interactive, and user-friendly, enhancing the overall data visualization experience.
+
+<Preview onDemand={true} reset={true} content={<TooltipFormat />} path="chart/tooltipFormat.tsx" />
+
+## Tooltip header
+
+In chart tooltips, the header refers to the top line that presents essential context such as a category name, timestamp, or data group label when hovering over a chart element. You can manage its visibility using the [`showHeaderLine`](https://react-api.syncfusion.com/chart/charttooltipprops#showheaderline) property within the `ChartTooltip` component.
+
+<Preview onDemand={true} reset={true} content={<TooltipHeader />} path="chart/tooltipHeader.tsx" />
+
+## Customize tooltip appearance
+
+You can personalize the look and feel of the tooltip in the `ChartTooltip` component using various styling properties.
+
+**Key Properties**:
+
+- [`fill`](https://react-api.syncfusion.com/chart/charttooltipprops#fill): Sets the background color of the tooltip.
+
+- [`border`](https://react-api.syncfusion.com/chart/charttooltipprops#border): Customizes the border's color, width, and style.
+
+**Text Styling with textStyle**:
+
+Use the [`textStyle`](https://react-api.syncfusion.com/chart/charttooltipprops#textstyle) property to fine-tune the appearance of tooltip text. You can adjust:
+
+- `fontWeight`
+
+- `fontStyle`
+
+- `opacity`
+
+- `fontFamily`
+
+- `color`
+
+- `fontSize`
+
+<Preview onDemand={true} reset={true} content={<TooltipCustomization />} path="chart/tooltipCustomization.tsx" />

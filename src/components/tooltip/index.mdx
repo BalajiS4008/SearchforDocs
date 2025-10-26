@@ -1,0 +1,208 @@
+import UserTooltip from './basic-tooltip';
+import { Check, Cross, Clock } from '../../common/util';
+import UserDetail from './template';
+import OpensOnTypes from './opens-on';
+import FeatureList from './multiple-target';
+import PositionedTooltip from './positioned-tooltip';
+import ControlledMode from './controlled-mode';
+import ImageInspector from './mouse-trail';
+import Sticky from './sticky';
+import ScrollMode from './scrollMode';
+import Delay from './delay';
+import Animation from './animation';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet'
+import { tooltipNpm, tooltipImport, tooltipStyles, tooltipSnippet } from './tooltip-snippets'
+import { Link } from 'react-router'
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Tooltip Component | Syncfusion"
+  description="The Tooltip component displays brief contextual messages on hover or focus, enhancing usability with customizable positioning and style."
+/>
+
+# React Tooltip
+
+The `Tooltip` component provides contextual information when users interact with elements on your application. This elegant UI element appears when users hover over, focus on, or tap UI elements, offering clarification and additional details.
+
+Designed with simplicity and user experience in mind, our `Tooltip` component integrates seamlessly with your `React` application, supporting customizable positioning, animations, and styling options to match your design system.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite?section=set-up-the-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let’s add the `React Tooltip` component to the project.
+
+### Installing Syncfusion® packages
+
+To use the `React Tooltip` component in this project, the [`@syncfusion/react-popups`](https://www.npmjs.com/package/@syncfusion/react-popups) package needs to be installed using the following command:
+
+<Snippet content={tooltipNpm}/>
+
+### Adding CSS reference
+
+In this article, the `Material 3` theme is applied using CSS styles, which are available in installed packages. The necessary Material CSS styles for the `Tooltip` component and its dependents were imported into the `src/App.css` file.
+
+<Snippet content={tooltipStyles}/>
+
+### Adding Tooltip component
+
+To include the `Tooltip` component in your application, import the `Tooltip` from the `@syncfusion/react-popups` package in `App.tsx`.
+
+<Snippet content={tooltipImport} />
+
+Add the `Tooltip` component in application as shown in below code example.
+
+<Snippet content={tooltipSnippet} />
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+The following example display simple, informative `Tooltip` when hovering over UI elements. This fundamental implementation shows how `Tooltip` can provide context for icons and controls with minimal configuration. To create a basic `Tooltip`, use the [`content`](https://react-api.syncfusion.com/tooltip/overview#content) property to define the content and the [`position`](https://react-api.syncfusion.com/tooltip/overview#position) property to control where the `Tooltip` appears.
+
+<Preview 
+  content={<UserTooltip />} 
+  path="tooltip/basic-tooltip.tsx"
+/>
+
+## Template
+
+Create rich, custom `Tooltip` content using templates. This example demonstrates a profile `Tooltip` with an avatar and description, showcasing how `Tooltip` can display complex structured information.
+
+<Preview 
+  content={<UserDetail />} 
+  path="tooltip/template.tsx"
+/>
+
+## Triggering types
+
+Control how `Tooltip` are triggered with different interaction modes. To specify how a Tooltip is triggered, use the [`opensOn`](https://react-api.syncfusion.com/tooltip/overview#openson) property with values like `Auto`, `Focus`, `Hover`, or `Click`. This determines what user interaction will display the `Tooltip`.
+
+> For mobile devices, the Tooltip triggers on tap-hold action instead of hover.
+
+<Preview 
+  content={<OpensOnTypes />} 
+  path="tooltip/opens-on.tsx"
+/>
+
+## Multiple targets
+
+Efficiently apply `Tooltip` to multiple elements using a filtering mechanism. This technique allows different elements within a container to display unique `Tooltip` content. To implement `Tooltip` for multiple targets, use the [`onFilterTarget`](https://react-api.syncfusion.com/tooltip/overview#onfiltertarget) callback to provide a function that evaluates target elements and returns true for elements that should trigger the `Tooltip`.
+<Preview 
+  content={<FeatureList />} 
+  path="tooltip/multiple-target.tsx"
+/>
+
+## Tooltip positions
+
+Position your `Tooltip` precisely where needed with twelve strategic placement options around target elements. The component offers complete directional control with positions like Top Left, Right Center, or Bottom Right, ensuring `Tooltip` remain visible and contextual. 
+
+<Preview 
+  content={<PositionedTooltip />} 
+  path="tooltip/positioned-tooltip.tsx"
+/>
+
+## Controlled tooltip
+
+The controlled `Tooltip` lets you manually manage when `Tooltip` appear or disappear using a state variable. In this example, the `Tooltip` is controlled by the [`open`](https://react-api.syncfusion.com/tooltip/overview#open), [`onClose`](https://react-api.syncfusion.com/tooltip/overview#onclose), and [`onOpen`](https://react-api.syncfusion.com/tooltip/overview#onopen) properties.
+
+<Preview 
+  content={<ControlledMode />} 
+  path="tooltip/controlled-mode.tsx"
+/>
+
+## Animations
+
+Add smooth visual effects to your `Tooltip` with animations. The example shows three animation types: Zoom, Fade, and combined Fade and Zoom effects. Configure opening and closing animations separately using the [`animation`](https://react-api.syncfusion.com/tooltip/overview#animation) property with custom duration settings.
+
+<Preview 
+  content={<Animation />} 
+  path="tooltip/animation.tsx"
+/>
+
+## Sticky tooltip
+
+The sticky `Tooltip` stays open even after users move away from the button. Use the `sticky` property to keep `Tooltip` visible until users close them.
+
+<Preview 
+  content={<Sticky />} 
+  path="tooltip/sticky.tsx"
+/>
+
+## Scroll Mode
+
+When a specific [`height`](https://react-api.syncfusion.com/tooltip/overview#height) is set for a `Tooltip` and its content exceeds that height, a scroll mode is enabled automatically. This feature allows users to scroll through the content within the `Tooltip`.
+
+<Preview 
+  content={<ScrollMode />} 
+  path="tooltip/scrollMode.tsx"
+/>
+
+## Delay
+
+Control how quickly `Tooltip` appear and disappear using delay settings. The [`openDelay`](https://react-api.syncfusion.com/tooltip/overview#opendelay) property determines how long a user must hover before the `Tooltip` appears, while the [`closeDelay`](https://react-api.syncfusion.com/tooltip/overview#closedelay) property sets how long the `Tooltip` stays visible after the cursor moves away. This example demonstrates `Tooltip` with a 1000ms (1 second) delay for both opening and closing.
+<Preview 
+  content={<Delay />} 
+  path="tooltip/delay.tsx"
+/>
+
+## Mouse trail
+
+`Tooltip` with mouse trail functionality follow cursor movements, providing contextual information in real-time. The [`followCursor`](https://react-api.syncfusion.com/tooltip/overview#followcursor) property enables `Tooltip` to stay connected to the pointer position for enhanced interaction. This example showcases an "Image Pixel Inspector" that displays color data and coordinates while hovering over an image - ideal for design tools, image editors, and interactive maps.
+
+> The Mouse Trail functionality is only available on desktop devices as it relies on mouse pointer movements.
+
+<Preview 
+  content={<ImageInspector />} 
+  path="tooltip/mouse-trail.tsx"
+  scroll={false}
+/>
+
+## Accessibility
+
+The `Tooltip` component followed the accessibility guidelines and standards, including [ADA](https://www.ada.gov/), [Section 508](https://www.section508.gov/), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) standards, and [WCAG roles](https://www.w3.org/TR/wai-aria/#roles) that are commonly used to evaluate accessibility.
+
+The accessibility compliance for the `Tooltip` component is outlined below.
+
+| Accessibility Criteria | Compatibility |
+| -- | -- |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Support | <Check/> |
+| [Section 508](https://www.section508.gov/) Support | <Check/> |
+| Screen Reader Support | <Check/> |
+| Right-To-Left Support | <Check/> |
+| Color Contrast | <Check/> |
+| Mobile Device Support | <Check/> |
+| Keyboard Navigation Support | <Check/> |
+| [Accessibility](https://www.npmjs.com/package/@storybook/addon-a11y) Validation | <Check/> |
+
+<Check/> - All features of the component meet the requirement.
+
+<Clock/> - Some features of the component do not meet the requirement.
+
+<Cross/> - The component does not meet the requirement.
+
+### WAI-ARIA attributes
+
+The `Tooltip` component followed the [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/) patterns to meet the accessibility. The following ARIA attributes are used in the `Tooltip` component:
+
+| Attributes | Purpose |
+| --- | --- |
+| <mark>role=”tooltip”</mark> | 	The element that serves as the container for the `Tooltip` has the ARIA role of `tooltip`. |
+| <mark>aria-describedby</mark> | This attribute is added to the target element on which the `Tooltip` gets opened, when focusing or hovering over it. It usually holds the randomly generated `Id` value of the `Tooltip` element. <br /> <br />In case, the target element already holds an `aria-describedby` attribute with `Id` value of some other component, then the `Tooltip` Id value can be additionally appended to the existing `aria-describedby` attribute separated by a space as shown in the example below.<br /><br /> **For example:** <br /> aria-describedby = "my-text my-tooltip" <br /> **my-text** is the Id of some other component.<br /> **my-tooltip** is the id of `Tooltip` component. <br /><br/> When the `Tooltip` is closed, the `aria-describedby` attribute is  removed from the target. |
+| <mark>aria-hidden</mark> | This attribute is assigned to the `Tooltip` element whose default value is true. <br /><br /> When `true`, it denotes that the `Tooltip` element is in a hidden or a closed state. When the `Tooltip` appears on the screen, it’s value changes to `false`. |
+
+
+### Keyboard interaction
+
+The `Tooltip` component followed the [keyboard interaction](https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/#keyboardinteraction) guideline, making it easy for people who use assistive technologies (AT) and those who completely rely on keyboard navigation. The following keyboard shortcuts are supported by the `Tooltip` component.
+
+| **Windows** | **Mac** | **To do this** |
+| --- | --- | --- |
+| <kbd>Escape</kbd> | <kbd>Escape</kbd> | Closes or dismisses the `Tooltip`. |
+| <kbd>Tab</kbd>| <kbd>Tab</kbd> | A form control receiving focus (say through tab key), opens the Tooltip, and on focus out closes it.|
+
+> 1. When the `Tooltip` is being displayed on the target element, focus continues to stay on it.
+> 2. If the `Tooltip` opens on mouse entering into the target element space, then it should be dismissed only when the mouse leaves that target.
+> 3. If the `Tooltip` opens on the target element that receives focus, then it should be closed only when the focus moves out of that target element.
+Likewise, if the `Tooltip` opens on a click, then it should be closed only on another click action.

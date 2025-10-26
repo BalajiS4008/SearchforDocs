@@ -1,0 +1,74 @@
+import SmartLabelTitle from './smartLabelTitle'
+import SmartLabelTickline from './smartLabelTickline'
+import SmartLabelGridline from './smartLabelGridline'
+import InversedAxis from './inversedAxis';
+import MultipleAxis from './multipleAxis';
+import MultipleRow from './multipleRow'
+import AxisOpposed from './axisOpposed'
+import AxisTitleRotation from './axisTitleRotation'
+import { Preview } from '../../common/preview';
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Chart Axis Customization | Syncfusion"
+  description="React Chart axis customization supports titles, label rotation, tick configuration, grid lines, axis inversion, and multiple axes for flexible chart design."
+/>
+
+# Axis Customization in React Chart
+
+Axis customization allows you to tailor the appearance and behavior of chart axes to better suit your data, improve readability, and match your application's design. You can customize both the X-axis and Y-axis using a variety of properties and events.
+
+## Axis title
+
+Use the [`text`](https://react-api.syncfusion.com/chart/chartaxistitleprops#text) property within the [`ChartAxisTitle`](https://react-api.syncfusion.com/chart/chartaxistitleprops) component to clearly define and display the title for the corresponding chart axis.
+
+<Preview onDemand={true} reset={true} content={<SmartLabelTitle />} path="chart/smartLabelTitle.tsx" />
+
+## Axis title rotation
+
+The [`rotationAngle`](https://react-api.syncfusion.com/chart/chartaxistitleprops#rotationangle) property allows you to rotate the axis title between 0 and 360 degrees for better visualization.
+
+<Preview onDemand={true} reset={true} content={<AxisTitleRotation />} path="chart/axisTitleRotation.tsx" />
+
+## Tick lines
+
+You can control the appearance of major and minor tick lines on a chart axis using the [`ChartMajorTickLines`](https://react-api.syncfusion.com/chart/majorticklines) and [`ChartMinorTickLines`](https://react-api.syncfusion.com/chart/minorticklines) components.
+
+The following properties allow for detailed customization:
+
+- `width`: Specifies the thickness of the tick lines.
+- `height`: Defines the length of the tick lines.
+- `color`: Sets the visual color of the tick lines.
+
+<Preview onDemand={true} reset={true} content={<SmartLabelTickline />} path="chart/smartLabelTickline.tsx" />
+
+## Grid lines
+
+You can enhance the appearance of major and minor grid lines on both the X-axis and Y-axis using the [`ChartMajorGridLines`](https://react-api.syncfusion.com/chart/majorgridlines) and [`ChartMinorGridLines`](https://react-api.syncfusion.com/chart/minorgridlines) components.
+
+The following properties allow for detailed customization:
+
+- `width`: Specifies the thickness of the grid lines.
+- `color`: Sets the color of the grid lines for better visual contrast.
+- `dashArray`: Defines the dash pattern used to style the lines, allowing for a more tailored visual effect.
+
+<Preview onDemand={true} reset={true} content={<SmartLabelGridline />} path="chart/smartLabelGridline.tsx" />
+
+## Inversed axis
+
+The [`inverted`](https://react-api.syncfusion.com/chart/chartaxisprops#inverted) property allows you to reverse the direction of both the X and Y axes, giving you greater control over axis orientation.
+
+<Preview onDemand={true} reset={true} content={<InversedAxis />} path="chart/inversedAxis.tsx" />
+
+## Opposed position
+
+To move an axis to the opposite side, enable the [`opposedPosition`](https://react-api.syncfusion.com/chart/chartaxisprops#opposedposition) property by setting it to `true`.
+
+<Preview onDemand={true} reset={true} content={<AxisOpposed />} path="chart/axisOpposed.tsx" />
+
+## Multiple axis
+
+In addition to the primary X and Y axes, you can add multiple additional axes to a chart using the [`ChartAxes`](https://react-api.syncfusion.com/chart/chartaxisprops) component. This is useful when displaying data series with different scales or units.
+Each axis should have a unique name, and you can associate a data series with a specific axis by mapping it to that name
+
+<Preview onDemand={true} reset={true} content={<MultipleAxis />} path="chart/multipleAxis.tsx" />

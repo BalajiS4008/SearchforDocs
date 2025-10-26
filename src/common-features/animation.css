@@ -1,0 +1,100 @@
+:root {
+  --preview-color: #7925ff;
+  --layout: white;
+  --background: #ffffff;
+  --layout-border: #f0f0f0;
+  --layout-hover: #f9f9f9;
+  --text-color: #49454E;
+  --color: black;
+}
+
+.dark-theme {
+  --layout: var(--preview-background-color);
+  --background: black;
+  --color: white;
+  --layout-border: #3a3535;
+  --layout-hover: #3a3535;
+}
+
+.animation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.animation-select {
+  border-color: var(--border-color);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.animation-select:focus-visible {
+  outline: none;
+}
+
+.animation-box {
+  width: 130px;
+  height: 130px;
+  background-color: var(--preview-bg-color);
+  color: var(--preview-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  border-radius: 8px;
+}
+
+.animation-demo-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.animation-status {
+  text-align: center;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.animation-box-special {
+  width: 300px;
+  height: 120px;
+  background: linear-gradient(135deg, #7366ff, #2196f3);
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.animation-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+.animation-icon {
+  font-size: 2.5rem;
+  margin-right: 1rem;
+}
+
+.animation-text h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.animation-text p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.fixed-width-button {
+  min-width: 90px;
+  text-align: center;
+}

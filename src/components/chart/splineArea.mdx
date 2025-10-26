@@ -1,0 +1,92 @@
+import { Preview } from '../../common/preview';
+import SplineArea from './splineArea'
+import SplineAreaEmptyPoint from './splineAreaEmptyPoint'
+import SplineAreaCustom from './splineAreaCustom'
+import SplineAreaLabel from './splineAreaLabel'
+import SplineAreaType from './splineAreaType'
+import SplineAreaLiveUpdate from './splineAreaLiveUpdate'
+import SplineAreaNegative from './splineAreaNegative'
+import SplineAreaDynamicUpdate from './splineAreaDynamicUpdate'
+import SplineAreaTransposed from './splineAreaTransposed'
+import { Meta } from '../../common/meta';
+
+<Meta title="React Spline Area Chart | Syncfusion"
+  description="React Chart spline area charts fill the area under a smooth curve to show magnitude over time."
+/>
+
+# React Spline Area Chart
+
+A spline area chart is a variation of an area chart that uses smooth curves to connect data points. It's useful for visualizing trends over time and displaying cumulative values effectively.
+
+## Overview
+
+To visualize data as a splineArea chart, set the [`type`](https://react-api.syncfusion.com/chart/chartseriesprops#type) property to `SplineArea` within the [`ChartSeries`](https://react-api.syncfusion.com/chart/chartseriesprops) component.
+
+<Preview onDemand={true} reset={true} content={<SplineArea />} path="chart/splineArea.tsx" />
+
+## Data label
+
+To display data labels on the splineArea chart, set the [`visible`](https://react-api.syncfusion.com/chart/chartdatalabelprops#visible) property to `true` within the [`ChartDataLabel`](https://react-api.syncfusion.com/chart/chartdatalabelprops) component.
+
+<Preview onDemand={true} reset={true} content={<SplineAreaLabel />} path="chart/splineAreaLabel.tsx" />
+
+## Spline type
+
+The [`splineType`](https://react-api.syncfusion.com/chart/chartseriesprops#splinetype) property in the `ChartSeries` component allows you to customize how curves are drawn in SplineArea chart.
+By default, the spline type is set to `Natural`, which produces smooth and flowing curves. You can change it to other types based on your data visualization needs:
+
+- `Natural` – Smooth, flowing curves.
+- `Monotonic` – Preserves monotonicity; avoids overshooting.
+- `Cardinal` – Balanced smoothness with tension control.
+- `Clamped` – Restricts curve within data bounds.
+    
+<Preview onDemand={true} reset={true} content={<SplineAreaType />} path="chart/splineAreaType.tsx" scroll={false} />
+
+## Skip missing points
+
+Data points with values of null, undefined, or NaN are treated as empty points in the series. You can customize their appearance and behavior using the [`emptyPointSettings`](https://react-api.syncfusion.com/chart/chartseriesprops#emptypointsettings) property in the `ChartSeries` component. This property supports various modes, including `Gap`, `Zero`, `Average`, and `Drop`, allowing you to control how empty points are rendered or connected in the chart.
+
+<Preview onDemand={true} reset={true} content={<SplineAreaEmptyPoint />} path="chart/splineAreaEmptyPoint.tsx" scroll={false} />
+
+## Live point update
+
+React Chart supports live data updates, ensuring your chart reflects the latest information in real time without requiring a page reload.
+Whenever the chart's data source changes, the chart automatically re-renders to display the updated values.
+
+<Preview onDemand={true} reset={true} content={<SplineAreaLiveUpdate />} path="chart/splineAreaLiveUpdate.tsx" />
+
+## Inverted axes
+
+To switch the X and Y axes in your chart, use the [`transposed`](https://react-api.syncfusion.com/chart/overview#transposed)  property in the `Chart` component. When this property is enabled, the chart is rendered in a transposed format, which can enhance readability and data comparison, especially for horizontal splineArea charts or when working with long category labels.
+
+<Preview onDemand={true} reset={true} content={<SplineAreaTransposed />} path="chart/splineAreaTransposed.tsx" />
+
+## Negative data
+
+Charts can display negative values to represent downward trends in performance, metrics, or other data over time.
+A negative spline area series visually dips below the baseline (usually the X-axis), making it easy to identify declines or losses.
+
+<Preview onDemand={true} reset={true} content={<SplineAreaNegative />} path="chart/splineAreaNegative.tsx" />
+
+## Series customization
+
+You can customize the appearance of the splineArea series in the `ChartSeries` component by setting the following properties:
+- [`fill`](https://react-api.syncfusion.com/chart/chartseriesprops#fill) – Sets the color of the area.
+- [`width`](https://react-api.syncfusion.com/chart/chartseriesprops#width) – Defines the thickness of the area.
+- [`border`](https://react-api.syncfusion.com/chart/chartseriesprops#border) – Defines the thickness and color of the outline.
+- [`opacity`](https://react-api.syncfusion.com/chart/chartseriesprops#opacity) – Controls the transparency level of the area.
+- [`dashArray`](https://react-api.syncfusion.com/chart/chartseriesprops#dasharray) - Defines the pattern of dashes and gaps in area.
+                
+<Preview onDemand={true} reset={true} content={<SplineAreaCustom />} path="chart/splineAreaCustom.tsx" />
+
+## Datasource update
+
+We can dynamically replace the entire dataset in a SplineArea chart when the underlying data changes significantly.
+
+This is especially useful during:
+- Periodic refreshes (e.g., hourly or daily updates)
+- Batch processing of large datasets
+- Recalculated analytics or simulations
+
+
+<Preview onDemand={true} reset={true} content={<SplineAreaDynamicUpdate />} path="chart/splineAreaDynamicUpdate.tsx" />

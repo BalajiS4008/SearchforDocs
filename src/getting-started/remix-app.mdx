@@ -1,0 +1,79 @@
+import { Snippet } from '../common/snippet';
+import { Link } from 'react-router';
+import { createRemixApp, numericTextboxPackage, remixAppStyles, remixSSRSnippets, remixNumericTextboxSnippets } from './snippets';
+import { Meta } from '../common/meta';
+import { Preview } from '../common/preview';
+import NumericTextBoxComponent from '../components/numeric-textbox/basic-numeric-textbox';
+
+<Meta
+ title="React components in Remix | Syncfusion"
+ description="Integrate React components into Remix, the full-stack React framework for building fast, and performant web applications."
+/>
+
+# Getting Started with a Remix App using React Components
+
+This guide helps you create a simple `Remix` application using the React framework along with Syncfusion<sup>®</sup> React components.
+
+## Prerequisites
+
+<p><Link to="/overview/system-requirements">System requirements for Syncfusion<sup>®</sup> React UI components</Link></p>
+
+## Create Remix application
+
+To set up a basic `Remix` app, run the following command:
+
+<Snippet content={[{ title: "CMD", code: `npx create-remix@latest` }]} />
+
+This `create-remix@latest` command initializes a new `Remix` application using the latest available packages.
+
+When you run this command, you'll be prompted to answer a few configuration questions:
+
+<Snippet content={createRemixApp} />
+
+Then navigate to the project directory by running the following command:
+
+<Snippet content={[{ title: "CMD", code: 'cd quick-start' }]} />
+
+## Add Syncfusion<sup>®</sup> React packages
+
+All the available Syncfusion<sup>®</sup> React packages are published in <a href="https://www.npmjs.com/~syncfusionorg" target="_blank" rel="noopener noreferrer">npmjs.com</a> public registry. To install React `Numeric Textbox` component, use the following command:
+<Snippet content={numericTextboxPackage} />
+
+> The `--save` flag ensures that the Inputs package is added to the dependencies section of your `package.json` file.
+
+## Add CSS reference
+
+To apply Syncfusion<sup>®</sup> themes, import the necessary CSS files in the `~/app/routes/_index.tsx` file:
+
+<Snippet content={remixAppStyles} />
+
+## Add SSR configuration
+
+To use Syncfusion<sup>®</sup> packages with Server-Side Rendering (SSR) with `Vite`, you'll need to update the `vite.config.ts` file. This configuration ensures that Syncfusion<sup>®</sup> packages are properly transpiled for compatibility with the server environment.
+
+<Snippet content={remixSSRSnippets} />
+
+## Add the Numeric Textbox component
+
+You can now start using Syncfusion<sup>®</sup> React components in your `Remix` application.
+To get started, add the React `Numeric TextBox` component to the `~/app/routes/_index.tsx` file using the following code:
+
+<Snippet content={remixNumericTextboxSnippets} />
+
+## Run the application
+
+To run your `Remix` application in development mode, use the following command:
+
+<Snippet content={[{ title: "CMD", code: 'npm run dev' }]} />
+
+To prepare your app for deployment, build it for production using:
+
+<Snippet content={[{ title: "CMD", code: 'npm run build' }]} />
+
+Then run the app in production mode:
+
+<Snippet content={[{ title: "CMD", code: 'npm run start' }]} />
+
+The output will appear as follows:
+
+<Preview content={<NumericTextBoxComponent />} header={false} />

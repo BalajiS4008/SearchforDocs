@@ -1,0 +1,102 @@
+import NumberFormatting from './number-formatting.tsx';
+import DateFormatting from './date-formatting.tsx';
+import CustomFormatting from './custom-formatting.tsx';
+import { gridComplexBindingSnippet, gridRemoteDataMangerSnippet, gridComplexNextedColumnSnippet } from './grid-snippets.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Meta } from '../../common/meta';
+import { Link } from 'react-router';
+
+<Meta
+  title="React Data Grid - Column Format | Syncfusion"
+  description="Column formats in Data Grid support numeric, date, and time types to customize value display and ensure consistent rendering across datasets."
+/>
+
+# Column Format in React Data Grid
+
+The Syncfusion® React Data Grid component uses the [`format`](https://react-api.syncfusion.com/data-grid/columnprops#format) property to customize the display of numeric and date values in columns. This property supports predefined and custom formats to transform raw data into clear, consistent output, enhancing readability across the grid component.
+
+## Number formatting
+
+Number formatting applies patterns to numeric columns, controlling decimal precision and styles like currency or percentages. The `format` property ensures consistent and clear number presentation across the grid.
+
+| Format | Description                                              |
+|--------|----------------------------------------------------------|
+| `N`    | Numeric format with specified decimals (e.g., N2 for two decimals). |
+| `C`    | Currency format with decimals (e.g., C2 for two decimals). |
+| `P`    | Percentage format for 0-1 values (e.g., P2 for 20.00%).  |
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  content={<NumberFormatting />}
+  path="grid/number-formatting.tsx"
+  scroll={false}
+  onDemand={true}
+/>
+
+## Date formatting
+
+Use the `format` property to control how date values appear in grid columns. Predefined formats like `yMd` display dates in a year-month-day pattern based on locale. This ensures date values are presented clearly across the grid. For more control, apply custom formats to match specific display requirements. The following table shows the custom format options:
+
+| Format                                    | Formatted Value            |
+|-------------------------------------------|----------------------------|
+| `{ type: ColumnType.Date, format: 'dd/MM/yyyy' }`  | 04/07/2024                |
+| `{ type: ColumnType.Date, format: 'dd.MM.yyyy' }`  | 04.07.2024                |
+| `{ type: ColumnType.Date, skeleton: 'short' }`     | 7/4/24                    |
+| `{ type: 'ColumnType.DateTime', format: 'dd/MM/yyyy hh:mm a' }` | 04/07/2024 12:00 AM |
+| `{ type: 'ColumnType.DateTime', format: 'MM/dd/yyyy hh:mm:ss a' }` | 07/04/2024 12:00:00 AM |
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  content={<DateFormatting />}
+  path="grid/date-formatting.tsx"
+  scroll={false}
+  onDemand={true}
+/>
+	
+## Custom formatting
+
+The Data Grid component supports customization of data formatting within grid columns. Custom formats can be applied to numeric or date columns to display values in a specific format based on requirements. To enable custom formatting, use the `format` property in the column configuration.
+
+A custom format string must contain one or more of the following standard date/time symbols.
+
+| Symbol         | Description             | Format                                      | Formatted Value     |
+|----------------|-------------------------|-----------------------------------------------------|---------------------|
+| G              | Era (for example: AD (Anno Domini, after year 0), BC (Before Christ, before year 0) )      | `{ type: ColumnType.Date, format: 'G' }`           | AD or BC (for example: September 17, 2025, the era is AD)                 |
+| y              | Year                    | `{ type: ColumnType.Date, format: 'yyyy' }`        | 2025                |
+| M / L          | Month                   | `{ type: ColumnType.Date, format: 'MM' }`          | 09                  |
+| E / c          | Day of the week         | `{ type: ColumnType.Date, format: 'EEEE' }`        | Wednesday           |
+| d              | Day of the month        | `{ type: ColumnType.Date, format: 'dd' }`          | 17                  |
+| m              | Minutes                 | `{ type: 'ColumnType.DateTime', format: 'mm' }`               | 09                  |
+| h / H          | Hour (12/24-hour)       | `{ type: 'ColumnType.DateTime', format: 'hh a' }`<br />`{ type: 'ColumnType.DateTime', format: 'HH' }` | 04 PM<br />16         |
+| s              | Seconds                 | `{ type: 'ColumnType.DateTime', format: 'ss' }`               | 00                  |
+| f              | Milliseconds            | `{ type: 'ColumnType.DateTime', format: 'fff' }`              | 000                 |
+| a              | AM/PM (with 12-hour)    | `{ type: 'ColumnType.DateTime', format: 'hh:mm a' }`          | 04:09 PM            |
+| z              | Time zone               | `{ type: 'ColumnType.DateTime', format: 'z' }`                | IST                 |
+| ' (single quotes) | Literal text in format | `{ type: ColumnType.Date, format: ''Date:' yyyy-MM-dd' }` | Date: 2025-09-17 |
+
+The custom format specifiers listed in the table below can be used to create custom number format.
+
+| Specifier | Description | Example Input | Format Output |
+|-----------|-------------|---------------|----------------|
+| 0         | Displays digit or zero if absent. | `formatNumber(123, { format: '0000' })` | 0123 |
+| #         | Displays digit if present; hides if absent. | `formatNumber(1234, { format: '####' })` | 1234 |
+| .         | Defines decimal precision. | `formatNumber(546321, { format: '###0.##0#' })` | 546321.000 |
+| %         | Converts value to percentage. | `formatNumber(1, { format: '0000 %' })` | 0100 % |
+| $         | Formats value as currency. | `formatNumber(13, { format: '$ ###.00' })` | $ 13.00 |
+| ;         | Separates formats for positive, negative, and zero. | `formatNumber(-120, { format: '###.##;(###.00);-0' })` | (120.00) |
+| 'String' (single Quotes)  | Displays literal text in output. | `formatNumber(-123.44, { format: "####.## '@'" })` | 123.44 @ |
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  content={<CustomFormatting />}
+  path="grid/custom-formatting.tsx"
+  scroll={false}
+  onDemand={true}
+/>
+
+## See also
+
+* <p><Link to="/data-grid/globalization#loading-translations-for-culture">Internationalization of Grid Cell Formats</Link></p>
+* <p><Link to="/data-grid/aggregates#format-aggregate-values">Aggregate Cell Formats in Grid </Link></p>
+* <p><Link to="/data-grid/cell/expressions#customizing-cell-display-text">Customizing Display Text in Grid Cells</Link></p>

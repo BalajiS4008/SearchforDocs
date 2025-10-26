@@ -1,0 +1,92 @@
+import Spline from './spline'
+import SplineType from './splineType'
+import SplineEmptyPoint from './splineEmptyPoint'
+import SplineCustomize from './splineCustomize'
+import SplineLive from './splineLive'
+import { Preview } from '../../common/preview';
+import SplineLabel from './splineLabel'
+import SplineNegative from './splineNegative'
+import SplineTransposed from './splineTransposed'
+import SplineDynamicUpdate from './splineDynamicUpdate'
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Spline Chart | Syncfusion"
+  description="React Chart spline charts connect data points with smooth curves to highlight trends in continuous data and compare multiple series."
+/>
+
+
+# React Spline Chart
+
+A spline chart is a type of line chart that uses smooth curves to connect data points. It's used to visualize trends and relationships in continuous data, enhancing readability and aesthetics.
+
+## Overview
+
+To visualize data as a spline chart, set the [`type`](https://react-api.syncfusion.com/chart/chartseriesprops#type) property to `Spline` within the [`ChartSeries`](https://react-api.syncfusion.com/chart/chartseriesprops) component.
+
+<Preview onDemand={true} reset={true} content={<Spline />} path="chart/spline.tsx" />
+
+## Data label
+
+To display data labels on the spline chart, set the [`visible`](https://react-api.syncfusion.com/chart/chartdatalabelprops#visible) property to `true` within the [`ChartDataLabel`](https://react-api.syncfusion.com/chart/chartdatalabelprops) component.
+
+<Preview onDemand={true} reset={true} content={<SplineLabel />} path="chart/splineLabel.tsx" />
+
+## Spline type
+
+The [`splineType`](https://react-api.syncfusion.com/chart/chartseriesprops#splinetype) property in the `ChartSeries` component allows you to customize how curves are drawn in a Spline chart.
+By default, the spline type is set to `Natural`, which produces smooth and flowing curves. You can change it to other types based on your data visualization needs:
+
+- `Natural` – Smooth, flowing curves.
+- `Monotonic` – Preserves monotonicity; avoids overshooting.
+- `Cardinal` – Balanced smoothness with tension control.
+- `Clamped` – Restricts curve within data bounds.
+    
+<Preview onDemand={true} reset={true} content={<SplineType />} path="chart/splineType.tsx" scroll={false} />
+
+## Skip missing points
+
+Data points with values of null, undefined, or NaN are treated as empty points in the series. You can customize their appearance and behavior using the [`emptyPointSettings`](https://react-api.syncfusion.com/chart/chartseriesprops#emptypointsettings) property in the `ChartSeries` component. This property supports various modes, including `Gap`, `Zero`, `Average`, and `Drop`, allowing you to control how empty points are rendered or connected in the chart.
+
+<Preview onDemand={true} reset={true} content={<SplineEmptyPoint />} path="chart/splineEmptyPoint.tsx" scroll={false} />
+
+## Live point update
+
+React Chart supports live data updates, ensuring your chart reflects the latest information in real time without requiring a page reload.
+Whenever the chart's data source changes, the chart automatically re-renders to display the updated values.
+
+<Preview onDemand={true} reset={true} content={<SplineLive />} path="chart/splineLive.tsx" />
+
+## Inverted axes
+
+To switch the X and Y axes in your chart, use the [`transposed`](https://react-api.syncfusion.com/chart/overview#transposed)  property in the `Chart` component. When this property is enabled, the chart is rendered in a transposed format, which can enhance readability and data comparison, especially for horizontal spline charts or when working with long category labels.
+
+<Preview onDemand={true} reset={true} content={<SplineTransposed />} path="chart/splineTransposed.tsx" />
+
+## Negative data
+
+Charts can display negative values to represent downward trends in performance, metrics, or other data over time.
+A negative spline series visually dips below the baseline (usually the X-axis), making it easy to identify declines or losses.
+
+<Preview onDemand={true} reset={true} content={<SplineNegative />} path="chart/splineNegative.tsx" />
+
+## Series customization
+
+You can customize the appearance of the spline series in the `ChartSeries` component by setting the following properties:
+- [`fill`](https://react-api.syncfusion.com/chart/chartseriesprops#fill) – Sets the color of the line.
+- [`width`](https://react-api.syncfusion.com/chart/chartseriesprops#width) – Defines the thickness of the line.
+- [`opacity`](https://react-api.syncfusion.com/chart/chartseriesprops#opacity) – Controls the transparency level of the line.
+- [`dashArray`](https://react-api.syncfusion.com/chart/chartseriesprops#dasharray) - Defines the pattern of dashes and gaps in lines.
+                
+<Preview onDemand={true} reset={true} content={<SplineCustomize />} path="chart/splineCustomize.tsx" />
+
+## Datasource update
+
+We can dynamically replace the entire dataset in a Spline chart when the underlying data changes significantly.
+
+This is especially useful during:
+- Periodic refreshes (e.g., hourly or daily updates)
+- Batch processing of large datasets
+- Recalculated analytics or simulations
+
+<Preview onDemand={true} reset={true} content={<SplineDynamicUpdate />} path="chart/splineDynamicUpdate.tsx" />

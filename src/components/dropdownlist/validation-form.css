@@ -1,0 +1,21 @@
+.member-element {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--sf-spacing-20);
+}
+.error-text {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: var(--sf-spacing-5);
+}
+.sf-input-group.sf-control-wrapper.sf-ddl.validationform-ddl-width,
+.ddl-parent-element {
+  width: 100% !important;
+}
+.form-div-element {
+  padding: var(--sf-spacing-20);
+  border-radius: var(--sf-radius-4); 
+}
+.ddl-form-div-element {
+  margin-bottom: var(--sf-spacing-15);
+}

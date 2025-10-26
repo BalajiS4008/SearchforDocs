@@ -1,0 +1,92 @@
+import AlignHeaderText from './align-headertext.tsx';
+import HeaderStyle from './supplier-contracts-grid.tsx';
+import HeaderEventStyle from './flight-schedule-grid.tsx';
+import HeaderText from './header-text.tsx';
+import HeaderHeight from './patient-details-grid.tsx';
+import HeaderCustomAttributes from './task-management-grid.tsx';
+import HeaderTemplate from './employee-detail-grid.tsx';
+import HeaderWrap from './header-wrap.tsx'
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Meta } from '../../common/meta';
+import { Link } from 'react-router';
+
+<Meta
+  title="React Data Grid - Header | Syncfusion"
+  description="Column headers in Data Grid define display names for each column and support layout customization and accessibility."
+/>
+
+# Headers in React Data Grid
+
+The Syncfusion® React Data Grid component offers robust options for customizing column headers to enhance functionality and visual appeal. Header text, alignment, templates, wrapping, height, and styles can be modified to meet specific design and usability requirements. This guide outlines key features for configuring headers effectively.
+
+## Header text
+ 
+The [`headerText`](https://react-api.syncfusion.com/data-grid/columnprops#headertext) property defines the title displayed in the column header cell. When header text is not provided, the grid defaults to displaying the corresponding field name as the column title.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<HeaderText />} path="grid/header-text.tsx" scroll={false} />
+
+## Header template
+
+The [`headerTemplate`](https://react-api.syncfusion.com/data-grid/columnprops#headertemplate) property enables the rendering of custom HTML elements or React components within a column header. This customization supports advanced features like adding interactive buttons or visual elements to the header. This property accepts a custom rendering function that receives a parameter of type [`ColumnHeaderTemplateProps`](https://react-api.syncfusion.com/data-grid/columnheadertemplateprops), an interface that provides contextual information about the column.
+
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<HeaderTemplate />} path="grid/employee-detail-grid.tsx" scroll={false} />
+
+## Header text align
+
+The [`headerTextAlign`](https://react-api.syncfusion.com/data-grid/columnprops#headertextalign) property sets the horizontal alignment of text within column headers. By default, header text is aligned to the left, but it can be configured to align center, right, or justify based on layout requirements.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<AlignHeaderText />} path="grid/align-headertext.tsx" scroll={false} />
+
+>To align both the header and cell content in a column, use the [`textAlign`](https://react-api.syncfusion.com/data-grid/columnprops#textalign) property.
+
+## Header text wrap
+
+The [`textWrapSettings.enabled`](https://react-api.syncfusion.com/data-grid/textwrapsettings#enabled) property enables text wrapping when header content exceeds the column width. Wrapping works only when columns have a defined [`width`](https://react-api.syncfusion.com/data-grid/columnprops#width). Use [`textWrapSettings.wrapMode`](https://react-api.syncfusion.com/data-grid/textwrapsettings#wrapmode) to control wrapping scope:
+
+- `Header`: Wraps only header content.
+
+- `Content`: Wraps only cell content.
+
+- `Both`: Wraps both header and cell content.
+
+For example, setting `textWrapSettings.wrapMode` to `Header` wraps only the header content.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<HeaderWrap />} path="grid/header-wrap.tsx" scroll={false} />
+
+## Header height
+ 
+Adjusting the header height is essential when accommodating multiline text, images, or custom elements. The height can be modified using CSS by overriding the default `.sf-grid .sf-grid-header-row .sf-cell` class.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<HeaderHeight />} path="grid/patient-details-grid.tsx" scroll={false} />
+
+## Header customization
+
+The Data Grid component allows customization of header styles to align with design requirements. CSS classes and properties can be applied to modify attributes such as font, background color, and other header cell styles.
+
+### Using CSS
+
+Header appearance can be customized by applying CSS to the `.sf-grid-header-row .sf-cell` class, allowing adjustments to properties like font, background color, and text color.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<HeaderStyle />} path="grid/supplier-contracts-grid.tsx" scroll={false} />
+
+### Using property
+ 
+The [`cellClass`](https://react-api.syncfusion.com/data-grid/columnprops#cellclass) property enables assigning a custom CSS class to specific column headers for targeted styling. By defining a CSS class and applying it through `cellClass`, individual headers can be customized.
+
+<Snippet content={[{ title: "App.tsx", code: `<Column field="Priority" headerText="Priority" width="130" cellClass={(props?: CellClassProps)=>{return props?.cellType === CellType.Header ? 'customcss' : ''}} />` }]} />
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<HeaderCustomAttributes />} path="grid/task-management-grid.tsx" scroll={false} />
+
+### Dynamic styling
+
+The `cellClass` property enables dynamic styling of specific header cells by assigning custom CSS classes. It accepts a callback function whose parameter implements the [`CellClassProps`](https://react-api.syncfusion.com/data-grid/cellclassprops) interface, providing detailed information about the column.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<HeaderEventStyle />} path="grid/flight-schedule-grid.tsx" scroll={false} />
+
+> When `cellClass` property is defined as a function, it runs every time a cell renders or updates. In grids with many cells or frequent changes, this repeated execution increases processing load and can slow down performance. To improve efficiency, use the [`headerTemplate`](https://react.syncfusion.com/data-grid/columns/headers#header-template) feature for cell customization instead of function-based class assignments.
+
+## See also
+* <p><Link to="/data-grid/columns/templates">Column Template in Syncfusion React Data Grid</Link></p>
+* <p><Link to="/data-grid/rows/templates">Row Template in Syncfusion React Data Grid</Link></p>

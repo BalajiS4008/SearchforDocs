@@ -1,0 +1,159 @@
+import { Link } from 'react-router';
+import { Snippet } from '../../common/snippet';
+import { Preview } from '../../common/preview';
+import { Check, Cross, Clock } from '../../common/util';
+import { toolbarNpm, toolbarStyles, toolbarImport, toolbarComponent } from './snippets';
+import Default from './toolbar';
+import Tools from './tools';
+import Scrollable from './scrollable';
+import MultiRow from './multirow';
+import Popup from './popup';
+import Extended from './extended';
+import Orientation from './orientation';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Toolbar Component| Syncfusion"
+  description="The Toolbar component organizes actions, navigation, and tools in a horizontal layout, offering customizable design and functionality."
+/>
+
+# React Toolbar
+
+The `React Toolbar` component is a feature-rich container that organizes buttons, input, and custom elements in a horizontal or vertical layout. It provides a compact and efficient way to arrange UI elements for easy access and improved user experience.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite#set-up-the-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let’s add the `React Toolbar` component to the project.
+
+### Installing Syncfusion® packages
+
+To use the `Toolbar` component, install the [`@syncfusion/react-navigations`](https://www.npmjs.com/package/@syncfusion/react-navigations) package:
+
+<Snippet content={toolbarNpm}/>
+
+### Adding CSS reference
+
+In this article, the `Material 3` theme is applied using CSS styles, which are available in installed packages. The necessary Material CSS styles for the `Toolbar` component and its dependencies were imported into the `src/App.css` file.
+
+<Snippet content={toolbarStyles}/>
+
+### Adding Toolbar component
+
+To include the `Toolbar` component in your application, import the `Toolbar` from the `@syncfusion/react-navigations` package in `App.tsx`.
+
+<Snippet content={toolbarImport}/>
+
+Add the `Toolbar` component in your application as shown in the code example below.
+
+<Snippet content={toolbarComponent}/>
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+The following example demonstrates how to render a simple `Toolbar` component.
+
+<Preview content={<Default />} path="toolbar/toolbar.tsx" />
+
+## Tools
+
+The `React Toolbar` offers three essential organizational components:
+
+`ToolbarItem` - A container component for individual elements within the `Toolbar` that wraps buttons, inputs, or other UI elements, ensuring they are properly styled and positioned.
+
+`ToolbarSeparator` - A component that renders a dividing line between related `Toolbar` items to provide visual grouping and improved organization.
+
+`ToolbarSpacer` - A component that creates an expandable empty space within the `Toolbar`, pushing items on either side to the edges for flexible layout arrangements.
+
+<Preview content={<Tools />} path="toolbar/tools.tsx" />
+
+## Overflow Modes
+
+The `Toolbar` offers multiple solutions to handle items exceeding available space, including scrollable navigation, multi-row layouts, popup menus, and extended displays.
+
+### Scrollable mode
+
+The `Scrollable` mode adds navigation buttons to the `Toolbar` when items exceed the available space, allowing users to scroll through all items.
+
+The [`scrollStep`](https://react-api.syncfusion.com/toolbar/overview#scrollstep) property defines the scrolling distance in pixels when navigating through `Toolbar` items using the navigation buttons. This controls how far the `Toolbar` content moves with each navigation button click.
+
+<Preview content={<Scrollable />} path="toolbar/scrollable.tsx" />
+
+### MultiRow mode
+
+`MultiRow` mode automatically wraps overflow items to additional rows when they exceed the available width. This mode ensures all items remain visible simultaneously without requiring navigation, allowing users to see all available options at once.
+
+<Preview content={<MultiRow />} path="toolbar/multirow.tsx" />
+
+### Popup mode
+
+`Popup` mode automatically moves overflowing `Toolbar` items to a popup when there is not enough space available. Users can access these hidden items through a navigation button that appears when overflow occurs, maintaining a clean interface while ensuring all functions remain accessible when needed.
+
+<Preview content={<Popup />} path="toolbar/popup.tsx" />
+
+### Extended mode
+
+`Extended` mode handles overflow by moving excess items to a popup that spans the full width of the `Toolbar`. Unlike the standard Popup mode, this mode displays overflow items in a popup that matches the `Toolbar` width, creating a visual extension of the main `Toolbar`. This provides a more spacious and consistent layout for accessing overflow functionality.
+
+<Preview content={<Extended />} path="toolbar/extended.tsx" />
+
+## Orientation
+
+By default, the `Toolbar` renders in `Horizontal` mode. You can configure the `Toolbar` to display vertically by setting the [`orientation`](https://react-api.syncfusion.com/toolbar/overview#orientation) property to `Vertical`. This changes the layout direction from left-to-right to top-to-bottom, which is useful for sidebar menus and tools panels.
+
+<Preview content={<Orientation />} path="toolbar/orientation.tsx" />
+
+## Accessibility
+
+The `Toolbar` component follows the accessibility guidelines and standards, including [ADA](https://www.ada.gov/), [Section 508](https://www.section508.gov/), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) standards, and [WCAG roles](https://www.w3.org/TR/wai-aria/#roles) that are commonly used to evaluate accessibility.
+
+The accessibility compliance for the `Toolbar` component is outlined below.
+
+| Accessibility Criteria | Compatibility |
+| -- | -- |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Support | <Check/> |
+| [Section 508](https://www.section508.gov/) Support | <Check/> |
+| Screen Reader Support | <Check/> |
+| Right-To-Left Support | <Check/> |
+| Color Contrast | <Check/> |
+| Mobile Device Support | <Check/> |
+| Keyboard Navigation Support | <Check/> |
+| [Accessibility](https://www.npmjs.com/package/@storybook/addon-a11y) Validation | <Check/> |
+
+<Check/> - All features of the component meet the requirement.
+
+<Clock/> - Some features of the component do not meet the requirement.
+
+<Cross/> - The component does not meet the requirement.
+
+### WAI-ARIA attributes
+
+The `Toolbar` component follows the [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/) patterns to meet the accessibility standards. The following ARIA attributes are used in the `Toolbar` component:
+
+| Attributes | Purpose |
+| --- | --- |
+| <mark>role=toolbar</mark> | Tells screen readers this is a `Toolbar`. |
+| <mark>aria-label</mark> | Provides a simple name for the `Toolbar` (e.g., "Formatting tools"). |
+| <mark>aria-orientation</mark> | Indicates the orientation of the `Toolbar`, whether `Horizontal` or `Vertical`. |
+| <mark>aria-expanded</mark> | Indicates whether the overflow popup itself is currently open or closed in `Popup` and `Extended` modes (true when open, false when closed). |
+| <mark>aria-haspopup</mark> | Indicates that the navigation button in the `Popup` or `Extended` mode has a Popup with overflowing items that don't fit in the available `Toolbar` space |
+
+> **Important:** Users must provide an `aria-label` attribute to the `Toolbar` for proper accessibility, especially when the application contains multiple toolbars. The label should describe the toolbar's purpose (e.g., "Formatting tools", "Document actions", "Editor toolbar").
+
+### Keyboard interaction
+
+The `Toolbar` component follows the [keyboard interaction](https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/#keyboardinteraction) guidelines, making it easy for people who use assistive technologies (AT) and those who completely rely on keyboard navigation. The following keyboard shortcuts are supported by the `Toolbar` component.
+
+| **Windows** | **Mac** | **To do this** |
+| --- | --- | --- |
+| <kbd>Tab , Shift + Tab</kbd> | <kbd>Tab , ⇧ + Tab</kbd>| Moves focus among the interactive elements. |
+| <kbd>←</kbd> | <kbd>←</kbd>| Focuses the previous element. |
+| <kbd>→</kbd>| <kbd>→</kbd> | Focuses the next element. |
+| <kbd>↑</kbd>| <kbd>↑</kbd> | Focuses the previous element in the `Vertical` orientation and popup items. |
+| <kbd>↓</kbd> | <kbd>↓</kbd>| Focuses the next element in the `Vertical` orientation and popup items. |
+| <kbd>Home</kbd> | <kbd>Fn + ←</kbd>| Moves focus to the first element. |
+| <kbd>End</kbd> | <kbd>Fn + →</kbd> | Moves focus to the last element. |
+| <kbd>Enter</kbd> | <kbd>Enter</kbd>| When the Popup or Extended mode button has focus, opens the popup. |
+| <kbd>Esc</kbd> | <kbd>Esc</kbd> | Closes the popup. |

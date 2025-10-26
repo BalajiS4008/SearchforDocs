@@ -1,0 +1,166 @@
+.template-row td {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.template-cell {
+  padding: 16px;
+  vertical-align: middle;
+}
+
+.template-row .template-cell:last-of-type {
+  text-align: center;
+}
+
+.customer-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.customer-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.customer-name {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.customer-email {
+  font-size: 13px;
+  color: #888;
+}
+
+.customer-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.avatar-red {
+    background-color: #f44336;
+}
+
+.avatar-blue {
+    background-color: #2196f3;
+}
+
+.avatar-green {
+    background-color: #4caf50;
+}
+
+.avatar-orange {
+    background-color: #ff9800;
+}
+
+.avatar-purple {
+    background-color: #9c27b0;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+}
+
+.product-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  margin-right: 16px;
+  object-fit: cover;
+}
+
+.chart-container {
+  height: 80px;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+  width: 90px;
+  text-align: center;
+  display: inline-block;
+}
+
+.status-badge.completed,
+.green {
+  background-color: #4caf50;
+}
+
+.status-badge.pending,
+.blue {
+  background-color: #2196f3;
+}
+
+.status-badge.processing,
+.orange {
+  background-color: #ff9800;
+}
+
+.status-badge.failed,
+.red {
+  background-color: #f44336;
+}
+
+/* Dark Theme */
+.dark-theme .row-template {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid #424242;
+}
+
+.dark-theme .template-row td {
+  border-bottom: 1px solid #424242;
+}
+
+.dark-theme .template-row {
+  border-bottom-color: #424242;
+  background-color: #1a1a1a;
+}
+
+.dark-theme .template-cell {
+    color: #e0e0e0;
+}
+
+.dark-theme .customer-name {
+  color: #e0e0e0;
+}
+
+.dark-theme .customer-email {
+  color: #bdbdbd;
+}
+
+.dark-theme .status-badge {
+    color: #1a1a1a;
+}
+
+.dark-theme .status-badge.completed,
+.dark-theme .green {
+    background-color: #66bb6a;
+}
+
+.dark-theme .status-badge.pending,
+.dark-theme .blue {
+    background-color: #42a5f5;
+}
+
+.dark-theme .status-badge.processing,
+.dark-theme .orange {
+    background-color: #ffa726;
+}
+
+.dark-theme .status-badge.failed,
+.dark-theme .red {
+    background-color: #ef5350;
+}
+

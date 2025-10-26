@@ -1,0 +1,8 @@
+.sf-empty-record-template {
+    text-align: center;
+}
+
+.sf-empty-record { 
+    display: block;
+    margin: 10px auto;
+}

@@ -1,0 +1,15 @@
+.sales-trend .sf-product-info {
+    display: flex;
+    align-items: center;
+}
+
+.sales-trend .sf-product-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.sales-trend .sf-product-info span {
+    margin: 10px;
+}

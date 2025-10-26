@@ -1,0 +1,354 @@
+import BasicDropdownlist  from './basic-dropdownlist';
+import DisableItemDropdownlist  from './disable-item';
+import HeaderTemplateDropdownlist  from './header-template';
+import FooterTemplateDropdownlist  from './footer-template';
+import NoRecordsTemplateDropdownlist  from './no-records-template';
+import GroupTemplateDropdownlist  from './group-template';
+import ValueTemplateDropdownlist  from './value-template';
+import LabelModeDropdownlist  from './label-mode';
+import DisabledDropdownlist  from './disabled';
+import ReadOnlyDropdownlist  from './readonly';
+import ControlledDropdownlist  from './controlled-uncontrolled';
+import FormSupportDropdownlist  from './validation-form';
+import RemoteDataDropdownlist  from './remote-data';
+import ItemTemplateDropdownlist  from './item-template';
+import GroupingDropdownlist  from './grouping';
+import FilteringDropdownlist  from './filtering';
+import LocalDataDropdownlist  from './local-data';
+import CascadingDropdownlist  from './cascading-dropdownlist';
+import InvalidDropdownlist from './invalid-dropdownlist'
+import DiacriticsFilteringDropdownlist from './diacritics-filtering'
+import GroupingFilteringDropdownlist from './grouping-filtering'
+import FilteringRemoteDataDropdownlist from './filtering-remote-data'
+import { Preview } from '../../common/preview';
+import { Check, Cross, Clock } from '../../common/util';
+import { Snippet } from '../../common/snippet'
+import { dropdroplistNpm, dropdroplistImport, dropdroplistStyles, dropdroplistSnippet } from './dropdownlist-snippets'
+import { Link } from 'react-router'
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Dropdown List Component | Syncfusion"
+  description="The Dropdown List component displays a list of selectable options in a compact menu, with support for search, styling, and filtering."
+/>
+
+# React Dropdown List
+
+The React `Dropdown List` component is a user interface element that allows users to select a single option from a list of predefined options. It typically appears as a collapsible list anchored to an input or trigger element. This component is commonly used for selecting categories, filtering data, or guiding users through a sequence of options.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite#set-up-the-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let's add the React `Dropdown List` component to the project.
+
+### Installing Syncfusion® packages
+
+To use the React `Dropdown List` component in this project, the [`@syncfusion/react-dropdowns`](https://www.npmjs.com/package/@syncfusion/react-dropdowns) package needs to be installed using the following command:
+
+<Snippet content={dropdroplistNpm}/>
+
+### Adding CSS reference
+
+In this article, the `Material 3` theme is applied using CSS styles, which are available in installed packages. The necessary Material CSS styles for the `Dropdown List` component and its dependents were imported into the **src/App.css** file.
+
+<Snippet content={dropdroplistStyles}/>
+
+### Adding Dropdown List component
+
+To include the `Dropdown List` component in your application, import the `Dropdown List` from the `@syncfusion/react-dropdowns` package in **App.tsx**.
+
+<Snippet content={dropdroplistImport} />
+
+Add the `Dropdown List` component in application as shown in below code example.
+
+<Snippet content={dropdroplistSnippet} />
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+The following example demonstrates a basic `Dropdown List` with a simple list. Click the Dropdown List element and select an item from the options list.
+
+<Preview 
+  content={<BasicDropdownlist/>} 
+  path="dropdownlist/basic-dropdownlist.tsx"
+/>
+
+## Primitive data binding 
+
+The `Dropdown List` component can be bound to an array of primitive values, such as strings or numbers. This is useful for scenarios where the data is simple and does not require a complex data structure.
+<Preview 
+  content={<LocalDataDropdownlist />} 
+  path="dropdownlist/local-data.tsx"
+/>
+
+## Remote data binding 
+
+The `Dropdown List` component can be bound to remote data sources like APIs through the DataManager. The `dataSource` property establishes the connection to external data, while the `query` property filters and customizes what data is retrieved from the server. This approach is perfect for applications that need to display server-side data without loading everything at once.
+
+<Preview 
+  content={<RemoteDataDropdownlist />} 
+  path="dropdownlist/remote-data.tsx"
+/>
+
+## Grouping
+
+Grouping feature enables you to organize dropdown items into logical categories using the `groupBy` property. This functionality is particularly valuable when managing large datasets, as it arranges related items together, significantly improving user navigation and item discoverability.
+
+<Preview 
+  content={<GroupingDropdownlist />} 
+  path="dropdownlist/grouping.tsx"
+/>
+
+## Filtering
+
+The `Dropdown List` component makes finding items simple with its built-in filtering feature.
+When you turn on filtering by setting `filterable` to true, users can quickly narrow down choices by typing in the search box.
+The list automatically updates to show only matching items as you type, making it easy to find what you're looking for in large lists.
+
+<Preview 
+  content={<FilteringDropdownlist />} 
+  path="dropdownlist/filtering.tsx"
+/>
+
+### Diacritics Filtering
+
+The `Dropdown List` component  supports diacritics filtering which will ignore the diacritics and makes it easier to filter the results in international characters lists when the `ignoreAccent` is enabled.
+
+In the following sample, data with diacritics are bound as dataSource for Dropdown List.
+
+<Preview 
+  content={<DiacriticsFilteringDropdownlist />} 
+  path="dropdownlist/diacritics-filtering.tsx"
+/>
+
+### Grouping with Filtering
+
+This sample demonstrates how to implement a Dropdown List with grouping and filtering functionality. The Dropdown List organizes items into groups and allows users to filter options dynamically for a better user experience.
+
+<Preview 
+  content={<GroupingFilteringDropdownlist />} 
+  path="dropdownlist/grouping-filtering.tsx"
+/>
+
+### Filtering with RemoteData
+
+This sample demonstrates how to implement a Dropdown List with filtering functionality using remote data. The Dropdown List fetches data from a remote source and allows users to filter options dynamically based on their input.
+
+<Preview 
+  content={<FilteringRemoteDataDropdownlist />} 
+  path="dropdownlist/filtering-remote-data.tsx"
+/>
+
+## Cascading Dropdowns
+
+This sample demonstrates cascading dropdown functionality where selecting an option in one dropdown affects the available options in subsequent dropdowns.
+
+In this example:
+
+- First, select a country from the first dropdown.
+- Then, select a region from the second dropdown (options depend on the selected country)
+- Finally, select a city from the third dropdown (options depend on the selected region)
+
+<Preview 
+  content={<CascadingDropdownlist />} 
+  path="dropdownlist/cascading-dropdownlist.tsx"
+/>
+
+## Custom Rendering
+
+The `Dropdown List` component supports various options to customize the appearance and structure of the dropdown elements.
+
+### Item template
+
+The `Dropdown List` component allows you to customize the appearance of each item in the Dropdown List using the `itemTemplate` property. This is useful for displaying additional information or styling items in a specific way. You can place an icon such as a flag or status indicator beside the list text to give users an instant visual while they browse the list items.
+
+<Preview 
+  content={<ItemTemplateDropdownlist />}
+  path="dropdownlist/item-template.tsx"
+/>
+
+### Group template
+
+The `Dropdown List` component allows you to customize the appearance of group headers using the `groupTemplate` property. This is useful for displaying additional information or styling group headers in a specific way. Adding a title or icon such as a category marker or status badge to the group header helps users quickly understand the type of items in that section.
+
+<Preview 
+  content={<GroupTemplateDropdownlist />}
+  path="dropdownlist/group-template.tsx"
+/>
+
+### No Records template
+
+The `Dropdown List` component allows you to customize the message displayed when no data is available or when filtering returns no results. This is achieved using the `noRecordsTemplate` property.
+
+<Preview 
+  content={<NoRecordsTemplateDropdownlist />}
+  path="dropdownlist/no-records-template.tsx"
+/>
+
+### Header template
+
+The `Dropdown List` component allows you to add a custom header at the top of the popup list using the `headerTemplate` property. This is useful for displaying titles, helper text, or other contextual information at the top of the dropdown list items.
+
+Define a function that returns JSX and pass it to `headerTemplate` on the Dropdown List component. The returned content is rendered at the top of the popup list.
+
+<Preview 
+  content={<HeaderTemplateDropdownlist />}
+  path="dropdownlist/header-template.tsx"
+/>
+
+### Footer template
+
+The `Dropdown List` component allows you to add a custom footer at the bottom of the popup list using the `footerTemplate` property. This is useful for display additional information, links, custom content or “Add new”/“View all” actions below your dropdown list items.
+
+<Preview 
+  content={<FooterTemplateDropdownlist />}
+  path="dropdownlist/footer-template.tsx"
+/>
+
+### Value template
+
+The `Dropdown List` component allows you to customize the appearance of the selected value using the `valueTemplate` property. This is useful for displaying additional information such as an avatar, secondary text, custom formatting or styling the selected value in a specific way.
+
+<Preview 
+  content={<ValueTemplateDropdownlist />}
+  path="dropdownlist/value-template.tsx"
+/>
+
+## Appearance
+
+The `Dropdown List` component provides various options to customize its appearance, including the ability to disable specific items in the dropdown menu. This feature is useful when certain options should be visible but not selectable in particular contexts.
+
+### Label mode
+
+The `Dropdown List` component supports different label display modes through the `labelMode` property. This property controls how the label or placeholder text appears in relation to the input field.
+
+Available label mode options:
+- `"Never"`: The label will never float in the input when the placeholder is available.
+- `"Always"`: The floating label will always float above the input.
+- `"Auto"`: The floating label will float above the input after focusing or entering a value in the input.
+
+The following sample illustrates how the Dropdown List behaves with different label mode settings, allowing you to see how each option affects the appearance and interaction of labels relative to the input field.
+
+<Preview 
+  content={<LabelModeDropdownlist />}
+  path="dropdownlist/label-mode.tsx"
+/>
+
+### Disabled
+
+The `Dropdown List` component can be completely disabled by setting the `disabled` property to `true`. When disabled, the component becomes non-interactive and visually indicates its disabled state to the user.
+The example below demonstrates a fully disabled Dropdown List:
+
+<Preview 
+  content={<DisabledDropdownlist />}
+  path="dropdownlist/disabled.tsx"
+/>
+
+Note: This is different from disabling individual items within the dropdown (which is shown in the "Disabled items" section). The `disabled` property affects the entire component.
+
+### ReadOnly
+
+The `Dropdown List` component can be set to a read-only state by setting the `readOnly` property to `true`. In this state, the component displays its current value but doesn't allow any interaction with the dropdown functionality.
+The example below demonstrates a Dropdown List in read-only mode:
+
+<Preview 
+  content={<ReadOnlyDropdownlist />}
+  path="dropdownlist/readonly.tsx"
+/>
+
+### Invalid
+
+This example shows the `Dropdown List` styled with the `sf-error` class to highlight an invalid state. A clear error message can be shown below or near the dropdown to let the user know about the issue.
+
+<Preview 
+  content={<InvalidDropdownlist />} 
+  path="dropdownlist/invalid.tsx"
+/>
+
+Note: The read-only state differs from the disabled state. While both prevent changes to the selection, a read-only dropdown maintains its visual appearance and can receive focus, whereas a disabled dropdown appears visually inactive and cannot receive focus.
+
+## Disabled items
+
+The `Dropdown List` component allows you to disable specific items in the dropdown menu, preventing users from selecting them. This is useful when certain options should be visible but not selectable in particular contexts.
+
+To disable items, include a boolean property in your data objects (like `disabled: true`) and map it to the `disabled` field in the fields configuration object.
+
+<Preview 
+  content={<DisableItemDropdownlist />} 
+  path="dropdownlist/disable-item.tsx"
+/>
+
+## Controlled vs Uncontrolled
+
+The `Dropdown List` component supports both controlled and uncontrolled modes. In controlled mode, the `value` property manages the selected data externally, while uncontrolled mode uses the `defaultValue` property for initial state with internal state management.
+
+<Preview 
+  content={<ControlledDropdownlist />} 
+  path="dropdownlist/controlled-uncontrolled.tsx"
+/>
+
+## Forms support
+
+The Dropdown List component integrates seamlessly with forms, providing built-in validation capabilities. The component supports form validation through properties like `validityStyles`, `valid`, and `validationMessage`.
+The example below demonstrates a membership form with validation for required dropdown selections:
+
+<Preview 
+  content={<FormSupportDropdownlist />} 
+  path="dropdownlist/validation-form.tsx"
+/>
+
+Using the `validityStyles` property (set to true by default), you can control whether validation styling is applied. The `valid` property determines if the current selection passes validation, while `validationMessage` allows you to provide contextual error messages to guide users.
+
+## Accessibility
+ 
+The `Dropdown List` component follows accessibility guidelines and standards, including [ADA](https://www.ada.gov/), [Section 508](https://www.section508.gov/), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) standards, and [WCAG roles](https://www.w3.org/TR/wai-aria/#roles) that are commonly used to evaluate accessibility.
+ 
+The accessibility compliance for the `Dropdown List` component is outlined below.
+ 
+| Accessibility Criteria | Compatibility |
+| -- | -- |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Support | <Check/> |
+| [Section 508](https://www.section508.gov/) Support | <Check/> |
+| Screen Reader Support | <Check/> |
+| Right-To-Left Support | <Check/> |
+| Color Contrast | <Check/> |
+| Mobile Device Support | <Check/> |
+| Keyboard Navigation Support | <Check/> |
+| [Accessibility](https://www.npmjs.com/package/@storybook/addon-a11y) Validation | <Check/> |
+| Axe-core Accessibility Validation | <Check/> |
+ 
+<Check/> - All features of the component meet the requirement.
+ 
+<Clock/> - Some features of the component do not meet the requirement.
+ 
+<Cross/> - The component does not meet the requirement.
+ 
+### WAI-ARIA attributes
+ 
+The `Dropdown List` component follows the [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/Dropdown List-modal/) patterns to meet accessibility requirements. The following ARIA attributes are used in the Dialog component:
+ 
+| Attributes | Purpose |
+| --- | --- |
+| `aria-expanded` | Indicates whether the popup list has expanded or not. |
+| `aria-disabled` | References the element that describes the dialog content. |
+
+### Keyboard interaction
+ 
+You can use the following key shortcuts to access the Dropdown List without interruptions.
+
+| Press | To do this |
+| --- | --- |
+| <kbd>Arrow Down</kbd> | Selects the first item in the Dropdown List when no item selected. Otherwise, selects the item next to the currently selected item. |
+| <kbd>Arrow Up</kbd> | Selects the item previous to the currently selected one. |
+| <kbd>Page Down</kbd> | Scrolls down to the next page and selects the first item when popup list opens. |
+| <kbd>Page Up</kbd> | Scrolls up to the previous page and selects the first item when popup list opens |
+| <kbd>Enter</kbd> | Selects the focused item, and when it is in an open state the popup list closes. Otherwise, toggles the popup list. |
+| <kbd>Tab</kbd> | Focuses on the next TabIndex element on the page when the popup is closed. Otherwise, closes the popup list and remains the focus of the component. |
+| <kbd>Shift + tab</kbd> | Focuses on the previous TabIndex element on the page when the popup is closed. Otherwise, closes the popup list and remains the focus of the component. |
+| <kbd>Alt + Down</kbd> | Opens the popup list. |
+| <kbd>Alt + Up</kbd> | Closes the popup list. |
+| <kbd>Esc(Escape)</kbd> | Closes the popup list when it is in an open state and the currently selected item remains the same. |
+| <kbd>Home</kbd> | Selects the first item.|
+| <kbd>End</kbd> | Selects the last item. |

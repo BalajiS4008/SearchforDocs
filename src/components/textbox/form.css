@@ -1,0 +1,61 @@
+.k-col-span-1 {
+    margin: 20px;
+}
+
+.dark-theme.sf-dark-mode .sf-form-container {
+  border: 1px solid #49454F;
+}
+
+.sf-form-title-text{
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.dark-theme.sf-dark-mode .sf-form-title-text {
+  color: #cac4d0;
+}
+
+.sf-form-container {
+    max-width: 500px;
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #E7E0EC;
+    border-radius: 4px;
+    background-color: transparent;
+  }
+  
+  .sf-form-title {
+    text-align: center;
+  }
+  
+  .sf-hint {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+    margin-left: 2px;
+  }
+  
+  .sf-error-message {
+    font-size: 12px;
+    color: #d9534f;
+    margin-top: 5px;
+    margin-left: 2px;
+  }
+  
+  .sf-form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .sf-field.sf-valid {
+    border-bottom-color: #28a745;
+  }
+  
+  .sf-field.sf-error {
+    border-bottom-color: #dc3545;
+  }

@@ -1,0 +1,28 @@
+.library-data .sf-row-info {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #4A4458;
+    background-color: #F5EEFA;
+    border-radius: 4px;
+}
+
+.library-data .sf-row-info div {
+    margin-bottom: 4px;
+}
+
+.library-data .sf-row-info b {
+    font-weight: 600;
+    color: #000000;
+}
+
+.dark-theme .library-data .sf-row-info {
+    color: #E0E0E0;
+    background-color: #303030;
+}
+
+.dark-theme .library-data .sf-row-info b {
+    color: #FFFFFF;
+}

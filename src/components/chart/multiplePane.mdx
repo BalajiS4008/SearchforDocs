@@ -1,0 +1,32 @@
+import { Preview } from '../../common/preview';
+import MultipleRow from './multipleRow'
+import MultipleColumn from './multipleColumn'
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Chart Multiple Panes | Syncfusion"
+  description="React Chart multiple panes divide a chart into separate plot areas with custom sizes."
+/>
+
+
+# Multiple Panes in React Chart
+
+Chart area can be divided into multiple panes using rows and columns.
+
+**Rows**
+
+To split the chart area vertically into number of rows, use [`ChartRow`](https://react-api.syncfusion.com/chart/row) component of the chart.
+
+- You can allocate space for each row by using the [`height`](https://react-api.syncfusion.com/chart/row#height) property. The value can be either in percentage or in pixel.
+
+- To associate a vertical axis to a particular row, specify its index to [`rowIndex`](https://react-api.syncfusion.com/chart/chartaxisprops#rowindex) property of the axis.
+
+**Column**
+
+To split the chart area horizontally into number of columns, use ChartColumn component of the chart.
+
+- You can allocate space for each column by using the [`width`](https://react-api.syncfusion.com/chart/column) property. The given width can be either in percentage or in pixel.
+
+- To associate a horizontal axis to a particular column, specify its index to [`columnIndex`](https://react-api.syncfusion.com/chart/chartaxisprops#columnindex) property of the axis.
+
+<Preview onDemand={true} reset={true} content={<MultipleRow />} path="chart/multipleRow.tsx" />

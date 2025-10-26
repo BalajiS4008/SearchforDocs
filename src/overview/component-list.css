@@ -1,0 +1,23 @@
+#component-list tr {
+    border: 0;
+}
+
+#component-list td {
+    border: 0;
+    vertical-align: top;
+}
+
+.control-link {
+    text-decoration: none;
+    font-size: 14px;
+    text-align: left;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.control-category {
+    font-size: 14px;
+    text-align: left;
+    font-weight: bold;
+    letter-spacing: 0.7px !important;
+}

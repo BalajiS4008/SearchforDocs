@@ -1,0 +1,10 @@
+.row-hover .sf-grid-content-row:not(.sf-grid-edit-row):hover .sf-cell:not(.sf-active),
+.row-hover .sf-grid-content-row:not(.sf-grid-edit-row):hover .sf-cell {
+    background-color:  #e90b7b24;
+}
+
+
+.dark-theme .row-hover .sf-grid-content-row:not(.sf-grid-edit-row):hover .sf-cell:not(.sf-active),
+.dark-theme .row-hover .sf-grid-content-row:not(.sf-grid-edit-row):hover .sf-cell {
+    background-color: #b9236ead;
+}

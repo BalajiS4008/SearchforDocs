@@ -1,0 +1,33 @@
+import { Snippet } from '../common/snippet';
+import { Preview } from '../common/preview';
+import Localization from './localization';
+import ChangeLocale from './change-locale';
+import { Meta } from '../common/meta';
+
+<Meta
+ title="React components localization | Syncfusion"
+ description="Localization adapts React components to support regional languages, and cultures for a tailored user experience."
+/>
+
+# Localization support in React Components
+
+The `Localization` library enables Syncfusion<sup>®</sup> React UI components to adapt to various languages, ensuring accessibility and usability for global audiences beyond English.
+
+## Loading translations
+
+To implement translations, utilize the `load` function and `Provider` from the [@syncfusion/react-base](https://www.npmjs.com/package/@syncfusion/react-base) module and localization texts from the [@syncfusion/react-locale](https://www.npmjs.com/package/@syncfusion/react-locale) package. In the example below, the application’s language is configured to French (`fr`) using the `locale` property of the `Provider`. This configuration ensures that grid elements, such as column headers are rendered in the specified language.
+
+<Preview 
+  content={<Localization />} 
+  path="common-features/localization.tsx"
+/>
+
+## Changing the current locale
+
+To switch the language of Syncfusion<sup>®</sup> React UI components, update the `locale` property in the `Provider` context to the desired culture name.
+
+<Preview 
+  content={<ChangeLocale />} 
+  path="common-features/change-locale.tsx"
+  scroll={false}
+/>

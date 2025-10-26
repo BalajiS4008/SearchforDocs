@@ -1,0 +1,73 @@
+:root {
+  --icon-layout: white;
+  --text: #555;
+}
+
+.dark-theme {
+  --icon-layout: var(--preview-background-color);
+  --text: #CAC4D0
+}
+
+.syncfusion-icons {
+  padding: 20px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+}
+
+.icon-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 22px 15px 0;
+  background-color: var(--icon-layout);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100px;
+  height: 100px;
+  transition: transform 0.2s;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+}
+
+.icon-item:hover {
+  transform: scale(1.05);
+}
+
+.syncfusion-icons p {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.icon-description {
+  margin: 0;
+  margin-left: 5px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.custom {
+  display: flex;
+}
+
+@media (max-width: 580px) {
+  .custom {
+    display: block;
+  }
+}

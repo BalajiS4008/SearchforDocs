@@ -1,0 +1,133 @@
+import CancelEdit from './cancel-inline-edit.tsx';
+import DisableEdit from './disable-inline-edit.tsx';
+import SingleEdit from './single-edit.tsx';
+import ConfirmationEdit from './confirmation-inline-edit.tsx';
+import RemoveEdit from './remove-inline-edit.tsx';
+import DefaultEdit from './default-inline-edit.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Data Grid - Row Editing | Syncfusion"
+  description="Row editing in Data Grid to make entire rows editable directly within the table for fast, streamlined data entry."
+/>
+
+# Row Editing in React Data Grid
+
+The Syncfusion® React Data Grid component supports inline row editing for direct updates to cell values. To enable this, set [`editSettings.mode`](https://react-api.syncfusion.com/data-grid/editsettings#mode) property to `Normal` and configure the [`allowEdit`](https://react-api.syncfusion.com/data-grid/editsettings#allowedit), [`allowAdd`](https://react-api.syncfusion.com/data-grid/editsettings#allowadd), and [`allowDelete`](https://react-api.syncfusion.com/data-grid/editsettings#allowdelete) properties to `true` to provide full CRUD functionality.
+
+In normal mode, the selected row becomes editable for efficient data modifications. The following actions facilitate CRUD operations:
+
+- Edit a Row: Inline edit mode is activated by double-clicking a row or pressing <kbd>F2</kbd>.
+
+- Add a New Row: A new row is added by clicking the `Add` button in the toolbar or pressing <kbd>Insert</kbd> (<kbd>⌘ + ⌥ + Enter</kbd> on macOS) to start editing.
+
+- Delete a Row: A selected row is removed by clicking the `Delete` button in the toolbar or pressing <kbd>Delete</kbd>.
+
+- Save Changes: Changes are saved by pressing <kbd>Enter</kbd> or clicking the `Update` button in the toolbar, exiting edit mode.
+
+- Cancel Edit: Changes are discarded by pressing <kbd>Esc</kbd> or clicking the `Cancel` button in the toolbar, exiting edit mode.
+
+## Display default value for columns while adding
+ 
+Data Grid component enables automatic population of column values for new rows by setting the [`defaultValue`](https://react-api.syncfusion.com/data-grid/columnprops#defaultvalue) property in the column configuration.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<DefaultEdit/>}
+  path="grid/default-inline-edit.tsx"
+  scroll={false}
+/>
+
+## Cancel edit based on condition
+
+To restrict edit, add, or delete actions in the grid based on specific conditions using the [`onRowAddStart`](https://react-api.syncfusion.com/data-grid/overview#onrowaddstart), [`onRowEditStart`](https://react-api.syncfusion.com/data-grid/overview#onroweditstart), and [`onDataChangeStart`](https://react-api.syncfusion.com/data-grid/overview#ondatachangestart) events. These events are triggered at the start of a CRUD operation, enabling evaluation of the action (such as beginEdit, add, or delete) and cancellation by setting `args.cancel` as `true`. For example, editing or deleting a row can be blocked if the "Role" column contains the value "Manager".
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<CancelEdit/>}
+  path="grid/cancel-inline-edit.tsx"
+  scroll={false}
+/>
+
+## Show confirmation dialog while deleting
+
+Data Grid component prevents accidental deletions by enabling a built-in confirmation dialog. This is achieved by setting the [`confirmOnDelete`](https://react-api.syncfusion.com/data-grid/editsettings#confirmondelete) property to `true` within the edit settings configuration.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<ConfirmationEdit/>}
+  path="grid/confirmation-inline-edit.tsx"
+  scroll={false}
+/>
+
+## Enable editing in single click
+ 
+When configured in `Normal` mode, grid supports enabling single-click editing for immediate cell modifications. This is achieved by implementing the following steps: 
+
+- Add an `onMouseUp` event to the grid.
+
+- If the clicked element is a cell (`sf-cell`), use [`selectRow`](https://react-api.syncfusion.com/data-grid/overview#selectrow) and [`editRecord`](https://react-api.syncfusion.com/data-grid/overview#editrow) methods to begin editing.
+
+- If the grid is already in edit mode, call the [`saveDataChanges`](https://react-api.syncfusion.com/data-grid/overview#savedatachanges) method before starting a new edit.
+
+This approach allows entering edit mode instantly without requiring double-clicks or toolbar interactions.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<SingleEdit/>}
+  path="grid/single-edit.tsx"
+  scroll={false}
+/>
+
+## Disable editing for a particular row
+
+Data Grid component allows preventing edits on specific rows by utilizing the [`onRowEditStart`](https://react-api.syncfusion.com/data-grid/overview#onroweditstart) event. Editing can be canceled by setting the `args.cancel` property to `true` based on row data conditions.
+
+For example, to block editing rows where "Ship Country" column has the value "France", evaluate the row data during the `onRowEditStart` event and cancel the edit accordingly.
+ 
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<DisableEdit/>}
+  path="grid/disable-inline-edit.tsx"
+  scroll={false}
+/>
+
+## Programmatic editing
+ 
+Editing operations within the grid can be managed programmatically using built-in methods. This allows edit actions to be triggered and controlled without requiring direct interaction.
+
+| Method                                                                 | Description                                                                 |
+|---------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+| [`editRecord`](https://react-api.syncfusion.com/data-grid/overview#editrecord)     | Selects the target row to begin editing.                                        |
+| [`addRecord`](https://react-api.syncfusion.com/data-grid/overview#addrecord)     | Inserts a new row into the grid programmatically. Can be used in two ways: <br/> - `addRecord(data, index)`: Specify data values to prefill the new row and define the index position for the new row.<br/> - `addRecord()`: Adds an empty row at index 0 by default.|                            
+| [`updateRecord`](https://react-api.syncfusion.com/data-grid/overview#updaterecord)      | Modifies the contents of an existing row. <br/> - `updateRecord(index, data)`: Specify the index position of the row to update and provide the updated data values. |                                                                      |   
+| [`deleteRecord`](https://react-api.syncfusion.com/data-grid/overview#deleterecord) | Removes a row by selecting the target row.|
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<RemoveEdit/>}
+  path="grid/remove-inline-edit.tsx"
+  scroll={false}
+/>
+ 
+## See also
+
+* <p><Link to="/data-grid/editing/configuration#enable-editing">Grid Editing options</Link></p>
+
+* <p><Link to="/data-grid/editing/configuration#events">Grid Editing Event Reference</Link></p>
+
+* <p><Link to="/data-grid/editing/configuration#using-a-template-for-column-editing">Column Editing Templates and Customization</Link></p>
+
+* <p><Link to="/data-grid/editing/validation">Editing Validation Patterns</Link></p>
+
+* <p><Link to="/data-grid/accessibility#editing">Keyboard Shortcuts for CRUD Operations</Link></p>
+ 

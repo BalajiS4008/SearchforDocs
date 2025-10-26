@@ -1,0 +1,68 @@
+.component-section.positioned {
+    max-width: 600px;
+}
+
+.toast-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.toast-grid .sf-btn {
+    margin: 5px;
+}
+
+.toast-row {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px 0;
+}
+
+.mid-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 300px;
+    margin: 15px 0;
+}
+
+.left-col,
+.right-col {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media screen and (max-width: 900px) {
+    .toast-grid {
+        gap: 20px;
+    }
+
+    .toast-grid .sf-btn:last-child {
+        white-space: normal;
+    }
+
+    .left-col,
+    .right-col {
+        gap: 20px;
+    }
+
+    .toast-grid .sf-btn {
+        min-width: 80px;
+        font-size: 13px;
+    }
+
+    .mid-row {
+        gap: 50px;
+        justify-content: center;
+    }
+
+    .toast-row {
+        gap: 0px;
+    }
+
+    .component-section.positioned {
+        max-width: 300px;
+    }
+}

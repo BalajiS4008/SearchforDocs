@@ -1,0 +1,51 @@
+import DynamicFiltering from './dynamic-filtering.tsx';
+import DebouncingFiltering from './debouncing-filtering.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Meta } from '../../common/meta';
+import { Link } from 'react-router';
+
+<Meta
+  title="React Data Grid - Custom Filtering | Syncfusion"
+  description="Filtering in Data Grid enables quick record lookup using programmatic API methods to apply dynamic, custom filter logic within your application."
+/>
+
+# Custom Filtering in React Data Grid
+
+The Syncfusion® React Data Grid component supports external filtering, allowing filters to be applied and cleared programmatically. This functionality provides dynamic control over data presentation in the grid component.
+
+## Dynamic filter updates with React state
+
+The Data Grid component supports external filtering using the React's `useState` hook combined with input controls such as Syncfusion® React [`Button`](https://react.syncfusion.com/button), [`TextBox`](https://react.syncfusion.com/textbox), or [`Numeric TextBox`](https://react.syncfusion.com/numeric-textbox) components. This approach enables tailored control over filter logic and layout, independent of the built-in filter bar.
+
+To configure external filtering, initialize a filter object using `useState` and update it based on input events. The updated object can be assigned to [`filterSettings.columns`](https://react-api.syncfusion.com/data-grid/filtersettings#columns) property or applied via the [`filterByColumn`](https://react-api.syncfusion.com/data-grid/overview#filterbycolumn) method to trigger customized filtering behavior.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  content={<DynamicFiltering />}
+  path="grid/dynamic-filtering.tsx"
+  onDemand={true}
+  scroll={false}
+/>
+
+## Real-time filtering with debouncing
+
+Implement real-time filtering with debouncing to optimize grid performance during rapid input, such as in a search bar. Debouncing applies filters after a short delay, minimizing unnecessary updates and ensuring smooth interaction in live search scenarios.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  content={<DebouncingFiltering />}
+  path="grid/debouncing-filtering.tsx"
+  onDemand={true}
+  scroll={false}
+/>
+
+## See also
+
+* <p><Link to="/data-grid/data-binding/custom-data#handling-filtering-operation">Handling the Filtering in Custom Service </Link></p>
+
+* <p><Link to="/data-grid/filtering/configuration#enable-filtering">Filtering Configuration</Link></p>
+
+* <p><Link to="/data-grid/filtering/configuration#filter-operators">Supported Filter Operators</Link></p>
+
+* <p><Link to="/data-grid/filtering/configuration#events">Grid Filtering Event Reference</Link></p> 

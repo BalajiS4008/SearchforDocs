@@ -1,0 +1,257 @@
+.component-content:has(.property-panel) {
+  padding: 0;
+}
+.component-content:has(.property-panel[data-position="top"]) {
+  max-height: unset;
+}
+.preview-container:has(.property-panel) {
+  display: grid;
+  padding: 0;
+  gap: 0;
+}
+.preview-container:has(.property-panel[data-position="right"]):not(.preview-container:has(.property-panel[data-position="top"])) {
+  grid-template-columns: 1fr 270px;
+  grid-template-rows: 1fr;
+  gap: 1px;
+}
+.preview-container:has(.property-panel[data-position="top"]) {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 1px;
+}
+.preview-container:has(.property-panel:not([data-position])) {
+  grid-template-columns: 1fr 320px;
+  grid-template-rows: 1fr;
+  gap: 1px;
+}
+.preview-container.has-property-pane-right {
+  display: grid;
+  padding: 0;
+  grid-template-columns: 1fr 320px;
+  grid-template-rows: 1fr;
+  gap: 1px;
+}
+.preview-container.has-property-pane-top {
+  display: grid;
+  padding: 0;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 1px;
+}
+.preview-container:has(.property-panel[data-position="right"]) .component-section,
+.preview-container:has(.property-panel:not([data-position])) .component-section {
+  min-width: 100%;
+  align-items: center;
+  padding: 20px;
+  overflow: auto;
+}
+.preview-container:has(.property-panel[data-position="top"]) .component-section {
+  max-width: unset;
+  padding: 20px;
+  overflow: auto;
+}
+.preview-container.has-property-pane-right .component-section {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  min-height: 350px;
+  overflow: auto;
+}
+.preview-container.has-property-pane-top .component-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  min-height: 350px;
+  border: none;
+  border-radius: 0;
+  overflow: auto;
+}
+.property-panel[data-property-pane] {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: rgba(163, 146, 146, 0.03); 
+}
+.property-panel:not([data-position]),
+.property-panel[data-position="right"] {
+  border-left: 1px solid var(--border-color);
+  min-width: 270px;
+  height: 100%;
+  align-self: start;
+}
+.property-panel[data-position="top"] {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid var(--border-color);
+  max-height: 200px;
+  grid-row: 1;
+}
+@media (max-width: 768px) {
+  .property-panel[data-property-pane] {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    max-height: 250px;
+  }
+}
+.property-panel-header {
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 20px;
+  flex-shrink: 0;
+}
+.property-panel-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+.property-panel-content {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.property-panel[data-columns="2"] .property-row,
+.property-panel[data-columns="3"] .property-row,
+.property-panel[data-columns="4"] .property-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+.property-panel[data-columns="2"] .property-panel-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 12px;
+  align-items: start;
+}
+.property-panel[data-columns="3"] .property-panel-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 12px;
+  align-items: start;
+}
+.property-panel[data-columns="4"] .property-panel-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px 12px;
+  align-items: start;
+}
+.property-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-self: start;
+}
+.property-panel[data-columns="2"] .property-col-6 { 
+  grid-column: span 1;
+}
+.property-panel[data-columns="2"] .property-col-12 { 
+  grid-column: span 2;
+}
+.property-panel[data-columns="3"] .property-col-4 { 
+  grid-column: span 1;
+}
+.property-panel[data-columns="3"] .property-col-8 { 
+  grid-column: span 2;
+}
+.property-panel[data-columns="3"] .property-col-12 { 
+  grid-column: span 3;
+}
+.property-panel[data-columns="4"] .property-col-3 { 
+  grid-column: span 1;
+}
+.property-panel[data-columns="4"] .property-col-6 { 
+  grid-column: span 2;
+}
+.property-panel[data-columns="4"] .property-col-9 { 
+  grid-column: span 3;
+}
+.property-panel[data-columns="4"] .property-col-12 { 
+  grid-column: span 4;
+}
+.property-panel[data-columns="1"] .property-col,
+.property-panel:not([data-columns]) .property-col {
+  width: 100%;
+}
+.property-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+.property-col .property-row {
+  margin-bottom: 0;
+}
+.property-row .property-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--button-primary-bg);
+  line-height: 1.4;
+}
+.preview-container:has(.property-panel) > *:not(.component-section,.typography-section):not(.property-panel),
+.preview-container.has-property-pane-right > *:not(.component-section,.typography-section):not(.property-panel),
+.preview-container.has-property-pane-top > *:not(.component-section,.typography-section):not(.property-panel) {
+  align-items: center;
+  max-width: 100%;
+  min-height: 350px;
+  padding: 20px;
+  overflow: auto;
+}
+@media (max-width: 768px) {
+  .property-col {
+    grid-column: span 1 !important;
+  }
+  
+  .preview-container {
+    padding: 10px;
+    gap: 10px;
+  }
+  
+  .preview-container .component-section {
+    padding: 15px;
+  }
+  
+  .property-panel-content {
+    padding: 15px;
+  }
+  
+  .property-panel-header {
+    padding: 12px 15px;
+  }
+  
+  .property-panel-title {
+    font-size: 14px;
+  }
+}
+.property-panel-content::-webkit-scrollbar {
+  width: 0.275rem;
+}
+.property-panel-content::-webkit-scrollbar-track {
+   background: transparent;
+  border-radius: 3px;
+}
+.property-panel-content::-webkit-scrollbar-thumb {
+  background:var(--scrollbar-thumb);
+  border: 0.0625rem solid var(--scrollbar-thumb);
+}
+.property-panel-content::-webkit-scrollbar-thumb:hover {
+  background:var(--scrollbar-thumb-hover);
+}
+.preview-container {
+  transition: grid-template-columns 0.3s ease, grid-template-rows 0.3s ease;
+}
+.sb-no-frame .property-panel[data-position="top"] {
+  border: 1px solid var(--border-color);
+  margin-bottom: 8px;
+}
+.sb-no-frame .preview-container:has(.property-panel) > *:not(.component-section):not(.property-panel)
+{
+ padding: 0;
+}

@@ -1,0 +1,171 @@
+import DefaultFiltering from './default-filtering.tsx';
+import InitialFiltering from './initial-filtering.tsx';
+import DiacriticsFiltering from './diacritics-filtering.tsx';
+import CaseSensitivityFiltering from './casesensitive-filtering.tsx';
+import PreventFiltering from './prevent-filtering.tsx';
+import IdentifyFiltering from './identify-filtering.tsx';
+import ExternalFiltering from './external-filtering.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Data Grid - Filter | Syncfusion"
+  description="Filter data in Data Grid to help users quickly find what they need and explore records with ease."
+/>
+
+
+# Filtering in React Data Grid
+
+The Syncfusion® React Data Grid component provides robust filtering capabilities to display only data that meets specified conditions. This functionality simplifies the review of large datasets, enabling efficient analysis and decision-making.
+ 
+## Enable filtering
+
+The Data Grid component supports filtering by setting the [`filterSettings.enabled`](https://react-api.syncfusion.com/data-grid/filtersettings#enabled) property to `true`. This configuration displays filter bars in each column header, allowing data input to filter records based on specified conditions.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  scroll={false}
+  content={<DefaultFiltering />}
+  path="grid/default-filtering.tsx"
+/>
+
+## Initial filtering
+
+The Data Grid component supports initial filtering through the [`filterSettings.columns`](https://react-api.syncfusion.com/data-grid/filtersettings#columns) property, which automatically applies filters when the grid loads. The multiple filters can be configured across different columns by specifying each filter with its corresponding column [`field`](https://react-api.syncfusion.com/data-grid/filterpredicates#field), a logical [`operator`](https://react-api.syncfusion.com/data-grid/filterpredicates#operator) (e.g., equal, contains), and a matching [`value`](https://react-api.syncfusion.com/data-grid/filterpredicates#value).
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  scroll={false}
+  content={<InitialFiltering />}
+  path="grid/initial-filtering.tsx"
+/>
+ 
+## Diacritics filtering
+
+By default, the grid treats accented characters as distinct during filtering. Setting the [`filterSettings.ignoreAccent`](https://react-api.syncfusion.com/data-grid/filtersettings#ignoreaccent) property as `true` to enables the ignore accents, treating characters like "José" and "Jose" as identical. This configuration normalizes name-based or regional data with accent marks, ensuring consistent filtering results.
+ 
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  scroll={false}
+  content={<DiacriticsFiltering />}
+  path="grid/diacritics-filtering.tsx"
+/>
+
+## Case-sensitive filtering
+
+By default, the grid ignores case-sensitive during filtering. Configure [`filterSettings.caseSensitive`](https://react-api.syncfusion.com/data-grid/filtersettings#casesensitive) as `true` to treat uppercase and lowercase values as different. This approach proves valuable when exact matches are required.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  content={<CaseSensitivityFiltering />}
+  path="grid/casesensitive-filtering.tsx"
+  onDemand={true}
+  scroll={false}
+/>
+
+## Filter operators
+
+Filters use logical operators to evaluate input values against grid data. Each operator performs a distinct comparison and is applicable only to compatible data types.
+
+| Operator           | Description                              | Supported Data Types             |
+|------------------------|----------------------------------------------|--------------------------------------|
+|  `startsWith`            | Matches values starting with the input.      | String                               |
+|  `endsWith`              | Matches values ending with the input.        | String                               |
+|  `contains`              | Matches values containing the input.         | String                               |
+|  `doesNotStartWith`      | Excludes values starting with the input.     | String                               |
+|  `doesNotEndWith`        | Excludes values ending with the input.       | String                               |
+|  `doesNotcontain`        | Excludes values containing the input.        | String                               |
+|  `equal`                 | Matches exact values.                        | String, Number, Boolean, Date        |
+|  `notEqual`              | Excludes exact values.                       | String, Number, Boolean, Date        |
+|  `greaterThan`           | Matches values above the input.              | Number, Date                         |
+|  `greaterThanOrEqual`    | Matches values above or equal to the input.  | Number, Date                         |
+|  `lessThan`              | Matches values below the input.              | Number, Date                         |
+|  `lessThanOrEqual`       | Matches values below or equal to the input.  | Number, Date                         |
+|  `isNull`                | Shows null values.                           | String, Number, Date                 |
+|  `isNotNull`             | Shows non-null values.                       | String, Number, Date                 |
+|  `isEmpty`               | Shows empty strings.                         | String                               |
+|  `isNotEmpty`            | Shows non-empty strings.                     | String                               |
+|  `between`               | Matches values in a range.                   | Number, Date                         |
+|  `in`                    | Matches any of the listed values.            | String, Number, Date                 |
+|  `notIn`                 | Excludes listed values.                      | String, Number, Date                 |
+
+
+### Wildcard filtering
+
+The Wildcard filter can process one or more search patterns using the "*" symbol to retrieve values matching the specified patterns.
+
+| Example      | Description                                                                 |
+|---------------|-----------------------------------------------------------------------------|
+| Tom*Lee     | Matches any string that starts with "Tom" and ends with "Lee", with any characters (or none) between them. |
+| Tom*        | Matches any string that starts with "Tom", followed by any characters (or none). |
+| *Lee        | Matches any string that ends with "Lee", with any characters (or none) before it. |
+| *Tom       | Matches any string containing "Tom", with any characters (or none) before or after it. |
+| TomLee*   | Matches any string containing "Tom" followed by "Lee", with any characters (or none) before, between, or after them. |
+
+
+### LIKE filtering
+
+The LIKE filter can process single search patterns using the "%" symbol to retrieve values matching the specified patterns. The LIKE filtering is supported only for columns with string data types.
+
+| Example        | Description                                                             |
+|----------------|-------------------------------------------------------------------------|
+| %Tom Lee%    | Returns all values that contain the phrase "Tom Lee".                   |
+| Tom Lee%     | Returns all values that end with the phrase "Tom Lee".                  |
+| %Tom Lee     | Returns all values that start with the phrase "Tom Lee".                |
+
+
+>  The Wildcard and LIKE filter operators filters the value based on the given string pattern, and they apply to string-type columns.
+
+## Prevent filtering for particular column
+
+To prevent filtering on a specific column, set the [`allowFilter`](https://react-api.syncfusion.com/data-grid/columnprops#allowfilter) property to `false` in that column’s configuration. This configuration prevents the filter bar from appearing for the specified column, while other columns remain filterable.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  content={<PreventFiltering />}
+  path="grid/prevent-filtering.tsx"
+  onDemand={true}
+  scroll={false}
+/>
+ 
+
+## Programmatic filtering
+
+The Data Grid component supports applying and clearing filters programmatically through the following methods:
+
+- [`filterByColumn(field, operator, value)`](https://react-api.syncfusion.com/data-grid/overview#filterbycolumn) - Apply filters by specifying the column name (field), filter operator (operator), and filter value (value).
+
+- [`clearFilter()`](https://react-api.syncfusion.com/data-grid/overview#clearfilter) - Remove all filters from the grid. To clear filters on specific columns only, pass an array of column names to the method, for example: "clearFilter([columnName1, columnName2])".
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  content={<ExternalFiltering />}
+  path="grid/external-filtering.tsx"
+  onDemand={true}
+  scroll={false}
+/>
+
+## Events
+
+The Data Grid component provides event hooks that activate when a filtering action is completed, enabling customized data processing.
+ 
+| Event      | Description                                      |
+|----------------|--------------------------------------------------------|
+| [`onFilter`](https://react-api.syncfusion.com/data-grid/overview#onfilter) | Fires after a filtering or clear filtering action completes. It provides details about the current filter state, including the "column name",  "value", "action" performed (filtering or clearing). This event is useful for executing additional logic or updates once filters are applied or removed. |
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  content={<IdentifyFiltering />}
+  path="grid/identify-filtering.tsx"
+  onDemand={true}
+  scroll={false}
+/>
+
+## See also
+
+* <p><Link to="/data-grid/data-binding/custom-data#handling-filtering-operation">Handling Filtering in Custom API Services</Link></p>

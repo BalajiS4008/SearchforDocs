@@ -1,0 +1,25 @@
+import { Preview } from '../common/preview';
+import RTL from './rtl';
+import { Meta } from '../common/meta';
+
+<Meta
+ title="React components RTL support | Syncfusion"
+ description="RTL support in React components enables the user interface to adapt for languages written and read from right to left, such as Arabic, Hebrew, or Persian."
+/>
+
+# Right-to-Left support in React Components
+
+Right-to-Left (RTL) support enables applications to communicate effectively with users who read languages from right to left, such as `Arabic` and `Hebrew`.
+
+Syncfusion<sup>®</sup> React UI components can render content in RTL by setting the `dir` property to `rtl` in the `Provider` context. This action adds the class name `sf-rtl` to the component element, aligning our React components in the right-to-left direction.
+
+## Enable RTL for individual components
+
+To enable Right-to-Left (RTL) support for an individual component, set the `dir` property to `rtl` in the `Provider` context.
+
+The following example demonstrates how to configure the `Provider` with `dir={'rtl'}` to align the `Grid` component's content in a right-to-left layout:
+
+<Preview 
+  content={<RTL />} 
+  path="common-features/rtl.tsx"
+/>

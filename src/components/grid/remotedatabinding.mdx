@@ -1,0 +1,155 @@
+import RemoteData from './remote-data.tsx';
+import WebApiAdaptor from './web-api-adaptor.tsx';
+import URLAdaptor from './url-adaptor.tsx';
+import URLAdaptorHeader from './url-adaptor-headers.tsx';
+import URLAdaptorCrossDomain from './url-adaptor-crossdomain.tsx';
+import UseEffectFetchData from './useeffect-fetch-data.tsx';
+import Sort from '/images/grid/server-data-operations/server-sorting-api.png';
+import SortUrl from '/images/grid/server-data-operations/server-sorting-url.png';
+import PagingUrl from '/images/grid/server-data-operations/server-paging-url.png';
+import Paging from '/images/grid/server-data-operations/server-paging-api.png';
+import FilteringUrl from '/images/grid/server-data-operations/server-filtering-url.png';
+import Filtering from '/images/grid/server-data-operations/server-filtering-api.png';
+import Headers from '/images/grid/server-data-operations/custom-headers.png';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+import { Image } from '../../common/image';
+
+<Meta
+  title="React Data Grid - Remote Data Binding | Syncfusion"
+  description="Remote data binding in Data Grid to retrieve and display server-side data efficiently with on-demand loading and optimized rendering."
+/>
+
+# Remote Data Binding in React Data Grid
+
+The Syncfusion® React Data Grid component enables remote data binding by connecting UI components to server-side data sources. This approach facilitates fetching, displaying, and manipulating data stored on remote servers.
+
+## Remote data binding using useEffect and Fetch API
+
+The Data Grid component supports remote data binding through the `useEffect` hook and the native `Fetch` API. This method enables seamless integration with external data services, such as [`OData`](https://www.odata.org/documentation/), by assigning fetched data directly to the grid component. The approach provides a lightweight and flexible solution for populating the grid with dynamic, server-side data.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true}  content={<UseEffectFetchData />} path="grid/useeffect-fetch-data.tsx" scroll={false}/>
+
+## Remote data binding using Syncfusion® DataManager
+
+The Data Grid component supports remote data binding to connect UI components with external sources such as APIs, enabling efficient handling of large datasets. The [`@syncfusion/react-data`](https://www.npmjs.com/package/@syncfusion/react-data) package includes built-in adaptors that manage communication between the UI and the data service. To configure remote binding, specify a `url` for the endpoint and assign an appropriate `adaptor` to handle data requests and responses.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true}  content={<RemoteData />} path="grid/remote-data.tsx" scroll={false} />
+
+## Overview of DataManager 
+
+Syncfusion® DataManager is a data management library that serves as a gateway for performing data operations across various data services. It enables seamless integration between UI components and data services by handling the complexities of data retrieval, transformation, and manipulation. It supports both local and remote datasources, including arrays, JSON objects, RESTful Web APIs, OData services. DataManager efficiently constructs queries based on data operations such as filtering, sorting, and paging, and it handles CRUD (Create, Read, Update, and Delete) actions.
+
+### Why are adaptors necessary?
+
+Syncfusion® DataManager uses adaptors to connect with various data sources, such as RESTful Web APIs, OData services, or local arrays. Adaptors facilitate smooth data interactions by converting data formats to align with DataManager requirements. For remote sources like APIs, adaptors handle requests and responses. For local arrays, they process data directly without sending requests, ensuring consistent operations across all data sources.
+
+### Key features
+
+- Data Operations - Syncfusion® DataManager supports a wide range of data operations such as filtering, sorting, paging, searching.
+
+- Data Manipulation - Syncfusion® DataManager supports CRUD (Create, Read, Update, and Delete) operations to simplify interactions with data sources. Whether edit rows in a grid or send form data to a server, DataManager handles the essential logic for creating new records, updating existing records, deleting records, and saving changes in normal mode.
+
+- Security Management - Syncfusion® DataManager helps make sure communication between the client and server stays secure when using remote data services by enabling the addition of custom headers to every request, like authentication tokens, API keys, or anti-forgery (CSRF) tokens, which verifies the user or app sending the request and protects against unauthorized or fake requests. For example, adding an anti-forgery token in the headers helps secure apps that use CSRF protection.
+
+- Cross-Origin Support - Syncfusion® DataManager supports Cross-Origin Resource Sharing (CORS), enabling access to data from third-party services or microservices hosted on different domains, and ensures secure and compliant API communication by adhering to browser-enforced security policies, with support for CORS to allow secure access to resources on different domains using server-set rules to block unauthorized requests, and cross-domain requests with credentials to support authenticated requests to external APIs, keeping data exchanges secure while following browser security rules, allowing integration of external APIs without running into browser security restrictions.
+
+- Data Adaptors - Syncfusion® DataManager provides built-in adaptors such as "ODataV4 adaptor", "URL adaptor", and "Web API adaptor" to simplify integration with various data formats and protocols. The following topics are covered:
+
+### URL adaptor
+ 
+Data Grid component uses the `UrlAdaptor` to connect UI controls to custom APIs or remote endpoints using URLs. Data operations, including sorting, filtering, searching, paging, and CRUD actions, are sent in LINQ query format within HTTP requests for server processing. The server must return an object containing a `result` array of data items and a `count` value representing the total number of records.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<URLAdaptor />} path="grid/url-adaptor.tsx" scroll={false} />
+
+Request payload for data operations:
+
+When applying filter, sort, or pagination actions, the request payload includes parameters specifying the relevant criteria, which can be inspected in the browser’s network tab using developer tools. The server processes these parameters and responds by returning the results or appropriate data subset accordingly. The action details are as follows:
+
+- For filtering: field names, values and more.
+
+- For sorting: column and direction (ascending or descending).
+
+- For pagination: the number of items to retrieve (take) and skip.
+
+The following image displays the payload details generated by `UrlAdaptor` when filtering the "EmployeeID" field with the value "10001".
+
+<div style={{margin:'auto'}}>
+<Image style={{ display: 'block', margin: '0 auto', width: '100%', height: 'auto', maxWidth: '700px' }} alt="Url Filtering" src={FilteringUrl} hasDarkImage={true}/>
+</div>
+
+The following image displays the payload details generated by `UrlAdaptor` when sorting the "EmployeeID" field in descending order.
+
+<div style={{margin:'auto'}}>
+<Image style={{ display: 'block', margin: '0 auto', width: '100%', height: 'auto', maxWidth: '700px' }} alt="Url Sort" src={SortUrl} hasDarkImage={true}/>
+</div>
+
+The following image displays the payload details generated by `UrlAdaptor` during paging, which skips "7" records and fetches "7" records to display the second page of the grid. The skip and take values are determined by the [`pageSize`](https://react-api.syncfusion.com/data-grid/pagesettings#pagesize) property.
+
+<div style={{margin:'auto'}}>
+<Image style={{ display: 'block', margin: '0 auto', width: '100%', height: 'auto', maxWidth: '700px' }} alt="Url Paging" src={PagingUrl} hasDarkImage={true}/>
+</div>
+
+### ODataV4 adaptor
+ 
+The Data Grid component seamlessly integrates with OData V4 services via the `ODataV4Adaptor`, enabling efficient data retrieval and operations like sorting, filtering, searching, and paging using a queryable Entity Data Model (EDM), ensuring compatibility with the advanced features offered by the OData V4 protocol. The server returns a JSON object containing a `value` array of data items (e.g., records matching the query) and an `@odata.count` total number of records.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<RemoteData />} path="grid/remote-data.tsx" scroll={false}/>
+
+Request payload for data operations:
+
+When applying filter, sort, or pagination actions, the request payload includes parameters specifying the relevant criteria, which can be inspected in the browser’s network tab using developer tools. The server processes these parameters and responds by returning the results or appropriate data subset accordingly. The action details are as follows:
+
+- For filtering: field names, values and more.
+
+- For sorting: column and direction (ascending or descending).
+
+- For pagination: the number of items to retrieve (top) and skip.
+
+The following image displays the payload details generated by `ODataV4Adaptor` when filtering the "OrderID" field with the value "10248".
+
+<div style={{margin:'auto'}}>
+<Image style={{ display: 'block', margin: '0 auto', width: '100%', height: 'auto', maxWidth: '700px' }} alt="Filtering" src={Filtering} hasDarkImage={true}/>
+</div>
+
+The following image displays the payload details generated by `ODataV4Adaptor` when sorting the "OrderID" field in descending order.
+
+<div style={{margin:'auto'}}>
+<Image style={{ display: 'block', margin: '0 auto', width: '100%', height: 'auto', maxWidth: '700px' }} alt="Sort" src={Sort} hasDarkImage={true}/>
+</div>
+
+The following image displays the payload details generated by `ODataV4Adaptor` during paging, which skips "8" records and fetches "8" records to display the second page of the grid. The skip and top values are determined by the [`pageSize`](https://react-api.syncfusion.com/data-grid/pagesettings#pagesize) property.
+
+<div style={{margin:'auto'}}>
+<Image style={{ display: 'block', margin: '0 auto', width: '100%', height: 'auto', maxWidth: '700px' }} alt="Paging" src={Paging} hasDarkImage={true}/>
+</div>
+ 
+### Web API adaptor
+ 
+Data Grid component utilizes the `WebApiAdaptor`, an extension of the `ODataAdaptor`, for seamless integration with Web API services, including OData V4 endpoints. This adaptor supports efficient data retrieval and operations such as sorting, filtering, searching, and paging. It communicates with Web API endpoints using HTTP requests in JSON format, ensuring compatibility with OData-formatted queries for stable connectivity to remote data sources.
+
+<Preview  frame={false} onDemand={true} scroll={false} content={<WebApiAdaptor />} path="grid/web-api-adaptor.tsx" />
+
+> The `WebApiAdaptor` request format used for grid actions is the same as that of the [ODataV4Adaptor](remote-data#odatav4-adaptor).
+
+## Custom headers
+
+Customize request headers in the Syncfusion® DataManager using the `headers` property to include additional metadata with each request. This is useful for scenarios requiring authentication tokens, API keys, or anti-forgery (CSRF) tokens. Including such headers helps validate the request origin and improves overall security.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<URLAdaptorHeader />} path="grid/url-adaptor-headers.tsx" scroll={false} />
+
+<div style={{margin:'auto'}}>
+<Image style={{ display: 'block', margin: '0 auto', width: '100%', height: 'auto', maxWidth: '700px' }} alt="Custom Headers" src={Headers} hasDarkImage={true} />
+</div>
+
+## Cross domain
+
+Enable cross-origin support in the Syncfusion® DataManager by configuring the `crossDomain` property. This is essential for modern web applications that consume data from third-party services or hosted on different domains. The configuration ensures that requests are securely processed across origins without restriction.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<URLAdaptorCrossDomain />} path="grid/url-adaptor-crossdomain.tsx" scroll={false} />
+
+## See also
+
+* <p><Link to="/data-grid/data-binding/local-data#events">Grid Data Rendering Events</Link></p>

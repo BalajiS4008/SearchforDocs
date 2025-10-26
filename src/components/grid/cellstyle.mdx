@@ -1,0 +1,54 @@
+import QuerycellStyling from './sales-transaction-grid.tsx';
+import CellFont from './project-risk-grid.tsx';
+import CellEventStyle from './restaurant-menu-grid.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Data Grid - Cell Styling | Syncfusion"
+  description="Data Grid supports global and conditional styling for headers and content cells."
+/>
+
+
+# Cell Styling in React Data Grid
+
+Customizing the grid cell styles allows you to modify the appearance of cells in the Syncfusion® React Data Grid component to meet your design requirements. You can customize the font, background color, and other styles of the cells.
+
+## Dynamic cell styling
+
+The [`cellClass`](https://react-api.syncfusion.com/data-grid/columnprops#cellclass) property in the Syncfusion React Data Grid applies styles to individual cells based on their values. This enables dynamic formatting that highlights key data, improves readability, and adds visual clarity across the grid.
+
+In the example, conditional styling applies to cases such as:
+- Performance Ratings: Colored borders based on rating (e.g., green for Excellent, red for Poor).
+- Project Status: Colored labels to show status like Completed, In Progress, On Hold, or Delayed.
+- Productivity & Attendance: High performers and poor attendance are visually emphasized.
+- Targets Achieved: Star icons (★) and gradient backgrounds for top achievers.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<QuerycellStyling />} path="grid/sales-transaction-grid.tsx" scroll={false} />
+
+## Cell font styling
+
+Apply global font styling across all grid cells by targeting the .sf-grid .sf-grid-content-row .sf-cell selector in your stylesheet. This allows centralized control over font weight, size, style, and opacity. For conditional styling of specific cells, the [`cellClass`](https://react-api.syncfusion.com/data-grid/columnprops#cellclass) property can be used, which receives the following arguments:
+
+- `column:`  The column definition object, containing metadata such as field name and configuration.
+- `data:` The full data object for the row, allowing contextual evaluation of the cell's value.
+- `rowIndex:` The index of the current row, useful for alternating styles.
+- `cellType:` The type of the current cell (content or header), useful for applying styles based on cell category.
+ 
+For example, font styling can be applied as follows:
+- Apply `.critical-cell` to display bold, condensed, uppercase fonts with subtle text shadows.
+- Apply `.lowrisk-cell` to use lightweight fonts with reduced opacity for less prominent items.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<CellFont />} path="grid/project-risk-grid.tsx" scroll={false} />
+
+## Customize headers and content
+
+The [`cellClass`](https://react-api.syncfusion.com/data-grid/columnprops#cellclass) properties in the grid allow customization of header (`<th>`) and content (`<td>`) cells through CSS class assignment.
+
+- `cellClass(column, rowIndex, cellType, data):` Adds a CSS class to each cell (`<th>` and `td`). enabling styling based on the column name, index, cellType and row data.
+ 
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<CellEventStyle />} path="grid/restaurant-menu-grid.tsx" scroll={false} />
+
+> When `cellClass` property is defined as a function, it runs every time a cell renders or updates. In grids with many cells or frequent changes, this repeated execution increases processing load and can slow down performance. To improve efficiency, use the [`column template`](https://react.syncfusion.com/data-grid/columns/templates) feature for cell customization instead of function-based class assignments.

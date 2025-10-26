@@ -1,0 +1,76 @@
+import { Preview } from '../../common/preview';
+import AreaChart from './area'
+import AreaBorder from './areaBorder'
+import AreaEmptyPoint from './areaEmptyPoint'
+import AreaLiveUpdate from './areaLiveUpdate'
+import AreaLabel from './areaLabel'
+import AreaNegative from './areaNegative'
+import AreaDynamicUpdate from './areaDynamicUpdate'
+import AreaTransposed from './areaTransposed'
+import { Meta } from '../../common/meta';
+
+<Meta title="React Area Chart & Graph | Syncfusion"
+  description="Area charts plot values over time like line charts, shading the area below to highlight magnitude."
+/>
+
+# React Area Chart
+
+Area charts display quantitative data graphically, emphasizing the magnitude of change over time or categories by filling the area beneath the line connecting data points.
+
+## Overview
+
+To visualize data as a area chart, set the [`type`](https://react-api.syncfusion.com/chart/chartseriesprops#type) property to `Area` within the [`ChartSeries`](https://react-api.syncfusion.com/chart/chartseriesprops) component.
+
+<Preview onDemand={true} reset={true} content={<AreaChart />} path="chart/area.tsx" />
+
+## Data label
+
+To display data labels on the area chart, set the [`visible`](https://react-api.syncfusion.com/chart/chartdatalabelprops#visible) property to `true` within the [`ChartDataLabel`](https://react-api.syncfusion.com/chart/chartdatalabelprops) component.
+
+<Preview onDemand={true} reset={true} content={<AreaLabel />} path="chart/areaLabel.tsx" />
+
+## Skip missing points
+
+Data points with values of null, undefined, or NaN are treated as empty points in the series. You can customize their appearance and behavior using the [`emptyPointSettings`](https://react-api.syncfusion.com/chart/chartseriesprops#emptypointsettings) property in the `ChartSeries` component. This property supports various modes, including `Gap`, `Zero`, `Average`, and `Drop`, allowing you to control how empty points are rendered or connected in the chart.
+
+<Preview onDemand={true} reset={true} content={<AreaEmptyPoint />} path="chart/areaEmptyPoint.tsx" scroll={false} />
+
+## Live point update
+
+React Chart supports live data updates, ensuring your chart reflects the latest information in real time without requiring a page reload.
+Whenever the chart's data source changes, the chart automatically re-renders to display the updated values.
+
+<Preview onDemand={true} reset={true} content={<AreaLiveUpdate />} path="chart/areaLiveUpdate.tsx" />
+
+## Inverted axes
+
+To switch the X and Y axes in your chart, use the [`transposed`](https://react-api.syncfusion.com/chart/overview#transposed)  property in the `Chart` component. When this property is enabled, the chart is rendered in a transposed format, which can enhance readability and data comparison, especially for horizontal area charts or when working with long category labels.
+
+<Preview onDemand={true} reset={true} content={<AreaTransposed />} path="chart/areaTransposed.tsx" />
+
+## Negative data
+
+Charts can display negative values to represent downward trends in performance, metrics, or other data over time.
+A negative spline series visually dips below the baseline (usually the X-axis), making it easy to identify declines or losses.
+
+<Preview onDemand={true} reset={true} content={<AreaNegative />} path="chart/areaNegative.tsx" />
+
+## Series customization
+
+You can customize the appearance of the area series in the `ChartSeries` component by setting the following properties:
+- [`fill`](https://react-api.syncfusion.com/chart/chartseriesprops#fill) – Sets the color of the line.
+- [`border`](https://react-api.syncfusion.com/chart/chartseriesprops#border) – Defines the thickness and color of the line.
+- [`opacity`](https://react-api.syncfusion.com/chart/chartseriesprops#opacity) – Controls the transparency level of the line.
+
+<Preview onDemand={true} reset={true} content={<AreaBorder />} path="chart/areaBorder.tsx" />
+
+## Datasource update
+
+We can dynamically replace the entire dataset in a Area chart when the underlying data changes significantly.
+
+This is especially useful during:
+- Periodic refreshes (e.g., hourly or daily updates)
+- Batch processing of large datasets
+- Recalculated analytics or simulations
+
+<Preview onDemand={true} reset={true} content={<AreaDynamicUpdate />} path="chart/areaDynamicUpdate.tsx" />

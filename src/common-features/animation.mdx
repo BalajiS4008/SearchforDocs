@@ -1,0 +1,102 @@
+import FadeAnimation from './fade';
+import ZoomAnimation from './zoom';
+import SlideAnimation from './slide';
+import FlipAnimation from './flip';
+import CustomTimingFunction from './custom-timing';
+import DelayedAnimation from './delay';
+import { Preview } from '../common/preview';
+import { Check, Cross, Clock } from '../common/util';
+import { Snippet } from '../common/snippet';
+import { animationNpm, animationStyles, animationImport, fadeSnippet } from './snippets';
+import { Link } from 'react-router';
+import { Meta } from '../common/meta';
+
+<Meta
+ title="React Animation - Motion & Transitions"
+ description="Add smooth animations to React apps with Syncfusion® animation components. Motion effects, transitions, and interactive UI elements."
+/>
+
+# Animation
+
+Syncfusion® React Animation components provide smooth and customizable animation effects for HTML elements by running sequences of frames, with support for various animation types, timing functions, and event handling. These components include Fade, Zoom, Slide, and Flip animations to enhance user experience.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite?section=set-up-the-vite-project">Vite</Link> documentation. Once the Vite project is ready to run with default settings, let's add the Syncfusion Animation components to the project.
+
+### Installing Syncfusion® packages
+
+To use the Syncfusion® React Animation components in this project, the `@syncfusion/react-base` package needs to be installed using the following command:
+
+<Snippet content={animationNpm}/>
+
+### Adding CSS reference
+
+Import the `Animation` component’s required CSS references in src/App.css.
+
+<Snippet content={animationStyles}/>
+
+### Adding Animation components
+
+To include the animation components in your application, import them from the `@syncfusion/react-base` package in **App.tsx**.
+
+<Snippet content={animationImport}/>
+
+Add the `Fade` component in application as shown in below code example.
+
+<Snippet content={fadeSnippet}/>
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+## Fade
+
+The Fade component provides a smooth opacity based animation effect that creates elegant appearing and disappearing animations with seamless visual flow. 
+
+<Preview content={<FadeAnimation />} path="common-features/fade.tsx" />
+
+## Zoom
+
+The Zoom component delivers dynamic scaling animation effects that create impressive visual impact. It makes elements scale up from a smaller size when appearing and scale down to disappear, providing a natural zoom-in/zoom-out behavior.
+
+<Preview content={<ZoomAnimation />} path="common-features/zoom.tsx" />
+
+## Slide
+
+The Slide component offers versatile directional sliding animation effects that bring elements into view from specific direction. It supports four distinct directions: `Top`, `Bottom`, `Left`, and `Right`, where the direction property determines the origin point of the sliding animation.
+
+<Preview content={<SlideAnimation />} path="common-features/slide.tsx" />
+
+## Flip 
+
+The Flip component provides a 3D flip animation effects with comprehensive direction options. It supports eight different flip directions including `LeftDown`, `LeftUp`, `RightDown`, `RightUp`, `XDown`, `XUp`, `YLeft`, and `YRight`, offering versatile transformation effects that add depth and dimensionality.
+
+<Preview content={<FlipAnimation />} path="common-features/flip.tsx" />
+
+## Customization
+
+The Syncfusion® React Animation components provides customization options to control the timing, and behavior of animations through various properties and events.
+
+### Duration
+
+The `duration` property specifies the length of time that an animation should take to complete. The animation duration is specified in milliseconds (ms) and determines the total amount of time that an animation should run.
+
+The value of the animation duration can be adjusted to change the speed of the animation, with shorter durations resulting in faster animations and longer durations resulting in slower animations. The below sample demonstrates an interactive dialog with a numeric input that allows real-time adjustment of animation duration.
+
+<Preview content={<CustomTimingFunction />} path="common-features/custom-timing.tsx" />
+
+### Delay
+
+The `delay` property specifies the amount of time to wait before starting an animation. The animation delay is specified in milliseconds (ms) and determines the amount of time that should elapse before an animation begins.
+
+This can be useful in creating more complex animations, where multiple elements are animated in sequence, or in creating animations that start only after a user interaction has taken place. Below sample showcases a Message component that demonstrates delayed animation start.
+
+<Preview content={<DelayedAnimation />} path="common-features/delay.tsx" />
+
+
+## See also
+
+* <p><Link to="/dialog#animation">Syncfusion React Dialog</Link></p>

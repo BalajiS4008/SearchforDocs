@@ -1,0 +1,193 @@
+import Localization from './localization.tsx';
+import DifferentLocalization from './different-localization.tsx';
+import Internationalization from './internationalization.tsx';
+import LocaleEmptyRecord from '/images/grid/globalization/locale-empty-record.png';
+import LocaleTrue from '/images/grid/globalization/locale-true.png';
+import LocaleFalse from '/images/grid/globalization/locale-false.png';
+import LocaleTemplatecell from '/images/grid/globalization/locale-templatecell.png';
+import LocaleConfirmDelete from '/images/grid/globalization/locale-confirm-delete.png';
+import LocaleCurrentPageInfo from '/images/grid/globalization/locale-current-page-info.png';
+import LocaleTotalItemsInfo from '/images/grid/globalization/locale-total-items-info.png';
+import LocaleFirstPageTooltip from '/images/grid/globalization/locale-first-page-tooltip.png';
+import LocaleLastPageTooltip from '/images/grid/globalization/locale-last-page-tooltip.png';
+import LocaleNextPageTooltip from '/images/grid/globalization/locale-next-page-tooltip.png';
+import LocalePreviousPageTooltip from '/images/grid/globalization/locale-previous-page-tooltip.png';
+import LocaleNextPagerTooltip from '/images/grid/globalization/locale-next-pager-tooltip.png';
+import LocalePreviousPagerTooltip from '/images/grid/globalization/locale-previous-pager-tooltip.png';
+import LocalePagerExternalMsg from '/images/grid/globalization/locale-pager-external-msg.png';
+import LocalePagerOf from '/images/grid/globalization/locale-pager-of.png';
+import Add from '/images/grid/globalization/add.png';
+import Edit from '/images/grid/globalization/edit.png';
+import Update from '/images/grid/globalization/update.png';
+import Cancel from '/images/grid/globalization/cancel.png';
+import Delete from '/images/grid/globalization/delete.png';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Meta } from '../../common/meta';
+import { Link } from 'react-router';
+import { Image } from '../../common/image';
+
+<Meta
+  title="React Data Grid - Localization | Syncfusion"
+  description="Localization in Data Grid uses CLDR data, custom translations, and internationalization to support multi-language React applications."
+/>
+
+# Localization in React Data Grid
+
+The Syncfusion® React Data Grid component includes a built-in Localization library to customize displayed text for different languages and cultural preferences. The static text on various elements can be adapted to languages such as "Arabic", "German", "French", and more by setting the locale property in a custom React `Provider` with a translation object.
+
+## Configuration steps
+
+1. Choose the desired [`locale`](https://github.com/syncfusion/react-locale) for the application, as provided in the Syncfusion React localization resources.
+2. Install the `CLDR` (Unicode Common Locale Data Repository) package to enable culture specific formatting:
+    
+    <Snippet content={[{ title: "npm", code: `npm install react-cldr-data` }]} />
+
+3. Import the `L10n` class and `loadCldr` function from the [`@syncfusion/react-base`](https://www.npmjs.com/package/@syncfusion/react-base) package.
+4. Import the required localization files for the chosen language and the necessary `CLDR` data files:
+  
+    <Snippet content={[ { title: "App.tsx", code: `import { L10n, loadCldr } from "@syncfusion/react-base";
+    import Localization from './locale.json';
+    import * as enAllData from '@syncfusion/react-cldr-data/main/en/all.json';
+    import * as deAllData from '@syncfusion/react-cldr-data/main/de/all.json';` } ]} />
+
+5. Call the `loadCldr` function with the imported data to enable formatting and parsing for the selected culture:
+
+   <Snippet content={[ { title: "App.tsx", code: `loadCldr(enAllData, deAllData);` } ]} />
+
+6. Use the `L10n.load` method to load your translation object.
+7. Configure the `locale` property in the `Provider` to set the selected language.
+
+## Localized text configuration for Data Grid
+
+The following locale keywords and their corresponding text can be customized for different grid features:
+
+### Data rendering
+
+Locale keywords |Text | Example 
+-----|-----|-----
+`noRecordsMessage` | No records to display |  <Image style={ { width: '300px' } } alt="Grid Sample" src={LocaleEmptyRecord} hasDarkImage={true} />
+{ /* EmptyDataSourceError | DataSource must not be empty at initial load since columns are generated from dataSource in AutoGenerate Column Grid */}
+
+### Columns
+
+Locale keywords |Text | Example 
+-----|-----|-----
+`booleanTrueLabel` | true | <Image style={ { width: '300px' } } alt="Grid Sample" src={LocaleTrue} hasDarkImage={true} />
+`booleanFalseLabel` | false | <Image style={ { width: '300px' } } alt="Grid Sample" src={LocaleFalse} hasDarkImage={true}/>
+
+### Editing
+
+Locale keywords |Text | Example 
+-----|-----|-----
+`addButtonLabel` | Add | <Image style={ { width: '300px' } } alt="Grid Sample" src={Add} hasDarkImage={true}/>
+`editButtonLabel` | Edit | <Image style={ { width: '300px' } } alt="Grid Sample" src={Edit} hasDarkImage={true}/>
+`cancelButtonLabel` | Cancel | <Image style={ { width: '300px' } } alt="Grid Sample" src={Cancel} hasDarkImage={true}/>
+`updateButtonLabel` | Update | <Image style={ { width: '300px' } } alt="Grid Sample" src={Update} hasDarkImage={true}/>
+`deleteButtonLabel` | Delete | <Image style={ { width: '300px' } } alt="Grid Sample" src={Delete} hasDarkImage={true}/>
+`confirmDeleteMessage` | Are you sure you want to delete the record? | <Image style={ { width: '300px' } } alt="Grid Sample" src={LocaleConfirmDelete} hasDarkImage={true}/>
+
+{ /*
+**Filtering**
+
+Locale keywords |Text | Example 
+-----|-----|-----
+`InvalidFilterMessage` | Invalid Filter Data
+`filterbarTitle` | Filter bar cell |
+
+**Searching**
+
+Locale keywords |Text | Example 
+-----|-----|-----
+`search` | Search | 
+`SearchColumns` | search columns
+`Clear` | Clear | 
+
+**Sorting**
+
+Locale keywords |Text | Example 
+-----|-----|-----
+`Sort` | Sort | 
+*/}
+
+### Pager
+
+Locale keywords |Text | Example |
+-----|-----|-----
+`currentPageLabel` | {0} of {1} pages | <Image style={ { width: '100' } } alt="Grid Sample" src={LocaleCurrentPageInfo} hasDarkImage={true}/>|
+`totalItemsLabel` | ({0} items) | <Image style={ { width: '100' } } alt="Grid Sample" src={LocaleTotalItemsInfo} hasDarkImage={true}/>|
+`firstPageTooltip` | Go to first page |<Image style={ { width: '100' } } alt="Grid Sample" src={LocaleFirstPageTooltip} hasDarkImage={true}/>|
+`lastPageTooltip` | Go to last page |<Image style={ { width: '100%' } } alt="Grid Sample" src={LocaleLastPageTooltip} hasDarkImage={true}/>|
+`nextPageTooltip` | Go to next page | <Image style={ { width: '100%' } } alt="Grid Sample" src={LocaleNextPageTooltip} hasDarkImage={true}/>|
+`previousPageTooltip` | Go to previous page | <Image style={ { width: '100' } } alt="Grid Sample" src={LocalePreviousPageTooltip} hasDarkImage={true}/>|
+`nextPageGroupTooltip` | Go to next page group |<Image style={ { width: '100%' } } alt="Grid Sample" src={LocaleNextPagerTooltip} hasDarkImage={true}/>|
+`previousPageGroupTooltip` | Go to previous page group |<Image style={ { width: '50' } } alt="Grid Sample" src={LocalePreviousPagerTooltip} hasDarkImage={true}/>|
+`pagerStatusMessage` | Pager external message | <Image style={ { width: '30' } } alt="Grid Sample" src={LocalePagerExternalMsg} hasDarkImage={true}/>|
+`pagerOfLabel` |  of  | <Image style={ { width: '100' } } alt="Grid Sample" src={LocalePagerOf} hasDarkImage={true}/>
+
+**Customizing locale text**
+
+To customize locale text by defining a translation object with the required key value pairs. Load the translation object using the `L10n.load` method and configure the `locale` property in the custom React `Provider` to apply the customized text.
+
+<Snippet content={[ { title: "App.tsx", code: `import { L10n } from '@syncfusion/react-base';
+// Load translation object for custom locale.
+L10n.load({
+  'en-custom': {
+    grid: {
+      emptyRecord: 'Nothing found!',
+      add: 'Create New',
+      edit: 'Modify',
+      delete: 'Remove',
+      update: 'Save Changes',
+      cancel: 'Discard'
+    }
+  }
+});
+<Provider locale={'en-custom'} >
+<Grid dataSource={orderData} />
+</Provider>
+` } ]} />
+
+## Loading translations for culture
+
+The Data Grid component includes a built-in Localization library that enables loading of translation objects for various languages. By utilizing the `load` method from the `L10n` class, the grid's text content can be customized to appear in the desired language.
+
+This example demonstrates how to localize the grid using the `L10n.load` and `loadCldr` functions from the `@syncfusion/react-base` package. These functions enable dynamic culture switching and support for multiple languages and regional formats, allowing customized text content in the grid component.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<Localization />}
+  path="grid/localization.tsx"
+  scroll={false}
+/>
+
+## Set different locale text for two Data Grids in same page
+
+The Data Grid component allows configuring different locale settings for multiple grids displayed on the same page. The `L10n.load` function from the `@syncfusion/react-base` library enables customization of text content to display in different languages. The following example demonstrates how to configure different locales for two grids on the same page.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<DifferentLocalization />}
+  path="grid/different-localization.tsx"
+  scroll={false}
+/>
+
+## Internationalization
+
+The Data Grid Internationalization library enables localized display of numbers, dates, and times based on the selected language and region. The [`format`](https://react-api.syncfusion.com/data-grid/columnprops#format) property enables customization of these values through format strings, reflects the desired cultural formatting.
+
+The following sample demonstrates usage for "en-US (English)", "de (German - Germany)", "fr-CH (French - Azerbaijan)", "ar (Arabic)", and "zh (Chinese - China)" based on selected locale. The grid dynamically adjusts its number, date, and time formatting to align with the selected culture.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<Internationalization />}
+  path="grid/internationalization.tsx"
+  scroll={false}
+/> 
+
+## See also
+
+* <p><Link to="/data-grid/columns/column-format">Grid Cell Formatting Options </Link></p>

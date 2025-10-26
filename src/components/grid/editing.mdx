@@ -1,0 +1,201 @@
+import Editing from './editing.tsx';
+import AddToolbarEditing from './add-toolbar-editing.tsx';
+import ReadOnlyEditing from './read-only-editing.tsx';
+import DisableEditing from './disable-editing.tsx';
+import ConditionalEditing from './conditional-editing.tsx';
+import TemplateEditing from './template-editing.tsx';
+import CustomizeDeleteDialog from './customize-delete-dialog.tsx';
+import SingleClickEditing from './single-click-editing.tsx';
+import ComplexColumnEditing from './complex-column-editing.tsx';
+import ExternalEditing from './external-editing.tsx';
+import EditableGrid from './editable-grid.tsx';
+import CancelEdit from './cancel-edit.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Data Grid - Editing | Syncfusion"
+  description="Editing features in Data Grid allow all cells in a row to become editable simultaneously, enabling fast and efficient data entry workflows."
+/>
+
+# Editing in React Data Grid
+
+The Syncfusion® React Data Grid component supports dynamic CRUD (Create, Read, Update, Delete) operations within the interface. Changes in the grid component sync with the database in real time, eliminating the need for external forms and improving data interactivity and responsiveness.
+
+## Enable editing
+    
+To enable editing in the Data Grid component, set [`editSettings`](https://react-api.syncfusion.com/data-grid/overview#editsettings) property with [`allowEdit`](https://react-api.syncfusion.com/data-grid/editsettings#allowedit), [`allowAdd`](https://react-api.syncfusion.com/data-grid/editsettings#allowadd), and [`allowDelete`](https://react-api.syncfusion.com/data-grid/editsettings#allowdelete) as `true`. Define a unique column as the primary key using [`isPrimaryKey`](https://react-api.syncfusion.com/data-grid/columnprops#isprimarykey) property as `true` for accurate data updates.  
+
+The following code demonstrates enabling editing in the grid component with validation rules for accurate data entry.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<Editing />}
+  path="grid/editing.tsx"
+  scroll={false}
+/>
+
+## Adding a toolbar for editing
+ 
+The Data Grid component provides a built-in toolbar with interactive buttons for efficient editing. Configure the [`toolbar`](https://react-api.syncfusion.com/data-grid/overview#toolbar) property to include actions such as `Add`, `Edit`, `Delete`, `Update`, and `Cancel`, enabling quick access to CRUD operations.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<AddToolbarEditing />}
+  path="grid/add-toolbar-editing.tsx"
+  scroll={false}
+/>
+
+## Making columns read-only during editing
+ 
+The Data Grid component allows setting specific columns as read-only during add and edit operations. Configure the [`allowEdit`](https://react-api.syncfusion.com/data-grid/editsettings#allowedit) property to `false` in the column configuration to make a column visible but non-editable. For example, the "Assigned To" column appears in the edit form but cannot be modified.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<ReadOnlyEditing />}
+  path="grid/read-only-editing.tsx"
+  scroll={false}
+/>
+
+## Dynamically prevent editing for specific columns
+ 
+To enable input only during add mode and make a column read-only during edit, dynamically set [`allowEdit`](https://react-api.syncfusion.com/data-grid/editsettings#allowedit) property as `false` in the column configuration. In this example, any column can be configured to accept input during add mode. During edit mode, the same columns are rendered as read-only.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<DisableEditing />}
+  path="grid/disable-editing.tsx"
+  scroll={false}
+/>
+
+## Conditional toggle of CRUD
+
+Instead of static [`editSettings`](https://react-api.syncfusion.com/data-grid/overview#editsettings), use runtime control for add, edit, and delete actions based on specific conditions.  
+
+- Enable editing only during business hours.  
+- Allow deleting for users with confirmed status.  
+- Disable adding when record quota is exceeded.  
+
+Use events such as [`onRowAddStart`](https://react-api.syncfusion.com/data-grid/overview#onrowaddstart), [`onRowEditStart`](https://react-api.syncfusion.com/data-grid/overview#onroweditstart), and [`onDataChangeStart`](https://react-api.syncfusion.com/data-grid/overview#ondatachangestart) to implement role-based or data-driven toggles.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<ConditionalEditing />}
+  path="grid/conditional-editing.tsx"
+  scroll={false}
+/>
+
+## Using a template for column editing
+ 
+When default input types do not meet layout or interaction requirements, configure the column using the [`editTemplate`](https://react-api.syncfusion.com/data-grid/columnprops#edittemplate) property to define a custom editing interface mapped to the relevant field. This example shows a grid with a dropdown template for the "Branch" column.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<TemplateEditing />}
+  path="grid/template-editing.tsx"
+  scroll={false}
+/>
+
+## Customize delete confirmation
+ 
+The Data Grid component displays a confirmation dialog before deleting an item when the [`confirmOnDelete`](https://react-api.syncfusion.com/data-grid/editsettings#confirmondelete) property is enabled in the edit settings configuration. This helps prevent accidental deletions and ensures the protection of important data.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<CustomizeDeleteDialog />}
+  path="grid/customize-delete-dialog.tsx"
+  scroll={false}
+/>
+
+## Updating boolean columns with a single click
+ 
+To enable single-click updates for boolean fields in normal edit mode, configure the column using a custom [`editTemplate`](https://react-api.syncfusion.com/data-grid/columnprops#edittemplate) property. 
+
+For example, the Syncfusion® React [`CheckBox`](https://react.syncfusion.com/checkbox#getting-started) component can be rendered in the "Availability" column and bound to the corresponding field value. The grid's [`updateRecord`](https://react-api.syncfusion.com/data-grid/overview#updaterecord) method applies changes instantly when the checkbox is toggled, bypassing the standard editor interface for direct updates within the grid.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<SingleClickEditing />}
+  path="grid/single-click-editing.tsx"
+  scroll={false}
+/>
+
+## Editing complex columns
+ 
+Use the [`editTemplate`](https://react-api.syncfusion.com/data-grid/columnprops#edittemplate) property to handle complex or nested data in grid columns. Use the underscore ( _ ) operator (e.g., Name__FirstName) instead of dot notation to ensure accurate data binding for custom input elements.
+
+In the following sample, the input element is rendered in the `editTemplate` and the `name` property should be defined as "Name__FirstName" and "Name__LastName".
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<ComplexColumnEditing />}
+  path="grid/complex-column-editing.tsx"
+  scroll={false}
+/>
+
+## Performing CRUD actions programmatically
+ 
+The Data Grid component allows external control of Create, Read, Update, and Delete actions, ideal for triggering from custom toolbars or external UI elements. This approach provides enhanced flexibility in data management.
+
+The following methods facilitate external management of grid data:
+
+- [`addRecord`](https://react-api.syncfusion.com/data-grid/overview#addrecord): Starts a new entry. If no data is passed, a blank form opens for input.  
+- [`editRecord`](https://react-api.syncfusion.com/data-grid/overview#editrecord): Enables edit mode for the selected row.  
+- [`deleteRecord`](https://react-api.syncfusion.com/data-grid/overview#deleterecord): Removes the selected row. 
+- [`saveDataChanges`](https://react-api.syncfusion.com/data-grid/overview#savedatachanges): Saves changes in the grid.
+- [`cancelDataChanges`](https://react-api.syncfusion.com/data-grid/overview#canceldatachanges): Cancels editing and restores original state.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<ExternalEditing />}
+  path="grid/external-editing.tsx"
+  scroll={false}
+/>
+
+## Troubleshooting: Editing works only for first row
+ 
+Cause: Editing affects only the first row when the grid lacks a primary key, preventing unique row identification.
+
+Solution: Configure the [`isPrimaryKey`](https://react-api.syncfusion.com/data-grid/columnprops#isprimarykey) property as `true` on a column with unique values, (e.g., "Order ID"). This ensures accurate row tracking for edit and delete actions, preventing the grid from defaulting to the first row.
+
+## Events
+ 
+The Data Grid component provides event hooks that allow precise control over editing actions such as add, edit, and delete. These events are ideal for implementing custom behavior, validation, logging, or UI adjustments before and after editing operations.
+
+| Event                    | Description                                                                                                                                       |
+|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [`onRowEditStart`](https://react-api.syncfusion.com/data-grid/overview#onroweditstart)         | Fires when editing begins on a grid record. Use this event to perform validation, modify fields, or log activity before the individual starts editing. Ideal for preparing the UI or restricting edits based on conditions. |
+| [`onRowAddStart`](https://react-api.syncfusion.com/data-grid/overview#onrowaddstart)          | Fires when the process of adding a new row starts. Useful for initializing default values, validating input, or customizing the add form. Triggered before the row is inserted into the grid. |
+| [`onDataChangeStart`](https://react-api.syncfusion.com/data-grid/overview#ondatachangestart)     | Fires when a create, update, or delete operation is initiated. Enables pre-processing logic such as confirmation dialogs, audit logging, or conditional checks. Covers all data-changing actions before they are committed. |
+| [`onRowSelect`](https://react-api.syncfusion.com/data-grid/overview#onrowselect)            | Fires when a row is selected for editing. Useful for highlighting the selected row, loading related data, or enabling contextual UI elements. Triggered when the individual clicks or navigates to a row. |
+| [`onDataChangeComplete`](https://react-api.syncfusion.com/data-grid/overview#ondatachangecomplete)   | Fires after an editing operation (add/edit/delete) is completed. Use this to refresh data, show success messages, or trigger post-edit workflows. Ensures that all changes are finalized and reflected in the grid. |
+
+In the following example, editing actions are conditionally prevented by setting `args.cancel` to `true` within the following events:
+
+- `onRowEditStart`: Blocks editing when the "Fat" value exceeds "10".
+- `onDataChangeStart`: Prevents deletion when the "Food Name" value is "Pasta".
+- `onRowAddStart`: Restricts adding a new row when the action exceeds the defined quota.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<CancelEdit />}
+  path="grid/cancel-edit.tsx"
+  scroll={false}
+/>
+
+## See also
+
+* <p><Link to="/data-grid/accessibility#editing">Keyboard Shortcuts for CRUD Operations</Link></p>

@@ -1,0 +1,20 @@
+export const stepLineData = [
+  { x: 2007, y: 6.0, album: 'High School Musical 2', artist: 'Various Artists' },
+  { x: 2008, y: 6.8, album: 'Viva la Vida or Death and All His Friends', artist: 'Coldplay' },
+  { x: 2009, y: 8.3, album: 'I Dreamed a Dream', artist: 'Susan Boyle' },
+  { x: 2010, y: 5.7, album: 'Recovery', artist: 'Eminem' },
+  { x: 2011, y: 17.7, album: '21', artist: 'Adele' },
+  { x: 2012, y: 8.3, album: '21', artist: 'Adele' },
+  { x: 2013, y: 4.0, album: 'Midnight Memories', artist: 'One Direction' },
+  { x: 2014, y: 10.0, album: 'Frozen', artist: 'Various Artists' },
+  { x: 2015, y: 17.4, album: '25', artist: 'Adele' },
+  { x: 2016, y: 2.5, album: 'Lemonade', artist: 'Beyoncé' },
+  { x: 2017, y: 6.1, album: '÷', artist: 'Ed Sheeran' },
+  { x: 2018, y: 3.5, album: 'The Greatest Showman', artist: 'Hugh Jackman & Various Artists' },
+  { x: 2019, y: 3.3, album: '5x20 All the Best!! 1999–2019', artist: 'Arashi' },
+  { x: 2020, y: 4.8, album: 'Map of the Soul: 7', artist: 'BTS' },
+  { x: 2021, y: 4.68, album: '30', artist: 'Adele' },
+  { x: 2022, y: 7.2, album: 'Greatest Works of Art', artist: 'Jay Chou' },
+  { x: 2023, y: 6.4, album: 'FML', artist: 'Seventeen' },
+  { x: 2024, y: 5.6, album: 'The Tortured Poets Department', artist: 'Taylor Swift' }
+]

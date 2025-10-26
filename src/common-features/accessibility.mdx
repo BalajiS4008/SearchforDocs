@@ -1,0 +1,74 @@
+import './common.css'
+import { Link } from 'react-router'
+import { Meta } from '../common/meta';
+
+<Meta
+ title="React components accessibility | Syncfusion"
+ description="Accessibility ensures that user interface elements are usable by people with disabilities."
+/>
+
+# Accessibility in React Components
+
+Accessibility ensures that user interface elements are usable by people with disabilities. This includes features like high-contrast text, alternative text for images, and keyboard-friendly controls.
+
+## Standards
+
+The component is said to be accessible when it is constructed in accordance with certain standards that are required to make it accessible.
+
+The accessibility of the components consists of the following standards and aspects:
+
+- [ADA](https://www.ada.gov/): - A landmark law that guarantees equal access and opportunities for people with disabilities online and offline.
+
+- [WCAG 2.2](https://www.w3.org/WAI/standards-guidelines/wcag/) - The Web Content Accessibility Guidelines (WCAG) provide guidelines developed by the World Wide Web Consortium (W3C) to ensure web content is accessible to people with disabilities. `WCAG 2.2` establishes a framework of accessibility principles and their associated success criteria. The level of accessibility conformance achieved by a web application is determined by the extent to which it meets these success criteria, categorized into three levels: A, AA, and AAA.
+
+- [Section 508](https://www.section508.gov/): - A U.S. federal requirement ensuring all electronic and IT systems including websites and software are accessible to users with disabilities. Based heavily on WCAG.
+
+- [WAI-ARIA](https://www.w3.org/WAI/ARIA/): - The Web Accessibility Initiative – Accessible Rich Internet Applications (WAI-ARIA) adds meaning to complex UI elements like modals, tabs, and pop-ups. ARIA roles, states, and properties give screen readers the context they need to assist users effectively.
+
+- [Keyboard Navigation](https://www.w3.org/TR/WCAG22/#keyboard-accessible): - Not everyone uses a mouse that’s why all our components support full keyboard navigation, letting users move through interfaces with just the tab, arrows, and Enter/Space keys.
+
+Syncfusion<sup>®</sup> React components adhere to these standards.
+
+## Compliance
+
+The accessibility support provided by Syncfusion<sup>®</sup> React components is based on a collection of methodologies for adhering to and applying <Link to="#standards">recognized standards and technical specifications</Link> to ensure an intuitive experience for people with disabilities.
+
+There are several methodologies of accessibility validation that can be performed on the Syncfusion<sup>®</sup> React components, such as:
+
+- The [WAI-ARIA patterns](https://www.w3.org/WAI/ARIA/apg/patterns/) are followed by the our React components to enable appreciable accessibility.
+
+- Each React component is subjected to manual testing with a screen reader and also automated test cases to ensure the component's required attributes.
+
+- Attributes are allocated and updated correctly during interaction as well. Each component has been assigned a distinct `Role` attribute and its own set of `ARIA` attributes defined by the [WCAG 2.2](https://www.w3.org/TR/WCAG22/) specification.
+
+## Features
+
+### Screen reader support
+
+Syncfusion<sup>®</sup> React components are built with [WAI-ARIA](https://www.w3.org/WAI/ARIA/) standards, ensuring compatibility with popular screen readers like [Windows Narrator](https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1) and [VoiceOver for macOS](https://support.apple.com/en-in/guide/voiceover/vo2706/mac). This means users who are blind or visually impaired can seamlessly access and interact with your application.
+
+### RTL (Right-to-Left) language support
+
+Right-to-Left (RTL) support allows applications to effectively communicate with users who use languages that are written from right to left, such as Arabic, Hebrew, etc. Our React components support the Right-to-Left feature. Refer to the <Link to="/common-features/right-to-left">Right-to-Left documentation</Link> to learn more about this support.
+
+### Color contrast
+
+We ship with <Link to="/appearance/built-in-themes">prebuilt themes</Link> that follow accessible color contrast guidelines, making your app easier to read for users with low vision or color blindness.
+
+### Mobile-optimized UI
+
+Designed with mobile users in mind, our components are responsive, touch-friendly, and adaptable to different screen sizes and orientations, perfect for building inclusive mobile-first experiences.
+
+### Keyboard navigation support
+
+Every component supports intuitive keyboard navigation, providing users who rely on keyboards or assistive devices with a smooth and accessible experience.
+
+## Ensuring accessibility
+
+Ensuring the accessibility of Syncfusion<sup>®</sup> React components is crucial for making the product inclusive and user-friendly for individuals with disabilities. This process involves various types of accessibility testing, including:
+
+* `Automated testing`: The Syncfusion<sup>®</sup> React component's accessibility levels are ensured through an [accessibility validation](https://www.npmjs.com/package/@storybook/addon-a11y) software tools.
+
+* `Manual testing`: This type of testing involves manually evaluating the our React components. During manual accessibility testing, testers will ensure accessibility using the screen readers such as [Narrator](https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1) for `Windows` and [Embedded VoiceOver](https://support.apple.com/en-in/guide/voiceover/vo2706/mac) for `MAC`.
+
+Syncfusion<sup>®</sup> React components will keep improving when there is anything required. It also involves client feedback to make the component more accessible.

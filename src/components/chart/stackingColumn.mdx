@@ -1,0 +1,98 @@
+import { Preview } from '../../common/preview';
+import StackingColumn from './stackingColumn'
+import StackingColumnGroup from './stackingColumnGroup'
+import StackingColumnLabels from './stackingColumnLabels'
+import StackingColumnCustom from './stackingColumnCustom'
+import StackingColumnWidth from './stackingColumnWidth'
+import StackingColumnLabel from './stackingColumnLabel'
+import StackingColumnWidthinPixel from './stackingColumnWidthinPixel'
+import StackingColumnNegative from './stackingColumnNegative'
+import { Meta } from '../../common/meta';
+
+<Meta title="React Stacked Column Chart | Syncfusion"
+  description="React Chart stacked column charts stack series in vertical bars to show part-to-whole and totals."
+/>
+    
+# React Stacked Column Chart
+
+A StackingColumn chart displays vertical columns divided into segments, representing different categories. It effectively compares totals and visualizes part-to-whole relationships, trends, and segmented data across various categories.
+
+## Overview
+
+To visualize data as a stacking column chart, set the [`type`](https://react-api.syncfusion.com/chart/chartseriesprops#type) property to `StackingColumn` within the [`ChartSeries`](https://react-api.syncfusion.com/chart/chartseriesprops) component.
+
+<Preview onDemand={true} reset={true} content={<StackingColumn />} path="chart/stackingColumn.tsx" />
+
+## Data label
+
+To display data labels on the stackingColumn chart, set the [`visible`](https://react-api.syncfusion.com/chart/chartdatalabelprops#visible) property to `true` within the [`ChartDataLabel`](https://react-api.syncfusion.com/chart/chartdatalabelprops) component.
+
+<Preview onDemand={true} reset={true} content={<StackingColumnLabel />} path="chart/stackingColumnLabel.tsx" />
+
+## Stacking labels
+
+In stacked charts, stack labels display the cumulative total of each stack segment directly on the chart using data labels. This helps users quickly understand the total value represented by each stack.
+
+- When a stacked point includes negative values, the corresponding stack labels are positioned below the point.
+- You can enable this feature using the [`visible`](https://react-api.syncfusion.com/chart/chartstacklabelsprops#visible) property in the [`ChartStackLabels`](https://react-api.syncfusion.com/chart/chartstacklabelsprops) component.
+
+<Preview onDemand={true} reset={true} content={<StackingColumnLabels />} path="chart/stackingColumnLabels.tsx" />
+
+## Negative data
+
+A negative stacking column chart is a type of bar chart where the bars are stacked in a way that represents negative values. This visualization is particularly useful for displaying data that includes both positive and negative values.
+
+<Preview onDemand={true} reset={true} content={<StackingColumnNegative />} path="chart/stackingColumnNegative.tsx" />
+
+## Stacking group
+
+Use the [`stackingGroup`](https://react-api.syncfusion.com/chart/chartseriesprops#stackinggroup) property to group stacked bars for more effective comparisons.
+
+- Bars that share the same stackingGroup name will be stacked together.
+- This allows multiple stacks to appear side by side, each representing a different group.
+
+This feature is especially useful when:
+- Comparing grouped data across categories
+- Visualizing subgroups within a larger dataset
+
+<Preview onDemand={true} reset={true} content={<StackingColumnGroup />} path="chart/stackingColumnGroup.tsx" />
+
+## Customizing column spacing and width
+
+You can control the spacing and width of bar series in the chart using the following properties:
+
+- [`columnSpacing`](https://react-api.syncfusion.com/chart/chartseriesprops#columnspacing):
+
+    Defines the space between multiple bar series.
+    - Accepts values from 0 to 1.
+    - A lower value results in tighter spacing, while a higher value increases the gap between bar.
+
+- [`columnWidth`](https://react-api.syncfusion.com/chart/chartseriesprops#columnwidth):
+
+    Determines the width of each individual bar.
+    - Also accepts values from 0 to 1.
+    - A smaller value produces thinner columns, whereas a larger value makes them wider.
+
+These properties allow you to fine-tune the layout and visual balance of your bar chart for better readability and presentation.
+
+<Preview onDemand={true} reset={true} scroll={false} content={<StackingColumnWidth />} path="chart/stackingColumnWidth.tsx" />
+
+## Column width in pixels
+
+To define the exact width of columns in pixels, use the [`columnWidthInPixel`](https://react-api.syncfusion.com/chart/chartseriesprops#columnwidthinpixel) property within the `ChartSeries` Component.
+
+- This property allows you to specify a fixed column width, ensuring consistent sizing regardless of chart size or data density.
+- It is especially useful when you want precise control over the visual layout of your column chart.
+
+<Preview onDemand={true} reset={true} scroll={false} content={<StackingColumnWidthinPixel />} path="chart/stackingColumnWidthinPixel.tsx" />
+
+## Series customization
+
+You can customize the appearance of the stacking column series in the `ChartSeries` component by setting the following properties: 
+
+- [`fill`](https://react-api.syncfusion.com/chart/chartseriesprops#fill) – Sets the color of the column in the series.  
+- [`opacity`](https://react-api.syncfusion.com/chart/chartseriesprops#opacity) – Controls the transparency level of the column, allowing for varying visibility.  
+- [`border`](https://react-api.syncfusion.com/chart/chartseriesprops#border) – Defines the thickness and color of the border around the column.  
+- [`cornerRadius`](https://react-api.syncfusion.com/chart/chartseriesprops#cornerradius) – Specifies the radius of the corners of the columns, allowing for rounded edges.
+
+<Preview onDemand={true} reset={true} content={<StackingColumnCustom />} path="chart/stackingColumnCustom.tsx" />

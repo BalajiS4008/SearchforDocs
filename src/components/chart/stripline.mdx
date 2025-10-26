@@ -1,0 +1,60 @@
+import Stripline from './stripline';
+import VerticalStriplines from './verticalstriplines';
+import StriplineRecurrence from './striplinerecurrence';
+import StriplineTextCustom from './striplinetextcustom';
+import { Preview } from '../../common/preview';
+import { Meta } from '../../common/meta';
+
+<Meta title="React Chart Stripline | Syncfusion"
+  description="React Chart striplines are bands or lines across the plot area to highlight ranges, thresholds, or events."
+/>
+
+# Stripline in React Chart
+
+Striplines are horizontal or vertical bands in charts that highlight specific regions or intervals to emphasize important data points or ranges. They're commonly used to indicate target ranges, thresholds, or to visually separate different sections of a chart.
+
+## Horizontal striplines
+
+A horizontal stripline is a visual element used in charts to highlight or mark a specific range or threshold along the vertical axis using the [`ChartStripLines`](https://react-api.syncfusion.com/chart/chartstriplineprops) component. It resembles a band or line drawn horizontally across the chart to emphasize a particular value or region. Striplines are rendered within the defined start-to-end range, and multiple striplines can be added to a single axis.
+
+<Preview onDemand={true} reset={true} content={<Stripline />} path="chart/stripline.tsx" />
+
+## Vertical striplines
+
+A vertical stripline is a visual element used in charts to highlight or mark a specific range or threshold along the horizontal axis using the `ChartStripLines` component. It appears as a vertical band or line across the chart to emphasize a particular value or region. Striplines are rendered within the defined start-to-end range, and multiple striplines can be added to a single axis.
+
+<Preview onDemand={true} reset={true} content={<VerticalStriplines />} path="chart/verticalstriplines.tsx" />
+
+## Stripline recurrence
+
+When a stripline is set to repeat, it creates evenly spaced regions across the chart, making patterns or recurring intervals easy to identify. This can be achieved by configuring the [`range`](https://react-api.syncfusion.com/chart/chartstriplineprops#range) and [`repeat`](https://react-api.syncfusion.com/chart/chartstriplineprops#repeat) properties in the `ChartStripLines` component.
+
+<Preview onDemand={true} reset={true} content={<StriplineRecurrence />} path="chart/striplinerecurrence.tsx" />
+
+## Customize the stripline text
+
+You can enhance the appearance and positioning of stripline text in charts using the following properties:
+
+**Text Styling Properties**
+
+- [`color`](https://react-api.syncfusion.com/chart/chartfontprops#color) – Sets the color of the stripline text.
+
+- [`fontSize`](https://react-api.syncfusion.com/chart/chartfontprops#fontsize) – Defines the font size of the stripline text.
+
+- [`fontWeight`](https://react-api.syncfusion.com/chart/chartfontprops#fontweight) – Determines the thickness of the text (e.g., Normal, Bold, 600, 700).
+
+- [`fontFamily`](https://react-api.syncfusion.com/chart/chartfontprops#fontfamily) – Specifies the font type (e.g., Arial, Roboto, Times New Roman).
+
+- [`fontStyle`](https://react-api.syncfusion.com/chart/chartfontprops#fontstyle) – Applies custom styling to the stripline text, including italic, normal, or oblique.
+
+- [`opacity`](https://react-api.syncfusion.com/chart/chartfontprops#opacity) – Adjusts the transparency level of the stripline text.
+
+**Text Positioning Properties**
+
+- [`hAlign`](https://react-api.syncfusion.com/chart/striplinetextprops#halign) – Aligns the text horizontally within the stripline region (Left, Center, Right).
+
+- [`vAlign`](https://react-api.syncfusion.com/chart/striplinetextprops#valign) – Aligns the text vertically within the stripline region (Top, Center, Bottom).
+
+- [`rotation`](https://react-api.syncfusion.com/chart/striplinetextprops#rotation) – Rotates the stripline text by a specified degree to match the chart’s layout or direction.
+
+<Preview onDemand={true} reset={true} content={<StriplineTextCustom />} path="chart/striplinetextcustom.tsx" />

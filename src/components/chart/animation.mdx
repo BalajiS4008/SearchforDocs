@@ -1,0 +1,20 @@
+import Animation from './animation';
+import { Preview } from '../../common/preview';
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Chart Animation | Syncfusion"
+  description="Chart animation in React provides smooth transitions during data rendering and updates, with configurable delay and duration settings."
+/>
+
+# Animation in React Chart
+
+The [`animation`](https://react-api.syncfusion.com/chart/animation) property in the [`ChartSeries`](https://react-api.syncfusion.com/chart/chartseriesprops) component controls the visual transition effects applied when chart elements are rendered or updated. Instead of appearing abruptly, elements transition smoothly, resulting in a more engaging and polished chart experience.
+
+You can customize this behavior using the following properties:
+
+- [`enable`](https://react-api.syncfusion.com/chart/animation#enable) - Controls whether animation is enabled for the chart series. When set to **true**, the series will animate when first rendered or when data changes. 
+- [`delay`](https://react-api.syncfusion.com/chart/animation#delay) - Specifies the delay time before the animation starts. This property is particularly useful for creating staggered animation effects when multiple series are present, allowing each series to animate sequentially rather than simultaneously. 
+- [`duration`](https://react-api.syncfusion.com/chart/animation#duration) - Defines the total time taken to complete the animation. A higher value creates slower, more gradual animations, while lower values create faster transitions.
+
+<Preview onDemand={true} reset={true} content={<Animation />} path="chart/animation.tsx" />

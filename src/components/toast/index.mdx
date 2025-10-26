@@ -1,0 +1,118 @@
+import { Preview } from '../../common/preview';
+import { Check, Cross, Clock } from '../../common/util';
+import { Snippet } from '../../common/snippet'
+import { ToastNpm, ToastImport, ToastDependency, ToastStyles, ToastCode } from './toast-snippets';
+import Types from './types';
+import Multiple from './multiple';
+import ActionToast from './actionToast';
+import DirectUsageWrapper from './default';
+import ToastUtilityWrapper from './varients';
+import ToastApi from './apisample';
+import { Link } from 'react-router'
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Toast Component | Syncfusion"
+  description="The Toast component displays brief, auto-dismissible notifications to inform users of actions, updates, or system messages in real time."
+/>
+
+# React Toast
+
+The `Toast` component offers a seamless way to notify users without disrupting their workflow, appearing briefly before disappearing automatically.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite#set-up-the-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let’s add the `React Toast` component to the project.
+
+### Installing Syncfusion® packages
+
+To use the Toast component, install the [`@syncfusion/react-notifications`](https://www.npmjs.com/package/@syncfusion/react-notifications) package:  
+
+<Snippet content={ToastNpm}/>
+
+### Adding CSS reference
+
+Import the `Toast` component’s required CSS references as follows in `src/App.css`.
+
+<Snippet content={ToastStyles}/>
+
+### Adding Toast component
+
+To include the `Toast` component in your application, import the `Toast` from `@syncfusion/react-notifications` package in `App.tsx`.
+
+<Snippet content={ToastImport}/>
+
+Add the `Toast` component in application as shown in below code example.
+
+<Snippet content={ToastCode} />
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+This demonstration showcases a `Toast` component that is triggered by a toggle button through the use of the [`open`](https://react-api.syncfusion.com/toast/overview#open) property when clicked. Additionally, the toast's progress bar is displayed by setting the [`progressBar`](https://react-api.syncfusion.com/toast/overview#progressbar) property to `true`.
+
+<Preview content={<DirectUsageWrapper />} path="toast/default.tsx" />
+
+## Types
+
+The `Toast` component offers a complete range of predefined notification types that effectively convey messages to users both visually and semantically: `Success`, `Error`, `Warning`, and `Info`.
+
+<Preview content={<ToastUtilityWrapper />} path="toast/varients.tsx" />
+
+## Action Toast
+
+The `actionToast` sample demonstrates how to add interactive buttons to a Toast notification using the [`actions`](https://react-api.syncfusion.com/toast/overview#actions) property. This allows you to create confirmation dialogs that prompt users for a response, such as 'Undo' or 'Confirm', and execute specific logic based on their choice.
+
+<Preview content={<ActionToast/>} path="toast/actionToast.tsx" />
+
+## Multiple
+
+The `Multiple` sample demonstrates how to dynamically update multiple notifications to reflect the real-time status of a task, like a file upload.
+
+<Preview content={<Multiple/>} path="toast/multiple.tsx" />
+
+## Toast placement
+
+The `Toast` component provides versatile positioning options for notifications, including corner positions (Left-Top, Right-Top, Left-Bottom, Right-Bottom) and centered positions (Center-Top, Center-Bottom) to enhance your application's layout and user experience.
+
+<Preview content={<Types />} path="toast/types.tsx" />
+
+## Templates
+
+The `Toast` component supports custom content templates and offers a variety of animation effects to create a more engaging user experience.
+
+<Preview content={<ToastApi />} path="toast/apisample.tsx" />
+
+## Accessibility
+
+The `Toast` component followed the accessibility guidelines and standards, including [ADA](https://www.ada.gov/), [Section 508](https://www.section508.gov/), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) standards, and [WCAG roles](https://www.w3.org/TR/wai-aria/#roles) that are commonly used to evaluate accessibility.
+
+The accessibility compliance for the `Toast` component is outlined below.
+
+| Accessibility Criteria | Compatibility |
+| -- | -- |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Support | <Check/> |
+| [Section 508](https://www.section508.gov/) Support | <Check/> |
+| Screen Reader Support | <Check/> |
+| Right-To-Left Support | <Check/> |
+| Color Contrast | <Check/> |
+| Mobile Device Support | <Check/> |
+| Keyboard Navigation Support | Not Applicable |
+| [Accessibility](https://www.npmjs.com/package/@storybook/addon-a11y) Validation | <Check/> |
+
+<Check/> - All features of the component meet the requirement.
+
+<Clock/> - Some features of the component do not meet the requirement.
+
+<Cross/> - The component does not meet the requirement.
+
+### WAI-ARIA attributes
+
+The `Toast` component followed the [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/alert/) patterns to meet the accessibility. The following ARIA attributes are used in the Toast component:
+
+| Attributes | Purpose |
+| --- | --- |
+| <mark>role=alert</mark> | Identifies the element as the container where alert content will be added or updated. |

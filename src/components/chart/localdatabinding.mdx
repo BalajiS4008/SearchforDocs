@@ -1,0 +1,35 @@
+import ChartlocalJSONSnippet from './chartlocalJSONSnippet';
+import ChartlocaluseEffectSnippet  from './chartlocaluseEffectSnippet';
+import ChartlocalreactStateSnippet  from './chartlocalreactStateSnippet';
+import { Preview } from '../../common/preview';
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Chart Local Data Binding | Syncfusion"
+  description="Local data binding connects charts to in-memory data like JSON arrays or state, enabling offline, fast rendering and dynamic updates without a server."
+/>
+
+# Local Data Binding in React Chart
+
+The Chart component allows you to bind local datasets directly, making it ideal for displaying predefined data without server requests. This approach improves performance and supports offline functionality.
+
+## Assigning local JSON data
+
+You can bind data to the chart by assigning a **JSON array of objects** directly to its [`dataSource`](https://react-api.syncfusion.com/chart/chartseriesprops#datasource) property. This approach is suitable for static datasets and renders immediately based on the defined configuration.
+
+<Preview onDemand={true} reset={true} content={<ChartlocalJSONSnippet />} path="chart/chartlocalJSONSnippet.tsx" />
+
+## Loading data with useEffect
+
+Using React’s `useEffect` hook, you can prepare or load data after the component mounts. Once the data is available, it is assigned to the chart. This approach separates data fetching logic from rendering logic.
+
+<Preview onDemand={true} reset={true} content={<ChartlocaluseEffectSnippet />} path="chart/chartlocaluseEffectSnippet.tsx" />
+
+## Binding with React state
+
+You can bind the chart data source to a **React state** variable by passing the state directly to the [`dataSource`](https://react-api.syncfusion.com/chart/chartseriesprops#datasource) property. The chart automatically reflects changes whenever the state updates. This approach is ideal for dynamic applications that support real-time data updates.
+
+<Preview onDemand={true} reset={true} content={<ChartlocalreactStateSnippet />} path="chart/chartlocalreactStateSnippet.tsx" />
+
+
+

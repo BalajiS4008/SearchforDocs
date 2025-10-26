@@ -1,0 +1,63 @@
+#textbox {
+    margin-bottom: 10px;
+}
+
+.input-icon {
+    display: flex;
+    height: 30px;
+    align-items: center;
+    width: 30px;
+    justify-content: center;
+}
+
+.dark-theme.sf-dark-mode .textbox-component.textbox-icon path{
+  fill: #efcdcd;
+}
+
+.content-sect {
+  margin: 10px;
+}
+
+.textbox-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.textbox-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.textbox-component,
+.textbox-component-1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+
+.success-message-input {
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+
+.warning-message-input {
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+
+.error-content-input {
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+
+.sf-outline.sf-float-input.sf-control-wrapper input[readonly] ~ label.sf-label-top.sf-float-text {
+  transform: translate3d(0, 0, 0) scale(1) !important;
+  top: -6px !important;
+}

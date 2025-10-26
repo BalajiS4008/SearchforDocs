@@ -1,0 +1,15 @@
+import MultipleAxis from './multipleAxis';
+import { Preview } from '../../common/preview';
+import { Meta } from '../../common/meta';
+
+<Meta 
+  title="React Chart Multiple Axis | Syncfusion"
+  description="React Chart multiple axes add extra X or Y scales to show different units or ranges, enabling clearer comparisons and support for mixed metrics."
+/>
+
+# Multiple Axis in React Chart
+
+In addition to the primary X and Y axes, you can add multiple additional axes to a chart using the [`ChartAxes`](https://react-api.syncfusion.com/chart/chartaxisprops) component. This is useful when displaying data series with different scales or units.
+Each axis should have a unique name, and you can associate a data series with a specific axis by mapping it to that name.
+
+<Preview onDemand={true} reset={true} content={<MultipleAxis />} path="chart/multipleAxis.tsx" />

@@ -1,0 +1,143 @@
+import StringTypes from './string-types.tsx';
+import EditTypes from './edit-types.tsx';
+import DropDownEditType from './drop-down-edit-type.tsx';
+import CheckBoxTypeColor from './checkbox-color.tsx';
+import DatePickerMinMax from './date-picker-min-max.tsx';
+import DatePickerEditType from './date-picker-edit-type.tsx';
+import NumericTypes from './numeric-types.tsx';
+import DecimalTypes from './decimal-types.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Data Grid - Edit Types | Syncfusion"
+  description="Edit types in Data Grid, including string, numeric, dropdown, boolean, and date editors with flexible customization options for data entry."
+/>
+
+# Edit Types in React Data Grid
+ 
+The Syncfusion® React Data Grid component uses the [`edit.type`](https://react-api.syncfusion.com/data-grid/columneditconfig#type) property to assign editors based on column data types, streamlining input handling and customization. Default editors are automatically applied for common data types such as text, number, date, and boolean. The supported edit types are listed below.
+
+|Edit Type Value | Description |
+|-----------------|-------------|
+| `EditType.TextBox` | Renders a `TextBox` component for string data type columns. |
+| `EditType.NumericTextBox` | Renders a `NumericTextBox` component for numeric data types (e.g., integers, doubles, floats, shorts, bytes, longs, long doubles, decimals). |
+| `EditType.DropDownList` | Renders a `DropDownList` component for string data type columns with predefined options. |
+| `EditType.CheckBox` | Renders a `CheckBox` component for boolean data type columns. |
+| `EditType.DatePicker` | Renders a `DatePicker` component for date type columns. |
+ 
+To configure edit types, use the `edit.type` property within the column configuration. This enables customized data input based on column data types.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<EditTypes/>}
+  path="grid/edit-types.tsx"
+  scroll={false}
+/>
+  
+> When `edit.type` is not defined, the grid defaults to `EditType.TextBox` type, rendering a `TextBox` component for the column.
+ 
+## TextBox editor
+
+The `EditType.TextBox` type uses the Syncfusion® React [`TextBox`](https://react.syncfusion.com/textbox#getting-started) component for editing string data. The textbox can be customized using the [`edit.params`](https://react-api.syncfusion.com/data-grid/columneditconfig#params) property, which supports attributes such as [`clearButton`](https://react-api.syncfusion.com/textbox/overview#clearbutton), [`placeholder`](https://react-api.syncfusion.com/textbox/overview#placeholder), and other textbox-specific properties.
+
+### Placeholder and its position
+
+The following example demonstrates adding a `placeholder` and positioning it with `labelMode` for the "Employee Name" column.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<StringTypes/>}
+  path="grid/string-types.tsx"
+  scroll={false}
+/>
+ 
+## NumericTextBox editor
+ 
+The `EditType.NumericTextBox` type uses the Syncfusion® React [`NumericTextBox`](https://react.syncfusion.com/numeric-textbox#getting-started) component for editing numeric data. The numeric textbox can be customized using the [`edit.params`](https://react-api.syncfusion.com/data-grid/columneditconfig#params) property, which supports attributes such as [`decimals`](https://react-api.syncfusion.com/numeric-textbox/overview#decimals), [`format`](https://react-api.syncfusion.com/numeric-textbox/overview#format), [`spinButton`](https://react-api.syncfusion.com/numeric-textbox/overview#spinbutton), and other numeric textbox specific properties.
+
+In the following example, the NumericTextBox component used to edit the "Units Sold" column. It uses the format "N1", with a minimum value of 1 and a maximum value of 1000.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<NumericTypes/>}
+  path="grid/numeric-types.tsx"
+  scroll={false}
+/>
+ 
+### Restricting decimal points in NumericTextBox
+ 
+The Data Grid component restricts decimal input in the `NumericTextBox` during editing by using the `edit.params` property. Setting [`validateOnType`](https://react-api.syncfusion.com/numeric-textbox/overview#validateontype) to `true` prevents decimal input while typing, and `decimals` to "0" ensures only whole numbers are displayed. Disabling spin buttons through the `spinButton` property provides additional control. This configuration is applied to the "Price" column for precise numeric input.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true} 
+  content={<DecimalTypes/>}
+  path="grid/decimal-types.tsx"
+  scroll={false}
+/>
+ 
+## DropDownList editor
+
+The `EditType.DropDownList` type uses the Syncfusion® React `DropDownList` component for editing string data with predefined values.
+
+### Popup customization
+
+The following example demonstrates popup height customization through the [`edit.params`](https://react-api.syncfusion.com/data-grid/columneditconfig#params) property for the "Ship Country" column.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<DropDownEditType/>}
+  path="grid/drop-down-edit-type.tsx"
+  scroll={false}
+/>
+
+## CheckBox editor
+
+The `EditType.CheckBox` type uses the Syncfusion® React [`CheckBox`](https://react.syncfusion.com/checkbox#getting-started) component for editing boolean data. The checkbox can be customized using the [`edit.params`](https://react-api.syncfusion.com/data-grid/columneditconfig#params) property, which supports attributes such as [`label`](https://react-api.syncfusion.com/checkbox/overview#label), [`color`](https://react-api.syncfusion.com/checkbox/overview#color) and other checkbox specific properties.
+
+### Color customization
+
+The following example demonstrates customizing the color of the checkbox for the "Item Availability" column.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<CheckBoxTypeColor/>}
+  path="grid/checkbox-color.tsx"
+  scroll={false}
+/>
+
+## DatePicker editor
+
+The `EditType.DatePicker` type uses the Syncfusion® React `DatePicker` component for editing date data. The datepicker can be customized using the [`edit.params`](https://react-api.syncfusion.com/data-grid/columneditconfig#params) property, which supports attributes such as `minDate`, `maxDate`, `format`, `placeholder` and other datepicker specific properties. 
+
+### Configuring date ranges
+
+The following example demonstrates setting `minDate` to January and `maxDate` to February for the "Booking Date" column, and `minDate` to March and `maxDate` to April for the "Appointment Date" column.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<DatePickerMinMax/>}
+  path="grid/date-picker-min-max.tsx"
+  scroll={false}
+/>
+
+### Change the format of date value
+
+The following example demonstrates adding `placeholder` and `format` for the "Booking Date" and "Appointment Date" columns using `edit.params` property.
+
+<Preview  frame={false}
+  className={'sb-padding-10'}
+  onDemand={true}
+  content={<DatePickerEditType/>}
+  path="grid/date-picker-edit-type.tsx"
+  scroll={false}
+/>

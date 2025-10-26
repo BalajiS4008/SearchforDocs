@@ -1,0 +1,89 @@
+
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { chartNpm, chartImport } from './snippets';
+import { Link } from 'react-router';
+import Zooming from './zooming'
+import ZoomingMode from './zoomingMode'
+import ZoomingToolbar from './zoomingToolbar'
+import ZoomingPan from './zoomingPan'
+import ZoomingPinchZoom from './zoomingPinchZoom'
+import ZoomingMousewheel from './zoomingMousewheel'
+import ZoomingToolbarCustom from './zoomingToolbarCustom'
+import ZoomingPagination  from './zoomingPagination';
+import { Meta } from '../../common/meta';
+
+<Meta title="React Chart Zooming | Syncfusion"
+  description="React Chart zooming magnifies a selected region to inspect dense data and outliers. Supports drag, wheel, pinch, and reset for detailed analysis."
+/>
+
+# Zooming in React Chart
+
+Zooming enhances chart interactivity by allowing users to magnify specific areas, making it easier to analyze details and explore large datasets more effectively.
+
+## Selection zoom
+
+To enable zooming via rubber band selection, set the [`selectionZoom`](https://react-api.syncfusion.com/chart/chartzoomsettingsprops#selectionzoom) property to `true` within the [`ChartZoomSettings`](https://react-api.syncfusion.com/chart/chartzoomsettingsprops) component. This allows users to click and drag to select a specific area of the chart for a closer, more detailed view.
+
+<Preview onDemand={true} reset={true} content={<Zooming />} path="chart/zooming.tsx" />
+
+## Mouse wheel zoom
+
+To enable zooming with the mouse wheel, set the [`mouseWheelZoom`](https://react-api.syncfusion.com/chart/chartzoomsettingsprops#mousewheelzoom) property to true in the `ChartZoomSettings` component. This allows users to smoothly zoom in and out of the chart by scrolling the mouse wheel.
+
+<Preview onDemand={true} reset={true} content={<ZoomingMousewheel />} path="chart/zoomingMousewheel.tsx" />
+
+## Pinch zoom
+
+To enable pinch-to-zoom functionality on touch-enabled devices, set the [`pinchZoom`](https://react-api.syncfusion.com/chart/chartzoomsettingsprops#pinchzoom) property to `true` in the `ChartZoomSettings` component. This allows users to zoom in and out of the chart using a pinch gesture for intuitive touch interaction.
+
+<Preview onDemand={true} reset={true} content={<ZoomingPinchZoom />} path="chart/zoomingPinchZoom.tsx" />
+
+## Pan
+
+To enable panning on a zoomed chart, set the [`pan`](https://react-api.syncfusion.com/chart/chartzoomsettingsprops#pan) property to `true`. This allows users to easily navigate across different areas of the chart by clicking and dragging.
+
+<Preview onDemand={true} reset={true} content={<ZoomingPan />} path="chart/zoomingPan.tsx" />
+
+## Pagination
+
+You can swipe left or right using panning, or tap on a specific date button at the bottom to view the data for that day.
+
+<Preview onDemand={true} reset={true} content={<ZoomingPagination />} path="chart/zoomingPagination.tsx" />
+
+## Mode
+
+The [`mode`](https://react-api.syncfusion.com/chart/chartzoomsettingsprops#mode) property in the `ChartZoomSettings` component defines the direction in which zooming is applied. You can choose from the following options:
+
+- `X` – Enables horizontal zooming only.
+
+- `Y` – Enables vertical zooming only.
+
+- `XY` – Enables both horizontal and vertical zooming (default setting).
+
+The default mode is XY.
+
+<Preview onDemand={true} reset={true} content={<ZoomingMode />} path="chart/zoomingMode.tsx" scroll={false} />
+
+## Toolbar
+
+Zooming and panning can also be controlled using the zoom toolbar. To display the toolbar when the chart is first rendered, set the [`visible`](https://react-api.syncfusion.com/chart/charttoolbarprops#visible) property to `true` inside the [`toolbar`](https://react-api.syncfusion.com/chart/chartzoomsettingsprops#toolbar) in the `ChartZoomSettings` component.
+
+<Preview onDemand={true} reset={true} content={<ZoomingToolbar />} path="chart/zoomingToolbar.tsx" scroll={false} />
+
+### Toolbar customization
+
+The position of the zoom toolbar can be customized using the [`position`](https://react-api.syncfusion.com/chart/charttoolbarprops#position) property within the `ChartZoomSettings` component.
+
+For flexible alignment, use the following properties:
+- [`hAlign`](https://react-api.syncfusion.com/chart/toolbarposition#halign): Specifies horizontal alignment.
+    - `Left` – Aligns the toolbar to the start.
+    - `Center` – Centers the toolbar.
+    - `Right` – Aligns the toolbar to the end.
+- [`vAlign`](https://react-api.syncfusion.com/chart/toolbarposition#valign): Specifies vertical alignment.
+    - `Top` – Positions the toolbar at the top.
+    - `Center` – Centers the toolbar vertically.
+    - `Bottom` – Positions the toolbar at the bottom.
+
+
+<Preview onDemand={true} reset={true} content={<ZoomingToolbarCustom />} path="chart/zoomingToolbarCustom.tsx" scroll={false} />

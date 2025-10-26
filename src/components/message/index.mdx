@@ -1,0 +1,217 @@
+import DefaultMessage from './message';
+import Severities from './severity';
+import Variants from './variant';
+import Filled from './filled';
+import Outlined from './outlined';
+import Actions from './actions';
+import NoIcon from './no-icon';
+import CustomIcon from './custom-icon';
+import CloseIcon from './close-icon';
+import Template from './template';
+import Typography from './typography';
+import ContentAlignment from './content-alignment';
+import { Preview } from '../../common/preview';
+import { Check, Cross, Clock } from '../../common/util';
+import { Snippet } from '../../common/snippet'
+import { messageNpm, messageStyles, messageImport, messageSnippet } from './snippets'
+import { Link } from 'react-router'
+import { Meta } from '../../common/meta';
+
+<Meta
+ title="React Message component | Syncfusion"
+ description="The React Message component displays brief messages with distinct severity levels, using icons and colors to convey their importance and context effectively."
+/>
+
+# React Message
+
+The React `Message` is a graphical user interface component that displays messages with visual severity levels. It differentiates messages with icons and colors to denote the importance and context of the message. It has several built-in features, such as severities, variants, icons, and a template.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite?section=set-up-the-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let’s add the React `Message` component to the project.
+
+### Installing Syncfusion® packages
+
+To use the React `Message` component in this project, the [`@syncfusion/react-notifications`](https://www.npmjs.com/package/@syncfusion/react-notifications) package needs to be installed using the following command:
+
+<Snippet content={messageNpm}/>
+
+### Adding CSS reference
+
+In this article, the `Material 3` theme is applied using CSS styles, which are available in installed packages. The necessary `Material 3` CSS styles for the `Message` component and its dependents were imported into the `src/App.css` file.
+
+<Snippet content={messageStyles}/>
+
+### Adding Message component
+
+To include the `Message` component in your application, import the `Message` from the `@syncfusion/react-notifications` package in `App.tsx`.
+
+<Snippet content={messageImport}/>
+
+Add the `Message` component in application as shown in below code example.
+
+<Snippet content={messageSnippet} />
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+The following example demonstrates how to create a simple `Message` component. The `Message` component is displayed with a success message. The message is displayed with a green background and a check icon at the start of the message, indicating that an action was completed successfully.
+
+<Preview content={<DefaultMessage />} path="message/message.tsx" />
+
+## Severities
+
+The severity denotes the importance and context of the message to the user. The message contains different severity types. Use the `severity` property to display the messages with different severity levels.
+
+The available severity types are `Normal`, `Success`, `Info`, `Warning`, and `Error`. The default severity type for messages is `Normal`.
+
+The following example demonstrates the severity of the messages.
+
+<Preview content={<Severities />} path="message/severity.tsx" />
+
+## Variants
+
+The message has predefined appearance variants for different visual representations. The variants of the message can be changed based on the `variant` property.
+
+The available variants are `Standard`, `Outlined`, and `Filled`. The default variant type for messages is `Standard`.
+
+The following examples demonstrate the different variants of the message.
+
+### Standard
+
+The severity is differentiated using a text color and a light background color.
+
+<Preview content={<Variants />} path="message/variant.tsx" />
+
+### Outlined
+
+The severity is differentiated using a text color and a border without a background.
+
+<Preview content={<Outlined />} path="message/outlined.tsx" />
+
+### Filled
+
+The severity is differentiated using a text color and a dark background color.
+
+<Preview content={<Filled />} path="message/filled.tsx" />
+
+## Icons
+
+This section explains the message with no icons, how to show or hide the close icon, and add the custom severity icon to the message.
+
+### No icon
+
+By default, severity icons can be displayed according to the severity types to make it more understandable to the user by visual information rather than text. To hide the severity icons, set the `icon` property to `false`.
+
+The following example demonstrates the different severity messages without the severity icons.
+
+<Preview content={<NoIcon />} path="message/no-icon.tsx" />
+
+### Close icon
+
+The message can be rendered with or without the close icon. The close icon is used to hide the message, either by manually clicking the close icon or through keyboard interaction.
+
+By default, the close icon is not rendered in the message. To show the close icon, set the `closeIcon` property to `true`. You can also customize the close icon by passing a JSX element (such as an SVG) to the closeIcon property.
+
+In the following example, the messages are rendered with the close icon.
+
+<Preview content={<CloseIcon />} path="message/close-icon.tsx" />
+
+### Custom icon
+
+By default, severity icons in the `Message` component are automatically rendered based on the severity type, helping users quickly understand the nature of the message. However, if you want to personalize these icons such as using custom SVG icons to better match your application's design or intent you can easily customize the icons using the `icon` and `closeIcon` properties.
+
+- `icon`: This property allows you to override the default severity icon and render a custom SVG at the beginning of the message content.
+
+- `closeIcon`: This property lets you provide a custom icon for the close (dismiss) button, giving you complete control over the appearance and interaction design of the message box.
+
+The following example demonstrates how to render a message with fully customized icons:
+
+<Preview content={<CustomIcon />} path="message/custom-icon.tsx" reset={true} />
+
+## Actions
+
+The React Message component allows users to interact with messages dynamically using built-in actions. One such action is the `onClose` event, which is triggered when a message is dismissed using the close icon.
+
+You can use this event to perform additional actions, such as:
+
+- Displaying a confirmation message.
+
+- Updating the UI state upon message dismissal.
+
+- Logging user interactions for tracking purposes.
+
+The following example demonstrates how to handle the `onClose` event and update the state accordingly.
+
+<Preview content={<Actions />} path="message/actions.tsx" reset={true} />
+
+## Customization
+
+The `Message` component allows the user to customize the content display positions and appearance. This section explains the details about changing the content alignments and border styles for messages.
+
+### Content alignment
+
+Normally, the message content is aligned to the `left`. The Message component allows the user to align the message content in the `center` or `right` through the built-in classes `sf-content-center` and `sf-content-right`.
+
+The following example demonstrates the message with different content alignments.
+
+<Preview content={<ContentAlignment />} path="message/content-alignment.tsx" />
+
+### Appearance
+
+The Message component is designed using a set of predefined CSS variables, which come with default styling values. These variables control aspects like color, spacing, typography, and more, ensuring consistent appearance across implementations. Users can easily customize the look and feel of the component by overriding these variables, without needing to add extra CSS classes or modify the core styles. This approach promotes flexibility and maintainability in styling.
+
+In the example below, the color of the Message component is customized, along with other variables like font size, spacing, and more, to demonstrate how changes reflect in real time.
+
+<Preview content={<Typography />} path="message/typography.tsx" header={false}/>
+
+## Template
+
+The message supports templates that allow the user to customize the content with a custom structure. The content can be a string, paragraph, or any other HTML element. The template can be added directly to child elements of the Message component.
+The following example demonstrates how to customize the content using HTML elements.
+
+<Preview content={<Template />} path="message/template.tsx" />
+
+## Accessibility
+
+The Message component followed the accessibility guidelines and standards, including [ADA](https://www.ada.gov/), [Section 508](https://www.section508.gov/), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) standards, and [WCAG roles](https://www.w3.org/TR/wai-aria/#roles) that are commonly used to evaluate accessibility.
+
+The accessibility compliance for the Message component is outlined below.
+
+| Accessibility Criteria | Compatibility |
+| -- | -- |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Support | <Check/> |
+| [Section 508](https://www.section508.gov/) Support | <Check/> |
+| Screen Reader Support | <Check/> |
+| Right-To-Left Support | <Check/> |
+| Color Contrast | <Check/> |
+| Mobile Device Support | <Check/> |
+| Keyboard Navigation Support | <Check/> |
+| [Accessibility](https://www.npmjs.com/package/@storybook/addon-a11y) Validation | <Check/> |
+
+<Check/> - All features of the component meet the requirement.
+
+<Clock/> - Some features of the component do not meet the requirement.
+
+<Cross/> - The component does not meet the requirement.
+
+### WAI-ARIA attributes
+
+The Message component followed the [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/alert/) patterns to meet the accessibility. The following ARIA attributes are used in the Message component:
+
+| Attributes | Purpose |
+| --- | --- |
+| <mark>role=alert</mark> | Used to convey a significant and contextual message to the user. |
+| <mark>aria-label</mark> | Provides an accessible name for the close icon. |
+
+### Keyboard interaction
+
+The Message component followed the [keyboard interaction](https://www.w3.org/WAI/ARIA/apg/patterns/alert/#keyboardinteraction) guideline, making it easy for people who use assistive technologies (AT) and those who completely rely on keyboard navigation. The following keyboard shortcuts are supported by the Message component.
+
+| Press | To do this |
+| --- | --- |
+| <kbd>Tab / Shift + Tab</kbd> | To focus the close icon in the message. |
+| <kbd>Enter / Space</kbd> | Closes the focused close icon's message. |

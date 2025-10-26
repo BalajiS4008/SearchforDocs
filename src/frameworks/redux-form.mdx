@@ -1,0 +1,89 @@
+import { Snippet } from '../common/snippet';
+import { Preview } from '../common/preview';
+import { Link } from 'react-router'
+import { reduxLoginFormSnippet, loginFormSnippet, reduxStoreSnippet, connectReduxFormSnippet, fieldComponentSnippet, handlerSnippets, formValidationSnippet, displayErrorSnippet } from './snippets';
+import { Meta } from '../common/meta';
+import ReduxForm from './redux-form';
+
+<Meta
+ title="React components in Redux Form | Syncfusion"
+ description="Integrate React components with Redux Form, the best way to manage form state in Redux."
+/>
+
+# Integration of React Components with Redux Form
+
+This guide demonstrates how to integrate Syncfusion<sup>®</sup> React components in `Redux Form`, covering project setup, store configuration, form implementation, validation, and running the application.
+
+## What is Redux Form?
+
+<a href="https://redux-form.com/" target="_blank" rel="noopener noreferrer">Redux Form</a> is a popular library used in React projects for managing and handling form state. It integrates seamlessly with the Redux state management library <a href="https://redux.js.org/api/store" target="_blank" rel="noopener noreferrer">(Redux Store)</a> and provides an efficient way to manage form inputs, validation, submission, and data synchronization with the `Redux store`.
+
+## Set up the React project
+
+1\. Create a new React project using <Link to="/getting-started/vite#create-a-vite-project">Vite</Link>.
+
+2\. Install the necessary `Redux` dependencies by running the following command:
+
+<Snippet content={[ { title: "CMD", code: 'npm install --save @reduxjs/toolkit react-redux redux-form' }]} />
+
+> The `redux-form` package is not officially supported in React 19. It is recommended to use React 18 for compatibility. If you want to use React 19, you may encounter dependency issues. To resolve this, install the packages with the `--legacy-peer-deps` flag.
+
+## Create a Redux Form
+
+1\. Create a new file named `LoginForm.tsx` and implement the login form using `Redux Form`:
+
+<Snippet content={reduxLoginFormSnippet} />
+
+2\. Include the form component in your React project by adding the following code to the `App.tsx` file:
+
+<Snippet content={loginFormSnippet} />
+
+## Setting up the Redux store
+
+After creating the form and integrating it into the React project, set up the `Redux store` in the `main.tsx` file. Use the `Provider` component to make the `Redux store` available to all child components in the application. This enables the form state and other application state to be managed globally through Redux.
+
+<Snippet content={reduxStoreSnippet} />
+
+## Connecting the form to Redux
+
+In the `LoginForm.tsx` file, connect the form component with `Redux Form` by exporting it using the `reduxForm` higher-order component:
+
+<Snippet content={connectReduxFormSnippet} />
+
+## Adding Syncfusion<sup>®</sup> React components
+
+To add Syncfusion<sup>®</sup> React components (`TextBox` and `Button`) into the login form, follow these steps:
+
+1\. Install the necessary dependencies for React components.
+
+<Snippet content={[ { title: "CMD", code: 'npm install @syncfusion/react-inputs @syncfusion/react-buttons --save' }]} />
+
+2\. Integrate the React components within the login form using the `Field` component provided by `Redux Form`.
+
+<Snippet content={fieldComponentSnippet} />
+
+3\. Define a handler function for form submission and data display in `App.tsx`:
+
+<Snippet content={handlerSnippets} />
+
+## Form validation
+
+`Redux Form` provides built-in support for validation. Implement a `validate` function to check form values and display error messages when needed. Validation occurs automatically on submission.
+
+<Snippet content={formValidationSnippet} />
+
+## Displaying validation errors
+
+Upon form submission, the inputs will be validated and corresponding error messages will be displayed below the respective input fields.
+
+<Snippet content={displayErrorSnippet} />
+
+## Run the project
+
+Execute the following command to run the project:
+
+<Snippet content={[ { title: "npm", code: 'npm run dev' } ]} />
+
+The output will appear as follows:
+
+<Preview content={<ReduxForm />} header={false} />

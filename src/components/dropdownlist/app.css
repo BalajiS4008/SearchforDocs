@@ -1,0 +1,43 @@
+.dropdownlist-container {
+    width: 250px;
+}
+
+.ddlValuetemplate {
+    width: 380px;
+}
+
+.margin-top {
+    margin-top: 10px;
+}
+
+.margin-bottom {
+    margin-top: 10px;
+}
+
+.flex-direction-row {
+    flex-direction: row;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.min-gap {
+    gap: 10px;
+}
+
+.mid-gap {
+    gap: 20px;
+}
+
+.max-gap {
+    gap: 40px;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}

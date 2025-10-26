@@ -1,0 +1,10 @@
+@media (max-width: 1120px) {
+  .sf-pager .content-wrapper {
+      display: inline-block;
+      width: 200px;
+  }
+}
+.sf-pager .content-wrapper {
+    display: inline-block;
+    width: 300px;
+}

@@ -1,0 +1,49 @@
+import ExpressiononValueAccessor from './expression-value-accessor.tsx';
+import ValueAccessor from './value-accessor.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Link } from 'react-router';
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Data Grid - Cell Expressions | Syncfusion"
+  description="Expression columns in Data Grid compute and display calculated values based on other fields, enabling dynamic formulas and derived data visualization."
+/>
+
+
+# Expressions in React Data Grid
+
+Syncfusion® React Data Grid component [`valueAccessor`](https://react-api.syncfusion.com/data-grid/columnprops#valueaccessor) method customizes how the grid displays cell values without changing the original data source. This customization applies only to the display and does not affect data operations. By default, data operations such as sorting, filtering, and editing use the actual values stored in the data source. 
+
+The grid supports expression columns that compute values using formulas and logic across multiple columns. These columns produce results without modifying the original dataset.
+
+The `valueAccessor` function receives a parameter of type [`ValueAccessorProps`](https://react-api.syncfusion.com/data-grid/valueaccessorprops), which provides detailed information about the column and its associated row data.
+
+ 
+In below example an academic grading system, expression columns can be used to calculate performance metrics:
+ 
+-	Final: Computes weighted scores using the formula (Midterm × 25%) + (Project × 30%) + (Attendance × 10%) + (Final Exam × 35%).
+-	Grade: Converts percentage scores into academic letter grades (A, B+, B, C+, etc.) using conditional logic.
+-	GPA Pts: Multiplies grade points by credit hours for transcript calculations.
+-	Standing: Determines status such as Dean’s List, Good Standing, or Probation.
+-	Trend: Analyzes improvement by comparing midterm and final exam scores.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<ExpressiononValueAccessor />} path="grid/expression-value-accessor.tsx" scroll={false} />
+
+
+## Customizing cell display text
+
+The example below shows how to change the cell text, format it, and calculate column values dynamically by using `valueAccessor` method in grid.
+ 
+-	Customer: Combines the first name with the country code (e.g., John (US)) to improve international readability.
+-	Subtotal: Calculates quantity × unit price to show item-level totals.
+-	Discount: Converts percentage discounts into actual dollar values.
+-	Tax: Computes tax based on the discounted subtotal.
+-	Final Total: Applies the full calculation chain including quantity, price, discount, and tax.
+-	Estimated Shipping (Days): Converts shipping dates into relative terms like today, tomorrow, 3 days, or 1 week to help users understand delivery timelines at a glance.
+
+<Preview  frame={false} className={'sb-padding-10'} onDemand={true} content={<ValueAccessor />} path="grid/value-accessor.tsx" scroll={false} />
+
+## See also
+
+* <p><Link to="/data-grid/columns/column-format">Built-In Cell Formatting Options in Syncfusion React Data Grid</Link></p>

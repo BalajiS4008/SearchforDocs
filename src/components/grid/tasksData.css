@@ -1,0 +1,57 @@
+.tasksData #pbarlabel {
+    position: relative;
+    left: 10px;
+    line-height: 25px;
+    font-size: 11px;
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.tasksData #myBar {
+    position: absolute;
+    height: 100%;
+    background-color: #27ae60;
+    border-radius: 4px;
+}
+
+.tasksData #myBar.progressdisable {
+    background-color: #E46962;
+}
+
+.tasksData #myProgress {
+    position: relative;
+    height: 25px;
+    width: 10em;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+}
+
+/* Dark Theme Support */
+.dark-theme .tasksData #pbarlabel {
+    color: #000000;
+}
+
+.dark-theme .tasksData #myBar {
+    background-color: #388e3c;
+}
+
+.dark-theme .tasksData #myBar.progressdisable {
+    background-color: #d32f2f;
+}
+
+.dark-theme .tasksData #myProgress {
+    background-color: #424242;
+}
+
+.dark-theme .tasksData .pbar {
+    background-color: #424242;
+}
+
+.dark-theme .tasksData .bar {
+    background-color: #388e3c;
+}
+
+.dark-theme .tasksData .barlabel {
+    color: #000000;
+}

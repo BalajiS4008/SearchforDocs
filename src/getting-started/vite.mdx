@@ -1,0 +1,93 @@
+import { Snippet } from '../common/snippet';
+import { viteNpm, frameworkSnippet, viteVariant, viteNpmInstall, messagePackage, viteStyles, viteMessageSample, runSample } from './snippets';
+import { Preview } from '../common/preview';
+import DefaultMessage from '../components/message/message';
+import { Link } from 'react-router';
+import { Meta } from '../common/meta';
+
+<Meta
+ title="React components in Vite | Syncfusion"
+ description="Integrate React components into Vite, the next-generation frontend tooling for building lightning-fast web applications."
+/>
+
+# Getting Started with a Vite App using React Components  
+
+This guide outlines how to set up a [Vite](https://vitejs.dev/) project within a `TypeScript` environment and integrate Syncfusion<sup>®</sup> React components.
+
+`Vite` is a build tool and development server for modern web projects. It supports cutting-edge web technologies like `ES modules`, `TypeScript`, `JSX`, and `CSS modules`. Vite's development server leverages native ES modules in modern browsers, ensuring rapid startup and quick feedback during development.
+
+## Prerequisites
+
+<p><Link to="/overview/system-requirements">System requirements for Syncfusion<sup>®</sup> React UI components</Link></p>
+
+## Create a Vite project
+
+To create a new `Vite` project, use either NPM or Yarn.
+
+<Snippet content={viteNpm}/>
+
+Executing one of the above commands will guide you through additional configuration steps:
+
+1\. Specify the project name. For this guide, we'll use `my-project`.
+
+<Snippet content={[
+    { title: "CMD", code: '? Project name: » my-project' }
+  ]} />
+
+2\. Select React as the framework, which will set up a React project.
+
+<Snippet content={frameworkSnippet} />
+
+3\. Choose `TypeScript` as the framework variant to build this `Vite` project with `Typescript` and `React`.
+
+<Snippet content={viteVariant} />
+
+4\. After setting up `my-project`, install its dependencies:
+
+<Snippet content={viteNpmInstall}/>
+
+Now that `my-project` is ready to run with default settings, let's add Syncfusion<sup>®</sup> components to the project.
+
+## Install Syncfusion<sup>®</sup> React packages
+
+Syncfusion<sup>®</sup> React components are available on [npmjs.com](https://www.npmjs.com/search?q=react). To integrate them into your project, install the required npm package.
+
+To use the React `Message` component, install the `@syncfusion/react-notifications` package:
+
+<Snippet content={messagePackage}/>
+
+## Import Syncfusion<sup>®</sup> CSS styles
+
+Import themes for our React components using CSS or SASS from npm packages. For details on built-in themes and usage, refer to the <Link to="/appearance/built-in-themes">themes topic</Link>.
+
+In this guide, we apply the `Material3` theme with CSS styles in the ``src/App.css`` file:
+
+<Snippet content={viteStyles} />
+
+> Ensure CSS styles are imported in the correct dependency order.
+
+## Add Syncfusion<sup>®</sup> React component
+
+Follow these steps to add the React `Message` component to the Vite project:
+
+1. Import the `Message` component in ``src/App.tsx``:
+
+<Snippet content={[ { title: "App.tsx", code: `import { Message } from '@syncfusion/react-notifications';` } ]} />
+
+2. Then, add the `Message` component in the application using the following code sample.
+
+<Snippet content={viteMessageSample} />
+
+## Run the project
+
+Execute the following command to run the project:
+
+<Snippet content={runSample} />
+
+The output will appear as follows:
+
+<Preview content={<DefaultMessage />} header={false} />
+
+## See also
+
+* <p><Link to="/getting-started/nextjs">Getting Started with Syncfusion<sup>®</sup> React UI Component in NextJs</Link></p>

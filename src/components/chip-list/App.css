@@ -1,0 +1,23 @@
+.chip-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.chip-customization .sf-chip-list .sf-chip:hover,
+.chip-customization .sf-chip-list .sf-chip:active {
+    color: #fff;
+}
+
+.sf-dark-mode .chip-customization .sf-chip-list .sf-chip:hover,
+.sf-dark-mode .chip-customization .sf-chip-list .sf-chip:active,
+.sf-dark-mode .chip-customization .sf-chip-list .sf-chip {
+    color: #fff;
+}
+
+.custom-icon .sf-chip.sf-active .sf-chip-selectable-icon,
+.custom-remove .sf-chip-delete {
+    height: 20px;
+    width: 20px;
+}

@@ -1,0 +1,147 @@
+import BasicContextMenu from './basic-context-menu';
+import TaskManagementContextMenu from './action-menu';
+import IconContextMenu from './template';
+import ContextMenuAnimations from './animation';
+import ScrollableContextMenu from './scrolling';
+import { Preview } from '../../common/preview';
+import { Check, Cross, Clock } from '../../common/util';
+import { Snippet } from '../../common/snippet';
+import { contextMenuNpm, contextMenuImport, contextMenuStyles, contextMenuSnippet } from './context-menu-snippets'
+import { Link } from 'react-router'
+import { Meta } from '../../common/meta';
+
+<Meta
+  title="React Context Menu Component | Syncfusion"
+  description="The Context Menu component provides quick access to relevant actions on right-click or long-press, with customizable menu items."
+/>
+
+# React Context Menu
+
+The `ContextMenu` component provides a popup menu that appears when a user interacts with an element through right-click or a long press action. It offers a convenient way to present contextual options and commands relevant to the selected element or area.
+
+## Getting started
+
+To create a new Vite project, refer to the <Link to="/getting-started/vite?section=set-up-the-vite-project">Vite</Link> documentation. Once that Vite project is ready to run with default settings, let's add the `React ContextMenu` component to the project.
+
+### Installing Syncfusion® packages
+
+To use the `React ContextMenu` component in this project, the [`@syncfusion/react-navigations`](https://www.npmjs.com/package/@syncfusion/react-navigations) package needs to be installed using the following command:
+
+<Snippet content={contextMenuNpm}/>
+
+### Adding CSS reference
+
+In this article, the `Material 3` theme is applied using CSS styles, which are available in installed packages. The necessary Material CSS styles for the `ContextMenu` component and its dependents were imported into the `src/App.css` file.
+
+<Snippet content={contextMenuStyles}/>
+
+### Adding Context Menu component
+
+To include the `ContextMenu` component in your application, import the `ContextMenu` from the `@syncfusion/react-navigations` package in `App.tsx`.
+
+<Snippet content={contextMenuImport} />
+
+Add the `ContextMenu` component in application as shown in below code example.
+
+<Snippet content={contextMenuSnippet} />
+
+### Run the project
+
+To run the project, use the following command:
+
+<Snippet content={[{ title: "npm", code: 'npm run dev' }]} />
+
+The `ContextMenu` component  uses the [`targetRef`](https://react-api.syncfusion.com/context-menu/overview#targetref) prop to specify which element triggers the menu. Menu options are defined using `MenuItem` components, which can include [`text`](https://react-api.syncfusion.com/context-menu/menuitemprops#text) and [`icon`](https://react-api.syncfusion.com/context-menu/menuitemprops#icon).
+
+<Preview 
+  content={<BasicContextMenu />} 
+  path="context-menu/basic-context-menu.tsx"
+/>
+
+## Custom Icons
+
+Beyond simple text menu items, the `ContextMenu` supports rich content through component composition within `MenuItem` and the [`itemTemplate`](https://react-api.syncfusion.com/context-menu/overview#itemtemplate) prop. Using component composition allows for custom content in each menu item, while the [`itemTemplate`](https://react-api.syncfusion.com/context-menu/overview#itemtemplate) prop provides a consistent template for all items. Both approaches enable advanced customization with icons, layout formatting, and custom styling to create visually distinctive menu interactions.
+
+<Preview 
+  content={<IconContextMenu />} 
+  path="context-menu/template.tsx"
+/>
+
+## Animation Effects
+
+The [`animation`](https://react-api.syncfusion.com/context-menu/overview#animation) property enhances user experience by providing visual feedback when menus appear. Multiple effects are available including `FadeIn`, `ZoomIn`, and `SlideDown`, with configurable [`duration`](https://react-api.syncfusion.com/context-menu/menuanimationprops#duration) and [`easing`](https://react-api.syncfusion.com/context-menu/menuanimationprops#easing) functions.
+
+<Preview 
+  content={<ContextMenuAnimations />} 
+  path="context-menu/animation.tsx"
+/>
+
+## Scrollable Menu
+
+For data-heavy menus, the [`items`](https://react-api.syncfusion.com/context-menu/overview#items) property enables programmatic menu creation using the [`MenuItemProps`](https://react-api.syncfusion.com/context-menu/menuitemprops#props) interface as an alternative to declarative definition. The `className` prop can be used with CSS to create scrollable menus when content exceeds view limits, with a default max height of 500px that can be customized (shown here with a 200px constraint).
+
+<Preview 
+  content={<ScrollableContextMenu />} 
+  path="context-menu/scrolling.tsx"
+/>
+
+## Action Menu
+
+Interactive menus can be implemented using the [`onSelect`](https://react-api.syncfusion.com/context-menu/overview#onselect) event handler to process user selections, while the controlled component pattern ([`open`](https://react-api.syncfusion.com/context-menu/overview#open) and [`onClose`](https://react-api.syncfusion.com/context-menu/overview#onclose) props) enables precise management of menu visibility.
+
+<Preview 
+  content={<TaskManagementContextMenu />} 
+  path="context-menu/action-menu.tsx"
+  reset={true}
+/>
+
+## Accessibility
+
+The `ContextMenu` component followed the accessibility guidelines and standards, including [ADA](https://www.ada.gov/), [Section 508](https://www.section508.gov/), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) standards, and [WCAG roles](https://www.w3.org/TR/wai-aria/#roles) that are commonly used to evaluate accessibility.
+
+The accessibility compliance for the `ContextMenu` component is outlined below.
+
+| Accessibility Criteria | Compatibility |
+| -- | -- |
+| [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Support | <Check/> |
+| [Section 508](https://www.section508.gov/) Support | <Check/> |
+| Screen Reader Support | <Check/> |
+| Right-To-Left Support | <Check/> |
+| Color Contrast | <Check/> |
+| Mobile Device Support | <Check/> |
+| Keyboard Navigation Support | <Check/> |
+| [Accessibility](https://www.npmjs.com/package/@storybook/addon-a11y) Validation | <Check/> |
+
+<Check/> - All features of the component meet the requirement.
+
+<Clock/> - Some features of the component do not meet the requirement.
+
+<Cross/> - The component does not meet the requirement.
+
+### WAI-ARIA attributes
+
+The `ContextMenu` component followed the [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/) patterns to meet the accessibility. The following ARIA attributes are used in the `ContextMenu` component:
+
+| Attributes | Purpose |
+| --- | --- |
+| <mark>role</mark> | Indicates Context menu component popup as `menu`, and the popup items as `menuitem`. |
+| <mark>aria-haspopup</mark> | Indicates the availability and type of interactive popup element. |
+| <mark>aria-expanded</mark> | Indicates whether the subtree can be expanded or collapsed, as well as indicates whether its current state is expanded or collapsed. |
+| <mark>aria-label</mark> | Indicates the menu item text. |
+| <mark>aria-disabled</mark> | Indicates element is perceivable but disabled. |
+
+### Keyboard interaction
+
+The `ContextMenu` component follows the [keyboard interaction](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/#keyboardinteraction) guidelines, making it accessible for people who use assistive technologies (AT) and those who rely on keyboard navigation. The following keyboard shortcuts are supported:
+
+| **Windows** | **Mac** | **To do this** |
+| --- | --- | --- |
+| <kbd>Esc</kbd> | <kbd>Esc</kbd> | Closes the opened sub menu. |
+| <kbd>Enter , Space</kbd> | <kbd>Enter , Space</kbd>| Selects the focused item.|
+| <kbd>↑</kbd> | <kbd>↑</kbd>| Navigates up or to the previous menu item. |
+| <kbd>↓</kbd>| <kbd>↓</kbd>  | Navigates down or to the next menu item. |
+| <kbd>←</kbd>| <kbd>←</kbd>  | Closes the active submenu and returns to the parent menu |
+| <kbd>→</kbd>|<kbd>→</kbd> | Navigates and open the next sub menu. |
+| <kbd>Home</kbd> | <kbd> Fn + ←</kbd> | Moves focus to first item in the menu. |
+| <kbd>End</kbd> | <kbd>Fn + → </kbd> | Moves focus to last item in the menu. |
+| <kbd>Character</kbd> | <kbd>Character</kbd> | Moves focus to next item in the menu having a name that starts with the typed character.<br></br> If none of the items have a name starting with the typed character, focus does not move. |

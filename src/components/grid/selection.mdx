@@ -1,0 +1,107 @@
+import SingleSelection from './single-row-selection.tsx';
+import MultiSelection from './multi-row-selection.tsx';
+import ToggleSelection from './toggle-selection.tsx';
+import PreventSelection from './prevent-selection.tsx';
+import CustomizedSelection from './customize-selection.tsx';
+import ProgramaticSelection from './programatic-selection.tsx';
+import WorkflowSelection from './workflow-selection.tsx';
+import { Preview } from '../../common/preview';
+import { Snippet } from '../../common/snippet';
+import { Meta } from '../../common/meta';
+import { Link } from 'react-router';
+
+<Meta
+  title="React Data Grid - Selection | Syncfusion"
+  description="Selection in Syncfusion React Data Grid enables row highlighting and triggers related data actions for contextual workflows and user interaction."
+/>
+
+# Selection in React Data Grid
+ 
+The Syncfusion® React Data Grid supports a built-in selection feature that allows interactive highlighting of single or multiple rows. This feature is useful for performing data operations, highlighting specific rows, or executing custom actions within the grid
+
+
+## Selection mode
+The Data Grid component manages row selection behavior through the [`selectionSettings.mode`](https://react-api.syncfusion.com/data-grid/selectionsettings#mode) property. This property defines whether single or multiple rows can be selected. The supported selection modes are:
+
+### Single row selection
+
+The default value for `selectionSettings.mode` is `Single`. In this mode, only one row can be selected at a time by clicking it or pressing <kbd>Space</kbd> key on the focused row.
+
+
+<Preview frame={false} className={'sb-padding-10'} onDemand={true}  content={<SingleSelection />} path="grid/single-row-selection.tsx" scroll={false} />
+
+### Multiple row selection
+
+Set `selectionSettings.mode` to `Multiple` to enable selecting more than one row. This mode supports selection in two ways:
+
+- Multiple rows: Hold <kbd>Ctrl</kbd> (on <kbd>⌘</kbd> macOS) key while clicking each row to include in the selection.
+
+- Range of rows: Click any row to select it, then hold the <kbd>Shift</kbd> key and click another row to select all rows between them.
+
+<Preview frame={false} className={'sb-padding-10'} onDemand={true} content={<MultiSelection />} path="grid/multi-row-selection.tsx" />
+
+>  Toggle selection is disabled by default, do not allowing a row to be selected or deselected by clicking the same row.
+
+## Prevent selection using property
+ 
+To disable row selection, set [`selectionSettings.enabled`](https://react-api.syncfusion.com/data-grid/selectionsettings#enabled) to `false`. This disables all selection interactions and related events, effectively turning off row selection functionality within the grid.
+
+<Preview frame={false} className={'sb-padding-10'} onDemand={true} content={<PreventSelection />} path="grid/prevent-selection.tsx" scroll={false}/>
+
+## Customizing selection and hover styles
+
+To customize the default style of selected rows, modify the styles in the `.sf-grid .sf-active` CSS class. To change the appearance of rows when hovered over, apply styles to `.sf-grid-content-row:hover .sf-cell`. The example below shows how the background colors for both selected and hovered rows can be modified.
+
+<Preview frame={false} className={'sb-padding-10'} onDemand={true} content={<CustomizedSelection />} path="grid/customize-selection.tsx" scroll={false}/>
+
+## Programmatic selection
+
+Row selection can be managed programmatically with the following methods:
+
+- [`selectRow(index)`](https://react-api.syncfusion.com/data-grid/overview#selectrow): Selects a single row at the specified index.
+
+- [`selectRows([indices])`](https://react-api.syncfusion.com/data-grid/overview#selectrows): Selects multiple rows by providing an array of indices. Ensure that `selectionSettings.mode` is set to `Multiple` in the grid configuration to enable selecting more than one row.
+
+- [`clearRowSelection([indices])`](https://react-api.syncfusion.com/data-grid/overview#clearrowselection): Removes selection only from the specified rows, without affecting other selected rows.
+
+- [`clearSelection()`](https://react-api.syncfusion.com/data-grid/overview#clearselection): Clears all selected rows.
+
+<Preview frame={false} className={'sb-padding-10'} onDemand={true} content={<ProgramaticSelection />} path="grid/programatic-selection.tsx" scroll={false} />
+
+## Toggle selection
+
+The Data Grid component includes the toggle selection feature, which is disabled by default. Clicking an unselected row selects it, while clicking a selected row should not deselects it. This behavior applies to both single and multiple selection modes.
+
+To enable toggle selection, set [`selectionSettings.enableToggle`](https://react-api.syncfusion.com/data-grid/selectionsettings#enabletoggle) to `true`. When enabled, selection behaves as follows:
+
+### Single selection mode
+
+- Clicking a selected row again deselects it.
+- Selecting a different row by clicking or using the `selectRow` method clears the previous selection and selects the new row.
+
+### Multiple selection mode
+
+- Clicking a selected row without holding <kbd>Ctrl</kbd> key clears other row selections and retains only the clicked row.
+- Clicking the same row again with holding <kbd>Ctrl</kbd> key removes its selection, resulting in no selected rows.
+- Holding <kbd>Ctrl</kbd> key allows modifying the selection without clearing other rows.
+- Holding <kbd>Shift</kbd> selects a range of rows between the last focused row and the clicked row.
+
+> On macOS, use the <kbd>⌘</kbd> key in place of the <kbd>Ctrl</kbd> key.
+
+<Preview frame={false} className={'sb-padding-10'} onDemand={true} content={<ToggleSelection />} path="grid/toggle-selection.tsx" scroll={false} />
+
+## Events
+ 
+The Data Grid component provides event hooks for selection changes:
+
+| Event | Description |
+|---|---|
+| [`onRowSelect`](https://react-api.syncfusion.com/data-grid/overview#onrowselect) | Fires after a row is selected. Provides details for post-selection actions such as highlighting, loading related data, or updating UI elements. |
+| [`onRowDeselect`](https://react-api.syncfusion.com/data-grid/overview#onrowdeselect) | Fires after a row is deselected. Provides details for actions such as clearing data, resetting UI states, or logging deselection events. |
+
+
+<Preview frame={false} className={'sb-padding-10'} onDemand={true} content={<WorkflowSelection />} path="grid/workflow-selection.tsx" scroll={false} />
+
+## See also
+
+* <p><Link to="/data-grid/accessibility#selection">Keyboard Shortcuts for Selection</Link></p>

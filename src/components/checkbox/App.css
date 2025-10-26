@@ -1,0 +1,39 @@
+
+.sf-custom .sf-checkbox-frame-me {
+    border-radius: 100%;
+}
+
+.sf-custom-frame .sf-checkbox-frame-me {
+    border-radius: 40%;
+}
+
+.sf-checkicon.sf-checkbox-wrapper .sf-frame.sf-check::before {
+    content: '\e77d';
+}
+
+.sf-checkicon.sf-checkbox-wrapper .sf-check {
+    font-size: 8.5px;
+}
+
+.sf-checkicon.sf-checkbox-wrapper .sf-frame.sf-check {
+    background-color: white;
+    border-color: grey;
+    color: grey;
+}
+
+.sf-checkicon.sf-checkbox-wrapper:hover .sf-frame.sf-check {
+    background-color: white;
+    border-color: grey;
+    color: grey;
+}
+
+.sf-checkicon.sf-checkbox-wrapper .sf-checkbox:focus+.sf-frame.sf-check {
+    background-color: white;
+    border-color: grey;
+    box-shadow: none;
+    color: grey;
+}
+
+.gap-20 {
+    gap: 20px;
+}
