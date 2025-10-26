@@ -1,0 +1,57 @@
+{
+    "routes": [
+        {
+            "route": "/robots.txt",
+            "allowedRoles": ["anonymous"]
+        },
+        {
+            "route": "/BingSiteAuth.xml",
+            "allowedRoles": ["anonymous"]
+        },
+        {
+            "route": "/googlead3264fa14839e17.html",
+            "allowedRoles": ["anonymous"]
+        },
+        {
+            "route": "/manifest.json",
+            "allowedRoles": ["anonymous"]
+        },
+        {
+            "route": "/sitemap.xml",
+            "allowedRoles": ["anonymous"]
+        },
+        {
+            "route": "/assets/*",
+            "allowedRoles": [
+                "anonymous"
+            ]
+        },
+        {
+            "route": "/source/*",
+            "allowedRoles": [
+                "anonymous"
+            ]
+        },
+        {
+            "route": "/images/*",
+            "allowedRoles": [
+                "anonymous"
+            ],
+            "headers": {
+                "Cross-Origin-Resource-Policy": "cross-origin"
+            }
+        },
+        {
+            "route": "/",
+            "redirect": "/development/",
+            "statusCode": 301
+        },
+        {
+            "route": "/development/*",
+            "rewrite": "/index.html"
+        }
+    ],
+    "globalHeaders": {
+        "X-Robots-Tag": "index, follow"
+    }
+}

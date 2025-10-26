@@ -1,0 +1,23 @@
+{
+  "name": "Syncfusion React Demos & Docs",
+  "short_name": " React",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6750A4",
+  "description": "Explore and learn Essential Studio® React UI components library using large collection of feature-wise examples for each components.",
+    "icons": [{
+        "src": "favicon.ico",
+        "src": "images/syncfusion-logo-64.png",
+        "sizes": "64x64"
+    }, {
+        "src": "favicon.ico",
+        "src": "images/syncfusion-logo-128.png",
+        "sizes": "128x128"
+    }, {
+        "src": "images/syncfusion-logo.png",
+        "sizes": "256x256"
+    }],
+  "scope": "/",
+  "lang": "en"
+}

@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+<url>
+   <loc>https://react.syncfusion.com/overview/introduction</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/overview/system-requirements</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/licensing/overview</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/licensing/generating-license-keys</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/licensing/registering-license-keys</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/getting-started/vite</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/getting-started/nextjs</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/getting-started/remix-app</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/getting-started/sharepoint</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/getting-started/preact</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/getting-started/gatsby</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/getting-started/astro</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/getting-started/single-page-application</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/frameworks/material-ui</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/frameworks/redux-form</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/frameworks/redux-store</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/frameworks/redux-undo</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/frameworks/.net-core</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/frameworks/react-final-form</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/frameworks/server-side-rendering</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/tooltip</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/toolbar</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/toast</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/textbox</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/textarea</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/split-button</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/skeleton</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/radio-button</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/numeric-textbox</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/message</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/overview</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/getting-started</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/real-time-grid/streaming-trade-view</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/real-time-grid/order-status-tracker</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/data-binding/local-data</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/data-binding/remote-data</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/data-binding/custom-data</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/data-binding/empty-record-template</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/columns/configuration</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/columns/headers</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/columns/cell-customization</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/columns/grid-lines</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/columns/templates</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/columns/react-state-for-column</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/rows/rows</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/rows/templates</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/editing/configuration</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/editing/editing-types</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/editing/inline-editing</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/editing/validation</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/editing/custom-edit</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/sorting</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/filtering/configuration</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/filtering/filter-bar</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/filtering/custom-filtering</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/searching</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/paging</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/selection</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/aggregates</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/globalization</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/data-grid/accessibility</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/form</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/floating-action-button</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/dropdown-list</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/dropdown-button</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/dialog</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/date-picker</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/context-menu</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chiplist</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chip</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/checkbox</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/overview</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/getting-started</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/real-time-charts/cloud-monitoring-dashboard</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/data-binding/local-data-binding</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/data-binding/remote-data-binding</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/line-charts/line-chart</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/line-charts/spline-chart</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/line-charts/stepline-chart</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/area-charts/area-chart</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/area-charts/spline-area-chart</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/column-and-bar-charts/column-chart</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/column-and-bar-charts/bar-chart</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/column-and-bar-charts/stacking-column-chart</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/column-and-bar-charts/stacking-bar-chart</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/bubble-and-scatter-charts/scatter-chart</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/bubble-and-scatter-charts/bubble-chart</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/combination-chart</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/axis/axis-type</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/axis/axis-label</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/axis/axis-customization</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/axis/multiple-panes</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/stripline</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/datalabel</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/marker</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/tooltip</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/legend</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/zooming-and-panning</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/rtl</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/appearance</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/animation</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/events</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/keyboard-navigation</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/accessibility</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/chart/globalization</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/calendar</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/button</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/common-features/accessibility</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/common-features/right-to-left</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/common-features/localization</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/common-features/security</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/common-features/content-security-policy</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/appearance/built-in-themes</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/appearance/icons</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/appearance/styled-component</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+
+<url>
+   <loc>https://react.syncfusion.com/appearance/css-variables</loc>
+   <lastmod>2025-09-05</lastmod>
+</url>
+  
+</urlset>

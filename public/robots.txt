@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://react.syncfusion.com/sitemap.xml
