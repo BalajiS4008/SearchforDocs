@@ -1,6 +1,6 @@
 {
   "name": "react-samples",
-  "private": true,
+  "private": true, 
   "version": "29.2.4",
   "type": "module",
   "scripts": {
